@@ -1,0 +1,101 @@
+warehouse_id,country,city_name,capacity (NA),product_types
+3144,Jamaica,Saint Andrew,726506,"['W', 'G', 'J', 'B', 'U', 'A']"
+5657,United Arab Emirates,Umm al Qaywayn,215438,"['I', 'L', 'Q', 'R', 'C', 'W']"
+8630,Mexico,Sonora,979409,"['G', 'P', 'N']"
+6178,Senegal,Louga,225770,"['E', 'Q', 'G', 'N', 'Z', 'M', 'P']"
+6560,Aruba,NA,576172,['M']
+5877,Costa Rica,Puntarenas,545820,"['O', 'D', 'W']"
+5255,Guyana,Upper Takutu-Upper Essequibo,294236,"['P', 'J', 'T', 'O', 'V', 'K']"
+5120,New Caledonia,NA,232237,['K']
+3586,Norway,Romssa ja Finnmárkku,638984,"['G', 'X', 'Z']"
+1965,Nigeria,Kaduna,232001,"['K', 'O', 'Z', 'B', 'T', 'X', 'L']"
+5681,Monaco,Larvotto,890253,['Y']
+5130,Malawi,Nkhotakota,916459,"['W', 'P', 'U', 'R']"
+4936,Svalbard and Jan Mayen,NA,172118,"['R', 'G', 'T']"
+4539,Tonga,'Eua,913594,"['P', 'G']"
+4152,Angola,Bié,200761,"['I', 'Y', 'W', 'S', 'G', 'V', 'Z']"
+7670,Singapore,South East,547301,"['A', 'J', 'W']"
+9934,Algeria,Sidi Bel Abbès,316384,"['Z', 'T', 'P', 'Y', 'O', 'I', 'Q']"
+8707,Antigua and Barbuda,Saint Philip,585683,"['H', 'D', 'Y']"
+9297,North Macedonia,Valandovo,474616,['K']
+5145,Guadeloupe,NA,605370,"['G', 'U', 'T', 'Y', 'L', 'J', 'E']"
+6089,Zimbabwe,Masvingo,139849,['K']
+7568,United States,Connecticut,574270,"['H', 'F']"
+4570,Haiti,Artibonite,371117,['X']
+3048,Tokelau,NA,328969,"['D', 'S', 'A', 'I']"
+6244,Cayman Islands,NA,989636,"['W', 'K', 'B', 'G', 'U']"
+5918,French Polynesia,NA,416754,"['W', 'F', 'M']"
+1274,Bangladesh,Madaripur,297346,['Z']
+3573,Bermuda,NA,586490,"['Y', 'O', 'A', 'Z', 'Q', 'T', 'W']"
+5601,Albania,Korçë,800295,"['K', 'I', 'R', 'C', 'M']"
+6852,Angola,Moxico,575422,"['H', 'B']"
+4659,Netherlands,Sint Maarten,500145,"['H', 'W', 'I', 'V']"
+4439,"Taiwan, Province of China",Chiayi,602257,"['W', 'L', 'B', 'Y', 'D']"
+5447,Cameroon,South,240006,"['D', 'X', 'K', 'I', 'L', 'Q']"
+2610,Mauritius,Rodrigues Island,266619,"['U', 'J', 'N', 'B', 'I', 'D', 'Q']"
+1555,"Venezuela, Bolivarian Republic of",Portuguesa,727753,"['A', 'P', 'Q', 'D', 'L']"
+3416,Chile,Aisén del General Carlos Ibañez del Campo,989502,"['U', 'H', 'Q']"
+2080,Slovakia,Nitriansky kraj,382791,"['Q', 'X', 'Y', 'R', 'D', 'T']"
+1671,Spain,La Rioja,199839,['J']
+8958,North Macedonia,Makedonska Kamenica,427231,"['R', 'X']"
+6890,Morocco,Nouaceur,281172,['G']
+9508,Switzerland,Freiburg,789465,"['L', 'F', 'N', 'B', 'U']"
+6977,Lesotho,Quthing,746638,"['U', 'W']"
+3769,Dominican Republic,Pedernales,428448,"['P', 'S', 'T', 'G', 'J', 'E', 'X']"
+6850,British Indian Ocean Territory,NA,808978,"['R', 'J', 'G', 'I']"
+6486,Sweden,Värmlands län [SE-17],944199,"['C', 'R', 'O', 'W', 'Z', 'E']"
+2304,Eritrea,Ansabā,581137,"['F', 'B']"
+7767,"Congo, The Democratic Republic of the",Sud-Ubangi,116167,"['O', 'Z', 'U', 'M', 'P']"
+1689,South Sudan,Jonglei,925230,"['D', 'M', 'W', 'P', 'J', 'K', 'C']"
+6459,Oman,Z̧ufār,955997,"['S', 'T', 'F', 'Q', 'N']"
+5934,Thailand,Yasothon,860113,"['U', 'H', 'J', 'W']"
+9911,Guadeloupe,NA,579280,"['M', 'A', 'H', 'S', 'E', 'Y', 'U']"
+6784,Netherlands,Fryslân,643852,['Y']
+9038,Puerto Rico,NA,808600,"['D', 'Y', 'F', 'O', 'A', 'Q']"
+8723,Hungary,Veszprém,250197,"['R', 'C', 'V', 'F', 'J']"
+9424,Israel,Al Awsaţ,193872,"['M', 'U', 'K', 'B', 'Y', 'T', 'X']"
+1682,Puerto Rico,NA,511274,"['S', 'N', 'I']"
+1464,Togo,Centrale,584190,"['U', 'S', 'K', 'W']"
+9555,Mali,Ménaka,978981,"['B', 'S', 'Z', 'D', 'Q']"
+6016,Argentina,Catamarca,796061,"['G', 'K', 'C', 'W', 'X']"
+2164,Northern Mariana Islands,NA,222443,"['V', 'F', 'M', 'E']"
+5842,Burundi,Makamba,732473,"['T', 'F']"
+4163,Zimbabwe,Masvingo,532722,"['S', 'E', 'Z']"
+9421,Estonia,Kadrina,109696,"['L', 'R', 'G', 'O', 'I']"
+9484,Belgium,Limburg,663998,"['I', 'O']"
+6381,Pakistan,Sindh,178718,['Q']
+9981,Chad,Mayo-Kebbi-Ouest,749718,"['G', 'L', 'V']"
+6589,Cayman Islands,NA,474813,"['E', 'F', 'Z']"
+6306,Sao Tome and Principe,Cantagalo,979327,"['Q', 'X', 'D', 'R', 'N', 'K']"
+5509,Faroe Islands,NA,359670,['X']
+8421,Tuvalu,Nui,517073,"['J', 'I', 'M']"
+9975,Eswatini,Manzini,801592,"['Y', 'O', 'I', 'J', 'E', 'V']"
+3527,Bangladesh,Chandpur,216861,"['A', 'Z', 'C']"
+9691,Aruba,NA,470897,"['P', 'Q', 'E', 'U', 'S']"
+5820,United States Minor Outlying Islands,Midway Islands,831973,"['F', 'B']"
+9145,Eritrea,Semienawi K’eyyĭḥ Baḥri,275899,"['N', 'J', 'K', 'T']"
+1989,Uzbekistan,Sirdaryo,755212,['W']
+4031,Thailand,Samut Sakhon,171551,"['O', 'I', 'F', 'G', 'Z', 'A', 'T']"
+8064,Bosnia and Herzegovina,Brčko distrikt,393467,"['V', 'Y', 'Z', 'K']"
+2245,Nigeria,Bauchi,107116,"['E', 'B', 'T']"
+4957,Thailand,Roi Et,868155,"['J', 'F', 'L']"
+9687,Nicaragua,Managua,596395,"['N', 'L']"
+2739,Guatemala,Suchitepéquez,453497,"['D', 'P', 'F', 'C', 'T']"
+8165,Saint Kitts and Nevis,Saint Thomas Middle Island,433548,"['X', 'R', 'H']"
+1029,United States,Maryland,544667,['J']
+6725,Ethiopia,Gambela Peoples,129799,"['K', 'E']"
+1441,Myanmar,Chin,990021,['V']
+1312,Uruguay,Durazno,633927,"['P', 'A', 'J']"
+8863,Djibouti,Dikhil,885481,"['U', 'B', 'G', 'H']"
+3312,South Africa,Free State,956419,"['K', 'U', 'O', 'I']"
+9821,Qatar,Al Wakrah,401639,"['Y', 'A', 'G', 'R']"
+5144,Belize,Toledo,834876,"['Y', 'N', 'R']"
+1257,Faroe Islands,NA,863674,"['J', 'P', 'V', 'C', 'U']"
+3182,Sri Lanka,Matara,651414,"['H', 'X', 'Q', 'U']"
+8464,Azerbaijan,Zaqatala,380123,['U']
+4237,Barbados,Saint Joseph,670142,"['N', 'Z', 'R', 'K', 'Y', 'X', 'W']"
+4254,Malaysia,Wilayah Persekutuan Labuan,192922,['W']
+6678,Morocco,Tata,219338,"['T', 'D', 'Y', 'A']"
+1231,Greece,Ágion Óros,399983,['O']
+4712,Cuba,Matanzas,977242,"['X', 'Y', 'N', 'G', 'O', 'C', 'D']"
+2590,Myanmar,Chin,215589,"['A', 'X', 'E']"
