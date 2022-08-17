@@ -1,301 +1,301 @@
 supp_id,supplier_name,country,city_name,currency,type,number_of_employees,Annual_sales,number_of_orders,market_share (%),market_capitalization ($)
-34258,Taylor PLC,Lao People's Democratic Republic,Viangchan,Dollars,Financial Services,446,465.22,5565,48,597383663385
-40868,Sorrentino SPA,Mozambique,Gaza,Dollars,Real Estate,533,8881.74,1871,98,916817407470
-27813,Persico e figli,Saint Martin (French part),NA,Dollars,"Paper, Forest Products & Packaging",578,58.99,8611,9,697776752538
-57551,Karge OHG mbH,Brunei Darussalam,Belait,Dollars,Oil & Gas,145,3.35,4320,41,878640920949
-50099,"Smith, Porter and Lynch",Palau,Ngatpang,Dollars,Automotive & Assembly,872,8.39,2090,78,604646142864
-68240,Mary Breton S.A.,"Iran, Islamic Republic of",Āz̄ārbāyjān-e Shārqī,Ngultrum,Life Sciences,278,246.17,3731,28,671335305726
-46204,Renner,Guinea-Bissau,Sul,Dollars,Metals & Mining,202,4.71,7360,4,360380892640
-44351,Collins Inc,Czechia,Prachatice,Dollars,Advanced Electronics,912,6222.61,4121,74,432279688802
-43284,Lombard et Fils,Romania,Brașov,Dollars,Retail,525,6.18,6336,86,251047545273
-47804,"Mattarella, Chiappetta e Farinelli Group",Monaco,Vallon de la Rousse,Dollars,Public & Social Sector,522,178.37,9266,91,960444397150
-61874,Agnesi-Donatoni e figli,Suriname,Paramaribo,Dollars,Oil & Gas,498,3.51,7503,23,287868766025
+34258,Taylor PLC,Lao People's Democratic Republic,Viangchan,Dollars,Financial Services,446,465.22,5565,48,5.97384E+11
+40868,Sorrentino SPA,Mozambique,Gaza,Dollars,Real Estate,533,8881.74,1871,98,9.16817E+11
+27813,Persico e figli,Saint Martin (French part),NA,Dollars,"Paper, Forest Products & Packaging",578,58.99,8611,9,6.97777E+11
+57551,Karge OHG mbH,Brunei Darussalam,Belait,Dollars,Oil & Gas,145,3.35,4320,41,8.78641E+11
+50099,"Smith, Porter and Lynch",Palau,Ngatpang,Dollars,Automotive & Assembly,872,8.39,2090,78,6.04646E+11
+68240,Mary Breton S.A.,"Iran, Islamic Republic of",Āz̄ārbāyjān-e Shārqī,Ngultrum,Life Sciences,278,246.17,3731,28,6.71335E+11
+46204,Renner,Guinea-Bissau,Sul,Dollars,Metals & Mining,202,4.71,7360,4,3.60381E+11
+44351,Collins Inc,Czechia,Prachatice,Dollars,Advanced Electronics,912,6222.61,4121,74,4.3228E+11
+43284,Lombard et Fils,Romania,Brașov,Dollars,Retail,525,6.18,6336,86,2.51048E+11
+47804,"Mattarella, Chiappetta e Farinelli Group",Monaco,Vallon de la Rousse,Dollars,Public & Social Sector,522,178.37,9266,91,9.60444E+11
+61874,Agnesi-Donatoni e figli,Suriname,Paramaribo,Dollars,Oil & Gas,498,3.51,7503,23,2.87869E+11
 10161,Marchand Salmon et Fils,Iceland,Rangárþing eystra,Dollars,"Technology, Media & Telecommunications",706,450.56,8872,6,73010024548
-27880,Faust Gierschner GmbH & Co. KG,French Southern Territories,NA,Dollars,Oil & Gas,711,9.61,6063,42,495824275061
-58199,Müller,Antigua and Barbuda,Saint Peter,Dollars,"Technology, Media & Telecommunications",920,4274.60,8637,93,867596140747
-75581,"Giulietti, Casaleggio e Nibali e figli",Lebanon,An Nabaţīyah,Dollars,Metals & Mining,794,40.52,9856,92,948234144205
-89467,Langern,Qatar,Umm Şalāl,Dollars,"Engineering, Construction & Building Materials",344,1.14,1502,44,437082314981
-61433,Ginesio-Majewski e figli,Marshall Islands,Likiep,Dollars,Electric Power & Natural Gas,362,650.10,6018,27,919631362370
-57453,Wong PLC,Russian Federation,Altajskij kraj,Dollars,"Technology, Media & Telecommunications",337,4386.47,7968,79,406769478067
-77332,Fischer,Saint Lucia,Choiseul,Dollars,Electric Power & Natural Gas,314,99.10,3207,94,990968893906
-70443,Tamburini-Endrizzi Group,Åland Islands,NA,Dollars,"Travel, Logistics & Infrastructure",225,48.46,7592,69,943490118815
-85351,Bohnbach Schulz GmbH & Co. OHG,Brazil,Piauí,Dollars,Electric Power & Natural Gas,320,94.75,2613,43,762017163835
-29277,Ortmann Eigenwillig GbR,Cook Islands,NA,Dollars,"Technology, Media & Telecommunications",630,936.91,8268,69,777816303787
-97749,Daniels and Sons,French Southern Territories,NA,Dollars,Retail,531,48.35,3181,20,463229112478
-93661,"Mastandrea, Faranda e Crispi SPA",Ecuador,Sucumbíos,Dollars,Consumer Packaged Goods,768,520.91,3030,32,575746714060
+27880,Faust Gierschner GmbH & Co. KG,French Southern Territories,NA,Dollars,Oil & Gas,711,9.61,6063,42,4.95824E+11
+58199,Müller,Antigua and Barbuda,Saint Peter,Dollars,"Technology, Media & Telecommunications",920,4274.6,8637,93,8.67596E+11
+75581,"Giulietti, Casaleggio e Nibali e figli",Lebanon,An Nabaţīyah,Dollars,Metals & Mining,794,40.52,9856,92,9.48234E+11
+89467,Langern,Qatar,Umm Şalāl,Dollars,"Engineering, Construction & Building Materials",344,1.14,1502,44,4.37082E+11
+61433,Ginesio-Majewski e figli,Marshall Islands,Likiep,Dollars,Electric Power & Natural Gas,362,650.1,6018,27,9.19631E+11
+57453,Wong PLC,Russian Federation,Altajskij kraj,Dollars,"Technology, Media & Telecommunications",337,4386.47,7968,79,4.06769E+11
+77332,Fischer,Saint Lucia,Choiseul,Dollars,Electric Power & Natural Gas,314,99.1,3207,94,9.90969E+11
+70443,Tamburini-Endrizzi Group,Åland Islands,NA,Dollars,"Travel, Logistics & Infrastructure",225,48.46,7592,69,9.4349E+11
+85351,Bohnbach Schulz GmbH & Co. OHG,Brazil,Piauí,Dollars,Electric Power & Natural Gas,320,94.75,2613,43,7.62017E+11
+29277,Ortmann Eigenwillig GbR,Cook Islands,NA,Dollars,"Technology, Media & Telecommunications",630,936.91,8268,69,7.77816E+11
+97749,Daniels and Sons,French Southern Territories,NA,Dollars,Retail,531,48.35,3181,20,4.63229E+11
+93661,"Mastandrea, Faranda e Crispi SPA",Ecuador,Sucumbíos,Dollars,Consumer Packaged Goods,768,520.91,3030,32,5.75747E+11
 47339,Parent Boulanger S.A.,Colombia,Cauca,Dollars,"Travel, Logistics & Infrastructure",684,96.64,6011,59,90469483609
-26090,Lange GmbH,Algeria,Tamanrasset,Dollars,Electric Power & Natural Gas,935,9.31,7225,1,322496620115
-17977,Reynaud,Yemen,Ḩaḑramawt,Dollars,Chemicals,813,3851.88,4098,53,836527011705
-68081,Garcia-Garcia,Madagascar,Antsiranana,Dollars,Electric Power & Natural Gas,830,6.54,4668,93,247418734264
-83468,Couturier,Ireland,Louth,Dollars,Chemicals,430,8920.61,2771,14,592761640723
-65468,Devaux SARL,Georgia,Samtskhe-Javakheti,Dollars,Chemicals,211,395.56,6002,12,291298664193
-35841,Richard,Austria,Tirol,Dollars,Consumer Packaged Goods,184,71.56,4777,32,268556969456
-27896,"Taylor, Rees and Burke",Samoa,Gaga'emauga,Dollars,Metals & Mining,554,265.88,6696,55,733736693019
+26090,Lange GmbH,Algeria,Tamanrasset,Dollars,Electric Power & Natural Gas,935,9.31,7225,1,3.22497E+11
+17977,Reynaud,Yemen,Ḩaḑramawt,Dollars,Chemicals,813,3851.88,4098,53,8.36527E+11
+68081,Garcia-Garcia,Madagascar,Antsiranana,Dollars,Electric Power & Natural Gas,830,6.54,4668,93,2.47419E+11
+83468,Couturier,Ireland,Louth,Dollars,Chemicals,430,8920.61,2771,14,5.92762E+11
+65468,Devaux SARL,Georgia,Samtskhe-Javakheti,Dollars,Chemicals,211,395.56,6002,12,2.91299E+11
+35841,Richard,Austria,Tirol,Dollars,Consumer Packaged Goods,184,71.56,4777,32,2.68557E+11
+27896,"Taylor, Rees and Burke",Samoa,Gaga'emauga,Dollars,Metals & Mining,554,265.88,6696,55,7.33737E+11
 19974,Legendre,Hungary,Kaposvár,Dollars,Public & Social Sector,369,9.33,1204,19,77674664573
-63319,Donati e figli,Djibouti,Ali Sabieh,Dollars,Education,731,65.25,6910,2,105781922031
-58047,Sanders-Yoder,Cook Islands,NA,Dollars,"Engineering, Construction & Building Materials",358,126.50,1459,15,85648381584
-55441,"Boezio, Galvani e Mazzeo Group",Argentina,Neuquén,Dollars,Agriculture,429,548.43,2247,55,259404778521
-69142,Fisher-Wright,Chad,Madīnat Injamīnā,Dollars,Public & Social Sector,660,9348.77,7618,7,325729547666
-29604,Frazier-Snyder,Thailand,Kalasin,Dollars,Agriculture,751,8462.13,3844,16,218589314506
-22560,Bernini-Mascheroni s.r.l.,Japan,Fukui,Dollars,Consumer Packaged Goods,332,2.41,2230,52,916225111396
-74660,Niemeier Käster AG,Argentina,Santa Fe,Dollars,Retail,227,1.50,8102,89,753904691510
-47093,Garnier S.A.,France,Gironde,Dollars,"Engineering, Construction & Building Materials",713,94.16,1244,92,575608857594
+63319,Donati e figli,Djibouti,Ali Sabieh,Dollars,Education,731,65.25,6910,2,1.05782E+11
+58047,Sanders-Yoder,Cook Islands,NA,Dollars,"Engineering, Construction & Building Materials",358,126.5,1459,15,85648381584
+55441,"Boezio, Galvani e Mazzeo Group",Argentina,Neuquén,Dollars,Agriculture,429,548.43,2247,55,2.59405E+11
+69142,Fisher-Wright,Chad,Madīnat Injamīnā,Dollars,Public & Social Sector,660,9348.77,7618,7,3.2573E+11
+29604,Frazier-Snyder,Thailand,Kalasin,Dollars,Agriculture,751,8462.13,3844,16,2.18589E+11
+22560,Bernini-Mascheroni s.r.l.,Japan,Fukui,Dollars,Consumer Packaged Goods,332,2.41,2230,52,9.16225E+11
+74660,Niemeier Käster AG,Argentina,Santa Fe,Dollars,Retail,227,1.5,8102,89,7.53905E+11
+47093,Garnier S.A.,France,Gironde,Dollars,"Engineering, Construction & Building Materials",713,94.16,1244,92,5.75609E+11
 58976,Murray-Lowe,Jamaica,Saint Andrew,Dollars,Retail,248,5077.25,2848,41,13261847684
-27107,Loiseau,Indonesia,Jawa Tengah,Dollars,Electric Power & Natural Gas,263,7.49,4483,62,559953733709
-11283,Godard,United States Minor Outlying Islands,Wake Island,Dollars,Healthcare Systems & Services,382,518.82,7902,43,992983347924
-63113,"Ajello, Pavanello e Vasari e figli",Afghanistan,Baghlān,Dollars,"Technology, Media & Telecommunications",109,448.29,5809,97,744453758758
-24741,Lange,Ghana,Bono,Dollars,"Engineering, Construction & Building Materials",199,411.41,4001,24,801454228758
-67421,Bourgeois Guillaume S.A.R.L.,Gabon,Nyanga,Dollars,Electric Power & Natural Gas,585,62.64,7382,57,870814997989
-43691,Legros,Chad,Borkou,Dollars,Life Sciences,505,423.94,5206,90,533867599218
-18952,Calvo-Satriani e figli,Bahamas,Spanish Wells,Dollars,Semiconductors,212,1080.19,2108,97,424598963325
-64251,"Parker, Golden and Vasquez",Tonga,Ha'apai,Dollars,"Travel, Logistics & Infrastructure",958,285.39,6012,71,372250794592
-71819,Hale-Robinson,Sint Maarten (Dutch part),NA,Dollars,Consumer Packaged Goods,143,67.70,9620,67,737401049615
-24646,Thanel Schlosser AG & Co. KG,American Samoa,NA,Dollars,Private Equity & Principal Investors,666,8.58,6375,52,564366545520
-72315,Phillips and Sons,Argentina,Tierra del Fuego,Dollars,Aerospace & Defense,682,5.35,3930,33,320702563293
-56382,Campbell LLC,Antigua and Barbuda,Saint Philip,Dollars,Retail,911,6854.47,7625,4,972461710390
-31532,Williams-Carter,Seychelles,Au Cap,Dollars,Private Equity & Principal Investors,200,73.33,5919,65,726451795542
+27107,Loiseau,Indonesia,Jawa Tengah,Dollars,Electric Power & Natural Gas,263,7.49,4483,62,5.59954E+11
+11283,Godard,United States Minor Outlying Islands,Wake Island,Dollars,Healthcare Systems & Services,382,518.82,7902,43,9.92983E+11
+63113,"Ajello, Pavanello e Vasari e figli",Afghanistan,Baghlān,Dollars,"Technology, Media & Telecommunications",109,448.29,5809,97,7.44454E+11
+24741,Lange,Ghana,Bono,Dollars,"Engineering, Construction & Building Materials",199,411.41,4001,24,8.01454E+11
+67421,Bourgeois Guillaume S.A.R.L.,Gabon,Nyanga,Dollars,Electric Power & Natural Gas,585,62.64,7382,57,8.70815E+11
+43691,Legros,Chad,Borkou,Dollars,Life Sciences,505,423.94,5206,90,5.33868E+11
+18952,Calvo-Satriani e figli,Bahamas,Spanish Wells,Dollars,Semiconductors,212,1080.19,2108,97,4.24599E+11
+64251,"Parker, Golden and Vasquez",Tonga,Ha'apai,Dollars,"Travel, Logistics & Infrastructure",958,285.39,6012,71,3.72251E+11
+71819,Hale-Robinson,Sint Maarten (Dutch part),NA,Dollars,Consumer Packaged Goods,143,67.7,9620,67,7.37401E+11
+24646,Thanel Schlosser AG & Co. KG,American Samoa,NA,Dollars,Private Equity & Principal Investors,666,8.58,6375,52,5.64367E+11
+72315,Phillips and Sons,Argentina,Tierra del Fuego,Dollars,Aerospace & Defense,682,5.35,3930,33,3.20703E+11
+56382,Campbell LLC,Antigua and Barbuda,Saint Philip,Dollars,Retail,911,6854.47,7625,4,9.72462E+11
+31532,Williams-Carter,Seychelles,Au Cap,Dollars,Private Equity & Principal Investors,200,73.33,5919,65,7.26452E+11
 33037,Schinke,Saint Pierre and Miquelon,NA,Dollars,Retail,568,7.65,5517,77,96739764422
 13951,Santoro-Bignami SPA,Belize,Belize,Dollars,Oil & Gas,569,20.98,5075,26,98321109644
-88882,"Copeland, Briggs and Taylor",French Guiana,NA,Dollars,Real Estate,133,464.75,1036,1,986560918539
-18141,Röhrdanz AG & Co. KG,Zambia,North-Western,Dollars,Public & Social Sector,123,317.36,6687,88,561988784153
-73593,Simon Dijoux SA,French Guiana,NA,Dollars,Aerospace & Defense,956,7.48,4612,30,293623599324
-92416,Tonisto s.r.l.,Niue,NA,Dollars,Life Sciences,221,5396.52,6068,65,215162642215
-73487,Bishop Ltd,Italy,Marche,Dollars,Metals & Mining,455,8.57,8447,51,239942050451
-99762,Hammond Inc,Netherlands,Saba,Dollars,Real Estate,762,40.24,5322,77,534026897587
-86815,Giorgetti-Rossetti SPA,Equatorial Guinea,Bioko Sud,Dollars,"Technology, Media & Telecommunications",269,180.97,8566,46,357992618934
-53699,Köster Walter GmbH & Co. KGaA,Niger,Diffa,Dollars,Real Estate,751,3.80,2347,12,65711062011
-41898,"Gray, Walsh and Martin",Bouvet Island,NA,Dollars,Agriculture,359,506.12,1114,16,180706652707
-13889,John PLC,Benin,Alibori,Dollars,Public & Social Sector,514,90.57,5223,37,559406612565
-21166,"Martin, Ross and Doyle",Gabon,Ogooué-Maritime,Dollars,Advanced Electronics,596,168.81,7106,97,827492861243
-52544,Baglioni e figli,"Bolivia, Plurinational State of",Pando,Dollars,Semiconductors,443,50.79,5317,68,851818436090
-68120,Humbert et Fils,Holy See (Vatican City State),NA,Dollars,Financial Services,392,9626.27,8629,3,285700945808
-14125,Dörschner Naser GmbH,"Bonaire, Sint Eustatius and Saba",Saba,Dollars,Healthcare Systems & Services,195,649.86,6139,64,853833794114
+88882,"Copeland, Briggs and Taylor",French Guiana,NA,Dollars,Real Estate,133,464.75,1036,1,9.86561E+11
+18141,Röhrdanz AG & Co. KG,Zambia,North-Western,Dollars,Public & Social Sector,123,317.36,6687,88,5.61989E+11
+73593,Simon Dijoux SA,French Guiana,NA,Dollars,Aerospace & Defense,956,7.48,4612,30,2.93624E+11
+92416,Tonisto s.r.l.,Niue,NA,Dollars,Life Sciences,221,5396.52,6068,65,2.15163E+11
+73487,Bishop Ltd,Italy,Marche,Dollars,Metals & Mining,455,8.57,8447,51,2.39942E+11
+99762,Hammond Inc,Netherlands,Saba,Dollars,Real Estate,762,40.24,5322,77,5.34027E+11
+86815,Giorgetti-Rossetti SPA,Equatorial Guinea,Bioko Sud,Dollars,"Technology, Media & Telecommunications",269,180.97,8566,46,3.57993E+11
+53699,Köster Walter GmbH & Co. KGaA,Niger,Diffa,Dollars,Real Estate,751,3.8,2347,12,65711062011
+41898,"Gray, Walsh and Martin",Bouvet Island,NA,Dollars,Agriculture,359,506.12,1114,16,1.80707E+11
+13889,John PLC,Benin,Alibori,Dollars,Public & Social Sector,514,90.57,5223,37,5.59407E+11
+21166,"Martin, Ross and Doyle",Gabon,Ogooué-Maritime,Dollars,Advanced Electronics,596,168.81,7106,97,8.27493E+11
+52544,Baglioni e figli,"Bolivia, Plurinational State of",Pando,Dollars,Semiconductors,443,50.79,5317,68,8.51818E+11
+68120,Humbert et Fils,Holy See (Vatican City State),NA,Dollars,Financial Services,392,9626.27,8629,3,2.85701E+11
+14125,Dörschner Naser GmbH,"Bonaire, Sint Eustatius and Saba",Saba,Dollars,Healthcare Systems & Services,195,649.86,6139,64,8.53834E+11
 12548,"Whitehead, Morris and Chan",Somalia,Shabeellaha Hoose,Dollars,Education,745,35.61,9702,40,56583264482
 30692,Parsons-Miles,Saint Barthélemy,NA,Dollars,Aerospace & Defense,949,76.43,6981,86,89700080724
-31934,Brown Group,Wallis and Futuna,Alo,Dollars,Financial Services,814,4.51,4480,49,318592147171
-91465,Davis LLC,Marshall Islands,Enewetak & Ujelang,Dollars,Automotive & Assembly,582,756.60,8797,3,181468532073
-81423,Eco s.r.l.,Bouvet Island,NA,Dollars,Aerospace & Defense,276,4.17,6658,69,344949587538
+31934,Brown Group,Wallis and Futuna,Alo,Dollars,Financial Services,814,4.51,4480,49,3.18592E+11
+91465,Davis LLC,Marshall Islands,Enewetak & Ujelang,Dollars,Automotive & Assembly,582,756.6,8797,3,1.81469E+11
+81423,Eco s.r.l.,Bouvet Island,NA,Dollars,Aerospace & Defense,276,4.17,6658,69,3.4495E+11
 82768,Argan-Montesano Group,Grenada,Saint George,Dollars,Consumer Packaged Goods,982,53.66,4186,17,31804971061
-32829,Le Roux Faure et Fils,Kuwait,Al ‘Āşimah,Dollars,Chemicals,885,51.31,5063,54,597311886405
-39180,Lebon S.A.R.L.,Australia,Queensland,Dollars,Agriculture,616,350.95,9886,69,819612191619
-55787,Gröttner Stahr KG,Saint Vincent and the Grenadines,Saint David,Dollars,Advanced Electronics,981,781.93,2736,92,153905746224
-11770,Fantoni-Pareto SPA,Eritrea,Debubawi K’eyyĭḥ Baḥri,Dollars,Semiconductors,687,5786.51,5156,97,222248710518
-75444,Schacht KGaA,Argentina,La Pampa,Dollars,Electric Power & Natural Gas,565,122.57,7540,14,368621307055
-12179,Ferrand Lefebvre SARL,Saint Vincent and the Grenadines,Saint David,Dollars,Advanced Electronics,397,98.99,7296,100,444562465389
-12547,Eberhardt Ortmann GmbH & Co. KG,Mali,Ségou,Dollars,Real Estate,652,455.91,1848,24,523779178212
-46676,Davies Group,Seychelles,Takamaka,Dollars,Healthcare Systems & Services,184,8646.20,3217,74,332530776214
-89745,Stoll,New Caledonia,NA,Dollars,Metals & Mining,168,68.59,5767,8,290298047487
-46615,"Brown, Roberts and Williams","Moldova, Republic of",Călărași,Dollars,Semiconductors,510,2.99,6535,91,886935927785
-42065,Hayward Inc,Sint Maarten (Dutch part),NA,Dollars,Healthcare Systems & Services,826,8071.90,5073,63,304311870416
-18262,"Davies, Anderson and Lewis",Saint Lucia,Soufrière,Dollars,Semiconductors,623,3039.43,1257,29,219938077199
-24451,Knapp-Lynch,Kuwait,Mubārak al Kabīr,Dollars,Electric Power & Natural Gas,621,629.46,7584,79,458221248570
-64604,Jennings-Richards,Croatia,Varaždinska županija,Dollars,Real Estate,324,22.57,3816,80,431279918339
-46995,Moore-Wright,Sao Tome and Principe,Lembá,Dollars,Advanced Electronics,726,994.68,1889,34,983818600956
-49681,Barbe,Gibraltar,NA,Dollars,Metals & Mining,791,4938.68,3287,5,144427578025
+32829,Le Roux Faure et Fils,Kuwait,Al ‘Āşimah,Dollars,Chemicals,885,51.31,5063,54,5.97312E+11
+39180,Lebon S.A.R.L.,Australia,Queensland,Dollars,Agriculture,616,350.95,9886,69,8.19612E+11
+55787,Gröttner Stahr KG,Saint Vincent and the Grenadines,Saint David,Dollars,Advanced Electronics,981,781.93,2736,92,1.53906E+11
+11770,Fantoni-Pareto SPA,Eritrea,Debubawi K’eyyĭḥ Baḥri,Dollars,Semiconductors,687,5786.51,5156,97,2.22249E+11
+75444,Schacht KGaA,Argentina,La Pampa,Dollars,Electric Power & Natural Gas,565,122.57,7540,14,3.68621E+11
+12179,Ferrand Lefebvre SARL,Saint Vincent and the Grenadines,Saint David,Dollars,Advanced Electronics,397,98.99,7296,100,4.44562E+11
+12547,Eberhardt Ortmann GmbH & Co. KG,Mali,Ségou,Dollars,Real Estate,652,455.91,1848,24,5.23779E+11
+46676,Davies Group,Seychelles,Takamaka,Dollars,Healthcare Systems & Services,184,8646.2,3217,74,3.32531E+11
+89745,Stoll,New Caledonia,NA,Dollars,Metals & Mining,168,68.59,5767,8,2.90298E+11
+46615,"Brown, Roberts and Williams","Moldova, Republic of",Călărași,Dollars,Semiconductors,510,2.99,6535,91,8.86936E+11
+42065,Hayward Inc,Sint Maarten (Dutch part),NA,Dollars,Healthcare Systems & Services,826,8071.9,5073,63,3.04312E+11
+18262,"Davies, Anderson and Lewis",Saint Lucia,Soufrière,Dollars,Semiconductors,623,3039.43,1257,29,2.19938E+11
+24451,Knapp-Lynch,Kuwait,Mubārak al Kabīr,Dollars,Electric Power & Natural Gas,621,629.46,7584,79,4.58221E+11
+64604,Jennings-Richards,Croatia,Varaždinska županija,Dollars,Real Estate,324,22.57,3816,80,4.3128E+11
+46995,Moore-Wright,Sao Tome and Principe,Lembá,Dollars,Advanced Electronics,726,994.68,1889,34,9.83819E+11
+49681,Barbe,Gibraltar,NA,Dollars,Metals & Mining,791,4938.68,3287,5,1.44428E+11
 86580,Carlier Bernard SARL,Grenada,Saint George,Dollars,Metals & Mining,659,1156.14,4041,31,81400493131
-97142,Pietrangeli SPA,Belize,Belize,Dollars,"Paper, Forest Products & Packaging",542,30.38,6518,38,506844982219
-63322,Ernst,Guinea,Télimélé,Dollars,Metals & Mining,941,948.26,4995,17,991382318104
+97142,Pietrangeli SPA,Belize,Belize,Dollars,"Paper, Forest Products & Packaging",542,30.38,6518,38,5.06845E+11
+63322,Ernst,Guinea,Télimélé,Dollars,Metals & Mining,941,948.26,4995,17,9.91382E+11
 90272,"Tarantino, Monaco e Stefanelli e figli",Myanmar,Tanintharyi,Dollars,Real Estate,817,4.19,9939,59,67351662587
-92698,Pedroni s.r.l.,Antigua and Barbuda,Barbuda,Dollars,Oil & Gas,656,8.45,1477,71,757324909600
-14522,Charrier,Paraguay,Caaguazú,Dollars,Agriculture,453,7268.14,1715,91,107989257885
-23557,Techer S.A.S.,Lesotho,Qacha's Nek,Dollars,Advanced Electronics,766,8.97,8687,56,893473562745
-60591,Garcia,French Southern Territories,NA,Dollars,"Technology, Media & Telecommunications",886,5.25,9836,26,340631737712
-38265,"Borromini, Ginesio e Tirabassi Group",Bhutan,Samdrup Jongkhar,Dollars,Oil & Gas,422,37.16,2854,62,337700770873
-55648,"Scalfaro, Spinola e Alfieri Group",Antigua and Barbuda,Saint Mary,Dollars,Electric Power & Natural Gas,728,9645.18,8829,65,332571783604
-71574,Weller,Brazil,Mato Grosso,Dollars,Oil & Gas,263,1.33,3938,13,121559611243
-71916,Wirth AG,Afghanistan,Bādghīs,Dollars,Healthcare Systems & Services,988,7903.53,1873,44,167961397271
-76443,Duval,Malaysia,Terengganu,Dollars,Life Sciences,326,85.56,5683,69,858328689687
-96293,Thomas-Stevens,Nauru,Uaboe,Dollars,Semiconductors,586,1.10,7895,3,699358768361
-60393,Baron,Bahamas,Ragged Island,Dollars,Electric Power & Natural Gas,757,903.42,2264,56,718963960855
+92698,Pedroni s.r.l.,Antigua and Barbuda,Barbuda,Dollars,Oil & Gas,656,8.45,1477,71,7.57325E+11
+14522,Charrier,Paraguay,Caaguazú,Dollars,Agriculture,453,7268.14,1715,91,1.07989E+11
+23557,Techer S.A.S.,Lesotho,Qacha's Nek,Dollars,Advanced Electronics,766,8.97,8687,56,8.93474E+11
+60591,Garcia,French Southern Territories,NA,Dollars,"Technology, Media & Telecommunications",886,5.25,9836,26,3.40632E+11
+38265,"Borromini, Ginesio e Tirabassi Group",Bhutan,Samdrup Jongkhar,Dollars,Oil & Gas,422,37.16,2854,62,3.37701E+11
+55648,"Scalfaro, Spinola e Alfieri Group",Antigua and Barbuda,Saint Mary,Dollars,Electric Power & Natural Gas,728,9645.18,8829,65,3.32572E+11
+71574,Weller,Brazil,Mato Grosso,Dollars,Oil & Gas,263,1.33,3938,13,1.2156E+11
+71916,Wirth AG,Afghanistan,Bādghīs,Dollars,Healthcare Systems & Services,988,7903.53,1873,44,1.67961E+11
+76443,Duval,Malaysia,Terengganu,Dollars,Life Sciences,326,85.56,5683,69,8.58329E+11
+96293,Thomas-Stevens,Nauru,Uaboe,Dollars,Semiconductors,586,1.1,7895,3,6.99359E+11
+60393,Baron,Bahamas,Ragged Island,Dollars,Electric Power & Natural Gas,757,903.42,2264,56,7.18964E+11
 13540,Scott-Miller,Tuvalu,Nukufetau,Dollars,Consumer Packaged Goods,765,113.23,1799,98,18982761777
-16601,Krein Schaaf Stiftung & Co. KGaA,Comoros,Andjouân,Dollars,Automotive & Assembly,896,466.30,9846,92,195028459501
-98981,"Calarco, Gregori e Lopresti Group",United Arab Emirates,Al Fujayrah,Dollars,Financial Services,844,6.45,1374,98,595611307459
-13283,Melendez-Williams,Congo,Bouenza,Dollars,Aerospace & Defense,680,792.86,6739,10,838447800650
-12748,"Dossetti, Sobrero e Padovano SPA",Liberia,Grand Bassa,Dollars,Life Sciences,294,7.32,9449,88,676316366205
-51293,Cusano s.r.l.,Niue,NA,Dollars,"Paper, Forest Products & Packaging",402,107.13,4671,75,734967757954
-61570,Morris PLC,Afghanistan,Paktiyā,Dollars,"Paper, Forest Products & Packaging",229,342.72,8971,24,412137444661
-55515,"Price, Carroll and Cook",Oman,Shamāl al Bāţinah,Dollars,Metals & Mining,633,9383.99,8260,15,371582185419
-46942,Monduzzi-Pellico Group,Greenland,Qeqqata Kommunia,Dollars,"Paper, Forest Products & Packaging",751,9611.85,9922,85,679458993237
-13362,"Martin, Summers and Edwards",Dominican Republic,Peravia,Dollars,Financial Services,550,2505.77,1288,44,259812179330
-11513,Cohen,Antarctica,NA,Dollars,"Travel, Logistics & Infrastructure",709,964.40,5343,87,977766413695
-78265,Karge GmbH & Co. KG,Sao Tome and Principe,Água Grande,Dollars,Metals & Mining,172,943.46,7289,41,320562456964
-76088,Römer GmbH,Belgium,Limburg,Dollars,Metals & Mining,687,310.85,3574,15,645452942066
-52578,Morin S.A.S.,Costa Rica,Guanacaste,Dollars,"Travel, Logistics & Infrastructure",606,3.89,4869,79,435811889536
-85924,Bertrand,Sao Tome and Principe,Lembá,Dollars,Real Estate,437,3.52,2494,58,353427608665
-71597,Roccabonella-Lamborghini e figli,Guadeloupe,NA,Dollars,Chemicals,781,6.77,1925,13,636375841315
-70050,Talbot-Smith,Belize,Stann Creek,Dollars,Retail,403,734.96,9448,96,246439862619
-26533,Miller PLC,Northern Mariana Islands,NA,Dollars,Consumer Packaged Goods,244,7.79,5367,89,903395662998
-90236,Schönland AG,United Arab Emirates,Al Fujayrah,Dollars,Electric Power & Natural Gas,481,8203.36,7561,82,408336456495
-91409,Sauvage,Seychelles,Saint Louis,Dollars,"Engineering, Construction & Building Materials",251,7287.92,9734,20,226306037030
+16601,Krein Schaaf Stiftung & Co. KGaA,Comoros,Andjouân,Dollars,Automotive & Assembly,896,466.3,9846,92,1.95028E+11
+98981,"Calarco, Gregori e Lopresti Group",United Arab Emirates,Al Fujayrah,Dollars,Financial Services,844,6.45,1374,98,5.95611E+11
+13283,Melendez-Williams,Congo,Bouenza,Dollars,Aerospace & Defense,680,792.86,6739,10,8.38448E+11
+12748,"Dossetti, Sobrero e Padovano SPA",Liberia,Grand Bassa,Dollars,Life Sciences,294,7.32,9449,88,6.76316E+11
+51293,Cusano s.r.l.,Niue,NA,Dollars,"Paper, Forest Products & Packaging",402,107.13,4671,75,7.34968E+11
+61570,Morris PLC,Afghanistan,Paktiyā,Dollars,"Paper, Forest Products & Packaging",229,342.72,8971,24,4.12137E+11
+55515,"Price, Carroll and Cook",Oman,Shamāl al Bāţinah,Dollars,Metals & Mining,633,9383.99,8260,15,3.71582E+11
+46942,Monduzzi-Pellico Group,Greenland,Qeqqata Kommunia,Dollars,"Paper, Forest Products & Packaging",751,9611.85,9922,85,6.79459E+11
+13362,"Martin, Summers and Edwards",Dominican Republic,Peravia,Dollars,Financial Services,550,2505.77,1288,44,2.59812E+11
+11513,Cohen,Antarctica,NA,Dollars,"Travel, Logistics & Infrastructure",709,964.4,5343,87,9.77766E+11
+78265,Karge GmbH & Co. KG,Sao Tome and Principe,Água Grande,Dollars,Metals & Mining,172,943.46,7289,41,3.20562E+11
+76088,Römer GmbH,Belgium,Limburg,Dollars,Metals & Mining,687,310.85,3574,15,6.45453E+11
+52578,Morin S.A.S.,Costa Rica,Guanacaste,Dollars,"Travel, Logistics & Infrastructure",606,3.89,4869,79,4.35812E+11
+85924,Bertrand,Sao Tome and Principe,Lembá,Dollars,Real Estate,437,3.52,2494,58,3.53428E+11
+71597,Roccabonella-Lamborghini e figli,Guadeloupe,NA,Dollars,Chemicals,781,6.77,1925,13,6.36376E+11
+70050,Talbot-Smith,Belize,Stann Creek,Dollars,Retail,403,734.96,9448,96,2.4644E+11
+26533,Miller PLC,Northern Mariana Islands,NA,Dollars,Consumer Packaged Goods,244,7.79,5367,89,9.03396E+11
+90236,Schönland AG,United Arab Emirates,Al Fujayrah,Dollars,Electric Power & Natural Gas,481,8203.36,7561,82,4.08336E+11
+91409,Sauvage,Seychelles,Saint Louis,Dollars,"Engineering, Construction & Building Materials",251,7287.92,9734,20,2.26306E+11
 72631,Berger Kohl GmbH & Co. KGaA,Bosnia and Herzegovina,Republika Srpska,Dollars,Consumer Packaged Goods,161,69.39,5812,55,90745418271
-33368,Sagese e figli,Slovakia,Nitriansky kraj,Dollars,Chemicals,225,7018.83,8297,10,549467194526
-48580,Patel LLC,"Moldova, Republic of",Călărași,Dollars,Oil & Gas,941,40.90,8036,81,493443780106
-83378,Taylor Ltd,Thailand,Sing Buri,Dollars,Financial Services,572,352.29,8023,84,580348364366
-68177,"Davies, James and Singh",Central African Republic,Ouham-Pendé,Dollars,Life Sciences,892,867.80,6922,10,101934064379
+33368,Sagese e figli,Slovakia,Nitriansky kraj,Dollars,Chemicals,225,7018.83,8297,10,5.49467E+11
+48580,Patel LLC,"Moldova, Republic of",Călărași,Dollars,Oil & Gas,941,40.9,8036,81,4.93444E+11
+83378,Taylor Ltd,Thailand,Sing Buri,Dollars,Financial Services,572,352.29,8023,84,5.80348E+11
+68177,"Davies, James and Singh",Central African Republic,Ouham-Pendé,Dollars,Life Sciences,892,867.8,6922,10,1.01934E+11
 21232,"Wong, Garcia and Ford",Bermuda,NA,Dollars,Chemicals,679,6.66,4404,33,96977509746
-68800,Williams-Armstrong,Spain,Valencia,Dollars,Education,436,14.32,9959,77,973523677835
-42179,Casagrande e figli,Argentina,Tierra del Fuego,Dollars,Semiconductors,103,570.80,7126,100,467067553827
-81015,Bohlander GbR,Georgia,Rach'a-Lechkhumi-Kvemo Svaneti,Dollars,Retail,838,6828.48,6455,99,624583843797
-72157,"Salazar, Robinson and Williams",Antarctica,NA,Dollars,Oil & Gas,784,5.10,3620,40,438882790369
-77743,"Cianciolo, Leblanc e Petrucelli s.r.l.",Chad,Salamat,Dollars,Retail,666,1.49,2244,4,860709651406
-23083,Rodriguez Inc,Egypt,Al Minyā,Dollars,Oil & Gas,639,806.30,3681,30,666114072220
-83444,Henry Ledoux S.A.,Switzerland,Appenzell Ausserrhoden,Dollars,Oil & Gas,730,265.12,2796,87,361063119082
-34582,West-Lane,Wallis and Futuna,Uvea,Dollars,Real Estate,187,8890.56,2421,77,947456520716
-90059,Velez-Walker,Malawi,Dowa,Dollars,Healthcare Systems & Services,476,41.30,9287,30,632544198956
-24401,Johnson-Gardner,Curaçao,NA,Dollars,Aerospace & Defense,826,18.29,3909,95,120476746140
-41112,"Iannotti, Abatantuono e Vecoli SPA",Gibraltar,NA,Dollars,Private Equity & Principal Investors,579,5658.14,8488,64,960958532384
-59005,Allen PLC,Uruguay,Flores,Dollars,"Technology, Media & Telecommunications",204,8.36,9952,7,631121785264
-69003,"Germano, Luxardo e Botta s.r.l.",Austria,Salzburg,Dollars,Retail,702,25.40,9626,96,620824335142
-54218,"Weaver, Fitzgerald and Anderson",Seychelles,Bel Air,Dollars,Metals & Mining,375,4015.65,9802,55,380343270832
-61603,Giraud S.A.R.L.,Ireland,Munster,Dollars,Education,332,5687.64,9657,95,924391170513
-72867,"Roberts, Ramirez and Ellis",French Polynesia,NA,Dollars,Healthcare Systems & Services,324,2867.82,5928,92,426204494105
-65204,Bolnbach Gorlitz AG,Russian Federation,Kaluzhskaya oblast',Dollars,"Engineering, Construction & Building Materials",863,48.58,6380,67,658685055836
-29185,"Depero, Saragat e Ziani s.r.l.",Greece,Kentrikí Makedonía,Dollars,Life Sciences,740,809.68,8860,45,378838158008
-80325,Söding,Bahamas,Central Andros,Dollars,Aerospace & Defense,994,87.14,9184,78,585899516038
-10753,Tlustek,Romania,Călărași,Dollars,Life Sciences,846,1305.30,3584,67,263603557578
-93778,Mcfarland-Gibson,Azerbaijan,Astara,Dollars,Healthcare Systems & Services,146,4.30,7277,90,955672122691
-78843,Camilleri-Rubbia s.r.l.,Israel,Al Quds,Dollars,Life Sciences,879,5.60,5727,46,848607313857
-74432,Deschamps,Turkey,Balıkesir,Dollars,Public & Social Sector,804,8.34,3428,55,782204005700
+68800,Williams-Armstrong,Spain,Valencia,Dollars,Education,436,14.32,9959,77,9.73524E+11
+42179,Casagrande e figli,Argentina,Tierra del Fuego,Dollars,Semiconductors,103,570.8,7126,100,4.67068E+11
+81015,Bohlander GbR,Georgia,Rach'a-Lechkhumi-Kvemo Svaneti,Dollars,Retail,838,6828.48,6455,99,6.24584E+11
+72157,"Salazar, Robinson and Williams",Antarctica,NA,Dollars,Oil & Gas,784,5.1,3620,40,4.38883E+11
+77743,"Cianciolo, Leblanc e Petrucelli s.r.l.",Chad,Salamat,Dollars,Retail,666,1.49,2244,4,8.6071E+11
+23083,Rodriguez Inc,Egypt,Al Minyā,Dollars,Oil & Gas,639,806.3,3681,30,6.66114E+11
+83444,Henry Ledoux S.A.,Switzerland,Appenzell Ausserrhoden,Dollars,Oil & Gas,730,265.12,2796,87,3.61063E+11
+34582,West-Lane,Wallis and Futuna,Uvea,Dollars,Real Estate,187,8890.56,2421,77,9.47457E+11
+90059,Velez-Walker,Malawi,Dowa,Dollars,Healthcare Systems & Services,476,41.3,9287,30,6.32544E+11
+24401,Johnson-Gardner,Curaçao,NA,Dollars,Aerospace & Defense,826,18.29,3909,95,1.20477E+11
+41112,"Iannotti, Abatantuono e Vecoli SPA",Gibraltar,NA,Dollars,Private Equity & Principal Investors,579,5658.14,8488,64,9.60959E+11
+59005,Allen PLC,Uruguay,Flores,Dollars,"Technology, Media & Telecommunications",204,8.36,9952,7,6.31122E+11
+69003,"Germano, Luxardo e Botta s.r.l.",Austria,Salzburg,Dollars,Retail,702,25.4,9626,96,6.20824E+11
+54218,"Weaver, Fitzgerald and Anderson",Seychelles,Bel Air,Dollars,Metals & Mining,375,4015.65,9802,55,3.80343E+11
+61603,Giraud S.A.R.L.,Ireland,Munster,Dollars,Education,332,5687.64,9657,95,9.24391E+11
+72867,"Roberts, Ramirez and Ellis",French Polynesia,NA,Dollars,Healthcare Systems & Services,324,2867.82,5928,92,4.26204E+11
+65204,Bolnbach Gorlitz AG,Russian Federation,Kaluzhskaya oblast',Dollars,"Engineering, Construction & Building Materials",863,48.58,6380,67,6.58685E+11
+29185,"Depero, Saragat e Ziani s.r.l.",Greece,Kentrikí Makedonía,Dollars,Life Sciences,740,809.68,8860,45,3.78838E+11
+80325,Söding,Bahamas,Central Andros,Dollars,Aerospace & Defense,994,87.14,9184,78,5.859E+11
+10753,Tlustek,Romania,Călărași,Dollars,Life Sciences,846,1305.3,3584,67,2.63604E+11
+93778,Mcfarland-Gibson,Azerbaijan,Astara,Dollars,Healthcare Systems & Services,146,4.3,7277,90,9.55672E+11
+78843,Camilleri-Rubbia s.r.l.,Norway,Oslo,Dollars,Life Sciences,879,5.6,5727,46,8.48607E+11
+74432,Deschamps,Turkey,Balıkesir,Dollars,Public & Social Sector,804,8.34,3428,55,7.82204E+11
 29196,Hecker,"Korea, Democratic People's Republic of",Hwanghae-namdo,Dollars,Semiconductors,399,74.12,1958,77,37208678956
-23640,Perez,Georgia,Imereti,Dollars,Oil & Gas,711,31.20,6475,2,697102501469
-87916,Ball PLC,Japan,Tochigi,Dollars,"Paper, Forest Products & Packaging",766,5.21,6855,40,797373528859
-41099,Krein,Macao,NA,Dollars,Aerospace & Defense,211,5.55,4738,16,404091426769
-80737,"Humphreys, Roberts and Dean",Uruguay,Rivera,Dollars,"Technology, Media & Telecommunications",622,90.55,1620,99,896609694602
-54921,Villarreal and Sons,El Salvador,Chalatenango,Dollars,Agriculture,217,1164.21,8336,43,188157875290
+23640,Perez,Georgia,Imereti,Dollars,Oil & Gas,711,31.2,6475,2,6.97103E+11
+87916,Ball PLC,Japan,Tochigi,Dollars,"Paper, Forest Products & Packaging",766,5.21,6855,40,7.97374E+11
+41099,Krein,Macao,NA,Dollars,Aerospace & Defense,211,5.55,4738,16,4.04091E+11
+80737,"Humphreys, Roberts and Dean",Uruguay,Rivera,Dollars,"Technology, Media & Telecommunications",622,90.55,1620,99,8.9661E+11
+54921,Villarreal and Sons,El Salvador,Chalatenango,Dollars,Agriculture,217,1164.21,8336,43,1.88158E+11
 57113,Dehmel GbR,Suriname,Nickerie,Dollars,Advanced Electronics,146,75.51,2720,85,72804181579
-52160,Zorbach e.V.,Albania,Fier,Dollars,Healthcare Systems & Services,325,5.21,4600,19,164103847889
-19878,"Morales, Walker and Garcia",Bermuda,NA,Dollars,Electric Power & Natural Gas,960,10.98,3849,11,630059418927
-81114,Junck Keudel AG,Gambia,North Bank,Dollars,Private Equity & Principal Investors,784,3575.62,2907,31,440679418716
-68562,Cavalcanti e figli,Mayotte,NA,Dollars,"Travel, Logistics & Infrastructure",758,95.71,2636,10,501565558892
-20226,Merle,Bulgaria,Dobrich,Dollars,Chemicals,829,11.89,9611,76,764716928193
-47070,Boyer,Northern Mariana Islands,NA,Dollars,Oil & Gas,896,1.47,1383,40,385796736948
-36417,Webster Group,Switzerland,Aargau,Dollars,Metals & Mining,238,7924.26,9098,85,102638541486
-36243,"Togliatti, Segni e Carfagna s.r.l.",Azerbaijan,Sumqayıt,Dollars,"Paper, Forest Products & Packaging",986,64.48,5152,83,423450476544
-36985,De Sousa,Australia,New South Wales,Dollars,"Technology, Media & Telecommunications",656,1698.49,2473,98,970964921972
-77189,"Davis, Wilson and Strickland",Gabon,Moyen-Ogooué,Dollars,Metals & Mining,615,62.24,7435,63,377222163748
-56104,Calbo e figli,Solomon Islands,Central,Dollars,"Technology, Media & Telecommunications",680,78.92,4725,33,776381058103
-54148,"Riley, Harding and Johnson",Argentina,Misiones,Dollars,"Paper, Forest Products & Packaging",969,9.92,3703,81,994581874197
-79479,Trommler,Saint Kitts and Nevis,Saint Paul Capisterre,Dollars,Healthcare Systems & Services,698,27.91,9285,41,152835801427
-30890,Monicelli-Bartoli Group,Haiti,Centre,Dollars,Healthcare Systems & Services,306,3398.80,9341,52,555089052961
-81548,Iannotti s.r.l.,Sudan,Sennar,Dollars,"Paper, Forest Products & Packaging",569,8.27,9080,67,519003864593
-48251,Lucarelli-Borsellino s.r.l.,Saint Lucia,Canaries,Dollars,Aerospace & Defense,611,374.27,5814,84,658400414551
-85572,Iannucci-Gualandi SPA,Martinique,NA,Dollars,Financial Services,353,9.94,3057,27,120514975640
-90456,Johnston-Jones,Papua New Guinea,Milne Bay,Dollars,Real Estate,665,5778.26,8166,55,845917513987
-58421,"Tacchini, Cilibrasi e Panicucci s.r.l.","Virgin Islands, U.S.",NA,Dollars,Real Estate,317,353.76,8773,50,869345730842
-25123,Hamann Benthin Stiftung & Co. KGaA,Belize,Corozal,Dollars,Oil & Gas,725,9.42,2750,98,739814738793
-74318,Hart Inc,Uganda,Mpigi,Dollars,Healthcare Systems & Services,159,658.93,7009,100,941427631381
-66206,Gramsci SPA,Côte d'Ivoire,Savanes,Dollars,Aerospace & Defense,914,4.12,6136,54,530544269210
-84844,Fornaciari-Cristoforetti SPA,Peru,Moquegua,Dollars,Public & Social Sector,232,248.58,5956,47,116502001323
-47789,Bouvet Paris SARL,Cameroon,West,Dollars,Consumer Packaged Goods,436,9.11,6201,80,958655690319
-68357,"Fields, Mathis and Ross",Romania,Brașov,Dollars,Retail,983,3096.12,6612,40,279188466600
+52160,Zorbach e.V.,Albania,Fier,Dollars,Healthcare Systems & Services,325,5.21,4600,19,1.64104E+11
+19878,"Morales, Walker and Garcia",Bermuda,NA,Dollars,Electric Power & Natural Gas,960,10.98,3849,11,6.30059E+11
+81114,Junck Keudel AG,Gambia,North Bank,Dollars,Private Equity & Principal Investors,784,3575.62,2907,31,4.40679E+11
+68562,Cavalcanti e figli,Mayotte,NA,Dollars,"Travel, Logistics & Infrastructure",758,95.71,2636,10,5.01566E+11
+20226,Merle,Bulgaria,Dobrich,Dollars,Chemicals,829,11.89,9611,76,7.64717E+11
+47070,Boyer,Northern Mariana Islands,NA,Dollars,Oil & Gas,896,1.47,1383,40,3.85797E+11
+36417,Webster Group,Switzerland,Aargau,Dollars,Metals & Mining,238,7924.26,9098,85,1.02639E+11
+36243,"Togliatti, Segni e Carfagna s.r.l.",Azerbaijan,Sumqayıt,Dollars,"Paper, Forest Products & Packaging",986,64.48,5152,83,4.2345E+11
+36985,De Sousa,Australia,New South Wales,Dollars,"Technology, Media & Telecommunications",656,1698.49,2473,98,9.70965E+11
+77189,"Davis, Wilson and Strickland",Gabon,Moyen-Ogooué,Dollars,Metals & Mining,615,62.24,7435,63,3.77222E+11
+56104,Calbo e figli,Solomon Islands,Central,Dollars,"Technology, Media & Telecommunications",680,78.92,4725,33,7.76381E+11
+54148,"Riley, Harding and Johnson",Argentina,Misiones,Dollars,"Paper, Forest Products & Packaging",969,9.92,3703,81,9.94582E+11
+79479,Trommler,Saint Kitts and Nevis,Saint Paul Capisterre,Dollars,Healthcare Systems & Services,698,27.91,9285,41,1.52836E+11
+30890,Monicelli-Bartoli Group,Haiti,Centre,Dollars,Healthcare Systems & Services,306,3398.8,9341,52,5.55089E+11
+81548,Iannotti s.r.l.,Sudan,Sennar,Dollars,"Paper, Forest Products & Packaging",569,8.27,9080,67,5.19004E+11
+48251,Lucarelli-Borsellino s.r.l.,Saint Lucia,Canaries,Dollars,Aerospace & Defense,611,374.27,5814,84,6.584E+11
+85572,Iannucci-Gualandi SPA,Martinique,NA,Dollars,Financial Services,353,9.94,3057,27,1.20515E+11
+90456,Johnston-Jones,Papua New Guinea,Milne Bay,Dollars,Real Estate,665,5778.26,8166,55,8.45918E+11
+58421,"Tacchini, Cilibrasi e Panicucci s.r.l.","Virgin Islands, U.S.",NA,Dollars,Real Estate,317,353.76,8773,50,8.69346E+11
+25123,Hamann Benthin Stiftung & Co. KGaA,Belize,Corozal,Dollars,Oil & Gas,725,9.42,2750,98,7.39815E+11
+74318,Hart Inc,Uganda,Mpigi,Dollars,Healthcare Systems & Services,159,658.93,7009,100,9.41428E+11
+66206,Gramsci SPA,Côte d'Ivoire,Savanes,Dollars,Aerospace & Defense,914,4.12,6136,54,5.30544E+11
+84844,Fornaciari-Cristoforetti SPA,Peru,Moquegua,Dollars,Public & Social Sector,232,248.58,5956,47,1.16502E+11
+47789,Bouvet Paris SARL,Cameroon,West,Dollars,Consumer Packaged Goods,436,9.11,6201,80,9.58656E+11
+68357,"Fields, Mathis and Ross",Romania,Brașov,Dollars,Retail,983,3096.12,6612,40,2.79188E+11
 54953,Riou,Fiji,Ra,Dollars,Oil & Gas,191,23.72,8884,3,22589653442
-46070,Tedesco Group,Madagascar,Toamasina,Dollars,Real Estate,815,8682.88,9822,83,919968555286
-75482,Cooper-Price,Bosnia and Herzegovina,Brčko distrikt,Dollars,Healthcare Systems & Services,548,1.43,3819,5,997189645044
-77683,Ebert,Grenada,Saint David,Dollars,"Paper, Forest Products & Packaging",693,1.53,6260,27,659918335953
-70468,Giammusso SPA,Georgia,Samtskhe-Javakheti,Dollars,Financial Services,344,7028.92,1247,66,986031525014
-38957,Lejeune,Western Sahara,NA,Dollars,Life Sciences,466,5.71,9117,46,355775244458
-73575,Foley Inc,Réunion,NA,Dollars,Retail,365,6586.89,2080,74,277666981074
-75434,Medina-Williams,Solomon Islands,Rennell and Bellona,Dollars,Retail,972,4.99,9295,63,354824119779
-80991,Oneal-Young,Côte d'Ivoire,Comoé,Dollars,"Paper, Forest Products & Packaging",330,8114.81,4692,33,288672787335
-45056,Dehmel Birnbaum AG,Malta,Birgu,Dollars,Financial Services,650,2.21,9988,58,870744713468
-16082,Gaito SPA,Chile,Coquimbo,Denar,Oil & Gas,899,999.94,8088,71,246791219437
-28873,Herrmann,United States,Alabama,Dollars,"Engineering, Construction & Building Materials",183,753.73,5904,41,328916133577
+46070,Tedesco Group,Madagascar,Toamasina,Dollars,Real Estate,815,8682.88,9822,83,9.19969E+11
+75482,Cooper-Price,Bosnia and Herzegovina,Brčko distrikt,Dollars,Healthcare Systems & Services,548,1.43,3819,5,9.9719E+11
+77683,Ebert,Grenada,Saint David,Dollars,"Paper, Forest Products & Packaging",693,1.53,6260,27,6.59918E+11
+70468,Giammusso SPA,Georgia,Samtskhe-Javakheti,Dollars,Financial Services,344,7028.92,1247,66,9.86032E+11
+38957,Lejeune,Western Sahara,NA,Dollars,Life Sciences,466,5.71,9117,46,3.55775E+11
+73575,Foley Inc,Réunion,NA,Dollars,Retail,365,6586.89,2080,74,2.77667E+11
+75434,Medina-Williams,Solomon Islands,Rennell and Bellona,Dollars,Retail,972,4.99,9295,63,3.54824E+11
+80991,Oneal-Young,Côte d'Ivoire,Comoé,Dollars,"Paper, Forest Products & Packaging",330,8114.81,4692,33,2.88673E+11
+45056,Dehmel Birnbaum AG,Malta,Birgu,Dollars,Financial Services,650,2.21,9988,58,8.70745E+11
+16082,Gaito SPA,Chile,Coquimbo,Denar,Oil & Gas,899,999.94,8088,71,2.46791E+11
+28873,Herrmann,United States,Alabama,Dollars,"Engineering, Construction & Building Materials",183,753.73,5904,41,3.28916E+11
 71339,Gilbert PLC,Holy See (Vatican City State),NA,Dollars,Electric Power & Natural Gas,721,654.54,3371,38,74576815055
-75613,Tommaseo SPA,Christmas Island,NA,Dollars,Chemicals,900,2.25,8147,31,141926102902
-52082,Mcfarland-Gill,San Marino,Acquaviva,Dollars,"Paper, Forest Products & Packaging",608,5.91,2563,90,210967241333
-25563,Rismondo e figli,Kiribati,Line Islands,Dollars,"Paper, Forest Products & Packaging",615,76.56,8891,67,771933480262
-41542,Montanari-Gucci SPA,Finland,Egentliga Finland,Dollars,Chemicals,732,7670.95,4999,31,561644740239
-47017,Faure S.A.S.,"Moldova, Republic of",Chișinău,Dollars,Education,221,8112.61,8031,69,616256708665
-46894,"Pitts, Stokes and Hardin",Ethiopia,Dire Dawa,Dollars,Public & Social Sector,666,69.83,9757,28,928344932665
-43160,Häring Fechner GmbH & Co. KG,Saint Pierre and Miquelon,NA,Dollars,Advanced Electronics,238,73.32,1697,34,499471791682
-94512,Breton Delorme SA,Uruguay,Tacuarembó,Dollars,Retail,321,9.89,2583,60,531558038424
-79389,Drub KGaA,Curaçao,NA,Dollars,Retail,719,57.50,4327,1,834889254149
+75613,Tommaseo SPA,Christmas Island,NA,Dollars,Chemicals,900,2.25,8147,31,1.41926E+11
+52082,Mcfarland-Gill,San Marino,Acquaviva,Dollars,"Paper, Forest Products & Packaging",608,5.91,2563,90,2.10967E+11
+25563,Rismondo e figli,Kiribati,Line Islands,Dollars,"Paper, Forest Products & Packaging",615,76.56,8891,67,7.71933E+11
+41542,Montanari-Gucci SPA,Finland,Egentliga Finland,Dollars,Chemicals,732,7670.95,4999,31,5.61645E+11
+47017,Faure S.A.S.,"Moldova, Republic of",Chișinău,Dollars,Education,221,8112.61,8031,69,6.16257E+11
+46894,"Pitts, Stokes and Hardin",Ethiopia,Dire Dawa,Dollars,Public & Social Sector,666,69.83,9757,28,9.28345E+11
+43160,Häring Fechner GmbH & Co. KG,Saint Pierre and Miquelon,NA,Dollars,Advanced Electronics,238,73.32,1697,34,4.99472E+11
+94512,Breton Delorme SA,Uruguay,Tacuarembó,Dollars,Retail,321,9.89,2583,60,5.31558E+11
+79389,Drub KGaA,Curaçao,NA,Dollars,Retail,719,57.5,4327,1,8.34889E+11
 60009,Klapp AG,Oman,Al Wusţá,Dollars,Education,868,6966.14,3892,84,16594453544
-30764,"Fletcher, Page and Hill","Venezuela, Bolivarian Republic of",Bolívar,Dollars,"Paper, Forest Products & Packaging",439,9.43,8848,6,357380442101
-82144,Scott-Hughes,Sierra Leone,Northern,Dollars,Financial Services,313,55.40,7747,95,133499234293
-42191,Blanchet,United Kingdom,Walsall,Dollars,Advanced Electronics,565,6602.96,5251,14,530014095574
-99869,Barnes Ltd,Aruba,NA,Dollars,Oil & Gas,912,878.67,3120,7,745996480282
-99559,Monnier SA,Sierra Leone,Eastern,Dollars,Advanced Electronics,233,60.75,9948,76,557632631624
-21602,Wells-Shaw,"Taiwan, Province of China",Penghu,Dollars,Life Sciences,477,4022.61,2889,37,185515468392
-10797,Davis-Ward,Sao Tome and Principe,Mé-Zóchi,Dollars,Retail,761,183.64,8686,39,528648590884
-68814,Patterson-Barnes,Mozambique,Zambézia,Dollars,Education,165,9.80,9751,13,611667949669
-81099,Caldwell-Taylor,Cayman Islands,NA,Dollars,"Paper, Forest Products & Packaging",570,10.26,1508,98,618617027210
-35703,Treves-Carli e figli,"Venezuela, Bolivarian Republic of",Lara,Dollars,Public & Social Sector,109,992.40,1082,74,840799685982
-40125,Marsh LLC,Honduras,Francisco Morazán,Dollars,Financial Services,843,1637.99,1665,62,164469069303
-27057,"Patel, Payne and Lee",Zambia,Lusaka,Dollars,Oil & Gas,508,5862.41,8074,79,255885123167
-87209,Grant Inc,United States,Nevada,Dollars,Metals & Mining,598,753.49,8256,26,930147921105
+30764,"Fletcher, Page and Hill","Venezuela, Bolivarian Republic of",Bolívar,Dollars,"Paper, Forest Products & Packaging",439,9.43,8848,6,3.5738E+11
+82144,Scott-Hughes,Sierra Leone,Northern,Dollars,Financial Services,313,55.4,7747,95,1.33499E+11
+42191,Blanchet,United Kingdom,Walsall,Dollars,Advanced Electronics,565,6602.96,5251,14,5.30014E+11
+99869,Barnes Ltd,Aruba,NA,Dollars,Oil & Gas,912,878.67,3120,7,7.45996E+11
+99559,Monnier SA,Sierra Leone,Eastern,Dollars,Advanced Electronics,233,60.75,9948,76,5.57633E+11
+21602,Wells-Shaw,"Taiwan, Province of China",Penghu,Dollars,Life Sciences,477,4022.61,2889,37,1.85515E+11
+10797,Davis-Ward,Sao Tome and Principe,Mé-Zóchi,Dollars,Retail,761,183.64,8686,39,5.28649E+11
+68814,Patterson-Barnes,Mozambique,Zambézia,Dollars,Education,165,9.8,9751,13,6.11668E+11
+81099,Caldwell-Taylor,Cayman Islands,NA,Dollars,"Paper, Forest Products & Packaging",570,10.26,1508,98,6.18617E+11
+35703,Treves-Carli e figli,"Venezuela, Bolivarian Republic of",Lara,Dollars,Public & Social Sector,109,992.4,1082,74,8.408E+11
+40125,Marsh LLC,Honduras,Francisco Morazán,Dollars,Financial Services,843,1637.99,1665,62,1.64469E+11
+27057,"Patel, Payne and Lee",Zambia,Lusaka,Dollars,Oil & Gas,508,5862.41,8074,79,2.55885E+11
+87209,Grant Inc,United States,Nevada,Dollars,Metals & Mining,598,753.49,8256,26,9.30148E+11
 85240,Dunlap Group,Bahrain,Al Janūbīyah,Dollars,Metals & Mining,792,32.88,1893,70,92513292352
-88025,"Quasimodo, Petrucci e Verdone e figli",French Guiana,NA,Dollars,Oil & Gas,120,36.28,9823,70,552601195777
+88025,"Quasimodo, Petrucci e Verdone e figli",French Guiana,NA,Dollars,Oil & Gas,120,36.28,9823,70,5.52601E+11
 13920,Brock and Sons,Denmark,Syddanmark,Dollars,Aerospace & Defense,746,6.18,3965,16,7745977305
 59027,Detti-Muti SPA,Réunion,NA,Dollars,"Travel, Logistics & Infrastructure",229,33.75,6950,58,9179102255
 25648,"Ziani, Fischetti e Fittipaldi s.r.l.","Tanzania, United Republic of",Ruvuma,Dollars,Retail,623,2.22,6785,96,31771223102
-18997,Faust Carsten GmbH & Co. KGaA,Bhutan,Samdrup Jongkhar,Dollars,Electric Power & Natural Gas,735,8.63,4189,67,524186971527
-40597,"Houghton, Shaw and Bell",Antigua and Barbuda,Saint Peter,Dollars,Real Estate,793,685.27,9972,67,864350870068
+18997,Faust Carsten GmbH & Co. KGaA,Bhutan,Samdrup Jongkhar,Dollars,Electric Power & Natural Gas,735,8.63,4189,67,5.24187E+11
+40597,"Houghton, Shaw and Bell",Antigua and Barbuda,Saint Peter,Dollars,Real Estate,793,685.27,9972,67,8.64351E+11
 13569,"Green, Bush and Garcia",Liberia,Gbarpolu,Dollars,Real Estate,978,424.38,5489,84,30790751329
-48238,Tozzo Group,Niue,NA,Dollars,"Engineering, Construction & Building Materials",616,2034.12,4722,77,233030999599
-77347,Koch II AG,Croatia,Zadarska županija,Dollars,Metals & Mining,608,31.42,9005,60,326136470926
-91265,Tozzo-Pace e figli,Åland Islands,NA,Dollars,Aerospace & Defense,885,870.80,1520,80,912945819685
-28515,Schomber,Viet Nam,Bạc Liêu,Dollars,Consumer Packaged Goods,189,3.67,1469,79,151669356150
-70869,Shea-Ellis,Tajikistan,Dushanbe,Dollars,Private Equity & Principal Investors,263,613.78,4953,54,849462465182
-12116,Mills-Bates,North Macedonia,Jegunovce,Dollars,Oil & Gas,225,854.72,1176,46,684184787081
-42091,Gute,Suriname,Saramacca,Dollars,Education,790,4.54,8062,75,337342911784
-90942,Richards Group,British Indian Ocean Territory,NA,Dollars,Semiconductors,388,69.92,1825,14,205170142017
+48238,Tozzo Group,Niue,NA,Dollars,"Engineering, Construction & Building Materials",616,2034.12,4722,77,2.33031E+11
+77347,Koch II AG,Croatia,Zadarska županija,Dollars,Metals & Mining,608,31.42,9005,60,3.26136E+11
+91265,Tozzo-Pace e figli,Åland Islands,NA,Dollars,Aerospace & Defense,885,870.8,1520,80,9.12946E+11
+28515,Schomber,Viet Nam,Bạc Liêu,Dollars,Consumer Packaged Goods,189,3.67,1469,79,1.51669E+11
+70869,Shea-Ellis,Tajikistan,Dushanbe,Dollars,Private Equity & Principal Investors,263,613.78,4953,54,8.49462E+11
+12116,Mills-Bates,North Macedonia,Jegunovce,Dollars,Oil & Gas,225,854.72,1176,46,6.84185E+11
+42091,Gute,Suriname,Saramacca,Dollars,Education,790,4.54,8062,75,3.37343E+11
+90942,Richards Group,British Indian Ocean Territory,NA,Dollars,Semiconductors,388,69.92,1825,14,2.0517E+11
 76020,Dehmel Schomber KG,Lao People's Democratic Republic,Xaignabouli,Dollars,Financial Services,545,7248.43,1286,98,54402705239
-69229,Briggs LLC,Seychelles,Bel Air,Dollars,Financial Services,764,306.11,7975,85,805390444173
-61565,Barcaccia Group,Croatia,Šibensko-kninska županija,Dollars,Oil & Gas,805,74.83,2132,24,907335597751
-12435,Thomas Fernandez S.A.R.L.,Réunion,NA,Dollars,Automotive & Assembly,642,747.34,4647,44,446648832151
-79806,"Maspero, Biagiotti e Bianchini s.r.l.",Croatia,Sisačko-moslavačka županija,Dollars,Aerospace & Defense,248,64.18,8583,51,656464163535
-57109,Descamps SA,Mali,Kayes,Dollars,Retail,939,29.23,7001,70,856467627980
-52130,Delaunay,Sudan,Gedaref,Dollars,Electric Power & Natural Gas,277,2096.83,5794,100,807097709234
-42118,"Day, Howell and Hill",Montserrat,NA,Dollars,Private Equity & Principal Investors,521,8296.12,1387,13,389222772519
-40898,Brenna Group,Kuwait,Al Farwānīyah,Dollars,Metals & Mining,929,1353.54,6865,83,890841835570
-39402,Martinez,Suriname,Paramaribo,Dollars,Retail,191,2.96,8661,23,963922989251
-73431,Monti-Carnera Group,Singapore,Central Singapore,Dollars,Healthcare Systems & Services,277,820.40,9984,51,377095851996
-58914,Munoz SA,Timor-Leste,Lautein,Dollars,Aerospace & Defense,539,44.83,2382,100,168320834655
-34967,Scott-Williams,Guernsey,NA,Dollars,Chemicals,574,5.84,3124,89,663969047837
-99068,Geißler,Hong Kong,NA,Dollars,Real Estate,894,6.79,4626,18,465957453719
-75772,Williams-Ryan,Ireland,Connaught,Dollars,Consumer Packaged Goods,529,942.96,8490,6,764945843672
-13901,Legrand Ollivier et Fils,Netherlands,Saba,Dollars,"Paper, Forest Products & Packaging",358,1.85,3107,14,113265284047
-57265,Guarato e figli,Somalia,Mudug,Dollars,Semiconductors,696,4905.39,7379,31,723115470872
-71349,Blondel,Lesotho,Leribe,Dollars,Agriculture,460,77.50,5993,70,256607159622
-87695,"Ricci, Omma e Tirabassi SPA",Samoa,Fa'asaleleaga,Dollars,Retail,744,19.24,5488,96,228497242137
-81678,Wulf,Turkmenistan,Lebap,Dollars,Financial Services,803,6.62,2819,74,322713392522
-56429,Maurice SA,Benin,Alibori,Dollars,Healthcare Systems & Services,439,28.60,6662,69,853846148030
-16265,Prati-Anastasi e figli,Liechtenstein,Triesen,Dollars,Retail,910,64.96,4403,49,700661417194
-38461,"Chandler, Williams and Stevens",Costa Rica,Heredia,Dollars,"Engineering, Construction & Building Materials",993,99.48,2508,27,580755282959
-28042,Gumprich GbR,Pitcairn,NA,Dollars,Electric Power & Natural Gas,310,6.88,5592,91,737877418069
+69229,Briggs LLC,Seychelles,Bel Air,Dollars,Financial Services,764,306.11,7975,85,8.0539E+11
+61565,Barcaccia Group,Croatia,Šibensko-kninska županija,Dollars,Oil & Gas,805,74.83,2132,24,9.07336E+11
+12435,Thomas Fernandez S.A.R.L.,Réunion,NA,Dollars,Automotive & Assembly,642,747.34,4647,44,4.46649E+11
+79806,"Maspero, Biagiotti e Bianchini s.r.l.",Croatia,Sisačko-moslavačka županija,Dollars,Aerospace & Defense,248,64.18,8583,51,6.56464E+11
+57109,Descamps SA,Mali,Kayes,Dollars,Retail,939,29.23,7001,70,8.56468E+11
+52130,Delaunay,Sudan,Gedaref,Dollars,Electric Power & Natural Gas,277,2096.83,5794,100,8.07098E+11
+42118,"Day, Howell and Hill",Montserrat,NA,Dollars,Private Equity & Principal Investors,521,8296.12,1387,13,3.89223E+11
+40898,Brenna Group,Kuwait,Al Farwānīyah,Dollars,Metals & Mining,929,1353.54,6865,83,8.90842E+11
+39402,Martinez,Suriname,Paramaribo,Dollars,Retail,191,2.96,8661,23,9.63923E+11
+73431,Monti-Carnera Group,Singapore,Central Singapore,Dollars,Healthcare Systems & Services,277,820.4,9984,51,3.77096E+11
+58914,Munoz SA,Timor-Leste,Lautein,Dollars,Aerospace & Defense,539,44.83,2382,100,1.68321E+11
+34967,Scott-Williams,Guernsey,NA,Dollars,Chemicals,574,5.84,3124,89,6.63969E+11
+99068,Geißler,Hong Kong,NA,Dollars,Real Estate,894,6.79,4626,18,4.65957E+11
+75772,Williams-Ryan,Ireland,Connaught,Dollars,Consumer Packaged Goods,529,942.96,8490,6,7.64946E+11
+13901,Legrand Ollivier et Fils,Netherlands,Saba,Dollars,"Paper, Forest Products & Packaging",358,1.85,3107,14,1.13265E+11
+57265,Guarato e figli,Somalia,Mudug,Dollars,Semiconductors,696,4905.39,7379,31,7.23115E+11
+71349,Blondel,Lesotho,Leribe,Dollars,Agriculture,460,77.5,5993,70,2.56607E+11
+87695,"Ricci, Omma e Tirabassi SPA",Samoa,Fa'asaleleaga,Dollars,Retail,744,19.24,5488,96,2.28497E+11
+81678,Wulf,Turkmenistan,Lebap,Dollars,Financial Services,803,6.62,2819,74,3.22713E+11
+56429,Maurice SA,Benin,Alibori,Dollars,Healthcare Systems & Services,439,28.6,6662,69,8.53846E+11
+16265,Prati-Anastasi e figli,Liechtenstein,Triesen,Dollars,Retail,910,64.96,4403,49,7.00661E+11
+38461,"Chandler, Williams and Stevens",Costa Rica,Heredia,Dollars,"Engineering, Construction & Building Materials",993,99.48,2508,27,5.80755E+11
+28042,Gumprich GbR,Pitcairn,NA,Dollars,Electric Power & Natural Gas,310,6.88,5592,91,7.37877E+11
 27988,Thomas,Brazil,Pará,Dollars,Agriculture,634,2.72,5948,77,959526079
-85116,Löchel,"Bonaire, Sint Eustatius and Saba",Saba,Dollars,Real Estate,705,8.56,1382,76,503373572866
-68615,"Pacheco, Davies and Randall",Portugal,Vila Real,Dollars,"Paper, Forest Products & Packaging",372,8.58,3644,48,226407140441
-67411,"Reed, Matthews and Holmes",Finland,Norra Savolax,Dollars,Automotive & Assembly,388,4.20,1673,57,501312916075
-11790,Campbell-West,Chad,Tibastī,Dollars,Semiconductors,761,1141.39,4777,30,644128020069
-21726,Voisin,New Caledonia,NA,Dollars,Healthcare Systems & Services,423,471.96,3919,2,649246517356
-15367,Schüler,Sudan,North Darfur,Dollars,"Engineering, Construction & Building Materials",432,545.34,2240,48,402464963477
-95496,Didier,China,Hong Kong SAR,Dollars,Aerospace & Defense,825,6.59,6728,61,805924352512
-93032,Smith-Hill,Bulgaria,Sofia,Dollars,Aerospace & Defense,738,72.84,7639,55,328446742197
-64580,Gotthard Stiftung & Co. KGaA,Cyprus,Baf,Dollars,Financial Services,602,75.43,3397,51,746637940748
-19072,Casarin-Valentino Group,Botswana,Central,Dollars,Healthcare Systems & Services,926,5954.35,8479,63,813333963529
-94877,Gould Inc,United States,Vermont,Dollars,Financial Services,730,372.62,6193,3,855411749206
-67018,Gray-Johnson,Brazil,Paraíba,Dollars,Real Estate,744,4.57,5607,45,814950221485
-86494,Murphy-Mitchell,Slovenia,Kozje,Dollars,Private Equity & Principal Investors,659,24.94,8030,39,110883523965
-71056,Christoph KG,Mali,Ménaka,Dollars,"Engineering, Construction & Building Materials",564,7878.81,7403,80,650867751391
-11186,"Norris, Dominguez and Smith",New Caledonia,NA,Dollars,"Paper, Forest Products & Packaging",809,7.38,9314,25,605713862709
-55714,Richardson LLC,Botswana,Lobatse,Dollars,Education,674,2589.86,2770,14,193821686324
-65285,Marty S.A.R.L.,Djibouti,Tadjourah,Dollars,Real Estate,715,4.97,3173,51,564464067134
-96448,Murillo Group,Comoros,Andjazîdja,Dollars,Education,610,628.14,6486,93,981945883484
-68498,"Tropea, Soprano e Chiappetta s.r.l.",Papua New Guinea,Bougainville,Dollars,Consumer Packaged Goods,514,22.93,8291,29,243482757372
-29946,Flores-Anderson,Guernsey,NA,Dollars,Aerospace & Defense,767,670.25,6775,98,226677238326
-35340,Hall-Bell,Falkland Islands (Malvinas),NA,Dollars,Advanced Electronics,240,7945.64,8289,35,600183512109
-99057,Charles PLC,Mali,Mopti,Dollars,Public & Social Sector,990,6.13,7048,99,536659004570
-10731,"Giolitti, Pincherle e Zanazzo Group",Paraguay,Cordillera,Dollars,Advanced Electronics,119,5.62,3190,21,523077612503
-99101,Leblanc and Sons,Western Sahara,NA,Dollars,Advanced Electronics,109,59.47,9012,60,219755213777
-70892,Heidrich Christoph KG,Curaçao,NA,Dollars,Financial Services,154,2.40,6927,12,10956758891
-51207,Bolzmann Säuberlich GmbH,French Guiana,NA,Dollars,"Travel, Logistics & Infrastructure",797,71.57,7655,67,351263297112
-94574,Harper-Jones,Mali,Koulikoro,Dollars,Oil & Gas,471,58.36,6620,22,252744905948
-30864,Rose KG,Palau,Ngarchelong,Dollars,Automotive & Assembly,597,4.46,9729,35,282236539285
-90700,Lefebvre,Brazil,Paraná,Dollars,Semiconductors,310,3.25,3748,97,111953687921
+85116,Löchel,"Bonaire, Sint Eustatius and Saba",Saba,Dollars,Real Estate,705,8.56,1382,76,5.03374E+11
+68615,"Pacheco, Davies and Randall",Portugal,Vila Real,Dollars,"Paper, Forest Products & Packaging",372,8.58,3644,48,2.26407E+11
+67411,"Reed, Matthews and Holmes",Finland,Norra Savolax,Dollars,Automotive & Assembly,388,4.2,1673,57,5.01313E+11
+11790,Campbell-West,Chad,Tibastī,Dollars,Semiconductors,761,1141.39,4777,30,6.44128E+11
+21726,Voisin,New Caledonia,NA,Dollars,Healthcare Systems & Services,423,471.96,3919,2,6.49247E+11
+15367,Schüler,Sudan,North Darfur,Dollars,"Engineering, Construction & Building Materials",432,545.34,2240,48,4.02465E+11
+95496,Didier,China,Hong Kong SAR,Dollars,Aerospace & Defense,825,6.59,6728,61,8.05924E+11
+93032,Smith-Hill,Bulgaria,Sofia,Dollars,Aerospace & Defense,738,72.84,7639,55,3.28447E+11
+64580,Gotthard Stiftung & Co. KGaA,Cyprus,Baf,Dollars,Financial Services,602,75.43,3397,51,7.46638E+11
+19072,Casarin-Valentino Group,Botswana,Central,Dollars,Healthcare Systems & Services,926,5954.35,8479,63,8.13334E+11
+94877,Gould Inc,United States,Vermont,Dollars,Financial Services,730,372.62,6193,3,8.55412E+11
+67018,Gray-Johnson,Brazil,Paraíba,Dollars,Real Estate,744,4.57,5607,45,8.1495E+11
+86494,Murphy-Mitchell,Slovenia,Kozje,Dollars,Private Equity & Principal Investors,659,24.94,8030,39,1.10884E+11
+71056,Christoph KG,Mali,Ménaka,Dollars,"Engineering, Construction & Building Materials",564,7878.81,7403,80,6.50868E+11
+11186,"Norris, Dominguez and Smith",New Caledonia,NA,Dollars,"Paper, Forest Products & Packaging",809,7.38,9314,25,6.05714E+11
+55714,Richardson LLC,Botswana,Lobatse,Dollars,Education,674,2589.86,2770,14,1.93822E+11
+65285,Marty S.A.R.L.,Djibouti,Tadjourah,Dollars,Real Estate,715,4.97,3173,51,5.64464E+11
+96448,Murillo Group,Comoros,Andjazîdja,Dollars,Education,610,628.14,6486,93,9.81946E+11
+68498,"Tropea, Soprano e Chiappetta s.r.l.",Papua New Guinea,Bougainville,Dollars,Consumer Packaged Goods,514,22.93,8291,29,2.43483E+11
+29946,Flores-Anderson,Guernsey,NA,Dollars,Aerospace & Defense,767,670.25,6775,98,2.26677E+11
+35340,Hall-Bell,Falkland Islands (Malvinas),NA,Dollars,Advanced Electronics,240,7945.64,8289,35,6.00184E+11
+99057,Charles PLC,Mali,Mopti,Dollars,Public & Social Sector,990,6.13,7048,99,5.36659E+11
+10731,"Giolitti, Pincherle e Zanazzo Group",Paraguay,Cordillera,Dollars,Advanced Electronics,119,5.62,3190,21,5.23078E+11
+99101,Leblanc and Sons,Western Sahara,NA,Dollars,Advanced Electronics,109,59.47,9012,60,2.19755E+11
+70892,Heidrich Christoph KG,Curaçao,NA,Dollars,Financial Services,154,2.4,6927,12,10956758891
+51207,Bolzmann Säuberlich GmbH,French Guiana,NA,Dollars,"Travel, Logistics & Infrastructure",797,71.57,7655,67,3.51263E+11
+94574,Harper-Jones,Mali,Koulikoro,Dollars,Oil & Gas,471,58.36,6620,22,2.52745E+11
+30864,Rose KG,Palau,Ngarchelong,Dollars,Automotive & Assembly,597,4.46,9729,35,2.82237E+11
+90700,Lefebvre,Brazil,Paraná,Dollars,Semiconductors,310,3.25,3748,97,1.11954E+11
 90256,Förster,Ethiopia,Addis Ababa,Dollars,"Paper, Forest Products & Packaging",764,7024.13,7003,46,69190139802
-35266,Gotthard Zahn GmbH,Finland,Pohjanmaa,Dollars,Healthcare Systems & Services,570,6.51,7985,42,147139359268
-52647,Cook-Webb,Morocco,Berkane,Dollars,"Paper, Forest Products & Packaging",762,10.69,2171,35,763313562421
-13355,Shah-Lowe,Central African Republic,Bamingui-Bangoran,Dollars,Automotive & Assembly,862,37.45,6844,50,214602018912
-48467,Brandt Ltd,Anguilla,NA,Dollars,Oil & Gas,593,788.49,1593,20,325400135598
+35266,Gotthard Zahn GmbH,Finland,Pohjanmaa,Dollars,Healthcare Systems & Services,570,6.51,7985,42,1.47139E+11
+52647,Cook-Webb,Morocco,Berkane,Dollars,"Paper, Forest Products & Packaging",762,10.69,2171,35,7.63314E+11
+13355,Shah-Lowe,Central African Republic,Bamingui-Bangoran,Dollars,Automotive & Assembly,862,37.45,6844,50,2.14602E+11
+48467,Brandt Ltd,Anguilla,NA,Dollars,Oil & Gas,593,788.49,1593,20,3.254E+11

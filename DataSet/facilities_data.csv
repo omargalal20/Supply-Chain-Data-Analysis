@@ -300,7 +300,7 @@ Name: market_capitalization ($), dtype: float64","Bolivia, Plurinational State o
 237624,27988,"265    8.513100e+07
 Name: market_capitalization ($), dtype: float64",Guinea,Dubréka,Dollars,905,4.11
 251231,68562,"167    1.057826e+11
-Name: market_capitalization ($), dtype: float64",Israel,H̱efa,Dollars,154,802.39
+Name: market_capitalization ($), dtype: float64",mozambique,Maputo,Dollars,154,802.39
 292895,68562,"167    5.472600e+10
 Name: market_capitalization ($), dtype: float64",Slovakia,Prešovský kraj,Dollars,542,9178.34
 897878,68562,"167    1.668238e+10
@@ -532,7 +532,7 @@ Name: market_capitalization ($), dtype: float64",Egypt,Dumyāţ,Dollars,707,6466
 513112,29604,"37    8.515780e+09
 Name: market_capitalization ($), dtype: float64",Nigeria,Rivers,Dollars,516,147.59
 508366,29604,"37    3.306113e+10
-Name: market_capitalization ($), dtype: float64",Israel,Al Quds,Dollars,774,5907.7
+Name: market_capitalization ($), dtype: float64",Norway,Oslo,Dollars,774,5907.7
 293496,29604,"37    1.863326e+10
 Name: market_capitalization ($), dtype: float64",Finland,Egentliga Finland,Dollars,478,312.2
 643913,29604,"37    2.722616e+10
@@ -698,7 +698,7 @@ Name: market_capitalization ($), dtype: float64",Nepal,Mechi,Dollars,966,65.67
 514540,83378,"131    1.578167e+10
 Name: market_capitalization ($), dtype: float64",India,Sikkim,Dollars,874,36.96
 876203,83378,"131    7.650509e+09
-Name: market_capitalization ($), dtype: float64",Israel,Ash Shamālī,Dollars,674,4.76
+Name: market_capitalization ($), dtype: float64",Pakistan,Islamabad,Dollars,674,4.76
 901911,46615,"86    5.637869e+10
 Name: market_capitalization ($), dtype: float64",Malawi,Phalombe,Dollars,906,3960.88
 955404,46615,"86    1.630319e+11
@@ -1496,7 +1496,7 @@ Name: market_capitalization ($), dtype: float64","Bolivia, Plurinational State o
 401818,59005,"145    7.324042e+09
 Name: market_capitalization ($), dtype: float64",Eritrea,Semienawi K’eyyĭḥ Baḥri,Dollars,871,88.28
 533624,59005,"145    8.400383e+09
-Name: market_capitalization ($), dtype: float64",Israel,Al Awsaţ,Dollars,568,15.4
+Name: market_capitalization ($), dtype: float64",North Macedonia,Skopje,Dollars,568,15.4
 309990,59005,"145    1.608915e+11
 Name: market_capitalization ($), dtype: float64",Andorra,La Massana,Dollars,420,2927.47
 349657,79806,"245    2.477429e+10
@@ -2394,7 +2394,7 @@ Name: market_capitalization ($), dtype: float64",Malaysia,Johor,Dollars,427,2392
 129926,68800,"134    1.905348e+10
 Name: market_capitalization ($), dtype: float64",Suriname,Marowijne,Dollars,495,6.46
 578530,68800,"134    3.272510e+10
-Name: market_capitalization ($), dtype: float64",Israel,Al Quds,Dollars,835,78.46
+Name: market_capitalization ($), dtype: float64",Romania,Bucharest,Dollars,835,78.46
 262445,68800,"134    5.280996e+10
 Name: market_capitalization ($), dtype: float64",Argentina,Córdoba,Dollars,762,11.91
 645901,68800,"134    2.096178e+11
@@ -2402,7 +2402,7 @@ Name: market_capitalization ($), dtype: float64",Kuwait,Al Aḩmadī,Dollars,318
 466174,65204,"150    5.526117e+09
 Name: market_capitalization ($), dtype: float64",Finland,Egentliga Tavastland,Dollars,993,4303.81
 435316,65204,"150    1.783703e+11
-Name: market_capitalization ($), dtype: float64",Israel,Tall Abīb,Dollars,203,6421.53
+Name: market_capitalization ($), dtype: float64",Costa Rica,San Jose,Dollars,203,6421.53
 483875,65204,"150    7.038052e+10
 Name: market_capitalization ($), dtype: float64",Gibraltar,NA,Dollars,107,4503.38
 977932,65204,"150    5.500930e+10
