@@ -58,9 +58,9 @@ print(nodes_df)
 print('-------------------------')
 
 
-edgesTable = initialize_nodes_edges_df.edges_df_edges_as_nodes
+edges_df = initialize_nodes_edges_df.edges_df_edges_as_nodes
 print("Edges DF: ")
-print(edgesTable)
+print(edges_df)
 print('-------------------------')
 
 
