@@ -1,3 +1,7 @@
+from asyncio.windows_events import NULL
+from platform import node
+
+
 class Neo4jGraph:
 
     def __init__(self, nodes_df, edges_df):
@@ -11,19 +15,83 @@ class Neo4jGraph:
 
         self.__transaction_execution_commands = []
 
-    def draw_graph(self):
+        self.deleteSpecificNode = {}
+
+    def draw_graph(self,name):
         self.__transaction_execution_commands = []
         self.__add_delete_statement()
         self.__add_nodes_statements()
         self.__add_edges_statemnts()
         self.execute_transactions()
+        self.saveGraph(name,nodeList=['Customer','Products','Retailer','Supplier','Rcextship','Scextship','Srintship','Ssintship','Facilities','Warehouses','Rcextorders',
+        'Scextorders','Srintorders','Ssintorders','Externalservices','Internalservices','Externaltransactions','Internaltransactions'],
+        edgeList=['Order','rcextship','scextship','srintship','ssintship','Related_To',
+        'Manufactures','Orders_Prodcut','externaltransactions','internaltransactions'])
+
+
+    def trail(self,label,id,nodeID):
+        print("-----------Beginning --------------")
+        print(label,id,nodeID)
+        deleteNodeStatement = f"MATCH (a:{label} " + "{"+ f"ID: {id}" + "}) DELETE a" 
+        print("------------Statment----------------")
+        print(deleteNodeStatement)
+        print("-----------Create DIC --------------")
+        self.deletedNode = [{
+            id:{
+                'Label':label,
+            }
+        }]
+        self.execute_Command(deleteNodeStatement)
+        return self.deletedNode
+    
+    def findAllPaths(self,nodeID,cases,name,target=NULL,):
+        executedStatment =""
+        openBracket = "{"
+        closedBracket = "}"
+        print("beginning")
+        if(cases == 0):
+            print("All paths with no target")
+            executedStatment = f"CALL gds.allShortestPaths.dijkstra.stream({name}," +openBracket+ f'''
+            sourceNode: {nodeID},
+            relationshipWeightProperty: 'weight'
+            '''+ closedBracket + f'''
+            )
+            YIELD index, sourceNode, targetNode, totalCost, nodeIds, costs, path
+            RETURN
+            index,
+            gds.util.asNode(sourceNode).name AS sourceNodeName,
+            gds.util.asNode(targetNode).name AS targetNodeName,
+            totalCost,
+            [nodeId IN nodeIds | gds.util.asNode(nodeId).name] AS nodeNames,
+            costs,
+            nodes(path) as path
+            ORDER BY index''' 
+        elif (cases == 1):
+            print("morethan one path with target")
+        elif (cases == 2):
+            print("only one path")
+
+
+    def saveGraph(self,name,nodeList,edgeList):
+        print("beginning")
+        saveStatment = f'''CALL gds.graph.project({name},{nodeList},{edgeList}) 
+        YIELD graphName AS graph, nodeProjection, nodeCount AS nodes, relationshipCount AS rels'''
+        self.execute_Command(saveStatment)
+   
 
     def execute_transactions(self):
         from neo4j import GraphDatabase
-        data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "password"))
+        data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "123"))
         session = data_base_connection.session()
         for command in self.__transaction_execution_commands:
             session.run(command)
+
+    def execute_Command(self,command):
+        from neo4j import GraphDatabase
+        data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "123"))
+        session = data_base_connection.session()
+        session.run(command)
+        print("------------executed-----------------")
 
     def __add_delete_statement(self):
         delete_statement = "match (n) detach delete n"

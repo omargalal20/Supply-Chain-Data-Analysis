@@ -1,4 +1,5 @@
 from pickle import TRUE
+from Neo4jGraph import Neo4jGraph
 from ReadingDataSet import ReadingDataSet
 from keys import keys
 from InitializingNodesAndEdges import InitializeNodesAndEdges
@@ -64,11 +65,13 @@ print(edges_df)
 print('-------------------------')
 
 
+#myGraph = Neo4jGraph(nodes_df,edges_df)
+#myGraph.draw_graph()
+#print("---------------NEW DIC-------------------")
+#output = myGraph.trail(label="Warehouses",id=8750,nodeID="warehouses 8750")
+#print(output)
 
 
+print(nodes_df.loc[(nodes_df['ID'] == 380 ) & (nodes_df['Label'] == 'supplier')])
 
-
-
-
-
-
+#print(list(All_dfs.keys()))
