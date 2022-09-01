@@ -65,13 +65,18 @@ print(edges_df)
 print('-------------------------')
 
 
-#myGraph = Neo4jGraph(nodes_df,edges_df)
-#myGraph.draw_graph()
-#print("---------------NEW DIC-------------------")
+myGraph = Neo4jGraph(nodes_df,edges_df)
+myGraph.draw_graph('supplyChainNew')
+print("---------------Case 0-------------------")
+#myGraph.findAllPaths(sourceNodeName="Supplier 90236",label="Supplier",cases=0,graphName="supplyChain91",relationShip="ssintship")
+#print("---------------Case 1-------------------")
+#print(myGraph.findAllPaths(sourceNodeName="Supplier 90236",label="Supplier",cases=1,graphName="supplyChain",relationShip="ssintship",k=4,targetNodeName="Supplier 90236"))
+print("---------------Case2-------------------")
+print(myGraph.findAllPaths(sourceNodeName="Supplier 90236",label="Supplier",cases=2,graphName="supplyChainNew",targetNodeName="Supplier 61565"))
 #output = myGraph.trail(label="Warehouses",id=8750,nodeID="warehouses 8750")
 #print(output)
 
 
-print(nodes_df.loc[(nodes_df['ID'] == 380 ) & (nodes_df['Label'] == 'supplier')])
+#print(nodes_df.loc[(nodes_df['ID'] == 380 ) & (nodes_df['Label'] == 'supplier')])
 
 #print(list(All_dfs.keys()))

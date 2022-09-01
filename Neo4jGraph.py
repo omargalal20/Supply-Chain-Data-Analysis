@@ -1,6 +1,8 @@
 from asyncio.windows_events import NULL
+import imp
 from platform import node
-
+import neo4j
+import pandas as pd
 
 class Neo4jGraph:
 
@@ -44,18 +46,17 @@ class Neo4jGraph:
         self.execute_Command(deleteNodeStatement)
         return self.deletedNode
     
-    def findAllPaths(self,nodeID,cases,name,target=NULL,):
+    def findAllPaths(self,sourceNodeName,label,cases,graphName,relationShip="",k=1,targetNodeName=''):
         executedStatment =""
-        openBracket = "{"
-        closedBracket = "}"
         print("beginning")
         if(cases == 0):
             print("All paths with no target")
-            executedStatment = f"CALL gds.allShortestPaths.dijkstra.stream({name}," +openBracket+ f'''
-            sourceNode: {nodeID},
-            relationshipWeightProperty: 'weight'
-            '''+ closedBracket + f'''
-            )
+            executedStatment = '''
+            MATCH (source:%s {name:'%s'} )
+            CALL gds.allShortestPaths.dijkstra.stream('%s', {
+            sourceNode: source,
+            relationshipWeightProperty: 'weight',
+            relationshipTypes: ['%s']})
             YIELD index, sourceNode, targetNode, totalCost, nodeIds, costs, path
             RETURN
             index,
@@ -65,18 +66,67 @@ class Neo4jGraph:
             [nodeId IN nodeIds | gds.util.asNode(nodeId).name] AS nodeNames,
             costs,
             nodes(path) as path
-            ORDER BY index''' 
+            ORDER BY index
+            ''' % (label,sourceNodeName,graphName,relationShip )
         elif (cases == 1):
             print("morethan one path with target")
+            executedStatment = '''
+            MATCH (source:%s {name: '%s'}), (target:%s {name: '%s'})
+            CALL gds.shortestPath.yens.stream('%s',{sourceNode:source, targetNode:target, k:%s , relationshipWeightProperty:'weight',
+            relationshipTypes:['%s']})
+            YIELD index, sourceNode, targetNode, totalCost, nodeIds, costs, path
+            RETURN
+                index,
+                gds.util.asNode(sourceNode).name AS sourceNodeName,
+                gds.util.asNode(targetNode).name AS targetNodeName,
+                totalCost,
+                [nodeId IN nodeIds | gds.util.asNode(nodeId).name] AS nodeNames,
+                costs,
+                nodes(path) as path
+            ORDER BY index
+            '''% (label,sourceNodeName,label,targetNodeName,graphName,k,relationShip)
         elif (cases == 2):
             print("only one path")
-
-
+            executedStatment = '''
+            MATCH (source:%s {name: '%s'}), (target:%s {name: '%s'})
+            CALL gds.shortestPath.dijkstra.stream('%s', {
+            sourceNode: source,
+            targetNode: target,
+            relationshipWeightProperty: 'weight'
+            })
+            YIELD index, sourceNode, targetNode, totalCost, nodeIds, costs, path
+            RETURN
+            index,
+            gds.util.asNode(sourceNode).name AS sourceNodeName,
+            gds.util.asNode(targetNode).name AS targetNodeName,
+            totalCost,
+            [nodeId IN nodeIds | gds.util.asNode(nodeId).name] AS nodeNames,
+            costs,
+            nodes(path) as path
+            ORDER BY index
+            ''' % (label,sourceNodeName,label,targetNodeName,graphName)
+        print("----------------CASE EXCUTION----------------")
+        output = self.execute_Command(executedStatment,True)
+        print(output)
+        print("-------------------done--------------")
     def saveGraph(self,name,nodeList,edgeList):
         print("beginning")
-        saveStatment = f'''CALL gds.graph.project({name},{nodeList},{edgeList}) 
-        YIELD graphName AS graph, nodeProjection, nodeCount AS nodes, relationshipCount AS rels'''
-        self.execute_Command(saveStatment)
+        saveStatment = '''
+        CALL gds.graph.project(
+        '%s',
+        %s,
+        %s,
+        {
+        relationshipProperties: 'weight'
+        })
+        YIELD
+        graphName AS graph, nodeProjection, nodeCount AS nodes, relationshipCount AS rels
+        ''' %(name,nodeList,edgeList)
+        print("-------statment---------")
+        print(saveStatment)
+        print("----------------GRAPH SAVINGGGG----------------")
+        self.execute_Command(saveStatment,False)
+        print("----------------GRAPH SAVED----------------")
    
 
     def execute_transactions(self):
@@ -86,12 +136,21 @@ class Neo4jGraph:
         for command in self.__transaction_execution_commands:
             session.run(command)
 
-    def execute_Command(self,command):
+    def execute_Command(self,command,whichCommand):
         from neo4j import GraphDatabase
         data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "123"))
         session = data_base_connection.session()
-        session.run(command)
+        output = session.run(command)
+        if(whichCommand):
+            #print(type(output))
+            print("hllll")
+            print([ dict(i) for i in output ])
+            print("----------DataFrame------------")
+            #for i in output:
+                #print(pd.DataFrame.from_dict(dict(i)))
+                #print(dict(i))
         print("------------executed-----------------")
+        return output
 
     def __add_delete_statement(self):
         delete_statement = "match (n) detach delete n"
