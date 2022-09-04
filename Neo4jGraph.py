@@ -1,6 +1,8 @@
-from asyncio.windows_events import NULL
+# from asyncio.windows_events import NULL
 import imp
+from math import nan
 from platform import node
+from time import sleep
 import neo4j
 import pandas as pd
 
@@ -131,24 +133,21 @@ class Neo4jGraph:
 
     def execute_transactions(self):
         from neo4j import GraphDatabase
-        data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "123"))
+        data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "password"))
         session = data_base_connection.session()
         for command in self.__transaction_execution_commands:
             session.run(command)
 
     def execute_Command(self,command,whichCommand):
         from neo4j import GraphDatabase
-        data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "123"))
+        data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "password"))
         session = data_base_connection.session()
         output = session.run(command)
         if(whichCommand):
-            #print(type(output))
-            print("hllll")
-            print([ dict(i) for i in output ])
+            for i in output:
+                print(pd.DataFrame(dict(i)))
             print("----------DataFrame------------")
-            #for i in output:
-                #print(pd.DataFrame.from_dict(dict(i)))
-                #print(dict(i))
+            self.returnPaths(output)
         print("------------executed-----------------")
         return output
 
@@ -199,3 +198,44 @@ class Neo4jGraph:
         create_statement = f"CREATE (a) - [r:{rel_name} {'{ weight: ' + str(weight) + ' }'}]->(b)"
         create_relation_statement = match_statement + create_statement
         return create_relation_statement
+
+    def returnPaths (self,output):
+        nodeNames = []
+        costs = []
+        curIndex = 0
+        outputIndex = 0
+        totalCosts = 0
+        sourceNodeName = ""
+        targetNodeName = ""
+        df = pd.DataFrame()
+        print("before for loop")
+        count = 0
+        for j in output:
+              k = pd.DataFrame(dict(j))
+              count += self.countSameIndex(k,0)
+              print(count)
+              print("I'm inside the first for loop")
+        for i in output:
+            x = pd.DataFrame(dict(i))
+
+            print("before the if")
+            if (x.loc[curIndex,"index"] == outputIndex) | (x.loc[curIndex+1,"index"] != None):
+                costs.append(x.loc[curIndex,"costs"])
+                nodeNames.append(x.loc[curIndex,"nodeNames"])
+                print("I'm inside the if")
+            else:
+                x.loc[curIndex,"costs"] = costs
+                x.loc[curIndex,"nodeNames"] = nodeNames
+                df = pd.concat([df, x], ignore_index=True)
+                outputIndex = outputIndex + 1
+                print("helloo")
+            curIndex = curIndex + 1
+        # print(df)
+
+    def countSameIndex(output, index):
+        print("inside counting method")
+        count = 0
+        for i in range(len(output)):
+            if(output.loc[i,"index"] == index):
+                count += 1
+        print(count)

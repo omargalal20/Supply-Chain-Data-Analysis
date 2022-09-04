@@ -66,7 +66,7 @@ print('-------------------------')
 
 
 myGraph = Neo4jGraph(nodes_df,edges_df)
-myGraph.draw_graph('supplyChainNew')
+# myGraph.draw_graph('supplyChainNew')
 print("---------------Case 0-------------------")
 #myGraph.findAllPaths(sourceNodeName="Supplier 90236",label="Supplier",cases=0,graphName="supplyChain91",relationShip="ssintship")
 #print("---------------Case 1-------------------")
