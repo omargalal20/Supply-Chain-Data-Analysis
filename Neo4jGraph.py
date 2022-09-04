@@ -133,20 +133,20 @@ class Neo4jGraph:
 
     def execute_transactions(self):
         from neo4j import GraphDatabase
-        data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "password"))
+        data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "123"))
         session = data_base_connection.session()
         for command in self.__transaction_execution_commands:
             session.run(command)
 
     def execute_Command(self,command,whichCommand):
         from neo4j import GraphDatabase
-        data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "password"))
+        data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "123"))
         session = data_base_connection.session()
         output = session.run(command)
         if(whichCommand):
-            for i in output:
-                print(pd.DataFrame(dict(i)))
-            print("----------DataFrame------------")
+            # for i in output:
+            #     print(pd.DataFrame(dict(i)))
+            # print("----------DataFrame------------")
             self.returnPaths(output)
         print("------------executed-----------------")
         return output
@@ -210,32 +210,34 @@ class Neo4jGraph:
         df = pd.DataFrame()
         print("before for loop")
         count = 0
-        for j in output:
-              k = pd.DataFrame(dict(j))
-              count += self.countSameIndex(k,0)
-              print(count)
-              print("I'm inside the first for loop")
+        tempOutput = output
+        print("type the temp======")
+        print(type(tempOutput))
+        # for j in tempOutput:
+        #       print("I'm inside the first for loop")
+        #       k = pd.DataFrame(dict(j))
+        #       count += self.countSameIndex(k,0)
         for i in output:
+            print("helllllllllllllllll")
             x = pd.DataFrame(dict(i))
-
             print("before the if")
-            if (x.loc[curIndex,"index"] == outputIndex) | (x.loc[curIndex+1,"index"] != None):
+            if (x.loc[curIndex,"index"] == outputIndex):
+                print("I'm inside the if")
                 costs.append(x.loc[curIndex,"costs"])
                 nodeNames.append(x.loc[curIndex,"nodeNames"])
-                print("I'm inside the if")
-            else:
-                x.loc[curIndex,"costs"] = costs
-                x.loc[curIndex,"nodeNames"] = nodeNames
-                df = pd.concat([df, x], ignore_index=True)
-                outputIndex = outputIndex + 1
-                print("helloo")
+                if(count == curIndex+1):
+                    print("I'm inside the else")
+                    x.loc[curIndex,"costs"] = costs
+                    x.loc[curIndex,"nodeNames"] = nodeNames
+                    df = pd.concat([df, x], ignore_index=True)
+                    print(df)
+                    outputIndex = outputIndex + 1
             curIndex = curIndex + 1
         # print(df)
 
-    def countSameIndex(output, index):
+    def countSameIndex(self,output,index):
         print("inside counting method")
-        count = 0
         for i in range(len(output)):
             if(output.loc[i,"index"] == index):
                 count += 1
-        print(count)
+        return(count)
