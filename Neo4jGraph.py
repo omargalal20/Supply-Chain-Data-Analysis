@@ -1,5 +1,6 @@
 # from asyncio.windows_events import NULL
 import imp
+from itertools import count
 from math import nan
 from platform import node
 from time import sleep
@@ -133,20 +134,17 @@ class Neo4jGraph:
 
     def execute_transactions(self):
         from neo4j import GraphDatabase
-        data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "123"))
+        data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "password"))
         session = data_base_connection.session()
         for command in self.__transaction_execution_commands:
             session.run(command)
 
     def execute_Command(self,command,whichCommand):
         from neo4j import GraphDatabase
-        data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "123"))
+        data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "password"))
         session = data_base_connection.session()
         output = session.run(command)
         if(whichCommand):
-            # for i in output:
-            #     print(pd.DataFrame(dict(i)))
-            # print("----------DataFrame------------")
             self.returnPaths(output)
         print("------------executed-----------------")
         return output
@@ -200,44 +198,48 @@ class Neo4jGraph:
         return create_relation_statement
 
     def returnPaths (self,output):
-        nodeNames = []
-        costs = []
-        curIndex = 0
-        outputIndex = 0
-        totalCosts = 0
-        sourceNodeName = ""
-        targetNodeName = ""
-        df = pd.DataFrame()
-        print("before for loop")
-        count = 0
-        tempOutput = output
-        print("type the temp======")
-        print(type(tempOutput))
-        # for j in tempOutput:
-        #       print("I'm inside the first for loop")
-        #       k = pd.DataFrame(dict(j))
-        #       count += self.countSameIndex(k,0)
+        final = pd.DataFrame()
         for i in output:
-            print("helllllllllllllllll")
-            x = pd.DataFrame(dict(i))
-            print("before the if")
-            if (x.loc[curIndex,"index"] == outputIndex):
-                print("I'm inside the if")
-                costs.append(x.loc[curIndex,"costs"])
-                nodeNames.append(x.loc[curIndex,"nodeNames"])
-                if(count == curIndex+1):
-                    print("I'm inside the else")
-                    x.loc[curIndex,"costs"] = costs
-                    x.loc[curIndex,"nodeNames"] = nodeNames
-                    df = pd.concat([df, x], ignore_index=True)
-                    print(df)
-                    outputIndex = outputIndex + 1
-            curIndex = curIndex + 1
-        # print(df)
+            x = dict(i)
+            index = x["index"]
+            sourceNodeName = x["sourceNodeName"]
+            targetNodeName = x["targetNodeName"]
+            totalCost = x["totalCost"]
+            nodeNames = x["nodeNames"]
+            costs = x["costs"]
+            tmp = pd.DataFrame({'index': [index],
+                                'sourceNodeName': [sourceNodeName],
+                                'targetNodeName': [targetNodeName],
+                                'totalCost': [totalCost]})
+
+            costs_df = pd.DataFrame({'costs': [costs]})
+
+            result = pd.merge(
+                 tmp,
+                 costs_df,
+                 how='left',
+                 left_index=True, 
+                 right_index=True # all the other rows will be NaN
+                 )
+
+            nodeNames_df = pd.DataFrame({'nodeNames': [nodeNames]})
+
+            final = pd.merge(
+                result,
+                nodeNames_df,
+                how='left',
+                left_index=True, # Merge on both indexes, since right only has 0...
+                right_index=True # all the other rows will be NaN
+            )
+
+
+        print(final)
 
     def countSameIndex(self,output,index):
-        print("inside counting method")
-        for i in range(len(output)):
-            if(output.loc[i,"index"] == index):
-                count += 1
-        return(count)
+        print("from the counting method")
+        count = 0
+        for i in output:
+            print(dict(i))
+            print(dict(i))
+            count += 1
+        print("count: "+str(count))

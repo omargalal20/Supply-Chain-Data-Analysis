@@ -72,7 +72,7 @@ print("---------------Case 0-------------------")
 #print("---------------Case 1-------------------")
 #print(myGraph.findAllPaths(sourceNodeName="Supplier 90236",label="Supplier",cases=1,graphName="supplyChain",relationShip="ssintship",k=4,targetNodeName="Supplier 90236"))
 print("---------------Case2-------------------")
-print(myGraph.findAllPaths(sourceNodeName="Supplier 90236",label="Supplier",cases=2,graphName="supplyChain",targetNodeName="Supplier 61565"))
+print(myGraph.findAllPaths(sourceNodeName="Supplier 90236",label="Supplier",cases=2,graphName="supplyChainNew",targetNodeName="Supplier 61565"))
 #output = myGraph.trail(label="Warehouses",id=8750,nodeID="warehouses 8750")
 #print(output)
 
