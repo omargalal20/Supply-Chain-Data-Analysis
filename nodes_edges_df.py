@@ -1,6 +1,8 @@
 import pandas as pd
-
-
+from AddTransportationWeightsToEdges import AddTransportationWeightsToEdges
+import threading
+from selenium import webdriver
+from selenium.webdriver.edge.service import Service
 class nodes_edges_dfs:
 
     def __init__(self, nodes, edges, properties, pk, fk, ref_in, All_dfs,edges_as_edges):
@@ -15,8 +17,10 @@ class nodes_edges_dfs:
         self.edgesTable = pd.DataFrame(columns=['From_Node_ID', 'To_Node_ID', 'order/service'])
 
         self.nodes_df_edges_as_nodes = pd.DataFrame(columns=['Label', 'ID', 'Attributes'])
-        self.edges_df_edges_as_nodes = pd.DataFrame(columns=['From', 'To', 'From_Table', 'To_Table', 'Weight', 'Edge_Name'])
+        self.edges_df_edges_as_nodes = pd.DataFrame(columns=['From', 'To', 'From_Table', 'To_Table', 'Weight', 'Distance', 'Edge_Name'])
         self.edges_as_edges = edges_as_edges
+
+        self.distanceAndDuration_df = pd.DataFrame(columns=['From','To', 'Distance', 'Duration'])
 
         self.create_nodes_and_edges_df()
 
@@ -86,12 +90,55 @@ class nodes_edges_dfs:
 
     def __prepare_graph_edges_as_nodes(self):
 
+        # t1 = threading.Thread(target=self.__create_nodes_df)
+        # t1.start()
+        # t1.join()
+        
+        # t2 = threading.Thread(target=self.__add_edges_to_edges_df)
+        # t2.start()
+        # t2.join()
+        
+        # t3 = threading.Thread(target=self.__add_properties_to_dfs)
+        # t3.start()
+        # t3.join()
+        
+        # t4 = threading.Thread(target=self.__add_manufacturing_relation_to_dfs)
+        # t4.start()
+        # t4.join()
+        
+        # t5 = threading.Thread(target=self.__add_internal_orders_to_dfs)
+        # t5.start()
+        # t5.join()
+        
+        # t6 = threading.Thread(target=self.adjustWeightRangeForFinalWeight, args=(['Distance']))
+        # t6.start()
+        # t6.join()
+        
         self.__create_nodes_df()
         self.__add_edges_to_edges_df()
         self.__add_properties_to_dfs()
         self.__add_manufacturing_relation_to_dfs()
         self.__add_internal_orders_to_dfs()
+        self.adjustWeightRangeForFinalWeight(['Distance'])
+
         return self.nodes_df_edges_as_nodes, self.edges_df_edges_as_nodes
+
+    def calculateNewValue(self, x, columnName):
+        minMax = self.edges_df_edges_as_nodes[columnName].agg(['min', 'max']).to_numpy()
+        # print(f"Minmax is {minMax}")
+                    
+        if(x != 0):
+            OldRange = (minMax[1] - minMax[0])  
+            NewRange = (100 - 1)  
+            NewValue = (((x - minMax[0]) * NewRange) / OldRange) + 1
+            return round(NewValue)
+                
+        return 0
+
+
+    def adjustWeightRangeForFinalWeight(self, columnNames):
+        for columnName in columnNames:
+            self.edges_df_edges_as_nodes[columnName] = self.edges_df_edges_as_nodes[columnName].apply(lambda x: self.calculateNewValue(x, columnName))
 
     def __create_nodes_df(self):
         for node in self.nodes:
@@ -103,8 +150,33 @@ class nodes_edges_dfs:
                 newRow = [{'Label': node, 'ID': self.All_dfs[node].iloc[index, 0], 'Attributes': att}]
                 tmp = pd.DataFrame(newRow)
                 self.nodes_df_edges_as_nodes = pd.concat([self.nodes_df_edges_as_nodes, tmp], ignore_index=True)
+    
+    def calculateTransportationWeight(self, fromId, toId, edgeId, driver):
+        typeOfTransportation = self.nodes_df_edges_as_nodes.iloc[edgeId]['Attributes']
+        transportationWeight = {}
+        # print(self.nodes_df_edges_as_nodes.iloc[fromId])
+        # print(self.nodes_df_edges_as_nodes.iloc[toId])
+
+        if('TransportationType' in typeOfTransportation):
+            # print(typeOfTransportation)
+            transportationWeight = AddTransportationWeightsToEdges(self.nodes_df_edges_as_nodes.iloc[fromId], self.nodes_df_edges_as_nodes.iloc[toId], driver, typeOfTransportation['TransportationType'])
+            # print('------------------------------------------------------------')
+            # print(f"Distance is {transportationWeight.distance}".encode('utf-8'))
+            # print(f"Duration is {transportationWeight.duration}".encode('utf-8'))
+            # print('------------------------------------------------------------')
+
+            newRow = [{'From': transportationWeight.fromName,'To': transportationWeight.toName, 'Distance': transportationWeight.distance, 'Duration': transportationWeight.duration}]
+            tmp = pd.DataFrame(newRow)
+            self.distanceAndDuration_df = pd.concat([self.distanceAndDuration_df, tmp], ignore_index=True)
+            print(f'{self.distanceAndDuration_df}'.encode('utf-8'))
 
     def __add_edges_to_edges_df(self):
+
+        driver = webdriver.Edge(service=Service("./msedgedriver.exe"))
+        driver.get("https://www.searates.com/services/distances-time/")
+
+        driver.implicitly_wait(5)
+
         for edge_name in self.edges:
             foreign_keys = list(self.fk[edge_name].keys())
 
@@ -113,6 +185,10 @@ class nodes_edges_dfs:
 
             to_col = foreign_keys[-1]
             to_table_name = self.fk[edge_name][to_col]
+
+            print("/////////////////////////////")
+            # print(f"From Table {from_table_name}")
+            # print(f"To Table {to_table_name}")
 
             column_names = list(self.All_dfs[edge_name].columns)  # get column names
             for index, _ in self.All_dfs[edge_name].iterrows():
@@ -145,21 +221,29 @@ class nodes_edges_dfs:
                     self.nodes_df_edges_as_nodes[
                         (self.nodes_df_edges_as_nodes['Label'] == from_table_name) & (self.nodes_df_edges_as_nodes['ID'] == from_ref_id)].index[
                         0]
+                # print(f"From Row {self.nodes_df_edges_as_nodes.iloc[from_node_id].to_string()}")
                 to_node_id = \
                     self.nodes_df_edges_as_nodes[(self.nodes_df_edges_as_nodes['Label'] == to_table_name) & (self.nodes_df_edges_as_nodes['ID'] == to_ref_id)].index[
                         0]
+                # print(f"To Row {self.nodes_df_edges_as_nodes.iloc[to_node_id].to_string()}")
+
+                # t1 = threading.Thread(target=self.calculateTransportationWeight, args=(from_node_id, to_node_id, edge_node_index, driver))
+                # t1.start()
+                # t1.join()
+
+                self.calculateTransportationWeight(from_node_id, to_node_id, edge_node_index, driver)
 
                 # from ---> edge
                 new_from_edge_row = [
                     {'From': from_node_id, 'To': edge_node_index, 'From_Table': from_table_name.capitalize(),
                      'To_Table': edge_name.capitalize()
-                        , 'Weight': 42, 'Edge_Name': edge_name}]
+                        , 'Weight': 42, 'Distance': 0, 'Edge_Name': edge_name}]
                 tmp = pd.DataFrame(new_from_edge_row)
                 self.edges_df_edges_as_nodes = pd.concat([self.edges_df_edges_as_nodes, tmp], ignore_index=True)
                 # edge --->to
                 new_to_edge_row = [{'From': edge_node_index, 'To': to_node_id, 'From_Table': edge_name.capitalize(),
                                     'To_Table': to_table_name.capitalize()
-                                       , 'Weight': 42, 'Edge_Name': edge_name}]
+                                       , 'Weight': 42, 'Distance': 0, 'Edge_Name': edge_name}]
                 tmp = pd.DataFrame(new_to_edge_row)
                 self.edges_df_edges_as_nodes = pd.concat([self.edges_df_edges_as_nodes, tmp], ignore_index=True)
 
@@ -206,7 +290,7 @@ class nodes_edges_dfs:
                         new_property_edge_row = [{'From': referenced_node_id, 'To': property_node_index,
                                                   'From_Table': referenced_table_name.capitalize(),
                                                   'To_Table': property_name.capitalize()
-                                                     , 'Weight': 42, 'Edge_Name': "Related_To"}]
+                                                     , 'Weight': 42, 'Distance': 0, 'Edge_Name': "Related_To"}]
                         tmp = pd.DataFrame(new_property_edge_row)
                         self.edges_df_edges_as_nodes = pd.concat([self.edges_df_edges_as_nodes, tmp], ignore_index=True)
 
@@ -217,7 +301,7 @@ class nodes_edges_dfs:
                     new_property_edge_row = [{'From': referenced_node_id, 'To': property_node_index,
                                               'From_Table': referenced_table_name.capitalize(),
                                               'To_Table': property_name.capitalize()
-                                                 , 'Weight': 42, 'Edge_Name': "Related_To"}]
+                                                 , 'Weight': 42, 'Distance': 0, 'Edge_Name': "Related_To"}]
                     tmp = pd.DataFrame(new_property_edge_row)
                     self.edges_df_edges_as_nodes = pd.concat([self.edges_df_edges_as_nodes, tmp], ignore_index=True)
 
@@ -234,7 +318,7 @@ class nodes_edges_dfs:
             new_edge_row = [
                 {'From': supplier_node_index, 'To': product_node_index, 'From_Table': "supplier".capitalize(),
                  'To_Table': "products".capitalize()
-                    , 'Weight': 42, 'Edge_Name': "Manufactures"}]
+                    , 'Weight': 42, 'Distance': 0, 'Edge_Name': "Manufactures"}]
             tmp = pd.DataFrame(new_edge_row)
             self.edges_df_edges_as_nodes = pd.concat([self.edges_df_edges_as_nodes, tmp], ignore_index=True)
 
@@ -266,14 +350,14 @@ class nodes_edges_dfs:
                 {'From': internal_shipment_node_index, 'To': internal_order_index,
                  'From_Table': "ssintship".capitalize(),
                  'To_Table': "ssintorders".capitalize()
-                    , 'Weight': 42, 'Edge_Name': "Order"}]
+                    , 'Weight': 42, 'Distance': 0, 'Edge_Name': "Order"}]
             tmp = pd.DataFrame(new_from_edge_row)
             self.edges_df_edges_as_nodes = pd.concat([self.edges_df_edges_as_nodes, tmp], ignore_index=True)
             # edge --->to
             new_to_edge_row = [
                 {'From': internal_order_index, 'To': product_node_index, 'From_Table': "ssintorders".capitalize(),
                  'To_Table': "products".capitalize()
-                    , 'Weight': 42, 'Edge_Name': "Orders_Prodcut"}]
+                    , 'Weight': 42, 'Distance': 0, 'Edge_Name': "Orders_Product"}]
             tmp = pd.DataFrame(new_to_edge_row)
             self.edges_df_edges_as_nodes = pd.concat([self.edges_df_edges_as_nodes, tmp], ignore_index=True)
 
