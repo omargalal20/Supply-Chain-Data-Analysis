@@ -2,10 +2,13 @@
 import imp
 from itertools import count
 from math import nan
+from operator import truediv
+from pickle import FALSE
 from platform import node
 from time import sleep
 import neo4j
 import pandas as pd
+
 
 class Neo4jGraph:
 
@@ -22,19 +25,45 @@ class Neo4jGraph:
 
         self.deleteSpecificNode = {}
 
+        self.allExistingGraphs = self.getGraphs()
+
+    ## draw and save graph if graph name doesn't exist in the database else print error
     def draw_graph(self,name):
-        self.__transaction_execution_commands = []
-        self.__add_delete_statement()
-        self.__add_nodes_statements()
-        self.__add_edges_statemnts()
-        self.execute_transactions()
-        self.saveGraph(name,nodeList=['Customer','Products','Retailer','Supplier','Rcextship','Scextship','Srintship','Ssintship','Facilities','Warehouses','Rcextorders',
-        'Scextorders','Srintorders','Ssintorders','Externalservices','Internalservices','Externaltransactions','Internaltransactions'],
-        edgeList=['Order','rcextship','scextship','srintship','ssintship','Related_To',
-        'Manufactures','Orders_Prodcut','externaltransactions','internaltransactions'])
+        if(self.ExistingGraph(name)==False):
+            self.__transaction_execution_commands = []
+            self.__add_delete_statement()
+            self.__add_nodes_statements()
+            self.__add_edges_statemnts()
+            self.execute_transactions()
+            self.saveGraph(name,nodeList=['Customer','Products','Retailer','Supplier','Rcextship','Scextship','Srintship','Ssintship','Facilities','Warehouses','Rcextorders',
+            'Scextorders','Srintorders','Ssintorders','Externalservices','Internalservices','Externaltransactions','Internaltransactions'],
+            edgeList=['Order','rcextship','scextship','srintship','ssintship','Related_To',
+            'Manufactures','Orders_Prodcut','externaltransactions','internaltransactions'])
+        else:
+            print("Graph Already Exists")
+                   
 
+    ## get all graphs names in the DB and save it in array (global variable)  return array        
+    def getGraphs(self):
+        stat = "CALL gds.graph.list()"
+        graphs = self.execute_Command(stat)
+        temp = []
+        for graph in graphs:
+            x = dict(graph)
+            temp.append(x['graphName'])
+        return temp
 
-    def trail(self,label,id,nodeID):
+      ## excute command function
+    def execute_Command(self,command):
+        from neo4j import GraphDatabase
+        data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "123"))
+        session = data_base_connection.session()
+        output = session.run(command)
+        print("------------executed-----------------")
+        return output
+
+    ## delete the node "for future works"
+    def deleteNode(self,label,id,nodeID):
         print("-----------Beginning --------------")
         print(label,id,nodeID)
         deleteNodeStatement = f"MATCH (a:{label} " + "{"+ f"ID: {id}" + "}) DELETE a" 
@@ -49,71 +78,8 @@ class Neo4jGraph:
         self.execute_Command(deleteNodeStatement)
         return self.deletedNode
     
-    def findAllPaths(self,sourceNodeName,label,cases,graphName,relationShip="",k=1,targetNodeName=''):
-        executedStatment =""
-        print("beginning")
-        if(cases == 0):
-            print("All paths with no target")
-            executedStatment = '''
-            MATCH (source:%s {name:'%s'} )
-            CALL gds.allShortestPaths.dijkstra.stream('%s', {
-            sourceNode: source,
-            relationshipWeightProperty: 'weight',
-            relationshipTypes: ['%s']})
-            YIELD index, sourceNode, targetNode, totalCost, nodeIds, costs, path
-            RETURN
-            index,
-            gds.util.asNode(sourceNode).name AS sourceNodeName,
-            gds.util.asNode(targetNode).name AS targetNodeName,
-            totalCost,
-            [nodeId IN nodeIds | gds.util.asNode(nodeId).name] AS nodeNames,
-            costs,
-            nodes(path) as path
-            ORDER BY index
-            ''' % (label,sourceNodeName,graphName,relationShip )
-        elif (cases == 1):
-            print("morethan one path with target")
-            executedStatment = '''
-            MATCH (source:%s {name: '%s'}), (target:%s {name: '%s'})
-            CALL gds.shortestPath.yens.stream('%s',{sourceNode:source, targetNode:target, k:%s , relationshipWeightProperty:'weight',
-            relationshipTypes:['%s']})
-            YIELD index, sourceNode, targetNode, totalCost, nodeIds, costs, path
-            RETURN
-                index,
-                gds.util.asNode(sourceNode).name AS sourceNodeName,
-                gds.util.asNode(targetNode).name AS targetNodeName,
-                totalCost,
-                [nodeId IN nodeIds | gds.util.asNode(nodeId).name] AS nodeNames,
-                costs,
-                nodes(path) as path
-            ORDER BY index
-            '''% (label,sourceNodeName,label,targetNodeName,graphName,k,relationShip)
-        elif (cases == 2):
-            print("only one path")
-            executedStatment = '''
-            MATCH (source:%s {name: '%s'}), (target:%s {name: '%s'})
-            CALL gds.shortestPath.dijkstra.stream('%s', {
-            sourceNode: source,
-            targetNode: target,
-            relationshipWeightProperty: 'weight'
-            })
-            YIELD index, sourceNode, targetNode, totalCost, nodeIds, costs, path
-            RETURN
-            index,
-            gds.util.asNode(sourceNode).name AS sourceNodeName,
-            gds.util.asNode(targetNode).name AS targetNodeName,
-            totalCost,
-            [nodeId IN nodeIds | gds.util.asNode(nodeId).name] AS nodeNames,
-            costs,
-            nodes(path) as path
-            ORDER BY index
-            ''' % (label,sourceNodeName,label,targetNodeName,graphName)
-        print("----------------CASE EXCUTION----------------")
-        output = self.execute_Command(executedStatment,True)
-        print(output)
-        print("-------------------done--------------")
+    ## save graph and add its name in the array of graph names (the global variable)
     def saveGraph(self,name,nodeList,edgeList):
-        print("beginning")
         saveStatment = '''
         CALL gds.graph.project(
         '%s',
@@ -128,26 +94,26 @@ class Neo4jGraph:
         print("-------statment---------")
         print(saveStatment)
         print("----------------GRAPH SAVINGGGG----------------")
-        self.execute_Command(saveStatment,False)
+        self.execute_Command(saveStatment)
+        self.allExistingGraphs.append(name)
         print("----------------GRAPH SAVED----------------")
-   
+        
+    ## check if the graphname gived as an input already exists or not
+    def ExistingGraph(self,name):
+        for n in self.allExistingGraphs:
+            if(n == name):
+                return True
+        return False
+            
+
+
 
     def execute_transactions(self):
         from neo4j import GraphDatabase
-        data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "password"))
+        data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "123"))
         session = data_base_connection.session()
         for command in self.__transaction_execution_commands:
             session.run(command)
-
-    def execute_Command(self,command,whichCommand):
-        from neo4j import GraphDatabase
-        data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "password"))
-        session = data_base_connection.session()
-        output = session.run(command)
-        if(whichCommand):
-            self.returnPaths(output)
-        print("------------executed-----------------")
-        return output
 
     def __add_delete_statement(self):
         delete_statement = "match (n) detach delete n"
@@ -196,50 +162,3 @@ class Neo4jGraph:
         create_statement = f"CREATE (a) - [r:{rel_name} {'{ weight: ' + str(weight) + ' }'}]->(b)"
         create_relation_statement = match_statement + create_statement
         return create_relation_statement
-
-    def returnPaths (self,output):
-        final = pd.DataFrame()
-        for i in output:
-            x = dict(i)
-            index = x["index"]
-            sourceNodeName = x["sourceNodeName"]
-            targetNodeName = x["targetNodeName"]
-            totalCost = x["totalCost"]
-            nodeNames = x["nodeNames"]
-            costs = x["costs"]
-            tmp = pd.DataFrame({'index': [index],
-                                'sourceNodeName': [sourceNodeName],
-                                'targetNodeName': [targetNodeName],
-                                'totalCost': [totalCost]})
-
-            costs_df = pd.DataFrame({'costs': [costs]})
-
-            result = pd.merge(
-                 tmp,
-                 costs_df,
-                 how='left',
-                 left_index=True, 
-                 right_index=True # all the other rows will be NaN
-                 )
-
-            nodeNames_df = pd.DataFrame({'nodeNames': [nodeNames]})
-
-            final = pd.merge(
-                result,
-                nodeNames_df,
-                how='left',
-                left_index=True, # Merge on both indexes, since right only has 0...
-                right_index=True # all the other rows will be NaN
-            )
-
-
-        print(final)
-
-    def countSameIndex(self,output,index):
-        print("from the counting method")
-        count = 0
-        for i in output:
-            print(dict(i))
-            print(dict(i))
-            count += 1
-        print("count: "+str(count))

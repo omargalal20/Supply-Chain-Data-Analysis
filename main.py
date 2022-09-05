@@ -4,6 +4,7 @@ from ReadingDataSet import ReadingDataSet
 from keys import keys
 from InitializingNodesAndEdges import InitializeNodesAndEdges
 from nodes_edges_df import nodes_edges_dfs
+from GraphAnalysis import GraphAnalysis
 
 dataSet = ReadingDataSet()
 # Dictionary containing all dataframes
@@ -66,17 +67,19 @@ print('-------------------------')
 
 
 myGraph = Neo4jGraph(nodes_df,edges_df)
-# myGraph.draw_graph('supplyChainNew')
-print("---------------Case 0-------------------")
-#myGraph.findAllPaths(sourceNodeName="Supplier 90236",label="Supplier",cases=0,graphName="supplyChain91",relationShip="ssintship")
+graphAnalysis = GraphAnalysis(nodes_df,edges_df)
+#myGraph.draw_graph('supplyChain1')
+#print(myGraph.allExistingGraphs)
+#print("---------------Case 0-------------------")
+#print(myGraph.findAllPaths(sourceNodeName="Supplier 90236",label="Supplier",cases=0,graphName="supplyChain",relationShip="ssintship"))
 #print("---------------Case 1-------------------")
-#print(myGraph.findAllPaths(sourceNodeName="Supplier 90236",label="Supplier",cases=1,graphName="supplyChain",relationShip="ssintship",k=4,targetNodeName="Supplier 90236"))
+#print(graphAnalysis.findAllPaths(sourceNodeName="Supplier 72315",sourceLabel="Supplier",cases=1,graphName="supplyChain",relationShip="srintship",k=4,targetNodeName="Retailer 25889",targetLabel="Retailer"))
 print("---------------Case2-------------------")
-print(myGraph.findAllPaths(sourceNodeName="Supplier 90236",label="Supplier",cases=2,graphName="supplyChainNew",targetNodeName="Supplier 61565"))
+print(graphAnalysis.findAllPaths(sourceNodeName="Retailer 25889",sourceLabel="Retailer",cases=2,graphName="supplyChain",targetNodeName="Customer 65924",targetLabel="Customer"))
 #output = myGraph.trail(label="Warehouses",id=8750,nodeID="warehouses 8750")
 #print(output)
 
-
+#print(myGraph.getGraphs())
 #print(nodes_df.loc[(nodes_df['ID'] == 380 ) & (nodes_df['Label'] == 'supplier')])
 
 #print(list(All_dfs.keys()))
