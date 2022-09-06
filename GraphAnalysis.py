@@ -9,6 +9,7 @@ class GraphAnalysis:
 
     def __init__(self,nodes_df,edges_df):
         self.myGraph = Neo4jGraph(nodes_df,edges_df)
+        self.pathsWithCorrectTargetNodes = set()
     
   
 
@@ -126,3 +127,43 @@ class GraphAnalysis:
             )
             final = pd.concat([final,temp], ignore_index=True)
         return final
+    
+    def validatePath(self,paths,sourceNodeName,nodeNames,edgesNames,propertiesNames,targetNodeName=""):
+        # filter Target nodes
+        # delete the unvalid rows with unvalid target nodes
+        # Take valid nodes names from the valid rows
+        # validate these rows
+        print()
+    
+    ## Valid target nodes
+
+    def targetNodeValidation(self,paths,sourceNodeName,nodeNames,targetNodeName=""):
+        targetNodesColumn =  paths["targetNodeName"]
+        dataFramePaths = paths
+        for path in range(len(paths)):
+            print("Iteration number "+str(path))
+            if(targetNodesColumn[path] == sourceNodeName):
+                #print(targetNodesColumn[path])
+                dataFramePaths = dataFramePaths.drop(path)
+                #targetNodesColumn = targetNodesColumn.drop(path)
+            elif(targetNodeName == ""):
+                targetNodeTemp = ((targetNodesColumn[path].split(" "))[0]).lower()
+                #print(targetNodesColumn[path])
+                if(targetNodeTemp not in nodeNames):
+                    #print(targetNodeTemp)
+                    dataFramePaths = dataFramePaths.drop(path)
+                    #targetNodesColumn = targetNodesColumn.drop(path)
+            #### Check y rawaaan
+            # elif(targetNodeName != ""):
+            #     targetNodeTemp = ((targetNodesColumn[path].split(" "))[0]).lower()
+            #     if(targetNodeTemp!= targetNodeName):
+            #         dataFramePaths.drop(path)
+        self.pathsWithCorrectTargetNodes =  dataFramePaths.reset_index(drop=True) 
+        return self.pathsWithCorrectTargetNodes
+        
+
+                        
+
+
+
+
