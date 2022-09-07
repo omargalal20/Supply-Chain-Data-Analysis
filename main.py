@@ -1,10 +1,13 @@
+from asyncore import read
 from pickle import TRUE
+#from turtle import pd
 from Neo4jGraph import Neo4jGraph
 from ReadingDataSet import ReadingDataSet
 from keys import keys
 from InitializingNodesAndEdges import InitializeNodesAndEdges
 from nodes_edges_df import nodes_edges_dfs
 from GraphAnalysis import GraphAnalysis
+import pandas as pd
 
 dataSet = ReadingDataSet()
 # Dictionary containing all dataframes
@@ -68,19 +71,57 @@ print('-------------------------')
 
 myGraph = Neo4jGraph(nodes_df,edges_df)
 graphAnalysis = GraphAnalysis(nodes_df,edges_df)
+
+x = ['Supplier 20226', 'Ssintship 10465', 'Supplier 30864', 'Ssintship 10482', 'Supplier 18952', 'Ssintship 10173', 'Supplier 13951', 'Ssintship 10350', 'Supplier 21232', 'Internaltransactions 9683', 'Supplier 78265', 'Ssintship 10290']
+y = ['Supplier 20226', 'Ssintship 10465', 'Supplier 30864', 'Ssintship 10482', 'Supplier 18952', 'Ssintship 10173', 'Supplier 13951', 'Ssintship 10350', 'Supplier 21232', 'srintorders 9683', 'Supplier 78265', 'Ssintship 10290']
+z = ['Supplier 20226', 'Ssintship 10113', 'Supplier 54148']
+m = ['Supplier 20226', 'Ssintship 10206', 'Supplier 68814']
+o = ['Supplier 20226', 'Ssintship 10206', 'srintorders 9683','Supplier 68814']
+t = ['Supplier 20226', 'Ssintship 10206', 'Supplier 68814','Ssintship 10482','Supplier 68814' ]
+temp = pd.DataFrame()
+final = pd.DataFrame()
+tmp = pd.DataFrame({'index': [1,2,3,4,5,6],
+                    'sourceNodeName': ["Supplier 20226","Supplier 20226","Supplier 20226","Supplier 20226","Supplier 20226","Supplier 20226"],
+                    'targetNodeName': ["Ssintship 10290","Ssintship 10291","Supplier 54148",'Supplier 68814','Supplier 68814','Supplier 68814'],
+                    'totalCost': [20,21,44,55,66,99]})
+
+costs_df = pd.DataFrame({'costs': [[1,2,3,4],[1,2,3,4],[1,2,3,4],[1,2,3,4],[1,2,3,4],[1,2,3,4]]})
+result = pd.merge(
+                 tmp,
+                 costs_df,
+                 how='left',
+                 left_index=True, 
+                 right_index=True 
+                 )
+          
+nodeNames_df = pd.DataFrame({'nodeNames': [x,y,z,m,o,t]})
+temp = pd.merge(
+                result,
+                nodeNames_df,
+                how='left',
+                left_index=True, 
+                right_index=True 
+            )
+final = pd.concat([final,temp], ignore_index=True)
+
+#print(final)
+
 #myGraph.draw_graph('supplyChain1')
 #print(myGraph.allExistingGraphs)
 #print("---------------Case 0-------------------")
-#output = graphAnalysis.findAllPaths(sourceNodeName="Retailer 83982",sourceLabel="Retailer",cases=0,graphName="supplyChain",relationShip="rcextship")
+#output = graphAnalysis.findAllPaths(sourceNodeName="Supplier 34967",sourceLabel="Supplier",cases=0,graphName="supplyChain")
 #print(output)
-#print(graphAnalysis.targetNodeValidation(paths=output,sourceNodeName="Retailer 83982",nodeNames=nodes))
+xp = graphAnalysis.targetNodeValidation(paths=final,sourceNodeName="Supplier 20226",nodeNames=nodes)
+#x = graphAnalysis.targetNodeValidation(paths=xp,sourceNodeName="Supplier 20226",nodeNames=nodes)
+graphAnalysis.pathsValidation (xp,nodes,edges)
 #print("---------------Case 1-------------------")
-#output = graphAnalysis.findAllPaths(sourceNodeName="Retailer 83982",sourceLabel="Retailer",cases=1,graphName="supplyChain",relationShip="rcextship",k=4,targetNodeName="Customer 31548",targetLabel="Customer")
+#output = graphAnalysis.findAllPaths(sourceNodeName="Supplier 34967",sourceLabel="Supplier",cases=1,graphName="supplyChain",k=4,targetNodeName="Supplier 14125",targetLabel="Supplier")
+#print(output)
 #print(graphAnalysis.targetNodeValidation(paths=output,sourceNodeName="Retailer 83982",nodeNames=nodes,targetNodeName="Customer 31548"))
 #print("---------------Case2-------------------")
-#print(graphAnalysis.findAllPaths(sourceNodeName="Retailer 83982",sourceLabel="Retailer",cases=2,graphName="supplyChain",targetNodeName="Customer 31548",targetLabel="Customer"))
+#print(graphAnalysis.findAllPaths(sourceNodeName="Supplier 34967",sourceLabel="Supplier",cases=2,graphName="supplyChain",targetNodeName="Supplier 14125",targetLabel="Supplier"))
 #output = myGraph.trail(label="Warehouses",id=8750,nodeID="warehouses 8750")
-#print(output)
+#print(output)th
 
 #print(myGraph.getGraphs())
 #print(nodes_df.loc[(nodes_df['ID'] == 380 ) & (nodes_df['Label'] == 'supplier')])

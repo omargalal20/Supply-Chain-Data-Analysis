@@ -21,31 +21,16 @@ class GraphAnalysis:
         executedStatment =""
         if(cases == 0):
             print("All paths with no target")
-            executedStatment = '''
-            MATCH (source:%s {name:'%s'} )
-            CALL gds.allShortestPaths.dijkstra.stream('%s', {
-            sourceNode: source,
-            relationshipWeightProperty: 'weight',
-            relationshipTypes: ['%s']})
-            YIELD index, sourceNode, targetNode, totalCost, nodeIds, costs, path
-            RETURN
-            index,
-            gds.util.asNode(sourceNode).name AS sourceNodeName,
-            gds.util.asNode(targetNode).name AS targetNodeName,
-            totalCost,
-            [nodeId IN nodeIds | gds.util.asNode(nodeId).name] AS nodeNames,
-            costs,
-            nodes(path) as path
-            ORDER BY index
-            ''' % (sourceLabel,sourceNodeName,graphName,relationShip )
-        elif (cases == 1):
-            print("morethan one path with target")
-            executedStatment = '''
-            MATCH (source:%s {name: '%s'}), (target:%s {name: '%s'})
-            CALL gds.shortestPath.yens.stream('%s',{sourceNode:source, targetNode:target, k:%s , relationshipWeightProperty:'weight',
-            relationshipTypes:['%s']})
-            YIELD index, sourceNode, targetNode, totalCost, nodeIds, costs, path
-            RETURN
+            if(relationShip!=""):
+                print("All paths with no target and with relation")
+                executedStatment = '''
+                MATCH (source:%s {name:'%s'} )
+                CALL gds.allShortestPaths.dijkstra.stream('%s', {
+                sourceNode: source,
+                relationshipWeightProperty: 'weight',
+                relationshipTypes: ['%s']})
+                YIELD index, sourceNode, targetNode, totalCost, nodeIds, costs, path
+                RETURN
                 index,
                 gds.util.asNode(sourceNode).name AS sourceNodeName,
                 gds.util.asNode(targetNode).name AS targetNodeName,
@@ -53,16 +38,70 @@ class GraphAnalysis:
                 [nodeId IN nodeIds | gds.util.asNode(nodeId).name] AS nodeNames,
                 costs,
                 nodes(path) as path
-            ORDER BY index
-            '''% (sourceLabel,sourceNodeName,targetLabel,targetNodeName,graphName,k,relationShip)
+                ORDER BY index
+                ''' % (sourceLabel,sourceNodeName,graphName,relationShip )
+            else:
+                print("All paths with no target and with no relation")
+                executedStatment = '''
+                MATCH (source:%s {name:'%s'} )
+                CALL gds.allShortestPaths.dijkstra.stream('%s', {
+                sourceNode: source,
+                relationshipWeightProperty: 'weight'})
+                YIELD index, sourceNode, targetNode, totalCost, nodeIds, costs, path
+                RETURN
+                index,
+                gds.util.asNode(sourceNode).name AS sourceNodeName,
+                gds.util.asNode(targetNode).name AS targetNodeName,
+                totalCost,
+                [nodeId IN nodeIds | gds.util.asNode(nodeId).name] AS nodeNames,
+                costs,
+                nodes(path) as path
+                ORDER BY index
+                ''' % (sourceLabel,sourceNodeName,graphName)
+        elif (cases == 1):
+            print("morethan one path with target")
+            if(relationShip!=""):
+                executedStatment = '''
+                MATCH (source:%s {name: '%s'}), (target:%s {name: '%s'})
+                CALL gds.shortestPath.yens.stream('%s',{sourceNode:source, targetNode:target, k:%s , relationshipWeightProperty:'weight',
+                relationshipTypes:['%s']})
+                YIELD index, sourceNode, targetNode, totalCost, nodeIds, costs, path
+                RETURN
+                    index,
+                    gds.util.asNode(sourceNode).name AS sourceNodeName,
+                    gds.util.asNode(targetNode).name AS targetNodeName,
+                    totalCost,
+                    [nodeId IN nodeIds | gds.util.asNode(nodeId).name] AS nodeNames,
+                    costs,
+                    nodes(path) as path
+                ORDER BY index
+                '''% (sourceLabel,sourceNodeName,targetLabel,targetNodeName,graphName,k,relationShip)
+            else:
+                executedStatment = '''
+                MATCH (source:%s {name: '%s'}), (target:%s {name: '%s'})
+                CALL gds.shortestPath.yens.stream('%s',{sourceNode:source, targetNode:target, k:%s , relationshipWeightProperty:'weight'})
+                YIELD index, sourceNode, targetNode, totalCost, nodeIds, costs, path
+                RETURN
+                    index,
+                    gds.util.asNode(sourceNode).name AS sourceNodeName,
+                    gds.util.asNode(targetNode).name AS targetNodeName,
+                    totalCost,
+                    [nodeId IN nodeIds | gds.util.asNode(nodeId).name] AS nodeNames,
+                    costs,
+                    nodes(path) as path
+                ORDER BY index
+                '''% (sourceLabel,sourceNodeName,targetLabel,targetNodeName,graphName,k)
         elif (cases == 2):
             print("only one path")
-            executedStatment = '''
+            if(relationShip!=""):
+                print("only one path with relationship")
+                executedStatment = '''
             MATCH (source:%s {name: '%s'}), (target:%s {name: '%s'})
             CALL gds.shortestPath.dijkstra.stream('%s', {
             sourceNode: source,
             targetNode: target,
-            relationshipWeightProperty: 'weight'
+            relationshipWeightProperty: 'weight',
+            relationshipTypes:['%s']
             })
             YIELD index, sourceNode, targetNode, totalCost, nodeIds, costs, path
             RETURN
@@ -74,7 +113,27 @@ class GraphAnalysis:
             costs,
             nodes(path) as path
             ORDER BY index
-            ''' % (sourceLabel,sourceNodeName,targetLabel,targetNodeName,graphName)
+            ''' % (sourceLabel,sourceNodeName,targetLabel,targetNodeName,graphName,relationShip)
+            else:   
+                print("only one path with no relationship")
+                executedStatment = '''
+                MATCH (source:%s {name: '%s'}), (target:%s {name: '%s'})
+                CALL gds.shortestPath.dijkstra.stream('%s', {
+                sourceNode: source,
+                targetNode: target,
+                relationshipWeightProperty: 'weight'
+                })
+                YIELD index, sourceNode, targetNode, totalCost, nodeIds, costs, path
+                RETURN
+                index,
+                gds.util.asNode(sourceNode).name AS sourceNodeName,
+                gds.util.asNode(targetNode).name AS targetNodeName,
+                totalCost,
+                [nodeId IN nodeIds | gds.util.asNode(nodeId).name] AS nodeNames,
+                costs,
+                nodes(path) as path
+                ORDER BY index
+                ''' % (sourceLabel,sourceNodeName,targetLabel,targetNodeName,graphName)
         print("----------------CASE EXCUTION----------------")
         dataFrameOutPut = self.execute_Command(executedStatment)
         print("-------------------done--------------")
@@ -105,7 +164,8 @@ class GraphAnalysis:
             tmp = pd.DataFrame({'index': [index],
                                 'sourceNodeName': [sourceNodeName],
                                 'targetNodeName': [targetNodeName],
-                                'totalCost': [totalCost]})
+                                'totalCost': [totalCost],
+                                'isDirect':[None]})
 
             costs_df = pd.DataFrame({'costs': [costs]})
 
@@ -128,38 +188,72 @@ class GraphAnalysis:
             final = pd.concat([final,temp], ignore_index=True)
         return final
     
-    def validatePath(self,paths,sourceNodeName,nodeNames,edgesNames,propertiesNames,targetNodeName=""):
+    ## validate paths and return the final approved paths
+    def validatePath(self,paths,sourceNodeName,nodeNames,edgesNames):
         # filter Target nodes
         # delete the unvalid rows with unvalid target nodes
+        self.targetNodeValidation(paths,sourceNodeName,nodeNames)
         # Take valid nodes names from the valid rows
         # validate these rows
-        print()
+        finalPaths = self.pathsValidation(self.pathsWithCorrectTargetNodes,nodeNames,edgesNames)
+        return finalPaths
+
+
+    
     
     ## Valid target nodes
-
-    def targetNodeValidation(self,paths,sourceNodeName,nodeNames,targetNodeName=""):
+    def targetNodeValidation(self,paths,sourceNodeName,nodeNames):
         targetNodesColumn =  paths["targetNodeName"]
         dataFramePaths = paths
         for path in range(len(paths)):
-            print("Iteration number "+str(path))
             if(targetNodesColumn[path] == sourceNodeName):
-                #print(targetNodesColumn[path])
                 dataFramePaths = dataFramePaths.drop(path)
-                #targetNodesColumn = targetNodesColumn.drop(path)
-            elif(targetNodeName == ""):
+            else:
                 targetNodeTemp = ((targetNodesColumn[path].split(" "))[0]).lower()
-                #print(targetNodesColumn[path])
                 if(targetNodeTemp not in nodeNames):
-                    #print(targetNodeTemp)
                     dataFramePaths = dataFramePaths.drop(path)
-                    #targetNodesColumn = targetNodesColumn.drop(path)
-            #### Check y rawaaan
-            # elif(targetNodeName != ""):
-            #     targetNodeTemp = ((targetNodesColumn[path].split(" "))[0]).lower()
-            #     if(targetNodeTemp!= targetNodeName):
-            #         dataFramePaths.drop(path)
         self.pathsWithCorrectTargetNodes =  dataFramePaths.reset_index(drop=True) 
         return self.pathsWithCorrectTargetNodes
+    
+    ## Validate the paths of the valid target nodes
+
+    def pathsValidation(self,pathsWithCorrectTargetNodes,nodeNames,edgesNames):
+        nodeNamesColumn =  pathsWithCorrectTargetNodes["nodeNames"]
+        dataFramePaths = pathsWithCorrectTargetNodes
+        previousNode = ""
+        currentNode = ""
+        validUntilNow = False
+        for path in range(len(pathsWithCorrectTargetNodes)):
+            if(len(nodeNamesColumn[path]) == 1):
+                dataFramePaths = dataFramePaths.drop(path)
+                continue
+            for element in  range(len(nodeNamesColumn[path])-1):
+                previousNode = (((nodeNamesColumn[path])[element]).split(" ")[0]).lower()
+                currentNode = (((nodeNamesColumn[path])[element+1]).split(" ")[0]).lower()
+                if ((previousNode in nodeNames) & (currentNode in edgesNames)) | ((previousNode in edgesNames) & (currentNode in nodeNames)):
+                    validUntilNow = True
+                else:
+                    validUntilNow = False
+                    break
+            if(validUntilNow == False):
+                dataFramePaths = dataFramePaths.drop(path)
+            else:
+                if(len(nodeNamesColumn[path]) == 3):
+                    dataFramePaths.at[path,'isDirect'] = True
+                else:
+                    dataFramePaths.at[path,'isDirect'] = False
+        finalApprovedPaths = dataFramePaths.reset_index(drop=True) 
+        print(finalApprovedPaths)
+        return finalApprovedPaths
+
+
+
+
+
+
+
+
+
         
 
                         

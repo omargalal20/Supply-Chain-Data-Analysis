@@ -1,0 +1,3 @@
+	index	sourceNodeName	targetNodeName	totalCost	costs	nodeNames
+0	3	Supplier 20226	Supplier 54148	44	[1, 2, 3, 4]	['Supplier 20226', 'Ssintship 10113', 'Supplier 54148']
+1	4	Supplier 20226	Supplier 68814	55	[1, 2, 3, 4]	['Supplier 20226', 'Ssintship 10206', 'Supplier 68814']

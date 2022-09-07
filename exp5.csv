@@ -1,0 +1,2 @@
+	index	sourceNodeName	targetNodeName	totalCost	costs	nodeNames
+0	1	Supplier 20226	Ssintship 10290	20	[1, 2, 3, 4]	['Supplier 20226', 'Ssintship 10465', 'Supplier 30864', 'Ssintship 10482', 'Supplier 18952', 'Ssintship 10173', 'Supplier 13951', 'Ssintship 10350', 'Supplier 21232', 'Internaltransactions 9683', 'Supplier 78265', 'Ssintship 10290']
