@@ -264,7 +264,7 @@ class AddTransportationWeightsToEdges:
     
     def chooseTransportationMode(self):
         buttonList =  WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located((By.XPATH, '//*[@id="distance__time-app"]/div/form/div[1]/div[1]/ul'))
+            EC.visibility_of_element_located((By.XPATH, '//*[@id="distance__time-app"]/div/form/div[1]/div[1]/ul'))
         )
 
         items = buttonList.find_elements(By.TAG_NAME, 'li')
@@ -283,8 +283,10 @@ class AddTransportationWeightsToEdges:
         if ("city_name" in self.fromNode['Attributes']):
             if(self.fromNode['Attributes']['city_name'] == 'Unknown'):
                 searchFrom.send_keys(self.fromNode['Attributes']['country'])
+                self.fromName = self.fromNode['Attributes']['country']
             else:
                 searchFrom.send_keys(self.fromNode['Attributes']['city_name'])
+                self.fromName = self.fromNode['Attributes']['city_name']
             
         chosenFrom = WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.XPATH, '//*[@id="distance__time-app"]/div/form/div[1]/div[2]/div[1]/div/div'))
@@ -295,7 +297,10 @@ class AddTransportationWeightsToEdges:
             searchFrom.clear()
             searchFrom.send_keys(Keys.CONTROL + "a")
             searchFrom.send_keys(Keys.DELETE)
-            searchFrom.send_keys(random.choice(self.countries)[1])
+            if ("country" in self.fromNode['Attributes']):
+                if(self.fromNode['Attributes']['country'] != 'Unknown'):
+                    searchFrom.send_keys(self.fromNode['Attributes']['country'])
+                    self.fromName = self.fromNode['Attributes']['country']
             chosenFrom = WebDriverWait(self.driver, 10).until(
                 EC.presence_of_element_located((By.XPATH, '//*[@id="distance__time-app"]/div/form/div[1]/div[2]/div[1]/div/div'))
             )
@@ -305,7 +310,8 @@ class AddTransportationWeightsToEdges:
                 searchFrom.clear()
                 searchFrom.send_keys(Keys.CONTROL + "a")
                 searchFrom.send_keys(Keys.DELETE)
-                searchFrom.send_keys(random.choice(self.countries)[1])      
+                self.fromName = random.choice(self.countries)[1]
+                searchFrom.send_keys(self.fromName)      
                 chosenFrom = WebDriverWait(self.driver, 10).until(
                     EC.presence_of_element_located((By.XPATH, '//*[@id="distance__time-app"]/div/form/div[1]/div[2]/div[1]/div/div'))
                 )
@@ -322,8 +328,10 @@ class AddTransportationWeightsToEdges:
         if ("city_name" in self.toNode['Attributes']):
             if(self.toNode['Attributes']['city_name'] == 'Unknown'):
                 searchTo.send_keys(self.toNode['Attributes']['country'])
+                self.toName = self.toNode['Attributes']['country']
             else:
                 searchTo.send_keys(self.toNode['Attributes']['city_name'])
+                self.toName = self.toNode['Attributes']['city_name']
         
         chosenTo = WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.XPATH, '//*[@id="distance__time-app"]/div/form/div[1]/div[2]/div[2]/div/div'))
@@ -337,6 +345,7 @@ class AddTransportationWeightsToEdges:
             if ("country" in self.toNode['Attributes']):
                 if(self.toNode['Attributes']['country'] != 'Unknown'):
                     searchTo.send_keys(self.toNode['Attributes']['country'])
+                    self.toName = self.toNode['Attributes']['country']
             chosenTo = WebDriverWait(self.driver, 10).until(
                 EC.presence_of_element_located((By.XPATH, '//*[@id="distance__time-app"]/div/form/div[1]/div[2]/div[2]/div/div'))
             )
@@ -346,7 +355,8 @@ class AddTransportationWeightsToEdges:
                 searchTo.clear()
                 searchTo.send_keys(Keys.CONTROL + "a")
                 searchTo.send_keys(Keys.DELETE)
-                searchTo.send_keys(random.choice(self.countries)[1])      
+                self.toName = random.choice(self.countries)[1]
+                searchTo.send_keys(self.toName)      
                 chosenTo = WebDriverWait(self.driver, 10).until(
                     EC.presence_of_element_located((By.XPATH, '//*[@id="distance__time-app"]/div/form/div[1]/div[2]/div[2]/div/div'))
                 )
@@ -356,8 +366,8 @@ class AddTransportationWeightsToEdges:
 
     def getResults(self, countryFrom, countryTo):
         # Click Search
-        searchButton = self.driver.find_element(By.XPATH, '//*[@id="distance__time-app"]/div/form/div[1]/button')
-        searchButton.click()
+        searchButton = WebDriverWait(self.driver, 20).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="distance__time-app"]/div/form/div[1]/button')))
+        self.driver.execute_script("arguments[0].click();", searchButton)
         # Get Results
         while(True):
             try:
@@ -367,8 +377,8 @@ class AddTransportationWeightsToEdges:
                 # print(resultsList[0].find_elements(By.TAG_NAME, 'span')[0].get_attribute("innerHTML").split(','))
                 # print(countryTo.split(',')[0])
                 # print(resultsList[-1].find_elements(By.TAG_NAME, 'span')[0].get_attribute("innerHTML").split(','))
-
-                if((countryFrom.split(',')[0] in [html.unescape(x.lstrip(' ')) for x in resultsList[0].find_elements(By.TAG_NAME, 'span')[0].get_attribute("innerHTML").split(',')]) and (countryTo.split(',')[0] in [html.unescape(x.lstrip(' ')) for x in resultsList[-1].find_elements(By.TAG_NAME, 'span')[0].get_attribute("innerHTML").split(',')])):
+                
+                if(((countryFrom.split(',')[0] in sum([html.unescape(x.lstrip(' ')).split(' ') for x in resultsList[0].find_elements(By.TAG_NAME, 'span')[0].get_attribute("innerHTML").split(',')], [])) or (countryFrom.split(',')[0] in sum([html.unescape(x.lstrip(' ')) for x in resultsList[0].find_elements(By.TAG_NAME, 'span')[0].get_attribute("innerHTML").split(',')], []))) or ((countryTo.split(',')[0] in sum([html.unescape(x.lstrip(' ')).split(' ') for x in resultsList[-1].find_elements(By.TAG_NAME, 'span')[0].get_attribute("innerHTML").split(',')], [])) or (countryTo.split(',')[0] in sum([html.unescape(x.lstrip(' ')) for x in resultsList[-1].find_elements(By.TAG_NAME, 'span')[0].get_attribute("innerHTML").split(',')], [])))):
                     break
             except:
                 try:
@@ -376,7 +386,7 @@ class AddTransportationWeightsToEdges:
                         EC.presence_of_element_located((By.XPATH, '//*[@id="panel"]/div[2]/ul'))
                     )
                     resultsList = results.find_elements(By.TAG_NAME, 'li')
-                    if((countryFrom.split(',')[0] in [html.unescape(x.lstrip(' ')) for x in resultsList[0].find_elements(By.TAG_NAME, 'span')[0].get_attribute("innerHTML").split(',')]) and (countryTo.split(',')[0] in [html.unescape(x.lstrip(' ')) for x in resultsList[-1].find_elements(By.TAG_NAME, 'span')[0].get_attribute("innerHTML").split(',')])):
+                    if(((countryFrom.split(',')[0] in sum([html.unescape(x.lstrip(' ')).split(' ') for x in resultsList[0].find_elements(By.TAG_NAME, 'span')[0].get_attribute("innerHTML").split(',')], [])) or (countryFrom.split(',')[0] in sum([html.unescape(x.lstrip(' ')) for x in resultsList[0].find_elements(By.TAG_NAME, 'span')[0].get_attribute("innerHTML").split(',')], []))) or ((countryTo.split(',')[0] in sum([html.unescape(x.lstrip(' ')).split(' ') for x in resultsList[-1].find_elements(By.TAG_NAME, 'span')[0].get_attribute("innerHTML").split(',')], [])) or (countryTo.split(',')[0] in sum([html.unescape(x.lstrip(' ')) for x in resultsList[-1].find_elements(By.TAG_NAME, 'span')[0].get_attribute("innerHTML").split(',')], [])))):
                         break
                 except:
                     results = 'No Path'
@@ -412,9 +422,8 @@ class AddTransportationWeightsToEdges:
             # print(f"Total Distance {totalDistance}")
             # print(f"Total Duration {totalDuration}")
             # print('------------------')
-            self.toName = resultsList[-1].find_elements(By.TAG_NAME, 'span')[0].get_attribute('innerHTML')
-            # print(self.toName) 
-        
+            self.toName = resultsList[-1].find_elements(By.TAG_NAME, 'span')[0].get_attribute('innerHTML')   
+    
     def calculateCoordinatesForFromGeoPy(self):
         # print(f"Class From Row {self.fromNode['Attributes']}".encode('utf-8'))
         try:
@@ -466,9 +475,10 @@ class AddTransportationWeightsToEdges:
     def usingSeaRatesApi(self):
         # Api Key has been expired, so web scraping was used
         modes = ['sea', 'air','road', 'rail']
+        apiKey = 'XXXX-XXXX-XXXX-XXXX'
 
         for mode in modes :
-            api_url  = f"https://sirius.searates.com/api/distanceandtime?lat_from=43.7346565&lng_from=15.890404459765625&lat_to=29.2273166&lng_to=48.12082908736457&type={mode}&key=0S4D-JPVF-YNQO-ELZC-AIMT&speed=15&road_speed=50"
+            api_url  = f"https://sirius.searates.com/api/distanceandtime?lat_from=43.7346565&lng_from=15.890404459765625&lat_to=29.2273166&lng_to=48.12082908736457&type={mode}&key={apiKey}&speed=15&road_speed=50"
             response = requests.get(api_url)
             if(response.ok):
                 jData = json.loads(response.content)

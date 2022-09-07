@@ -2,7 +2,6 @@ from ReadingDataSet import ReadingDataSet
 from keys import keys
 from InitializingNodesAndEdges import InitializeNodesAndEdges
 from nodes_edges_df import nodes_edges_dfs
-from Neo4jGraph import Neo4jGraph
 
 dataSet = ReadingDataSet()
 # Dictionary containing all dataframes
@@ -62,6 +61,7 @@ print('-------------------------')
 edges_df = initialize_nodes_edges_df.edges_df_edges_as_nodes
 print("Edges DF: ")
 print(f"{edges_df.to_string()}")
+edges_df.to_csv('edges_df.csv')
 print('-------------------------')
  
 
@@ -184,8 +184,6 @@ print('-------------------------')
 #         print('------------------')
 #         print(resultsList[-1].find_elements(By.TAG_NAME, 'span')[0].get_attribute('innerHTML')) 
         
-    
-
 # for i in range(100):
 #     random_country1 = random.choice(countries)
 #     random_country2 = random.choice(countries)

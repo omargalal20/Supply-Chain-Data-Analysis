@@ -98,6 +98,22 @@ class ReadingDataSet:
 
         self.All_dfs["externalshipments"]['TransportationType'] = seriesForExtShip
 
+    # def addOrderWeight(self):
+    #     IntOrders = self.All_dfs["internalorders"].shape[0]
+
+    #     ExtOrders = self.All_dfs["externalorders"].shape[0]
+
+    #     a = np.array([random.choice(types) for x in range(IntOrders)])
+    #     b = np.array([random.choice(types) for x in range(ExtOrders)])
+        
+    #     seriesForIntShip = pd.Series(a)
+    #     seriesForExtShip = pd.Series(b) 
+
+    #     self.All_dfs["internalshipments"]['TransportationType'] = seriesForIntShip
+
+    #     self.All_dfs["externalshipments"]['TransportationType'] = seriesForExtShip
+
+
     def splittingShipmentsTables(self):
         SRIntShip = self.All_dfs["internalshipments"].query('from_to_where == "SR"')
         SRIntShip = SRIntShip.drop(['from_to_where'], axis=1).reset_index(drop = True)
