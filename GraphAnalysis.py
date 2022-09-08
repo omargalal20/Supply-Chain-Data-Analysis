@@ -243,26 +243,34 @@ class GraphAnalysis:
                 else:
                     dataFramePaths.at[path,'isDirect'] = False
         finalApprovedPaths = dataFramePaths.reset_index(drop=True) 
-        print(finalApprovedPaths)
         return finalApprovedPaths
 
     ## check if the type of the connected direct nodes matches or not
     def lastCheckOnPath(self,dataFrameOfPaths,nodeTables,theDesiredType=''):
-        print()
         NodeLabel = ""
         NodeID = 0
+        FinalPaths = dataFrameOfPaths
         for path in range(len(dataFrameOfPaths)):
             if(dataFrameOfPaths.loc[path]["isDirect"] == True):
+                ## source node elly fel table
                 sourceNodeName = dataFrameOfPaths.loc[path]['sourceNodeName'].split(" ")
-                NodeLabel = sourceNodeName[0]
+                NodeLabel = sourceNodeName[0].lower()
                 NodeID = int(sourceNodeName[1])
-                print(type(NodeID))
-                print("beforeee")
-                print(nodeTables)
-                temp = nodeTables.query('nodeTables.Label == NodeLabel & nodeTables.ID == NodeID')
-                print("After")
-                print(temp)
-                ### df.query('max_speed == 1 & shield == 2')
+                ## get attributes of source node
+                x = nodeTables[(nodeTables.Label == NodeLabel) & (nodeTables.ID == NodeID)]
+                nodeType = ((x.Attributes).iloc[0])[4]
+                ## check on type
+                if(nodeType != theDesiredType):
+                    FinalPaths = FinalPaths.drop(path)
+            else:
+                pathNodeNames = dataFrameOfPaths.loc[path]['nodeNames']
+                ###  print(type(pathNodeNames)) tl3t list
+                ### supplier ---- Customer "Indirect
+        FinalPaths = FinalPaths.reset_index(drop=True) 
+        FinalPaths.to_csv("final4.csv")
+                    
+
+                
 
             
 

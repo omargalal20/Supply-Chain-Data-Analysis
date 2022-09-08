@@ -114,26 +114,25 @@ final = pd.concat([final,temp], ignore_index=True)
 #myGraph.draw_graph('supplyChain1')
 #print(myGraph.allExistingGraphs)
 
-print("---------------Case 0-------------------")
-output = graphAnalysis.findAllPaths(sourceNodeName="Supplier 34967",sourceLabel="Supplier",cases=0,graphName="supplyChain")
-out = graphAnalysis.validatePath(paths=output,sourceNodeName="Supplier 34967",nodeNames=nodes,edgesNames=edges)
-print(type(nodesTable))
-graphAnalysis.lastCheckOnPath(dataFrameOfPaths=out,nodeTables=nodesTable)
+#print("---------------Case 0-------------------")
+#output = graphAnalysis.findAllPaths(sourceNodeName="Supplier 34967",sourceLabel="Supplier",cases=0,graphName="supplyChain")
 
+
+# print(type(nodesTable))
+#nodesTable[(nodesTable.Label == "Supplier")&(nodesTable.ID == 34967)]
 #print(output)
 #xp = graphAnalysis.targetNodeValidation(paths=final,sourceNodeName="Supplier 20226",nodeNames=nodes)
 #x = graphAnalysis.targetNodeValidation(paths=xp,sourceNodeName="Supplier 20226",nodeNames=nodes)
 #graphAnalysis.pathsValidation (xp,nodes,edges)
 #print("---------------Case 1-------------------")
-#output = graphAnalysis.findAllPaths(sourceNodeName="Supplier 34967",sourceLabel="Supplier",cases=1,graphName="supplyChain",k=4,targetNodeName="Supplier 14125",targetLabel="Supplier")
-#print(output)
+output = graphAnalysis.findAllPaths(sourceNodeName="Supplier 34967",sourceLabel="Supplier",cases=1,graphName="supplyChain",k=4,targetNodeName="Supplier 14125",targetLabel="Supplier")
+out = graphAnalysis.validatePath(paths=output,sourceNodeName="Supplier 34967",nodeNames=nodes,edgesNames=edges)
+graphAnalysis.lastCheckOnPath(dataFrameOfPaths=out,nodeTables=nodesTable,theDesiredType="Financial Services")
 #print(graphAnalysis.targetNodeValidation(paths=output,sourceNodeName="Retailer 83982",nodeNames=nodes,targetNodeName="Customer 31548"))
 #print("---------------Case2-------------------")
 #print(graphAnalysis.findAllPaths(sourceNodeName="Supplier 34967",sourceLabel="Supplier",cases=2,graphName="supplyChain",targetNodeName="Supplier 14125",targetLabel="Supplier"))
 #output = myGraph.trail(label="Warehouses",id=8750,nodeID="warehouses 8750")
-#print(output)th
-
+#print(output)
 #print(myGraph.getGraphs())
 #print(nodes_df.loc[(nodes_df['ID'] == 380 ) & (nodes_df['Label'] == 'supplier')])
-
 #print(list(All_dfs.keys()))
