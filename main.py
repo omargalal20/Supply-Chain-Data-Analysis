@@ -1,5 +1,6 @@
 from asyncore import read
 from pickle import TRUE
+from wsgiref import validate
 #from turtle import pd
 from Neo4jGraph import Neo4jGraph
 from ReadingDataSet import ReadingDataSet
@@ -72,6 +73,8 @@ print('-------------------------')
 myGraph = Neo4jGraph(nodes_df,edges_df)
 graphAnalysis = GraphAnalysis(nodes_df,edges_df)
 
+
+
 x = ['Supplier 20226', 'Ssintship 10465', 'Supplier 30864', 'Ssintship 10482', 'Supplier 18952', 'Ssintship 10173', 'Supplier 13951', 'Ssintship 10350', 'Supplier 21232', 'Internaltransactions 9683', 'Supplier 78265', 'Ssintship 10290']
 y = ['Supplier 20226', 'Ssintship 10465', 'Supplier 30864', 'Ssintship 10482', 'Supplier 18952', 'Ssintship 10173', 'Supplier 13951', 'Ssintship 10350', 'Supplier 21232', 'srintorders 9683', 'Supplier 78265', 'Ssintship 10290']
 z = ['Supplier 20226', 'Ssintship 10113', 'Supplier 54148']
@@ -104,16 +107,21 @@ temp = pd.merge(
             )
 final = pd.concat([final,temp], ignore_index=True)
 
+
+#graphAnalysis.lastCheckOnPath(dataFrameOfPaths=final,nodeTables=nodesTable)
 #print(final)
 
 #myGraph.draw_graph('supplyChain1')
 #print(myGraph.allExistingGraphs)
-#print("---------------Case 0-------------------")
-#output = graphAnalysis.findAllPaths(sourceNodeName="Supplier 34967",sourceLabel="Supplier",cases=0,graphName="supplyChain")
+print("---------------Case 0-------------------")
+output = graphAnalysis.findAllPaths(sourceNodeName="Supplier 34967",sourceLabel="Supplier",cases=0,graphName="supplyChain")
+out = graphAnalysis.validatePath(paths=output,sourceNodeName="Supplier 20226",nodeNames=nodes,edgesNames=edges)
+graphAnalysis.lastCheckOnPath(dataFrameOfPaths=out,nodeTables=nodesTable)
+
 #print(output)
-xp = graphAnalysis.targetNodeValidation(paths=final,sourceNodeName="Supplier 20226",nodeNames=nodes)
+#xp = graphAnalysis.targetNodeValidation(paths=final,sourceNodeName="Supplier 20226",nodeNames=nodes)
 #x = graphAnalysis.targetNodeValidation(paths=xp,sourceNodeName="Supplier 20226",nodeNames=nodes)
-graphAnalysis.pathsValidation (xp,nodes,edges)
+#graphAnalysis.pathsValidation (xp,nodes,edges)
 #print("---------------Case 1-------------------")
 #output = graphAnalysis.findAllPaths(sourceNodeName="Supplier 34967",sourceLabel="Supplier",cases=1,graphName="supplyChain",k=4,targetNodeName="Supplier 14125",targetLabel="Supplier")
 #print(output)

@@ -194,7 +194,7 @@ class GraphAnalysis:
         # delete the unvalid rows with unvalid target nodes
         self.targetNodeValidation(paths,sourceNodeName,nodeNames)
         # Take valid nodes names from the valid rows
-        # validate these rows
+        # validate these rows && classify if they are direct or not
         finalPaths = self.pathsValidation(self.pathsWithCorrectTargetNodes,nodeNames,edgesNames)
         return finalPaths
 
@@ -246,7 +246,22 @@ class GraphAnalysis:
         print(finalApprovedPaths)
         return finalApprovedPaths
 
-
+    ## check if the type of the connected direct nodes matches or not
+    def lastCheckOnPath(self,dataFrameOfPaths,nodeTables,theDesiredType=''):
+        print()
+        NodeLabel = ""
+        NodeID = 0
+        for path in range(len(dataFrameOfPaths)):
+            if(dataFrameOfPaths.loc[path]["isDirect"] == True):
+                sourceNodeName = path['sourceNodeName'].split(" ")
+                NodeLabel = sourceNodeName[0]
+                NodeID = sourceNodeName[1]
+                print("beforeee")
+                print(nodeTables)
+                temp = nodeTables.query((nodeTables.Label == NodeLabel) & (NodeLabel.ID == NodeID))
+                print("After")
+                print(temp)
+            
 
 
 
