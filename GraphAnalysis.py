@@ -253,14 +253,17 @@ class GraphAnalysis:
         NodeID = 0
         for path in range(len(dataFrameOfPaths)):
             if(dataFrameOfPaths.loc[path]["isDirect"] == True):
-                sourceNodeName = path['sourceNodeName'].split(" ")
+                sourceNodeName = dataFrameOfPaths.loc[path]['sourceNodeName'].split(" ")
                 NodeLabel = sourceNodeName[0]
-                NodeID = sourceNodeName[1]
+                NodeID = int(sourceNodeName[1])
+                print(type(NodeID))
                 print("beforeee")
                 print(nodeTables)
-                temp = nodeTables.query((nodeTables.Label == NodeLabel) & (NodeLabel.ID == NodeID))
+                temp = nodeTables.query('nodeTables.Label == NodeLabel & nodeTables.ID == NodeID')
                 print("After")
                 print(temp)
+                ### df.query('max_speed == 1 & shield == 2')
+
             
 
 

@@ -113,9 +113,11 @@ final = pd.concat([final,temp], ignore_index=True)
 
 #myGraph.draw_graph('supplyChain1')
 #print(myGraph.allExistingGraphs)
+
 print("---------------Case 0-------------------")
 output = graphAnalysis.findAllPaths(sourceNodeName="Supplier 34967",sourceLabel="Supplier",cases=0,graphName="supplyChain")
-out = graphAnalysis.validatePath(paths=output,sourceNodeName="Supplier 20226",nodeNames=nodes,edgesNames=edges)
+out = graphAnalysis.validatePath(paths=output,sourceNodeName="Supplier 34967",nodeNames=nodes,edgesNames=edges)
+print(type(nodesTable))
 graphAnalysis.lastCheckOnPath(dataFrameOfPaths=out,nodeTables=nodesTable)
 
 #print(output)
