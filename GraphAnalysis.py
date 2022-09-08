@@ -196,6 +196,7 @@ class GraphAnalysis:
         # Take valid nodes names from the valid rows
         # validate these rows && classify if they are direct or not
         finalPaths = self.pathsValidation(self.pathsWithCorrectTargetNodes,nodeNames,edgesNames)
+        finalPaths.to_csv("try.csv")
         return finalPaths
 
 

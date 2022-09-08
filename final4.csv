@@ -1,4 +1,0 @@
-,index,sourceNodeName,targetNodeName,totalCost,isDirect,costs,nodeNames
-0,1,Supplier 34967,Supplier 14125,168.0,False,"[0.0, 42.0, 84.0, 126.0, 168.0]","['Supplier 34967', 'Internaltransactions 2751', 'Supplier 57109', 'Ssintship 10157', 'Supplier 14125']"
-1,2,Supplier 34967,Supplier 14125,168.0,False,"[0.0, 42.0, 84.0, 126.0, 168.0]","['Supplier 34967', 'Ssintship 10154', 'Supplier 54148', 'Ssintship 10453', 'Supplier 14125']"
-2,3,Supplier 34967,Supplier 14125,252.0,False,"[0.0, 42.0, 84.0, 126.0, 168.0, 210.0, 252.0]","['Supplier 34967', 'Internaltransactions 2751', 'Supplier 57109', 'Ssintship 10027', 'Supplier 87695', 'Ssintship 10450', 'Supplier 14125']"
