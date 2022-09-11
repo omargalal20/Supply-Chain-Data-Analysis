@@ -140,6 +140,39 @@ class GraphAnalysis:
         return dataFrameOutPut
 
 
+    def findAllPathsViseVerse(self,SourceLabel,SourceNodeName,TargetLabel,TargetType,nodesTable,graphName,nodeNames,edgesNames):
+        ### Retailer ---> supplier
+        ### Target --- supplier && source ---- Retailer
+        # trail = pd.DataFrame()
+        # for node in range(len(nodesTable)):
+        print("beginning")
+        outputtt = pd.DataFrame()
+        out = nodesTable[(nodesTable.Label == "supplier")].reset_index(drop=True) 
+        #print(fiteredNodesTable)
+        fiteredNodesTable = self.filterType(out,TargetType)
+        ## node --- each supplier
+        for node in range(len(fiteredNodesTable)):
+            souceNode = "Supplier "+ str(fiteredNodesTable.loc[node]['ID'])
+            ## target == sorcenodename 
+            out = self.findAllPaths(sourceNodeName=souceNode,sourceLabel='Supplier',cases=2,graphName=graphName,targetNodeName=SourceNodeName,targetLabel=SourceLabel)
+            if(out.empty):
+                continue
+            temp = self.validatePath(out,souceNode,nodeNames,edgesNames)
+            outputtt = pd.concat([outputtt,temp], ignore_index=True)
+        outputtt.to_csv("output.csv")
+
+
+    
+    def filterType(self,filteredTable,desiredType):
+        print("beginning")
+        temp = filteredTable
+        print(temp)
+        for node in range(len(filteredTable)):
+            if(list(temp["Attributes"].loc[node])[4] != desiredType):
+                temp = temp.drop(node)
+        return temp.reset_index(drop=True) 
+
+
     def execute_Command(self,command):
         from neo4j import GraphDatabase
         data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "123"))
@@ -190,17 +223,17 @@ class GraphAnalysis:
     
     ## validate paths and return the final approved paths
     def validatePath(self,paths,sourceNodeName,nodeNames,edgesNames):
+        print("from validation")
+        print(paths)
         # filter Target nodes
         # delete the unvalid rows with unvalid target nodes
         self.targetNodeValidation(paths,sourceNodeName,nodeNames)
         # Take valid nodes names from the valid rows
         # validate these rows && classify if they are direct or not
         finalPaths = self.pathsValidation(self.pathsWithCorrectTargetNodes,nodeNames,edgesNames)
-        finalPaths.to_csv("try.csv")
+        #finalPaths.to_csv("try.csv")
         return finalPaths
 
-
-    
     
     ## Valid target nodes
     def targetNodeValidation(self,paths,sourceNodeName,nodeNames):
@@ -269,6 +302,23 @@ class GraphAnalysis:
                 ### supplier ---- Customer "Indirect
         FinalPaths = FinalPaths.reset_index(drop=True) 
         FinalPaths.to_csv("final4.csv")
+    
+    def addColumnToRetailer(self,nodesTable):
+        retailerNodeTable = nodesTable[(nodesTable.Label == 'retailer')]
+        sourceNodeName = "Retailer "
+        ## get all retailers
+        for retailer in range(len(retailerNodeTable)):
+            ## to get one retailer node
+            retailerID = retailerNodeTable.iloc[retailer]['ID']
+            sourceNodeName = sourceNodeName + retailerID
+            ## find all paths
+        
+
+
+        
+
+
+
                     
 
                 
