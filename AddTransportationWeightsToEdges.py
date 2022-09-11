@@ -262,6 +262,7 @@ class AddTransportationWeightsToEdges:
         time.sleep(1)
         self.getResults(countryFromValue, countryToValue)
     
+    # Using web scraping to gather the distance and duration data
     def chooseTransportationMode(self):
         buttonList =  WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located((By.XPATH, '//*[@id="distance__time-app"]/div/form/div[1]/div[1]/ul'))
@@ -424,6 +425,7 @@ class AddTransportationWeightsToEdges:
             # print('------------------')
             self.toName = resultsList[-1].find_elements(By.TAG_NAME, 'span')[0].get_attribute('innerHTML')   
     
+    # Tried Geopy to calculate only distances
     def calculateCoordinatesForFromGeoPy(self):
         # print(f"Class From Row {self.fromNode['Attributes']}".encode('utf-8'))
         try:
@@ -472,6 +474,7 @@ class AddTransportationWeightsToEdges:
         # print(f"Distance is {self.distance}".encode('utf-8'))
         self.distance = geodesic(self.fromCoordinates, self.toCoordinates).miles
         
+    # Tried SeaRates Api, which returns distance and duration but needed to subscribe to a paid plan
     def usingSeaRatesApi(self):
         # Api Key has been expired, so web scraping was used
         modes = ['sea', 'air','road', 'rail']
@@ -488,9 +491,3 @@ class AddTransportationWeightsToEdges:
                     print(f"Mode {jData[mode]}".encode('utf-8'))
                 else:
                     print(f'{jData}')
-
-
-
-
-
-    

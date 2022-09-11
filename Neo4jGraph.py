@@ -1,3 +1,4 @@
+from neo4j import GraphDatabase
 class Neo4jGraph:
 
     def __init__(self, nodes_df, edges_df):
@@ -19,7 +20,6 @@ class Neo4jGraph:
         self.execute_transactions()
 
     def execute_transactions(self):
-        from neo4j import GraphDatabase
         data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "password"))
         session = data_base_connection.session()
         for command in self.__transaction_execution_commands:

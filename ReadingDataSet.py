@@ -14,7 +14,6 @@ class ReadingDataSet:
         self.handleNonAtomicColumns()
         self.createMissingShipments()
         self.createMissingOrders()
-        self.addTypeOfTransportationToShipments()
         self.splittingShipmentsTables()
         self.splittingOrdersTables()
         self.removeRedundantTables()
@@ -95,8 +94,10 @@ class ReadingDataSet:
         seriesForExtShip = pd.Series(b) 
 
         self.All_dfs["internalshipments"]['TransportationType'] = seriesForIntShip
+        self.All_dfs["internalshipments"].to_csv('DataSet/InternalShipments_data.csv', index = False)
 
         self.All_dfs["externalshipments"]['TransportationType'] = seriesForExtShip
+        self.All_dfs["externalshipments"].to_csv('DataSet/ExternalShipments_data.csv', index = False)
 
     # def addOrderWeight(self):
     #     IntOrders = self.All_dfs["internalorders"].shape[0]
