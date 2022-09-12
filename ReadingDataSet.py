@@ -25,7 +25,7 @@ class ReadingDataSet:
         ext = ('.csv')
         for file in os.listdir(path_of_the_directory):
             if file.endswith(ext):
-                print(file) 
+                # print(file) 
                 temp = (file.replace("_"," ").replace("."," ").split(" ")[0].lower())
                 self.All_dfs[temp] = pd.read_csv(path_of_the_directory+file)
             else:
@@ -79,6 +79,41 @@ class ReadingDataSet:
             df = pd.DataFrame(new_row)
             c = c+1
             self.All_dfs["internalorders"] = pd.concat([self.All_dfs["internalorders"], df], ignore_index=True)
+    
+    def addTypeOfTransportationToShipments(self):
+        IntShip = self.All_dfs["internalshipments"].shape[0]
+
+        ExtShip = self.All_dfs["externalshipments"].shape[0]
+
+        types = ['Sea', 'Land', 'Air']
+
+        a = np.array([random.choice(types) for x in range(IntShip)])
+        b = np.array([random.choice(types) for x in range(ExtShip)])
+    
+        seriesForIntShip = pd.Series(a)
+        seriesForExtShip = pd.Series(b) 
+
+        self.All_dfs["internalshipments"]['TransportationType'] = seriesForIntShip
+        self.All_dfs["internalshipments"].to_csv('DataSet/InternalShipments_data.csv', index = False)
+
+        self.All_dfs["externalshipments"]['TransportationType'] = seriesForExtShip
+        self.All_dfs["externalshipments"].to_csv('DataSet/ExternalShipments_data.csv', index = False)
+
+    # def addOrderWeight(self):
+    #     IntOrders = self.All_dfs["internalorders"].shape[0]
+
+    #     ExtOrders = self.All_dfs["externalorders"].shape[0]
+
+    #     a = np.array([random.choice(types) for x in range(IntOrders)])
+    #     b = np.array([random.choice(types) for x in range(ExtOrders)])
+        
+    #     seriesForIntShip = pd.Series(a)
+    #     seriesForExtShip = pd.Series(b) 
+
+    #     self.All_dfs["internalshipments"]['TransportationType'] = seriesForIntShip
+
+    #     self.All_dfs["externalshipments"]['TransportationType'] = seriesForExtShip
+
 
     def splittingShipmentsTables(self):
         SRIntShip = self.All_dfs["internalshipments"].query('from_to_where == "SR"')

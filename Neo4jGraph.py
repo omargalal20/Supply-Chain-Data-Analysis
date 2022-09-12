@@ -1,15 +1,5 @@
 # from asyncio.windows_events import NULL
-import imp
-from itertools import count
-from math import nan
-from operator import truediv
-from pickle import FALSE
-from platform import node
-from time import sleep
-import neo4j
-import pandas as pd
-
-
+from neo4j import GraphDatabase
 class Neo4jGraph:
 
     def __init__(self, nodes_df, edges_df):
@@ -55,8 +45,7 @@ class Neo4jGraph:
 
       ## excute command function
     def execute_Command(self,command):
-        from neo4j import GraphDatabase
-        data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "123"))
+        data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "password"))
         session = data_base_connection.session()
         output = session.run(command)
         print("------------executed-----------------")
@@ -110,7 +99,8 @@ class Neo4jGraph:
 
     def execute_transactions(self):
         from neo4j import GraphDatabase
-        data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "123"))
+        # data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "123"))
+        data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "password"))
         session = data_base_connection.session()
         for command in self.__transaction_execution_commands:
             session.run(command)

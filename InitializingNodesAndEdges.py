@@ -3,9 +3,9 @@ class InitializeNodesAndEdges:
     def __init__(self, All_dfs, fk):
         self.All_dfs = All_dfs
         self.fk = fk
-        self.nodes = set()
-        self.edges = set()
-        self.properties = set()
+        self.nodes = []
+        self.edges = []
+        self.properties = []
         self.convert_using_naming()
         self.nodes_edges(fk)
 
@@ -15,14 +15,14 @@ class InitializeNodesAndEdges:
         for name in list(self.All_dfs.keys()):
             lowerCasedName = name.lower()
             if(lowerCasedName in nodesNames):
-                self.nodes.add(lowerCasedName)
+                self.nodes.append(lowerCasedName)
 
     def nodes_edges(self, fk):
         for f in fk:
             if(f not in ['ssintorders','manufacturing']):
                 if len(fk[f]) == 2:
-                    self.edges.add(f)
+                    self.edges.append(f)
                 elif len(fk[f]) == 1:
-                    self.properties.add(f)
+                    self.properties.append(f)
                 # elif len(fk[f]) == 0:
                 #     nodes.add(f)

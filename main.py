@@ -13,7 +13,7 @@ import pandas as pd
 dataSet = ReadingDataSet()
 # Dictionary containing all dataframes
 All_dfs = dataSet.All_dfs
-# print(f"Df Keys: {All_dfs}")
+print(f"Df Keys: {All_dfs}")
 
 key = keys(All_dfs)
 # Dictionary indicating the column of each table that represents the primary key
@@ -47,20 +47,20 @@ initialize_nodes_edges_df = nodes_edges_dfs(nodes, edges, properties, All_pks, A
 
 nodesTable = initialize_nodes_edges_df.nodesTable
 print("Nodes Table: ")
-print(nodesTable)
+# print(nodesTable)
 print('-------------------------')
 
 
 edgesTable = initialize_nodes_edges_df.edgesTable
 print("Edges Table: ")
-print(edgesTable)
+# print(edgesTable)
 print('-------------------------')
 
 initialize_nodes_edges_df = nodes_edges_dfs(nodes, edges, properties, All_pks, All_fks, All_ref_ins, All_dfs, False)
 
 nodes_df = initialize_nodes_edges_df.nodes_df_edges_as_nodes
 print("Nodes DF: ")
-print(nodes_df)
+nodes_df.to_csv('nodes_df.csv')
 print('-------------------------')
 
 
