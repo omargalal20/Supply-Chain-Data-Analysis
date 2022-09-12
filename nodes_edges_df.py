@@ -177,19 +177,19 @@ class nodes_edges_dfs:
                         val=finalInt.values[i]
                         if ind =='Annual_sales':
                             myedges.loc[index, 'Annual_sales'] = val
-                            myedges.loc[index, 'Weight'] = myedges.loc[index, 'Weight']-10 if val>=avg_AnuualSales else myedges.loc[index, 'Weight']-5     
+                            myedges.loc[index, 'Weight'] = myedges.loc[index, 'Weight']-5 if val>=avg_AnuualSales else myedges.loc[index, 'Weight']-10     
                         if ind =='market_share (%)':
                             myedges.loc[index, 'market_share (%)'] = val
-                            myedges.loc[index, 'Weight'] = myedges.loc[index, 'Weight']-20 if val>=avg_MarketShare else myedges.loc[index, 'Weight']-5
+                            myedges.loc[index, 'Weight'] = myedges.loc[index, 'Weight']-5 if val>=avg_MarketShare else myedges.loc[index, 'Weight']-20
                         if ind =='price':
                             myedges.loc[index, 'price'] = val
-                            myedges.loc[index, 'Weight'] = myedges.loc[index, 'Weight']-50 if val>=avg_price else myedges.loc[index, 'Weight']-30
+                            myedges.loc[index, 'Weight'] = myedges.loc[index, 'Weight']-30 if val>=avg_price else myedges.loc[index, 'Weight']-50
                         if ind =='profit_margin (%)':
                             myedges.loc[index, 'profit_margin (%)'] = val
-                            myedges.loc[index, 'Weight'] = myedges.loc[index, 'Weight']-30 if val>=avg_ProfitMargin else myedges.loc[index, 'Weight']-15
+                            myedges.loc[index, 'Weight'] = myedges.loc[index, 'Weight']-15 if val>=avg_ProfitMargin else myedges.loc[index, 'Weight']-30
                         if ind =='Rental price':
                             myedges.loc[index, 'Rental price'] = val
-                            myedges.loc[index, 'Weight'] = myedges.loc[index, 'Weight']-80 if val>=avg_RentalPrice else myedges.loc[index, 'Weight']-40
+                            myedges.loc[index, 'Weight'] = myedges.loc[index, 'Weight']-40 if val>=avg_RentalPrice else myedges.loc[index, 'Weight']-80
                         # ....And so on if condition for each cost ex: Transport Type ,Distance,...Etc
             # Change weight in edges Table
             # print("weight",w)
@@ -222,7 +222,6 @@ class nodes_edges_dfs:
         return 0
 
     def __adjustWeightRangeForFinalWeight(self, columnNames):
-
         for columnName in columnNames:
             self.edges_df_edges_as_nodes[columnName] = self.edges_df_edges_as_nodes[columnName].apply(lambda x: self.__calculateNewValue(x, columnName))
 
