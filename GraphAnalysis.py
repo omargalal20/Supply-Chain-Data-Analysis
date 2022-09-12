@@ -1,5 +1,6 @@
 from mimetypes import init
 from re import X
+from tkinter import Y
 import pandas as pd
 import neo4j
 from Neo4jGraph import Neo4jGraph
@@ -7,9 +8,10 @@ from Neo4jGraph import Neo4jGraph
 class GraphAnalysis:
 
 
-    def __init__(self,nodes_df,edges_df):
+    def __init__(self,nodes_df,edges_df,nodesTable,edgesTable):
         self.myGraph = Neo4jGraph(nodes_df,edges_df)
         self.pathsWithCorrectTargetNodes = set()
+        self.addColumnToRetailer(nodesTable,edgesTable)
     
   
 
@@ -140,35 +142,39 @@ class GraphAnalysis:
         return dataFrameOutPut
 
 
-    def findAllPathsViseVerse(self,SourceLabel,SourceNodeName,TargetLabel,TargetType,nodesTable,graphName,nodeNames,edgesNames):
-        ### Retailer ---> supplier
+    def findAllPathsViseVerse(self,SourceLabel,SourceNodeName,TargetLabel,nodesTable,graphName,nodeNames,edgesNames,TargetType=""):
+        ### Retailer ---> supplier //Done
+        ### Customer ---> Retailer
         ### Target --- supplier && source ---- Retailer
-        # trail = pd.DataFrame()
-        # for node in range(len(nodesTable)):
-        print("beginning")
+        ### Target --- Retailer
         outputtt = pd.DataFrame()
-        out = nodesTable[(nodesTable.Label == "supplier")].reset_index(drop=True) 
-        #print(fiteredNodesTable)
-        fiteredNodesTable = self.filterType(out,TargetType)
+        out = nodesTable[(nodesTable.Label == (TargetLabel.lower()))].reset_index(drop=True) 
+        filteredNodesTable = self.filterType(out,TargetType)
         ## node --- each supplier
-        for node in range(len(fiteredNodesTable)):
-            souceNode = "Supplier "+ str(fiteredNodesTable.loc[node]['ID'])
+        for node in range(len(filteredNodesTable)):
+            souceNode = TargetLabel+ " " + str(filteredNodesTable.loc[node]['ID'])
+            print("source nodeee")
+            print(souceNode)
             ## target == sorcenodename 
-            out = self.findAllPaths(sourceNodeName=souceNode,sourceLabel='Supplier',cases=2,graphName=graphName,targetNodeName=SourceNodeName,targetLabel=SourceLabel)
+            out = self.findAllPaths(sourceNodeName=souceNode,sourceLabel=TargetLabel,cases=2,graphName=graphName,targetNodeName=SourceNodeName,targetLabel=SourceLabel)
+            print(out)
             if(out.empty):
                 continue
             temp = self.validatePath(out,souceNode,nodeNames,edgesNames)
             outputtt = pd.concat([outputtt,temp], ignore_index=True)
-        outputtt.to_csv("output.csv")
+        return outputtt
 
 
     
     def filterType(self,filteredTable,desiredType):
-        print("beginning")
         temp = filteredTable
         print(temp)
         for node in range(len(filteredTable)):
-            if(list(temp["Attributes"].loc[node])[4] != desiredType):
+           
+            if type(list(temp["Attributes"].loc[node])[4]) == set:
+                if desiredType not in (list(temp["Attributes"].loc[node])[4]):
+                    temp = temp.drop(node)
+            elif(list(temp["Attributes"].loc[node])[4] != desiredType):
                 temp = temp.drop(node)
         return temp.reset_index(drop=True) 
 
@@ -298,20 +304,49 @@ class GraphAnalysis:
                     FinalPaths = FinalPaths.drop(path)
             else:
                 pathNodeNames = dataFrameOfPaths.loc[path]['nodeNames']
-                ###  print(type(pathNodeNames)) tl3t list
                 ### supplier ---- Customer "Indirect
+                ### retailer ---- customer
+                pathNodeNames[-3]
+                if (pathNodeNames[-3]).find('retailer') : 
+                    ## nkmelha deh bokra
+                    print()
         FinalPaths = FinalPaths.reset_index(drop=True) 
         FinalPaths.to_csv("final4.csv")
     
-    def addColumnToRetailer(self,nodesTable):
-        retailerNodeTable = nodesTable[(nodesTable.Label == 'retailer')]
-        sourceNodeName = "Retailer "
-        ## get all retailers
-        for retailer in range(len(retailerNodeTable)):
-            ## to get one retailer node
-            retailerID = retailerNodeTable.iloc[retailer]['ID']
-            sourceNodeName = sourceNodeName + retailerID
-            ## find all paths
+    def addColumnToRetailer(self,nodesTable,edgesTable):
+        for node in range(len(nodesTable)):
+            if(nodesTable.loc[node]['Label'] == 'retailer'):
+                RetailerTypes = set()
+                ### all nodes that is connected to the retailer with node as ID
+                whatisConnectedToRetailer = edgesTable[(edgesTable.To_Node_ID == node)].reset_index(drop=True)
+                if(whatisConnectedToRetailer.empty):
+                    continue
+                ## loop on the all node connected to retailer to get the suppliers connected to retailer
+                for edge in range(len(whatisConnectedToRetailer)):
+                    ## From_Node_ID 
+                    idConnectedtoRetailer = whatisConnectedToRetailer.loc[edge]['From_Node_ID']
+                    ## check if From_Node_ID is supplier
+                    if nodesTable.loc[idConnectedtoRetailer]['Label'] == 'supplier':
+                        ## list of attributes of supplier connected to the retailer
+                        AttributesOfSupplier = list(nodesTable.loc[idConnectedtoRetailer]['Attributes'])
+                        ## type of supplier that is connected to the retailer
+                        typeOfSupplier = AttributesOfSupplier[4]
+                        RetailerTypes.add(typeOfSupplier)
+                if(len(RetailerTypes) != 0):
+                    ## adding column
+                    listOfAttributes = list(nodesTable.loc[node]['Attributes'])
+                    listOfAttributes.insert(4,RetailerTypes)
+                    nodesTable.loc[node]['Attributes'] = listOfAttributes
+        #nodesTable[(nodesTable.Label == 'retailer')].to_csv("nodesTable.csv")
+        
+
+
+
+  
+                
+                
+                        
+
         
 
 
