@@ -1,7 +1,8 @@
+<<<<<<< HEAD
 from mimetypes import init
+=======
+>>>>>>> d20db702b6a03a7143f8e7edc9246ab055550ba7
 import pandas as pd
-import neo4j
-from Neo4jGraph import Neo4jGraph
 
 class GraphAnalysis:
 

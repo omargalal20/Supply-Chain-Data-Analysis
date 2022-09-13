@@ -56,6 +56,7 @@ class nodes_edges_dfs:
                 nodesTB = pd.concat([nodesTB, tmp], ignore_index=True)
         return nodesTB
 
+    # 
     def __convert_prop(self, edge_key, pk_value):
         for referenced_table_name in self.ref_in[edge_key]:
             referenced_table = self.All_dfs[referenced_table_name]
@@ -100,18 +101,12 @@ class nodes_edges_dfs:
 
         return self.nodes_df_edges_as_nodes, self.edges_df_edges_as_nodes
 
+    # Method to Calculate Weight from product price, annual sales, market share, rental price of warehourse, and profit margin
     def __cal_weight(self):
         if self.edges_df_edges_as_nodes.empty and self.nodes_df_edges_as_nodes.empty:
             print('__cal_weight: DataFrame is still empty')
             return 
         print('/////////////////////////////////////////////////////////////////////////////////////////////////////////')
-        # print('edges Atrribues')
-        # print( self.edges_df_edges_as_nodes.Edge_Name)
-        # print('--------------------------------------------------------------------------------------------------------------')
-        # print('nodes Atrribues')
-        # print( self.nodes_df_edges_as_nodes.Attributes)
-
-        # w= randint(1,6) # Weight range (1,5)
 
         avg_AnuualSales= int(pd.read_csv("DataSet/Supplier_data.csv")["Annual_sales"].mean())
         avg_MarketShare= int(pd.read_csv("DataSet/Supplier_data.csv")["market_share (%)"].mean())   
@@ -135,28 +130,7 @@ class nodes_edges_dfs:
 
             # attribute_from= pd.Series( mynodes.loc[from_id]['Attributes'])
             attribute_to= pd.Series(mynodes.loc[to_id]['Attributes'])
-                
-            # if not attribute_from.empty:
-            #     intersectfr_sup=set(attribute_from.index).intersection(costs_sup)
-            #     intersectfr_pro= set(attribute_from.index).intersection(costs_product)
-            #     # set1.union(set2, set3, set4......)
-            #     total_fr= intersectfr_sup.union(intersectfr_pro)
-            #     if total_fr==0:
-            #         print("No attributes found match costs in From nodes")
-            #     else:
-            #         finalInt=attribute_from[total_fr]
-            #         print("Int of From:    ",finalInt)
-            #         for i in range(0,len(finalInt)):
-            #             ind=finalInt.index[i]
-            #             val=finalInt.values[i]
-            #             if ind =='Annual_sales':
-            #                 myedges.loc[index, 'Weight'] = myedges.loc[index, 'Weight']+10 if val>=900 else myedges.loc[index, 'Weight']+5
-            #             if ind =='market_share (%)':
-            #                 myedges.loc[index, 'Weight'] = myedges.loc[index, 'Weight']+20 if val>=50 else myedges.loc[index, 'Weight']+5
-            #             if ind =='price':
-            #               myedges.loc[index, 'Weight'] = myedges.loc[index, 'Weight']+200 if val>=avg_price else myedges.loc[index, 'Weight']+30
-            #             if ind =='profit_margin (%)':
-            #               myedges.loc[index, 'Weight'] = myedges.loc[index, 'Weight']+150 if val>=avg_ProfitMargin else myedges.loc[index, 'Weight']+15
+
             if not attribute_to.empty:
                 intersectto_sup= set(attribute_to.index).intersection(costs_sup)
                 intersectto_pro= set(attribute_to.index).intersection(costs_product)
@@ -190,17 +164,6 @@ class nodes_edges_dfs:
                         if ind =='Rental price':
                             myedges.loc[index, 'Rental price'] = val
                             myedges.loc[index, 'Weight'] = myedges.loc[index, 'Weight']-40 if val>=avg_RentalPrice else myedges.loc[index, 'Weight']-80
-                        # ....And so on if condition for each cost ex: Transport Type ,Distance,...Etc
-            # Change weight in edges Table
-            # print("weight",w)
-            # print(myedges.loc[(myedges['From']==from_id) & (myedges['To']==to_id)])
-            # print("Before")
-            # print(myedges.loc[(myedges['From']==from_id) & (myedges['To']==to_id),['Weight']])
-            # myedges.loc[(myedges['From']==from_id) & (myedges['To']==to_id),['Weight']] = w
-            # print("\n")
-            # print('After')
-            # print(myedges.loc[(myedges['From']==from_id) & (myedges['To']==to_id),['Weight']])
-            # break #Remove break when full code is finished
             
         print('/////////////////////////////////////////////////////////////////////////////////////////////////////////')
         myedges= myedges.fillna(0)
@@ -210,6 +173,7 @@ class nodes_edges_dfs:
         # myedges.to_csv('myedges.csv')
         return
 
+    # Method to convert a number in certain range to its corresponding new value in a new range
     def __calculateNewValue(self, x, columnName):
         minMax = self.edges_df_edges_as_nodes[columnName].agg(['min', 'max']).to_numpy()
                     
@@ -221,10 +185,13 @@ class nodes_edges_dfs:
                 
         return 0
 
+    # Method to apply the above function on all values in the columns that are entered to the method in the form of list
     def __adjustWeightRangeForFinalWeight(self, columnNames):
+
         for columnName in columnNames:
             self.edges_df_edges_as_nodes[columnName] = self.edges_df_edges_as_nodes[columnName].apply(lambda x: self.__calculateNewValue(x, columnName))
 
+    # Method to calculate Final Weight from Transportation cost
     def __calculateFinalWeightFromTransportationCost(self):
         def calculateAverage(row):
             # return row['Weight'] + (row['Distance'] + row['Duration'] / 2)
@@ -233,6 +200,7 @@ class nodes_edges_dfs:
         self.edges_df_edges_as_nodes['Transportation_Cost'] = self.edges_df_edges_as_nodes.apply(lambda row: calculateAverage(row), axis = 1)
         self.edges_df_edges_as_nodes['Weight'] = self.edges_df_edges_as_nodes['Weight'] - self.edges_df_edges_as_nodes.apply(lambda row: calculateAverage(row), axis = 1)
 
+    # Method Used only when web scraping is used in order to gather the distance and duration data
     def __calculateTransportationWeight(self, fromId, toId, edgeId, driver):
         typeOfTransportation = self.nodes_df_edges_as_nodes.iloc[edgeId]['Attributes']
         transportationWeight = {}
@@ -250,6 +218,7 @@ class nodes_edges_dfs:
             tmp = pd.DataFrame(newRow)
             self.distanceAndDuration_df = pd.concat([self.distanceAndDuration_df, tmp], ignore_index=True)
 
+    # Method to create the nodes dataframe from the dataframes that are determined as nodes
     def __create_nodes_df(self):
         for node in self.nodes:
             column_names = list(self.All_dfs[node].columns)  # get column names
@@ -269,6 +238,7 @@ class nodes_edges_dfs:
                 tmp = pd.DataFrame(newRow)
                 self.nodes_df_edges_as_nodes = pd.concat([self.nodes_df_edges_as_nodes, tmp], ignore_index=True)
 
+    # Method to create the edges dataframe from the dataframes that are determined as edges, and includes the calculation of the transportation cost along with the gathering of the distance and duration data
     def __add_edges_to_edges_df(self):
         if(os.path.exists('distanceAndDurationData.csv')):
             firstTimeToWriteToFile = False
@@ -378,6 +348,7 @@ class nodes_edges_dfs:
         self.__calculateFinalWeightFromTransportationCost()
         print('Finish Edges Method')
 
+    # Method to add the dataframes that are determined as properties to the nodes dataframe
     def __add_properties_to_dfs(self):
         for property_name in self.properties:
             # print(property_name)
@@ -439,6 +410,7 @@ class nodes_edges_dfs:
                     self.edges_df_edges_as_nodes = pd.concat([self.edges_df_edges_as_nodes, tmp], ignore_index=True)
         print('Finish Properties Method')
 
+    # Method to relate the products to the suppliers that produce a certain product
     def __add_manufacturing_relation_to_dfs(self):
         manufacturing_df = self.All_dfs["manufacturing"]
         manufacturing_columns = list(self.All_dfs["manufacturing"].columns)
@@ -462,6 +434,7 @@ class nodes_edges_dfs:
             self.edges_df_edges_as_nodes = pd.concat([self.edges_df_edges_as_nodes, tmp], ignore_index=True)
         print('Finish Manufacturing')
 
+    # Method to relate the products to the orders to know which product this order contains
     def __add_internal_orders_to_dfs(self):
         ss_internal_orders_df = self.All_dfs["ssintorders"]
 

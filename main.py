@@ -9,7 +9,7 @@ import pandas as pd
 dataSet = ReadingDataSet()
 # Dictionary containing all dataframes
 All_dfs = dataSet.All_dfs
-print(f"Df Keys: {All_dfs}")
+print(f"Df Keys: {All_dfs.keys()}")
 
 key = keys(All_dfs)
 # Dictionary indicating the column of each table that represents the primary key
