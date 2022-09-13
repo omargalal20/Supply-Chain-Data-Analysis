@@ -8,8 +8,8 @@ from Neo4jGraph import Neo4jGraph
 class GraphAnalysis:
 
 
-    def __init__(self,nodes_df,edges_df,nodesTable,edgesTable):
-        self.myGraph = Neo4jGraph(nodes_df,edges_df)
+    def __init__(self,myGraph,nodesTable,edgesTable):
+        self.myGraph = myGraph
         self.pathsWithCorrectTargetNodes = set()
         self.addColumnToRetailer(nodesTable,edgesTable)
     
@@ -153,11 +153,8 @@ class GraphAnalysis:
         ## node --- each supplier
         for node in range(len(filteredNodesTable)):
             souceNode = TargetLabel+ " " + str(filteredNodesTable.loc[node]['ID'])
-            print("source nodeee")
-            print(souceNode)
             ## target == sorcenodename 
             out = self.findAllPaths(sourceNodeName=souceNode,sourceLabel=TargetLabel,cases=2,graphName=graphName,targetNodeName=SourceNodeName,targetLabel=SourceLabel)
-            print(out)
             if(out.empty):
                 continue
             temp = self.validatePath(out,souceNode,nodeNames,edgesNames)
@@ -170,7 +167,6 @@ class GraphAnalysis:
         temp = filteredTable
         print(temp)
         for node in range(len(filteredTable)):
-           
             if type(list(temp["Attributes"].loc[node])[4]) == set:
                 if desiredType not in (list(temp["Attributes"].loc[node])[4]):
                     temp = temp.drop(node)
@@ -239,7 +235,6 @@ class GraphAnalysis:
         finalPaths = self.pathsValidation(self.pathsWithCorrectTargetNodes,nodeNames,edgesNames)
         #finalPaths.to_csv("try.csv")
         return finalPaths
-
     
     ## Valid target nodes
     def targetNodeValidation(self,paths,sourceNodeName,nodeNames):
@@ -256,7 +251,6 @@ class GraphAnalysis:
         return self.pathsWithCorrectTargetNodes
     
     ## Validate the paths of the valid target nodes
-
     def pathsValidation(self,pathsWithCorrectTargetNodes,nodeNames,edgesNames):
         nodeNamesColumn =  pathsWithCorrectTargetNodes["nodeNames"]
         dataFramePaths = pathsWithCorrectTargetNodes
@@ -264,6 +258,7 @@ class GraphAnalysis:
         currentNode = ""
         validUntilNow = False
         for path in range(len(pathsWithCorrectTargetNodes)):
+            ### noteee
             if(len(nodeNamesColumn[path]) == 1):
                 dataFramePaths = dataFramePaths.drop(path)
                 continue
@@ -280,6 +275,7 @@ class GraphAnalysis:
             else:
                 if(len(nodeNamesColumn[path]) == 3):
                     dataFramePaths.at[path,'isDirect'] = True
+                ### special pathhh
                 else:
                     dataFramePaths.at[path,'isDirect'] = False
         finalApprovedPaths = dataFramePaths.reset_index(drop=True) 
@@ -337,7 +333,6 @@ class GraphAnalysis:
                     listOfAttributes = list(nodesTable.loc[node]['Attributes'])
                     listOfAttributes.insert(4,RetailerTypes)
                     nodesTable.loc[node]['Attributes'] = listOfAttributes
-        #nodesTable[(nodesTable.Label == 'retailer')].to_csv("nodesTable.csv")
         
 
 

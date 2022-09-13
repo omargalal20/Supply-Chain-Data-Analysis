@@ -66,12 +66,13 @@ print(edges_df)
 print('-------------------------')
 
 myGraph = Neo4jGraph(nodes_df,edges_df)
-graphAnalysis = GraphAnalysis(nodes_df,edges_df,nodesTable,edgesTable)
+graphAnalysis = GraphAnalysis(myGraph,nodesTable,edgesTable)
 
+myGraph.draw_graph("Supply")
 
 #graphAnalysis.findAllPathsViseVerse('Retailer','Retailer 83982','Supplier','Chemicals',nodesTable,'supplyChain',nodes,edges)
 
-graphAnalysis.findAllPathsViseVerse(SourceLabel='Customer',SourceNodeName='Customer 48071',TargetLabel='Supplier',nodesTable=nodesTable,graphName='supplyChain',nodeNames=nodes,edgesNames=edges,TargetType='Chemicals')
+##graphAnalysis.findAllPathsViseVerse(SourceLabel='Customer',SourceNodeName='Customer 48071',TargetLabel='Supplier',nodesTable=nodesTable,graphName='SupplyChain',nodeNames=nodes,edgesNames=edges,TargetType='Chemicals')
 
 x = ['Supplier 20226', 'Ssintship 10465', 'Supplier 30864', 'Ssintship 10482', 'Supplier 18952', 'Ssintship 10173', 'Supplier 13951', 'Ssintship 10350', 'Supplier 21232', 'Internaltransactions 9683', 'Supplier 78265', 'Ssintship 10290']
 y = ['Supplier 20226', 'Ssintship 10465', 'Supplier 30864', 'Ssintship 10482', 'Supplier 18952', 'Ssintship 10173', 'Supplier 13951', 'Ssintship 10350', 'Supplier 21232', 'srintorders 9683', 'Supplier 78265', 'Ssintship 10290']
@@ -122,9 +123,10 @@ final = pd.concat([final,temp], ignore_index=True)
 #x = graphAnalysis.targetNodeValidation(paths=xp,sourceNodeName="Supplier 20226",nodeNames=nodes)
 #graphAnalysis.validatePath(output,"Supplier 11790",nodes,edges)
 #print("---------------Case 1-------------------")
-output = graphAnalysis.findAllPaths(sourceNodeName="Supplier 34967",sourceLabel="Supplier",cases=1,graphName="supplyChain",k=4,targetNodeName="Customer 31548",targetLabel="Customer")
+output = graphAnalysis.findAllPaths(sourceNodeName="Supplier 34967",sourceLabel="Supplier",cases=1,graphName="Supply",k=4,targetNodeName="Customer 31548",targetLabel="Customer")
 out = graphAnalysis.validatePath(paths=output,sourceNodeName="Supplier 34967",nodeNames=nodes,edgesNames=edges)
-graphAnalysis.lastCheckOnPath(dataFrameOfPaths=out,nodeTables=nodesTable,theDesiredType="Financial Services")
+out.to_csv("trail1.csv")
+##graphAnalysis.lastCheckOnPath(dataFrameOfPaths=out,nodeTables=nodesTable,theDesiredType="Financial Services")
 #print(graphAnalysis.targetNodeValidation(paths=output,sourceNodeName="Retailer 83982",nodeNames=nodes,targetNodeName="Customer 31548"))
 #print("---------------Case2-------------------")
 #print(graphAnalysis.findAllPaths(sourceNodeName="Supplier 34967",sourceLabel="Supplier",cases=2,graphName="supplyChain",targetNodeName="Supplier 14125",targetLabel="Supplier"))

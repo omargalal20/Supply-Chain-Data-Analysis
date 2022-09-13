@@ -45,7 +45,7 @@ class Neo4jGraph:
 
       ## excute command function
     def execute_Command(self,command):
-        data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "password"))
+        data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "123"))
         session = data_base_connection.session()
         output = session.run(command)
         print("------------executed-----------------")
@@ -99,8 +99,8 @@ class Neo4jGraph:
 
     def execute_transactions(self):
         from neo4j import GraphDatabase
-        # data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "123"))
-        data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "password"))
+        data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "123"))
+        #data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "password"))
         session = data_base_connection.session()
         for command in self.__transaction_execution_commands:
             session.run(command)
@@ -148,7 +148,18 @@ class Neo4jGraph:
         to_name = edge['To_Table']
         rel_name = edge['Edge_Name']
         weight = edge['Weight']
+        Transportation_Cost = edge['Transportation_Cost']
+        Transportation_Distance = edge['Transportation_Distance']
+        Transportation_Duration = edge['Transportation_Duration']
+        Transportation_Type = edge['Transportation_Type']
+        Rental_price = edge['Rental price']
+        price = edge['price']
+        profit_margin = edge['profit_margin (%)']
+        market_share = edge['market_share (%)']
+        Annual_sales = edge['Annual_sales']
         match_statement = f"Match (a:{from_name}),(b:{to_name}) WHERE a.index ={from_id} AND b.index = {to_id} "
-        create_statement = f"CREATE (a) - [r:{rel_name} {'{ weight: ' + str(weight) + ' }'}]->(b)"
+        create_statement = "CREATE (a) - [r:%s { weight: %f , Transportation_Cost: %f , Transportation_Distance: %f , Transportation_Duration: %f , Transportation_Type: '%s' , Rental_price: %i, product_price: %f , profit_margin: %f , market_share: %i, Annual_sales:%f }]->(b)" % (rel_name,weight,Transportation_Cost,Transportation_Distance,Transportation_Duration,Transportation_Type,Rental_price,price,profit_margin,market_share,Annual_sales)
+        print("-------statment---------")
+        print(create_statement)
         create_relation_statement = match_statement + create_statement
         return create_relation_statement
