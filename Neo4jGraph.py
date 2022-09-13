@@ -1,4 +1,3 @@
-# from asyncio.windows_events import NULL
 from neo4j import GraphDatabase
 class Neo4jGraph:
 
@@ -93,9 +92,6 @@ class Neo4jGraph:
             if(n == name):
                 return True
         return False
-            
-
-
 
     def execute_transactions(self):
         from neo4j import GraphDatabase

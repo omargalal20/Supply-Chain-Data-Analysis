@@ -1,9 +1,4 @@
-from mimetypes import init
-from re import X
-from tkinter import Y
 import pandas as pd
-import neo4j
-from Neo4jGraph import Neo4jGraph
 
 class GraphAnalysis:
 
