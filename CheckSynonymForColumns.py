@@ -1,3 +1,10 @@
+from ReadingDataSet import ReadingDataSet
+
+dataSet = ReadingDataSet()
+# Dictionary containing all dataframes
+All_dfs = dataSet.All_dfs
+print(f"Df Keys: {All_dfs.keys()}")
+
 # import nltk
 # nltk.download()
 
@@ -18,6 +25,8 @@
 # print ("SENTENCE:", sent)
 # print ("SYNONYMS FOR '" + word.upper() + "' FOUND IN THE SENTENCE: " + ", ".join(word_synonyms))
 
+# ///////////////////////////////
+
 # import spacy
 
 # book1_topics = ['god']
@@ -28,6 +37,8 @@
 # doc2 = nlp(' '.join(book2_topics))
 
 # print(doc1.similarity(doc2))
+
+# ///////////////////////
 
 # import spacy
   

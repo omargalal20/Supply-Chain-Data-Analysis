@@ -13,11 +13,13 @@ class Neo4jGraph:
         self.__transaction_execution_commands = []
 
     def draw_graph(self):
+        print('Drawing Graph')
         self.__transaction_execution_commands = []
         self.__add_delete_statement()
         self.__add_nodes_statements()
         self.__add_edges_statemnts()
         self.execute_transactions()
+        print('Finished Drawing')
 
     def execute_transactions(self):
         data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "password"))
@@ -68,7 +70,19 @@ class Neo4jGraph:
         to_name = edge['To_Table']
         rel_name = edge['Edge_Name']
         weight = edge['Weight']
+        Transportation_Cost = edge['Transportation_Cost']
+        Transportation_Distance = edge['Transportation_Distance']
+        Transportation_Duration = edge['Transportation_Duration']
+        quotes = '"'
+        Transportation_Type = quotes + edge['Transportation_Type'] + quotes
+        Rental_price = edge['Rental price']
+        price = edge['price']
+        profit_margin = edge['profit_margin (%)']
+        market_share = edge['market_share (%)']
+        Annual_sales = edge['Annual_sales']
+
         match_statement = f"Match (a:{from_name}),(b:{to_name}) WHERE a.index ={from_id} AND b.index = {to_id} "
-        create_statement = f"CREATE (a) - [r:{rel_name} {'{ weight: ' + str(weight) + ' }'}]->(b)"
+        create_statement = f"CREATE (a) - [r:{rel_name} {'{ weight: ' + str(weight) + ', Transportation_Cost: ' + str(Transportation_Cost) + ', Transportation_Distance: ' + str(Transportation_Distance) + ', Transportation_Duration: ' + str(Transportation_Duration) + ', Transportation_Type: ' +  Transportation_Type + ', Rental_price: ' + str(Rental_price) + ', product_price: ' + str(price) + ', profit_margin: ' + str(profit_margin) + ', market_share: ' + str(market_share) + ', Annual_sales: ' + str(Annual_sales) + ' }'}]->(b)"
+        
         create_relation_statement = match_statement + create_statement
         return create_relation_statement
