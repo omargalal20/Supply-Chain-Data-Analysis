@@ -1,0 +1,40 @@
+ def __add_manufacturing_relation_to_dfs(self):
+        manufacturing_df = self.All_dfs["manufacturing"]
+
+        for i, manufacturing_row in manufacturing_df.iterrows():
+            factory_id = manufacturing_row["Factory_id"]
+            supplier_node_index = self.nodes_df_edges_as_nodes.query(f"(Label == 'supplier' ) and (ID == {factory_id}) ").index[0]
+            product_id = manufacturing_row["Product_id"]
+            product_node_index = self.nodes_df_edges_as_nodes.query(f"(Label == 'products' ) and (ID == {product_id}) ").index[0]
+            supplier_country_name = self.nodes_df_edges_as_nodes.iloc[supplier_node_index]['Attributes']['country']
+            supplier_city_name = self.nodes_df_edges_as_nodes.iloc[supplier_node_index]['Attributes']['city_name'] 
+            
+            self.warehousesOfProducts(product_node_index)
+            #supplier -> products
+        #     new_supplier_edge_row = [
+        #         {'From': supplier_node_index, 'To': product_node_index,
+        #             'From_Table': "supplier".capitalize(),
+        #             'To_Table': "products".capitalize()
+        #             , 'Weight': 42, 'Distance': 0, 'Edge_Name': "Related_To"}]            
+        #     tmp = pd.DataFrame(new_supplier_edge_row)
+        #     self.edges_df_edges_as_nodes = pd.concat([self.edges_df_edges_as_nodes, tmp], ignore_index=True)
+        
+        # print(self.edges_df_edges_as_nodes[self.edges_df_edges_as_nodes['To_Table']=='Products'])
+
+            #Productinex "2610" is Distance "NaN"
+
+
+
+    def warehousesOfProducts(self,prodId):
+        for r, row in self.edges_df_edges_as_nodes.iterrows():
+            product_node_index = row['To']
+            warehouse_node_index = row['From']
+            if product_node_index == prodId:
+                new_warehouse_edge_row = [
+                    {'From': self.warehousesOfProducts(product_node_index) , 'To': product_node_index,
+                    'From_Table': "warehouses".capitalize(),
+                    'To_Table': "products".capitalize()
+                        , 'Weight': 42, 'Distance': 0, 'Edge_Name': "Related_To"}]            
+                tmp = pd.DataFrame(new_warehouse_edge_row)
+                self.edges_df_edges_as_nodes = pd.concat([self.edges_df_edges_as_nodes, tmp], ignore_index=True)
+        print(self.edges_df_edges_as_nodes[self.edges_df_edges_as_nodes['To_Table']=='Products'])
