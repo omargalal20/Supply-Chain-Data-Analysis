@@ -41,7 +41,7 @@ print('-------------------------')
 
 # nodesTable = initialize_nodes_edges_df.nodesTable
 # print("Nodes Table: ")
-# # print(nodesTable)
+# print(nodesTable)
 # print('-------------------------')
 
 
@@ -63,5 +63,5 @@ print("Edges DF: ")
 edges_df.to_csv('edges_df.csv')
 print('-------------------------')
 
-neo4j = Neo4jGraph(nodes_df=nodes_df, edges_df=edges_df)
-neo4j.draw_graph()
+# neo4j = Neo4jGraph(nodes_df=nodes_df, edges_df=edges_df)
+# neo4j.draw_graph()

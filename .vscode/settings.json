@@ -1,0 +1,6 @@
+{
+    "docker.commands.runInteractive": "${config:docker.dockerPath} run --rm -it ${exposedPorts} ${tag}",
+    "code-runner.runInTerminal": false,
+    "code-runner.runInOutput": true,
+
+}
