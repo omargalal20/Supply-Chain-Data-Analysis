@@ -18,28 +18,35 @@ class Neo4jGraph:
 
     ## draw and save graph if graph name doesn't exist in the database else print error
     def draw_graph(self,name):
+        # check if the graph name doesn't exists in the database
         if(self.ExistingGraph(name)==False):
+            # draw the graph
             self.__transaction_execution_commands = []
             self.__add_delete_statement()
             self.__add_nodes_statements()
             self.__add_edges_statemnts()
             self.execute_transactions()
+            # save the graph
             self.saveGraph(name,nodeList=['Customer','Products','Retailer','Supplier','Rcextship','Scextship','Srintship','Ssintship','Facilities','Warehouses','Rcextorders',
             'Scextorders','Srintorders','Ssintorders','Externalservices','Internalservices','Externaltransactions','Internaltransactions'],
             edgeList=['Order','rcextship','scextship','srintship','ssintship','Related_To',
             'Manufactures','Orders_Prodcut','externaltransactions','internaltransactions'])
+        # if the graph exists, nothing happens
         else:
             print("Graph Already Exists")
                    
 
     ## get all graphs names in the DB and save it in array (global variable)  return array        
     def getGraphs(self):
+        # send the graph list command
         stat = "CALL gds.graph.list()"
         graphs = self.execute_Command(stat)
         temp = []
+        # loop on the graphs and convert it to dictionary and add it to the array
         for graph in graphs:
             x = dict(graph)
             temp.append(x['graphName'])
+        # return the array of all graphs exists in the database
         return temp
 
       ## excute command function
@@ -79,8 +86,6 @@ class Neo4jGraph:
         YIELD
         graphName AS graph, nodeProjection, nodeCount AS nodes, relationshipCount AS rels
         ''' %(name,nodeList,edgeList)
-        print("-------statment---------")
-        print(saveStatment)
         print("----------------GRAPH SAVINGGGG----------------")
         self.execute_Command(saveStatment)
         self.allExistingGraphs.append(name)

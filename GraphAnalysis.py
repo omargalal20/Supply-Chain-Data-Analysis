@@ -7,8 +7,6 @@ class GraphAnalysis:
         self.myGraph = myGraph
         self.pathsWithCorrectTargetNodes = set()
         self.addColumnToRetailer(nodesTable,edgesTable)
-    
-  
 
     ## find all paths depending on the case 
     def findAllPaths(self,sourceNodeName,sourceLabel,cases,graphName,relationShip="",k=1,targetNodeName='',targetLabel=''):
@@ -153,28 +151,36 @@ class GraphAnalysis:
         ### Target --- Retailer
         outputtt = pd.DataFrame()
 
+        # filter the nodesTable based on the target we want to reach
         out = nodesTable[(nodesTable.Label == (TargetLabel.lower()))].reset_index(drop=True) 
+        # filter the out based on the type 
         filteredNodesTable = self.filterType(out,TargetType)
-        ## node --- each supplier
+        # loop over the dataframe that contains the filtered data "destired target + the type"
         for node in range(len(filteredNodesTable)):
             souceNode = TargetLabel+ " " + str(filteredNodesTable.loc[node]['ID'])
-            ## target == sorcenodename 
             out = self.findAllPaths(sourceNodeName=souceNode,sourceLabel=TargetLabel,cases=2,graphName=graphName,targetNodeName=SourceNodeName,targetLabel=SourceLabel)
+            # if there is no paths between the source and the target
             if(out.empty):
                 continue
+            # validate the paths returned
             temp = self.validatePath(out,souceNode,nodeNames,edgesNames)
             outputtt = pd.concat([outputtt,temp], ignore_index=True)
         return outputtt
     
+    # filter the filtered nodes table which has only the target nodes based on the type
     def filterType(self,filteredTable,desiredType):
         temp = filteredTable
-        print(temp)
         for node in range(len(filteredTable)):
+            # if the node is retailer, its attributes will be a set
             if type(list(temp["Attributes"].loc[node])[4]) == set:
+                # search if the desired type isn't in the set of attributes
                 if desiredType not in (list(temp["Attributes"].loc[node])[4]):
+                    # drop it
                     temp = temp.drop(node)
+            # else if the node is a supplier, its attribute will be a string
             elif(list(temp["Attributes"].loc[node])[4] != desiredType):
                 temp = temp.drop(node)
+        # reset the index of the filtered dataframe
         return temp.reset_index(drop=True) 
 
     # takes the command and send it to neo4ji, converts neo4ji output to dataframe and returns it
