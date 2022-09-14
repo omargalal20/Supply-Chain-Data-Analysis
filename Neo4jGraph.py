@@ -3,9 +3,9 @@ class Neo4jGraph:
 
     def __init__(self, nodes_df, edges_df):
 
-        self.__DBusername = "neo4j"
-        self.__DBpassword = "password"
-        self.__DBuri = "bolt://localhost:7687"
+        self.DBusername = "neo4j"
+        self.DBpassword = "password"
+        self.DBuri = "bolt://localhost:7687"
 
         self.nodes_df = nodes_df
         self.edges_df = edges_df
@@ -51,7 +51,7 @@ class Neo4jGraph:
 
       ## excute command function
     def execute_Command(self,command):
-        data_base_connection = GraphDatabase.driver(uri=self.__DBuri, auth=(self.__DBusername, self.__DBpassword))
+        data_base_connection = GraphDatabase.driver(uri=self.DBuri, auth=(self.DBusername, self.DBpassword))
         session = data_base_connection.session()
         output = session.run(command)
         print("------------executed-----------------")
@@ -100,9 +100,10 @@ class Neo4jGraph:
 
     def execute_transactions(self):
         from neo4j import GraphDatabase
-        data_base_connection = GraphDatabase.driver(uri=self.__DBuri, auth=(self.__DBusername, self.__DBpassword))
+        data_base_connection = GraphDatabase.driver(uri=self.DBuri, auth=(self.DBusername, self.DBpassword))
         #data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "password"))
         session = data_base_connection.session()
+        
         for command in self.__transaction_execution_commands:
             session.run(command)
 

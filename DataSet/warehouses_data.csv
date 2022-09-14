@@ -23,7 +23,7 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 1187,Curaçao,,127246,"['S', 'N', 'O', 'A', 'J', 'V']",0.55,2.3
 1205,Saudi Arabia,Ar Riyāḑ,531056,"['N', 'L', 'X', 'M', 'Z', 'J']",0.85,2.82
 1226,Comoros,Andjouân,368856,"['F', 'X', 'D']",0.71,2.6
-1234,"Iran, Islamic Republic of",Zanjān,751640,"['H', 'Q', 'K', 'J', 'B']",0.71,2.43
+1234,Islamic Republic of Iran ,Zanjān,751640,"['H', 'Q', 'K', 'J', 'B']",0.71,2.43
 1245,Saint Kitts and Nevis,Saint Peter Basseterre,951570,"['V', 'C', 'I', 'O', 'P', 'K']",0.83,2.7
 1249,Argentina,Formosa,800638,"['L', 'I', 'O', 'X', 'T', 'P', 'Y']",0.78,2.73
 1258,Mauritania,Assaba,283426,"['O', 'X', 'N', 'F']",0.99,2.26
@@ -50,7 +50,7 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 1482,Rwanda,Southern,763060,"['L', 'U', 'S', 'T', 'M']",0.79,2.96
 1505,Botswana,Gaborone,127229,['U'],0.8,1.94
 1510,Saint Martin (French part),,846033,"['Q', 'S', 'R', 'I', 'B', 'G']",0.79,2.88
-1526,"Tanzania, United Republic of",Morogoro,174677,"['R', 'X', 'T', 'K', 'E', 'J', 'C']",0.6,2.47
+1526,United Republic of Tanzania,Morogoro,174677,"['R', 'X', 'T', 'K', 'E', 'J', 'C']",0.6,2.47
 1538,Isle of Man,,988986,"['O', 'G', 'K']",0.63,2.37
 1544,Trinidad and Tobago,Siparia,891190,"['D', 'Y']",0.88,2.49
 1557,French Southern Territories,,865451,"['N', 'Q', 'S', 'R']",0.61,2.55
@@ -65,11 +65,11 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 1632,Russian Federation,Krasnojarskij kraj,952284,"['B', 'G', 'X']",0.81,2.7
 1653,Heard Island and McDonald Islands,,828796,['F'],0.75,2.86
 1666,India,Tripura,708237,"['O', 'S', 'A', 'R', 'F']",0.84,2.45
-1668,United States Minor Outlying Islands,Jarvis Island,957385,['R'],0.74,2.89
+1668,United States,Jarvis Island,957385,['R'],0.74,2.89
 1704,Dominica,Saint Andrew,844389,"['N', 'B', 'C', 'E', 'K']",0.54,2.77
 1707,Kiribati,Phoenix Islands,115466,"['Z', 'N', 'S', 'U', 'T']",0.9,2.52
 1716,Holy See (Vatican City State),,562643,['L'],0.84,2.1
-1721,United States Minor Outlying Islands,Navassa Island,721357,['E'],0.71,1.77
+1721,United States,Navassa Island,721357,['E'],0.71,1.77
 1728,Uganda,Zombo,575957,"['O', 'A']",0.91,2.15
 1735,Cocos (Keeling) Islands,,387594,['J'],0.82,2.56
 1754,Israel,Al Quds,473061,"['W', 'P']",0.5,2.62
@@ -107,7 +107,7 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 2091,Brazil,Paraíba,916584,"['T', 'P', 'J', 'X', 'G']",0.78,2.44
 2108,United Arab Emirates,Umm al Qaywayn,298045,"['T', 'G', 'X', 'N', 'H', 'A', 'S']",0.66,1.75
 2116,Mayotte,,393016,"['Q', 'X', 'Z', 'N', 'E', 'B', 'M']",0.93,1.91
-2125,"Korea, Democratic People's Republic of",Hamgyǒng-namdo,669077,"['Q', 'X', 'E', 'B', 'P', 'K']",0.93,2.57
+2125,Democratic People's Republic of Korea,Hamgyǒng-namdo,669077,"['Q', 'X', 'E', 'B', 'P', 'K']",0.93,2.57
 2140,Holy See (Vatican City State),,923532,"['F', 'Z', 'E', 'K']",0.79,2.7
 2141,Seychelles,Grand Anse Praslin,873365,"['Y', 'I', 'F', 'M']",0.64,2.57
 2151,Guam,,643851,"['N', 'P', 'W', 'L', 'C', 'F', 'X']",0.94,2.46
@@ -129,10 +129,10 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 2294,Rwanda,Northern,976557,"['K', 'E']",0.53,2.02
 2299,Seychelles,Ile Perseverance II,818828,"['C', 'F', 'S']",0.94,2.94
 2301,Montserrat,,320179,"['U', 'B', 'C', 'F', 'K']",0.5,2.82
-2304,"Congo, The Democratic Republic of the",Lomami,277143,"['E', 'H', 'L', 'M']",0.85,2.25
+2304, The Democratic Republic of the Congo,Lomami,277143,"['E', 'H', 'L', 'M']",0.85,2.25
 2321,Mayotte,,302337,"['T', 'M', 'F']",0.52,2.78
 2324,Paraguay,Caaguazú,176403,"['R', 'U', 'V', 'X', 'I', 'W', 'O']",0.91,2.38
-2329,"Venezuela, Bolivarian Republic of",Bolívar,312251,"['F', 'R', 'U', 'Y', 'J', 'C', 'X']",0.93,2.29
+2329,Bolivarian Republic of Venezuela,Bolívar,312251,"['F', 'R', 'U', 'Y', 'J', 'C', 'X']",0.93,2.29
 2345,France,Mayotte,201442,['B'],0.95,2.83
 2356,South Sudan,Western Equatoria,604853,"['V', 'O', 'C', 'D', 'S']",0.76,2.61
 2367,Suriname,Commewijne,871572,"['E', 'V', 'W', 'X']",0.57,2.31
@@ -143,7 +143,7 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 2430,Ghana,Upper East,619604,"['V', 'E', 'K', 'C', 'F']",0.66,1.94
 2441,Fiji,Macuata,346247,"['Y', 'X', 'A', 'S', 'T', 'J', 'C']",0.83,1.77
 2448,Cocos (Keeling) Islands,,830688,"['E', 'L', 'S', 'W', 'D', 'U', 'Y']",0.73,2.04
-2454,"Micronesia, Federated States of",Pohnpei,130823,"['I', 'B', 'O']",0.85,2.7
+2454,Federated States of Micronesia,Pohnpei,130823,"['I', 'B', 'O']",0.85,2.7
 2468,New Caledonia,,471849,"['X', 'U', 'T', 'Z', 'J']",0.6,2.06
 2481,Antarctica,,842926,"['E', 'B', 'F', 'P', 'N', 'W', 'H']",0.84,1.79
 2506,Saint Kitts and Nevis,Saint Thomas Middle Island,617653,"['Z', 'H', 'S']",0.82,2.11
@@ -169,7 +169,7 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 2691,Cyprus,Larnaka,375007,"['S', 'R', 'T', 'A', 'I', 'J', 'L']",0.89,2.45
 2708,Sao Tome and Principe,Cantagalo,198084,['P'],0.58,2.54
 2714,Saint Martin (French part),,162796,"['O', 'I', 'Z']",0.51,2.08
-2722,Comoros,Andjazîdja,523068,['L'],0.85,2.93
+2722,Comoros,Ngazidja,523068,['L'],0.85,2.93
 2727,Faroe Islands,,885712,"['X', 'J', 'I', 'N']",0.75,2.11
 2728,Dominica,Saint Andrew,871372,"['M', 'S', 'T']",0.79,2.06
 2729,Zimbabwe,Matabeleland South,257286,"['X', 'J', 'O']",0.52,2.11
@@ -179,9 +179,9 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 2764,Australia,Australian Capital Territory,147945,['E'],0.88,2.04
 2797,San Marino,Montegiardino,679250,['H'],0.84,2.42
 2798,Niue,,274601,"['E', 'L', 'K', 'Y', 'W', 'I']",0.76,1.89
-2804,Maldives,Fuvammulah,742500,"['O', 'C', 'E', 'M', 'T']",0.53,1.95
+2804,Maldives,,742500,"['O', 'C', 'E', 'M', 'T']",0.53,1.95
 2805,Saint Vincent and the Grenadines,Saint David,861965,"['T', 'H', 'J']",0.94,1.92
-2815,United States Minor Outlying Islands,Johnston Atoll,711521,"['X', 'M', 'I', 'L', 'F', 'H']",0.72,1.92
+2815,United States,Johnston Atoll,711521,"['X', 'M', 'I', 'L', 'F', 'H']",0.72,1.92
 2816,Tonga,Ha'apai,983278,"['H', 'G', 'X', 'Q']",0.94,1.91
 2821,Turks and Caicos Islands,,944666,"['O', 'R', 'C', 'Q', 'U', 'P', 'I']",0.74,1.86
 2822,Angola,Moxico,152203,['E'],0.94,1.99
@@ -200,7 +200,7 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 2910,Gabon,Ogooué-Lolo,169893,['K'],0.82,1.96
 2921,Madagascar,Antananarivo,340329,"['E', 'V', 'T', 'M', 'X', 'Y', 'G']",0.8,2.99
 2930,Uruguay,Río Negro,569054,"['S', 'W', 'Z', 'C']",0.96,1.81
-2935,"Micronesia, Federated States of",Yap,519448,"['X', 'R', 'P', 'W', 'Z']",0.66,2.12
+2935,Federated States of Micronesia,Yap,519448,"['X', 'R', 'P', 'W', 'Z']",0.66,2.12
 2936,Norway,Svalbard (Arctic Region),213297,"['I', 'U']",0.59,1.96
 2937,Netherlands,Aruba,939379,"['K', 'O', 'N']",0.94,2.22
 2951,Georgia,Tbilisi,769082,"['Q', 'A', 'X']",0.52,2.67
@@ -222,7 +222,7 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 3094,Bhutan,Gasa,534255,"['Q', 'W', 'Z', 'D', 'T', 'A', 'R']",0.86,2.52
 3105,Turks and Caicos Islands,,504909,"['C', 'Z', 'T', 'W', 'N', 'B', 'I']",0.63,2.08
 3106,Bermuda,,976610,"['E', 'I', 'Y', 'H']",0.67,2.16
-3112,"Bolivia, Plurinational State of",Santa Cruz,249236,"['B', 'C', 'Q', 'X']",0.95,1.95
+3112,Plurinational State of Bolivia,Santa Cruz,249236,"['B', 'C', 'Q', 'X']",0.95,1.95
 3118,Cambodia,Siem Reab,179501,"['Y', 'L', 'H', 'F', 'P', 'Q']",0.96,2.01
 3138,Uzbekistan,Andijon,616439,"['N', 'I', 'X', 'W', 'P', 'R', 'M']",0.62,2.32
 3140,Lebanon,Baalbek-Hermel,419644,"['F', 'W', 'N', 'B', 'V', 'Y']",0.53,1.94
@@ -261,7 +261,7 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 3459,Mauritius,Rodrigues Island,613316,"['A', 'T', 'Q']",0.53,1.79
 3468,Macao,,974866,"['L', 'Z', 'T']",0.58,2.88
 3493,Sao Tome and Principe,Príncipe,355769,"['G', 'W', 'X', 'Q', 'Y', 'M']",0.56,2.83
-3514,United States Minor Outlying Islands,Jarvis Island,351248,"['V', 'O', 'J', 'E', 'F', 'Z', 'C']",0.84,2.27
+3514,United States,Jarvis Island,351248,"['V', 'O', 'J', 'E', 'F', 'Z', 'C']",0.84,2.27
 3525,Dominican Republic,Barahona,780689,['B'],0.68,2.51
 3532,Panama,Ngöbe-Buglé,149633,"['I', 'Y', 'L', 'H', 'T', 'M', 'E']",0.73,2.51
 3535,Australia,South Australia,781893,"['W', 'Z', 'G', 'S', 'R']",0.83,2.31
@@ -284,16 +284,16 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 3730,India,Sikkim,951849,"['V', 'O', 'E', 'U']",0.79,2.19
 3735,Togo,Plateaux,644948,"['Z', 'B', 'G', 'T', 'F', 'H']",0.64,2.14
 3742,Austria,Tirol,681304,"['M', 'A', 'S', 'W', 'U', 'V']",0.72,2.09
-3751,"Tanzania, United Republic of",Singida,995241,"['Z', 'C']",0.64,2.89
-3756,"Palestine, State of",Gaza,614629,"['R', 'S', 'C', 'P', 'X', 'D']",0.93,2.11
+3751,United Republic of Tanzania,Singida,995241,"['Z', 'C']",0.64,2.89
+3756,State of Palestine,Gaza,614629,"['R', 'S', 'C', 'P', 'X', 'D']",0.93,2.11
 3759,Tajikistan,Kŭhistoni Badakhshon,772327,"['J', 'X']",0.59,2.31
 3760,Yemen,Aḑ Ḑāli‘,922304,"['X', 'Z', 'N', 'K']",0.83,1.97
 3765,Cyprus,Girne,512521,"['K', 'H', 'E', 'B', 'O', 'C', 'D']",0.5,2.99
 3766,Cameroon,South,578809,"['R', 'E', 'U', 'K', 'T']",0.92,1.84
-3773,Belarus,Minskaja oblast',712693,"['E', 'Q']",0.87,2.99
+3773,Belarus,Minskaja oblast,712693,"['E', 'Q']",0.87,2.99
 3825,Antigua and Barbuda,Saint Philip,149484,"['B', 'R', 'D', 'K']",0.93,1.8
 3826,"Saint Helena, Ascension and Tristan da Cunha",Tristan da Cunha,492313,"['X', 'O', 'B', 'J', 'U', 'C', 'P']",0.77,2.7
-3832,"Venezuela, Bolivarian Republic of",Falcón,368607,['V'],0.6,1.82
+3832,Bolivarian Republic of Venezuela,Falcón,368607,['V'],0.6,1.82
 3841,French Polynesia,,912609,['K'],0.98,2.21
 3852,Papua New Guinea,National Capital District (Port Moresby),626772,['T'],0.92,2.76
 3853,Gibraltar,,226865,"['D', 'Y', 'R', 'A', 'J', 'E', 'X']",0.76,2.76
@@ -330,21 +330,21 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 4098,Estonia,Lüganuse,232119,"['N', 'G', 'K']",0.58,1.75
 4099,Cameroon,North,399644,['P'],0.96,2.68
 4123,Japan,Iwate,797262,"['L', 'Y', 'Z']",0.92,2.58
-4127,Greece,Pelopónnisos,527721,"['L', 'X']",0.85,2.52
+4127,Greece,Peloponnese,527721,"['L', 'X']",0.85,2.52
 4132,Samoa,Satupa'itea,895744,"['H', 'O', 'C', 'V', 'G', 'T']",0.96,2.05
 4142,Czechia,Česká Lípa,637442,"['Z', 'I', 'G', 'S', 'E', 'A', 'Y']",0.56,2.1
 4166,Mauritania,Nouakchott Ouest,491941,"['O', 'G', 'V', 'A', 'B']",0.55,2.97
 4167,Serbia,Južnobački okrug,225187,"['J', 'O', 'N', 'S', 'H', 'G']",0.98,2.33
-4175,Russian Federation,Volgogradskaja oblast',311850,"['V', 'J', 'D', 'K']",0.61,2.63
+4175,Russian Federation,Volgogradskaja oblast,311850,"['V', 'J', 'D', 'K']",0.61,2.63
 4182,Antarctica,,491332,"['P', 'S', 'Y', 'D', 'V', 'N']",0.54,2.3
 4186,Ukraine,Ivano-Frankivska oblast,630022,['W'],0.68,2.05
-4197,"Moldova, Republic of",Rezina,220124,['M'],0.73,2.82
+4197,Republic of Moldova,Rezina,220124,['M'],0.73,2.82
 4204,Sudan,North Darfur,163120,"['F', 'E', 'B', 'P', 'X', 'W']",0.92,2.7
 4208,Antigua and Barbuda,Saint Paul,641487,"['L', 'Q', 'A', 'V']",0.85,2.09
 4210,Guadeloupe,,516825,"['O', 'F', 'C', 'W', 'I', 'T']",0.89,2.46
 4211,Svalbard and Jan Mayen,,863719,"['G', 'T', 'V', 'R', 'C', 'H']",0.7,2.12
-4213,Kyrgyzstan,Issyk-Kul'skaja oblast',662434,"['E', 'P', 'V', 'T']",0.52,1.92
-4218,"Moldova, Republic of",Ungheni,818477,['G'],0.58,2.16
+4213,Kyrgyzstan,Issyk-Kul'skaja oblast,662434,"['E', 'P', 'V', 'T']",0.52,1.92
+4218,Republic of Moldova,Ungheni,818477,['G'],0.58,2.16
 4229,New Caledonia,,704884,"['J', 'U', 'F']",0.83,2.8
 4232,Pakistan,Azad Jammu and Kashmir,180371,"['G', 'K']",0.71,2.73
 4234,Nigeria,Gombe,561965,"['L', 'A', 'Y']",0.68,2.47
@@ -371,13 +371,13 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 4361,Peru,La Libertad,667007,['Z'],0.84,2.99
 4371,Kuwait,Al Jahrā’,196413,"['J', 'V', 'U', 'C', 'T']",0.96,1.86
 4374,Ghana,Savannah,125712,"['B', 'N', 'L', 'O', 'K']",0.88,2.6
-4390,"Korea, Democratic People's Republic of",Hwanghae-bukto,445126,"['I', 'N', 'J']",0.71,2.34
+4390,Democratic People's Republic of Korea,Hwanghae-bukto,445126,"['I', 'N', 'J']",0.71,2.34
 4394,Mayotte,,633097,"['P', 'Y', 'J', 'V', 'L']",0.53,2.59
 4397,North Macedonia,Strumica,964056,"['F', 'S', 'X', 'O', 'D', 'N']",0.55,2.36
 4400,Australia,Tasmania,965757,"['W', 'V', 'X', 'U', 'E', 'T', 'R']",0.86,2.5
 4405,Macao,,431059,"['H', 'I', 'V', 'A', 'O', 'U']",0.58,2.74
 4406,Cambodia,Kaoh Kong,786452,['Y'],0.51,2.02
-4408,"Micronesia, Federated States of",Pohnpei,887096,"['A', 'L', 'B', 'G', 'S', 'Y']",0.99,2.42
+4408,Federated States of Micronesia ,Pohnpei,887096,"['A', 'L', 'B', 'G', 'S', 'Y']",0.99,2.42
 4411,Anguilla,,109846,"['G', 'E', 'N', 'A', 'Z', 'P', 'H']",0.65,2.54
 4412,Madagascar,Antsiranana,443837,"['P', 'H', 'R', 'B', 'Q']",0.57,2.23
 4415,Croatia,Virovitičko-podravska županija,433601,"['U', 'W', 'Q', 'F', 'Z', 'A', 'K']",0.63,2.67
@@ -386,7 +386,7 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 4427,Anguilla,,178628,"['P', 'O', 'E', 'J']",0.8,2.22
 4428,Slovakia,Trenčiansky kraj,822672,"['Z', 'Y', 'N', 'H']",0.7,2.62
 4431,Nigeria,Lagos,630212,['R'],0.5,1.87
-4445,"Taiwan, Province of China",Changhua,113291,['V'],0.88,1.86
+4445,Province of China Taiwan,Changhua,113291,['V'],0.88,1.86
 4458,Liberia,Montserrado,687359,"['B', 'K', 'A']",0.74,2.49
 4496,Holy See (Vatican City State),,345694,"['N', 'M', 'G']",0.65,2.53
 4499,El Salvador,San Salvador,827213,"['U', 'G', 'M', 'O', 'Q', 'F', 'S']",0.75,2.29
@@ -425,14 +425,14 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 4730,Mauritius,Rodrigues Island,505532,"['A', 'M', 'G', 'R', 'T', 'W']",0.97,2.98
 4733,Egypt,Al Uqşur,361554,"['Y', 'G', 'C', 'X', 'U', 'V']",0.94,2.53
 4744,Bahamas,Cat Island,115119,"['Q', 'A']",0.79,2.56
-4771,"Korea, Democratic People's Republic of",Hwanghae-namdo,627901,"['Q', 'N', 'F', 'P', 'J', 'C', 'I']",0.71,2.42
+4771,Democratic People's Republic of Korea,Hwanghae-namdo,627901,"['Q', 'N', 'F', 'P', 'J', 'C', 'I']",0.71,2.42
 4773,Zambia,Southern,494311,"['Q', 'M', 'Z']",0.72,2.75
 4780,Turks and Caicos Islands,,453375,"['Y', 'X']",0.5,2.34
 4782,Fiji,Serua,524973,"['A', 'Z', 'O']",0.58,2.07
 4785,United Kingdom,Brent,581257,"['J', 'O', 'R', 'V', 'X', 'M']",0.78,2.8
 4786,Niger,Agadez,447938,"['Q', 'B', 'G']",0.62,1.96
 4792,Seychelles,Baie Sainte Anne,525832,"['U', 'D', 'T', 'M', 'Q']",0.91,2.33
-4797,Kazakhstan,Turkestankaya oblast',149443,"['B', 'V', 'T', 'X', 'N']",0.79,2.69
+4797,Kazakhstan,Turkestankaya oblast,149443,"['B', 'V', 'T', 'X', 'N']",0.79,2.69
 4816,Chad,Hadjer Lamis,868545,"['O', 'I']",0.52,2.84
 4817,Ecuador,Guayas,246543,"['M', 'J', 'B']",0.97,2.14
 4823,Haiti,Nord-Ouest,140189,"['P', 'T', 'M', 'N', 'C']",0.97,1.94
@@ -443,7 +443,7 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 4876,Greece,Attikí,203317,"['U', 'V', 'C']",0.64,2.52
 4895,Monaco,Larvotto,638018,"['C', 'D', 'B', 'W']",0.75,2.78
 4910,Saint Vincent and the Grenadines,Saint David,845048,['J'],0.97,2.2
-4927,"Virgin Islands, British",,437645,"['H', 'J']",0.69,2.91
+4927,Virgin Islands ,,437645,"['H', 'J']",0.69,2.91
 4930,Svalbard and Jan Mayen,,943841,"['P', 'R']",0.89,1.81
 4939,Spain,Jaén,309492,['P'],0.52,1.87
 4956,Liberia,Sinoe,134294,"['J', 'G', 'K']",0.71,2.59
@@ -459,7 +459,7 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 5053,Liechtenstein,Gamprin,988148,"['G', 'H', 'E']",0.53,2.3
 5071,Singapore,South West,370486,"['S', 'G', 'W', 'A']",0.89,2.52
 5084,Czechia,Rokycany,137940,"['N', 'W', 'U', 'Y', 'V', 'C', 'I']",0.74,2.74
-5089,Comoros,Andjazîdja,918422,"['Z', 'E', 'A', 'J', 'P', 'G', 'W']",0.72,2.96
+5089,Comoros,Ngazidja,918422,"['Z', 'E', 'A', 'J', 'P', 'G', 'W']",0.72,2.96
 5094,Cyprus,Lemesos,316879,"['Z', 'G']",0.88,2.91
 5111,Ukraine,Volynska oblast,872614,"['Q', 'A', 'O', 'B']",0.57,2.97
 5116,Cocos (Keeling) Islands,,904534,['T'],0.54,2.3
@@ -481,7 +481,7 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 5294,Germany,Rheinland-Pfalz,845594,"['Y', 'K', 'Z', 'P', 'H', 'E']",0.95,2.21
 5297,Oman,Al Buraymī,399414,['C'],0.81,2.73
 5299,United Kingdom,Croydon,294830,"['C', 'Z', 'R', 'I', 'S', 'E', 'O']",0.91,2.87
-5303,"Palestine, State of",Hebron,541047,"['J', 'Q', 'N']",0.59,2.43
+5303,State of Palestine ,Hebron,541047,"['J', 'Q', 'N']",0.59,2.43
 5315,Liberia,Bong,806481,"['Z', 'D', 'E', 'V', 'N']",0.77,2.93
 5325,Hong Kong,,431455,"['J', 'V', 'L', 'N', 'T', 'E', 'X']",0.91,2.75
 5326,Czechia,Semily,587923,"['D', 'S', 'T']",0.53,2.26
@@ -502,7 +502,7 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 5464,Ghana,Greater Accra,978160,['W'],0.6,2.81
 5472,Guernsey,,340986,['K'],0.74,2.48
 5492,Greece,Thessalía,357988,"['E', 'O', 'R', 'P']",0.5,1.79
-5498,Kazakhstan,Kostanajskaja oblast',497920,"['G', 'B', 'P', 'T', 'U', 'K', 'Y']",0.65,2.55
+5498,Kazakhstan,oblast,497920,"['G', 'B', 'P', 'T', 'U', 'K', 'Y']",0.65,2.55
 5504,France,Morbihan,817176,['Z'],0.62,2.12
 5509,Mozambique,Maputo,632213,"['O', 'B', 'G', 'W', 'C']",0.75,2.03
 5510,Samoa,Gaga'emauga,340542,"['L', 'Z']",0.66,2.46
@@ -510,10 +510,10 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 5521,Saudi Arabia,Ḩā'il,640752,"['I', 'A', 'Q', 'P', 'S', 'V']",0.55,2.07
 5540,Zambia,Copperbelt,362366,['B'],0.96,2.4
 5569,Mozambique,Niassa,756610,"['Z', 'U', 'V']",0.93,2.09
-5571,"Taiwan, Province of China",Keelung,320930,"['H', 'Z', 'E', 'B', 'U']",0.54,2.94
+5571,Province of China Taiwan,Keelung,320930,"['H', 'Z', 'E', 'B', 'U']",0.54,2.94
 5596,Argentina,Neuquén,775335,"['S', 'Q', 'J', 'M']",0.99,1.84
 5597,Turkmenistan,Lebap,189669,"['F', 'K', 'T', 'D', 'P']",0.73,2.98
-5608,"Tanzania, United Republic of",Arusha,314777,['K'],0.97,2.15
+5608,United Republic of Tanzania,Arusha,314777,['K'],0.97,2.15
 5616,Bahrain,Al Janūbīyah,748878,"['T', 'N', 'U', 'B', 'I', 'S']",0.82,2.58
 5623,Bouvet Island,,633998,"['C', 'O']",0.65,2.34
 5647,Georgia,Samtskhe-Javakheti,255133,"['K', 'X', 'A']",0.62,2.02
@@ -544,7 +544,7 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 5879,Rwanda,City of Kigali,299468,"['L', 'J', 'B', 'E', 'G', 'T', 'X']",0.81,2.46
 5886,Gabon,Moyen-Ogooué,229159,"['I', 'H', 'C', 'B', 'S']",0.92,2.24
 5887,Turkmenistan,Balkan,526815,"['N', 'U', 'O']",0.78,2.37
-5904,"Taiwan, Province of China",Taichung,168814,"['B', 'H', 'J', 'F', 'Q']",0.74,1.84
+5904,Province of China Taiwan,Taichung,168814,"['B', 'H', 'J', 'F', 'Q']",0.74,1.84
 5919,Réunion,,325737,"['P', 'S']",0.59,2.86
 5922,Niue,,687910,['V'],0.6,2.61
 5932,Nauru,Meneng,480261,"['W', 'Q', 'S']",0.99,1.75
@@ -563,7 +563,7 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 6062,Chad,Mayo-Kebbi-Ouest,339997,['Z'],0.66,2.78
 6063,Guyana,Potaro-Siparuni,442769,"['P', 'Q', 'G']",0.54,1.93
 6085,Niger,Agadez,596156,"['N', 'F', 'V']",0.53,2.87
-6087,"Korea, Democratic People's Republic of",Hamgyǒng-bukto,959479,"['B', 'A', 'T', 'G', 'H']",0.66,1.76
+6087,Democratic People's Republic of Korea,Hamgyǒng-bukto,959479,"['B', 'A', 'T', 'G', 'H']",0.66,1.76
 6090,Ireland,Laois,187698,"['O', 'A']",0.9,2.47
 6096,Cook Islands,,557409,"['N', 'E', 'D', 'W', 'A', 'Z']",0.5,2.94
 6100,Mauritius,Savanne,579622,"['U', 'N', 'H', 'Y', 'O']",0.62,2.6
@@ -578,12 +578,12 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 6184,Samoa,Satupa'itea,157260,"['H', 'P', 'G', 'V', 'R', 'J', 'N']",0.63,2.8
 6198,Iceland,Blönduósbær,535493,"['Q', 'I', 'Z', 'G', 'F', 'L']",0.57,2.96
 6200,Namibia,Oshana,377469,"['J', 'H', 'V', 'B', 'D']",0.95,2.01
-6205,"Korea, Republic of",Jeollanam-do,857194,"['Z', 'T', 'O']",0.79,2.56
+6205,Democratic People's Republic of Korea,Jeollanam-do,857194,"['Z', 'T', 'O']",0.79,2.56
 6206,Cambodia,Kampot,575987,"['M', 'B', 'C']",0.54,2.42
 6219,Georgia,Shida Kartli,470305,['B'],0.89,1.99
 6229,Martinique,,291018,"['Y', 'J', 'B', 'K', 'P']",0.75,2.12
 6248,Qatar,Ash Shamāl,935275,"['T', 'B', 'V', 'H', 'S', 'C', 'I']",0.88,2.15
-6265,"Virgin Islands, British",,622459,['X'],0.65,2.14
+6265,"Virgin Islands ",,622459,['X'],0.65,2.14
 6266,Trinidad and Tobago,Siparia,743117,"['K', 'M', 'D']",0.92,2.5
 6277,Belize,Cayo,620408,"['X', 'Q', 'H', 'G']",0.75,2.78
 6280,Romania,Ialomița,464582,"['A', 'K', 'J', 'Q', 'X', 'V', 'M']",0.59,2.68
@@ -607,7 +607,7 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 6420,"Iran, Islamic Republic of",Yazd,906693,"['X', 'Z', 'E', 'L', 'W', 'B', 'K']",0.71,2.01
 6434,Iceland,Dalabyggð,567072,"['L', 'X', 'A']",0.63,2.2
 6443,Estonia,Paide,172956,"['Y', 'B', 'Q', 'F']",0.79,1.8
-6482,Russian Federation,Evrejskaja avtonomnaja oblast',843939,"['V', 'W']",0.89,2.28
+6482,Russian Federation,Evrejskaja avtonomnaja oblast,843939,"['V', 'W']",0.89,2.28
 6485,Lesotho,Maseru,861693,"['J', 'V', 'P']",0.53,2.61
 6492,Eritrea,Al Awsaţ,442453,"['N', 'P', 'B']",0.95,1.97
 6507,Cambodia,Rotanak Kiri,892482,"['A', 'O', 'T', 'U', 'W', 'Z']",0.9,2.47
@@ -621,7 +621,7 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 6591,Trinidad and Tobago,Siparia,511376,"['B', 'P']",0.71,2.53
 6601,Vanuatu,Taféa,870136,"['P', 'I', 'G']",0.56,2.16
 6607,Lao People's Democratic Republic,Viangchan,889570,"['V', 'D', 'T', 'A', 'Q', 'H', 'I']",0.59,2.79
-6626,"Congo, The Democratic Republic of the",Mongala,897003,"['D', 'G', 'Y', 'H', 'W']",0.55,2.92
+6626,The Democratic Republic of the Congo,Mongala,897003,"['D', 'G', 'Y', 'H', 'W']",0.55,2.92
 6634,Nauru,Nibok,602836,"['T', 'P', 'Y', 'R']",0.69,2.98
 6635,Greenland,Kommune Qeqertalik,108316,"['T', 'Z', 'S', 'U', 'J']",0.6,2.11
 6641,Bermuda,,670654,"['S', 'E']",0.78,2.77
@@ -637,7 +637,7 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 6770,"Virgin Islands, U.S.",,914398,"['P', 'M']",0.51,2.55
 6787,Serbia,Moravički okrug,620217,"['Y', 'U', 'N']",0.87,2.92
 6790,Saudi Arabia,Al Bāḩah,803731,"['G', 'S', 'Q', 'V', 'O']",0.53,2.3
-6804,"Iran, Islamic Republic of",Āz̄ārbāyjān-e Shārqī,555457,"['Z', 'J']",0.72,2.57
+6804,Islamic Republic of Iran,Āz̄ārbāyjān-e Shārqī,555457,"['Z', 'J']",0.72,2.57
 6818,Morocco,Médiouna,518668,"['F', 'Z', 'X', 'Y', 'T', 'I', 'Q']",0.58,2.22
 6833,Montserrat,,643444,"['V', 'S']",0.82,2.66
 6840,Cocos (Keeling) Islands,,179014,"['A', 'W', 'C', 'Y', 'O']",0.74,1.91
@@ -650,10 +650,10 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 6881,Malta,Dingli,850728,"['G', 'S', 'D', 'K']",0.73,2.88
 6889,Peru,Ancash,450015,['K'],0.65,2.91
 6894,Malaysia,Wilayah Persekutuan Kuala Lumpur,622784,"['R', 'Q']",0.69,2.45
-6895,"Congo, The Democratic Republic of the",Kasaï Oriental,650151,"['M', 'D', 'Z', 'Q', 'R', 'G']",0.55,2.32
+6895,The Democratic Republic of the Congo,Kasaï Oriental,650151,"['M', 'D', 'Z', 'Q', 'R', 'G']",0.55,2.32
 6898,Sierra Leone,Southern,152504,"['V', 'J']",0.89,2.09
 6915,Andorra,Encamp,372980,"['I', 'R']",0.6,2.75
-6928,"Congo, The Democratic Republic of the",Sud-Kivu,226213,"['P', 'U']",0.54,2.25
+6928,The Democratic Republic of the Congo,Sud-Kivu,226213,"['P', 'U']",0.54,2.25
 6958,Svalbard and Jan Mayen,,333627,"['L', 'C', 'E', 'F', 'W', 'S', 'D']",0.76,2.15
 6960,Papua New Guinea,Jiwaka,344863,"['M', 'W', 'A']",0.68,1.83
 6979,Bulgaria,Montana,973391,"['U', 'G', 'V', 'O', 'B']",0.98,1.89
@@ -682,7 +682,7 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 7146,United Arab Emirates,Umm al Qaywayn,305012,"['B', 'H', 'G', 'O', 'X', 'L']",0.84,1.87
 7158,Western Sahara,,886082,"['Y', 'O', 'C', 'P', 'E', 'R', 'D']",0.66,2.46
 7160,Israel,Ash Shamālī,160028,"['N', 'W', 'Y', 'G', 'C']",0.8,2.07
-7185,"Congo, The Democratic Republic of the",Kwango,906333,"['F', 'V', 'D', 'U', 'N']",0.95,1.84
+7185,The Democratic Republic of the Congo,Kwango,906333,"['F', 'V', 'D', 'U', 'N']",0.95,1.84
 7189,Netherlands,Saba,182365,['S'],0.83,2.45
 7196,France,Aube,566499,"['L', 'G', 'D', 'J']",0.61,2.14
 7202,Honduras,El Paraíso,129292,"['N', 'R', 'L', 'Z']",0.92,2.54
@@ -706,23 +706,23 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 7347,Paraguay,Caaguazú,344016,"['Y', 'T', 'C', 'Q', 'G']",0.89,2.03
 7352,Libya,Al Marj,592671,"['F', 'H', 'P', 'G', 'Q', 'L']",0.71,2.83
 7377,Serbia,Prizrenski okrug,902203,"['E', 'W', 'T']",0.95,2.79
-7382,"Iran, Islamic Republic of",Qazvīn,174895,"['H', 'Z']",0.64,2.45
+7382,Islamic Republic of Iran,Qazvīn,174895,"['H', 'Z']",0.64,2.45
 7400,Antarctica,,521046,['A'],0.58,2.57
 7402,American Samoa,,174555,"['Q', 'H', 'I', 'J', 'O', 'F', 'P']",0.62,2.53
 7404,Viet Nam,Hồ Chí Minh,302289,"['Z', 'R', 'J', 'N', 'C', 'V']",0.68,2.62
-7408,"Virgin Islands, British",,770072,"['W', 'F']",0.97,2.87
+7408,Virgin Islands ,,770072,"['W', 'F']",0.97,2.87
 7418,Peru,Tacna,435211,['D'],0.57,2.47
 7425,Kenya,Murang'a,943633,"['T', 'R', 'V', 'C', 'F']",0.76,2.32
 7434,Guadeloupe,,540139,"['I', 'E', 'K', 'Q']",0.81,2
 7451,Macao,,597844,"['F', 'G', 'V']",0.5,2.25
-7461,"Bonaire, Sint Eustatius and Saba",Sint Eustatius,956843,['W'],0.58,2.07
+7461,Sint Eustatius and Saba Bonaire,Sint Eustatius,956843,['W'],0.58,2.07
 7465,"Korea, Democratic People's Republic of",Kangweonto,230422,"['S', 'I']",0.94,2.66
 7466,Ukraine,Odeska oblast,980282,"['U', 'C', 'O', 'L', 'V', 'K']",0.73,1.93
 7474,Ethiopia,Dire Dawa,612693,"['K', 'R', 'N', 'G', 'I']",0.79,1.97
 7483,Botswana,Kgatleng,432023,"['F', 'G', 'I']",0.85,2.27
 7486,Bouvet Island,,982943,"['Q', 'A']",0.76,2.52
 7489,Algeria,Mostaganem,301828,"['T', 'N', 'R', 'G']",0.5,2.94
-3108,"Palestine, State of",Tulkarm,785369,"['M', 'V', 'P', 'S', 'C']",0.87,2.65
+3108,State of Palestine,Tulkarm,785369,"['M', 'V', 'P', 'S', 'C']",0.87,2.65
 7498,Congo,Kouilou,595107,"['M', 'A', 'P', 'C', 'I']",0.99,2.53
 7525,Saint Lucia,Anse la Raye,474914,"['G', 'H', 'R', 'S', 'C', 'O', 'F']",0.88,2.73
 7548,Qatar,Ash Shamāl,298671,"['S', 'H', 'Y', 'G', 'R', 'C', 'P']",0.52,2.73
@@ -732,9 +732,9 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 7567,Falkland Islands (Malvinas),,324347,"['T', 'H', 'K', 'U']",0.63,1.99
 7571,Mozambique,Maputo,729156,"['V', 'I', 'K', 'T', 'P', 'O']",0.56,2.53
 7581,Bosnia and Herzegovina,Federacija Bosne i Hercegovine,178463,"['F', 'Z']",0.92,2.91
-7611,"Taiwan, Province of China",Kinmen,865590,"['P', 'E', 'D', 'S', 'I', 'L']",0.98,1.83
+7611,Province of China Taiwan,Kinmen,865590,"['P', 'E', 'D', 'S', 'I', 'L']",0.98,1.83
 7614,Brazil,Rio de Janeiro,142029,"['I', 'R', 'Q', 'M']",0.72,2.25
-7618,"Tanzania, United Republic of",Njombe,367160,['G'],0.77,1.82
+7618,United Republic of Tanzania,Njombe,367160,['G'],0.77,1.82
 7622,Cambodia,Mondol Kiri,541792,"['P', 'C', 'N', 'Y', 'V', 'Z', 'H']",0.74,2.49
 7634,Bangladesh,Feni,819972,['I'],0.89,2.16
 7651,Senegal,Saint-Louis,477790,['J'],0.9,1.88
@@ -747,16 +747,16 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 7688,Norway,Viken,728364,"['X', 'B', 'L', 'Z', 'S', 'Q', 'J']",0.55,1.9
 7709,Aruba,,334039,"['N', 'X', 'Q']",0.66,1.91
 4703,Holy See (Vatican City State),,741867,"['J', 'M', 'I', 'N', 'P', 'W']",0.56,2.15
-7721,"Bolivia, Plurinational State of",Cochabamba,711640,"['W', 'D', 'Y', 'P', 'A']",0.86,2.54
+7721, Plurinational State of Bolivia,Cochabamba,711640,"['W', 'D', 'Y', 'P', 'A']",0.86,2.54
 7722,Brunei Darussalam,Tutong,385234,['L'],0.96,2.41
-7727,Maldives,Fuvammulah,773389,"['F', 'U', 'Y', 'T', 'H', 'S', 'Q']",0.83,2.24
+7727,Maldives,,773389,"['F', 'U', 'Y', 'T', 'H', 'S', 'Q']",0.83,2.24
 7751,Liberia,Maryland,872794,"['Y', 'X', 'Z']",0.98,1.97
 7763,Saint Vincent and the Grenadines,Saint Patrick,998218,"['P', 'U', 'C', 'J']",0.82,2.65
 7774,Cook Islands,,814929,"['M', 'R']",0.84,1.87
 7780,South Georgia and the South Sandwich Islands,,622111,"['D', 'K', 'N', 'T', 'V', 'Y', 'G']",0.89,2.99
 7794,British Indian Ocean Territory,,392362,"['D', 'T', 'E', 'J', 'L', 'H']",0.67,2.1
 7808,Ukraine,Chernihivska oblast,175293,"['T', 'W', 'U', 'D', 'E', 'F']",0.5,1.8
-7839,"Micronesia, Federated States of",Yap,720523,"['I', 'Y']",0.74,2.73
+7839,Federated States of Micronesia,Yap,720523,"['I', 'Y']",0.74,2.73
 7840,Angola,Namibe,522453,"['U', 'P', 'G', 'R', 'C']",0.61,2.8
 7843,Mongolia,Bayanhongor,323100,"['L', 'W']",0.87,2.68
 7845,Equatorial Guinea,Centro Sud,795271,"['O', 'E', 'R', 'A']",0.79,2.08
@@ -785,7 +785,7 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 8035,Viet Nam,Đà Nẵng,699226,"['K', 'M', 'J', 'H', 'V', 'S', 'U']",0.77,2.41
 8050,Benin,Zou,536470,"['P', 'S']",0.85,1.76
 8055,Norfolk Island,,783840,"['F', 'G', 'M', 'H', 'X']",0.57,2.15
-8060,"Virgin Islands, British",,888799,"['L', 'Y', 'Q', 'X', 'I', 'B']",0.57,2.68
+8060,"Virgin Islands ",,888799,"['L', 'Y', 'Q', 'X', 'I', 'B']",0.57,2.68
 8064,San Marino,Fiorentino,161288,"['Y', 'H', 'G', 'K', 'R', 'S', 'U']",0.77,2.17
 8065,Senegal,Dakar,815139,"['H', 'V', 'N', 'X']",0.94,2.79
 8084,Zimbabwe,Harare,993607,"['J', 'R', 'P', 'U', 'G', 'X']",0.99,2.52
@@ -793,7 +793,7 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 8096,Maldives,North Nilandhe Atoll,191153,"['J', 'G']",0.62,2.91
 8114,Croatia,Zagrebačka županija,225831,"['T', 'G', 'D', 'E']",0.99,1.77
 8117,Saint Kitts and Nevis,Saint James Windward,666308,"['D', 'Y', 'G', 'V', 'U', 'Q', 'L']",0.62,2.74
-8124,"Bonaire, Sint Eustatius and Saba",Saba,858506,"['O', 'I', 'K', 'C', 'X']",0.52,2.86
+8124,Bonaire  Sint Eustatius and Saba,Saba,858506,"['O', 'I', 'K', 'C', 'X']",0.52,2.86
 8146,Bouvet Island,,756956,"['W', 'L', 'P', 'M', 'G', 'V']",0.76,1.83
 8154,Belize,Belize,689960,['P'],0.72,1.92
 8169,Tuvalu,Nanumea,169534,"['U', 'P', 'T']",0.83,1.85
@@ -833,7 +833,7 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 8488,Fiji,Lomaiviti,297151,"['Z', 'H', 'F', 'D', 'U']",0.75,2.88
 8490,Malta,Saint Julian's,919605,"['I', 'L', 'K', 'M', 'F', 'N']",0.58,2.66
 8493,Kyrgyzstan,Bishkek Shaary,511292,"['X', 'Y', 'O', 'H']",0.83,1.89
-8511,"Korea, Democratic People's Republic of",Hamgyǒng-bukto,388787,"['Y', 'Q', 'U', 'F']",0.85,2.21
+8511,Democratic People's Republic of Korea,Hamgyǒng-bukto,388787,"['Y', 'Q', 'U', 'F']",0.85,2.21
 8522,Thailand,Chon Buri,784202,"['C', 'G']",0.64,2.51
 8527,Guernsey,,858397,"['U', 'Q']",0.55,2.02
 8534,Madagascar,Mahajanga,354055,"['X', 'G', 'Z', 'R', 'B', 'N', 'A']",0.8,2.23
@@ -852,7 +852,7 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 8677,United Kingdom,"Vale of Glamorgan, The [Bro Morgannwg GB-BMG]",501398,"['H', 'I', 'Z', 'K']",0.55,2.74
 8699,Azerbaijan,Biləsuvar,885914,"['X', 'O', 'E', 'B', 'N', 'G', 'V']",0.67,1.75
 8714,Guatemala,Izabal,729980,"['F', 'Y', 'N', 'C', 'K', 'S', 'E']",0.75,2.28
-8717,Kazakhstan,Kostanajskaja oblast',302558,['C'],0.99,1.87
+8717,Kazakhstan,oblast,302558,['C'],0.99,1.87
 8732,Niger,Maradi,706756,['A'],0.67,2.94
 8748,Saint Pierre and Miquelon,,193722,"['E', 'N', 'M', 'O', 'X']",0.72,2.42
 8750,Timor-Leste,Díli,191071,"['K', 'W', 'E']",0.76,2.69
@@ -863,11 +863,11 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 8812,Sudan,Gezira,123812,"['I', 'U', 'R', 'Z']",0.6,2.68
 8820,Andorra,Encamp,797793,"['E', 'R']",0.56,2.49
 8828,Chad,Mayo-Kebbi-Ouest,922654,"['B', 'Q']",0.56,1.85
-8836,"Venezuela, Bolivarian Republic of",Sucre,606971,"['Q', 'F', 'A']",0.71,2.09
+8836,Bolivarian Republic of Venezuela,Sucre,606971,"['Q', 'F', 'A']",0.71,2.09
 8848,Seychelles,Au Cap,775048,"['X', 'T', 'P']",0.8,2.13
 8853,Congo,Cuvette-Ouest,902441,"['J', 'C', 'M', 'D']",0.67,2.13
 8858,Marshall Islands,Aur,943584,['W'],0.94,1.86
-8862,"Iran, Islamic Republic of",Qom,632287,"['G', 'W', 'X', 'Y']",0.91,2.66
+8862,Islamic Republic of Iran,Qom,632287,"['G', 'W', 'X', 'Y']",0.91,2.66
 8892,Madagascar,Antananarivo,520216,"['C', 'K', 'M']",0.65,1.88
 8907,Burkina Faso,Gnagna,532958,"['V', 'X', 'N']",0.51,2.43
 8921,Qatar,Az̧ Z̧a‘āyin,793022,"['W', 'E', 'I', 'B', 'Y', 'L']",0.73,1.81
@@ -887,7 +887,7 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 9038,Switzerland,Bern,933359,"['N', 'U']",0.64,1.84
 9042,Mali,Koulikoro,686790,"['R', 'E', 'B']",0.77,2.57
 9043,Central African Republic,Haut-Mbomou,176236,"['O', 'K', 'D', 'J', 'V', 'I', 'N']",0.8,1.83
-9054,"Virgin Islands, British",,388791,"['P', 'H', 'D', 'G']",0.99,2
+9054,Virgin Islands ,,388791,"['P', 'H', 'D', 'G']",0.99,2
 9060,Libya,Surt,851601,"['I', 'X', 'S', 'N', 'A', 'Y']",0.65,1.98
 9065,Latvia,Grobiņas novads,789953,"['Z', 'T', 'L', 'J', 'I']",0.63,2.4
 9077,Niger,Diffa,453678,"['K', 'I', 'P', 'M', 'C']",0.54,2.28
@@ -921,34 +921,34 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 3412,Guadeloupe,,253021,"['V', 'W']",0.84,2.07
 9349,Poland,Mazowieckie,260720,"['I', 'C']",0.93,1.88
 9357,"Palestine, State of",North Gaza,934511,"['O', 'C', 'J', 'A']",0.53,2.2
-9359,"Taiwan, Province of China",Taoyuan,120250,"['E', 'T', 'J', 'Z']",0.72,2.68
+9359,Province of China Taiwan,Taoyuan,120250,"['E', 'T', 'J', 'Z']",0.72,2.68
 9988,Tajikistan,Sughd,459209,['Q'],0.98,2.48
 9369,Dominican Republic,María Trinidad Sánchez,524661,"['M', 'B', 'R', 'X']",0.72,2.17
 9375,Holy See (Vatican City State),,890628,"['O', 'D', 'J', 'A', 'L']",0.69,1.93
 9376,Bosnia and Herzegovina,Republika Srpska,555817,"['L', 'C', 'M', 'F']",0.7,1.98
 9387,Philippines,Quirino,567858,"['A', 'E', 'G', 'L']",0.78,2.11
-9388,"Virgin Islands, British",,869118,['F'],0.78,2.64
+9388,"Virgin Islands ",,869118,['F'],0.78,2.64
 9399,Cambodia,Banteay Mean Choăy,824459,"['F', 'W', 'C']",0.7,2.84
 9403,Palau,Ngaraard,867584,"['S', 'X']",0.52,2.26
 9408,Brazil,Distrito Federal,668999,"['D', 'I']",0.56,2.54
 9423,Turkmenistan,Mary,393101,"['F', 'K', 'H']",0.89,2.29
 9424,Belgium,Antwerpen,900513,"['D', 'N']",0.54,2.07
-9426,"Bonaire, Sint Eustatius and Saba",Bonaire,405099,"['F', 'V', 'O']",0.99,1.82
+9426,Bonaire Sint Eustatius and Saba,Bonaire,405099,"['F', 'V', 'O']",0.99,1.82
 9444,Denmark,Hovedstaden,433893,"['C', 'S', 'O', 'J', 'P', 'A', 'M']",0.53,2.84
 6124,Bulgaria,Kyustendil,426519,"['M', 'W', 'R']",0.98,2.99
 9451,Christmas Island,,949897,"['K', 'L', 'P', 'Z', 'F', 'D', 'N']",0.59,2.04
 9454,Hong Kong,,955339,"['Z', 'U', 'X', 'Q', 'R']",0.56,2.08
 9455,Bahamas,Exuma,323389,"['X', 'H', 'N']",0.61,2.16
 9471,Nigeria,Bauchi,793827,['J'],0.94,2.88
-9473,Russian Federation,Brjanskaja oblast',317035,"['F', 'U', 'D', 'N', 'Q']",0.77,2.19
-9506,"Venezuela, Bolivarian Republic of",Nueva Esparta,807177,"['P', 'W', 'J', 'I', 'L']",0.92,2.56
-9509,"Venezuela, Bolivarian Republic of",Sucre,549357,"['M', 'D', 'E']",0.69,2.24
+9473,Russian Federation,Brjanskaja oblast,317035,"['F', 'U', 'D', 'N', 'Q']",0.77,2.19
+9506,Bolivarian Republic of Venezuela,Nueva Esparta,807177,"['P', 'W', 'J', 'I', 'L']",0.92,2.56
+9509,Bolivarian Republic of Venezuela,Sucre,549357,"['M', 'D', 'E']",0.69,2.24
 9510,Eswatini,Manzini,799903,"['T', 'C', 'D', 'V', 'L']",0.98,1.86
 9515,Isle of Man,,375389,"['O', 'Z', 'J', 'M', 'H', 'Q', 'L']",0.64,2.98
 9557,Martinique,,227491,"['D', 'T', 'C', 'E', 'K', 'S', 'U']",0.85,1.84
 9563,Vanuatu,Pénama,365128,"['R', 'L', 'M', 'Y', 'V']",0.9,2.7
 9565,Guernsey,,457879,['E'],0.52,2.49
-9582,"Micronesia, Federated States of",Kosrae,508562,['G'],0.66,2.19
+9582,Federated States of Micronesia,Kosrae,508562,['G'],0.66,2.19
 9589,Anguilla,,642654,"['G', 'E']",0.63,2.5
 9596,Dominican Republic,Distrito Nacional (Santo Domingo),883699,"['F', 'Q', 'H', 'W', 'G']",0.85,2.68
 9603,Saint Barthélemy,,973160,"['V', 'R', 'J', 'U', 'D']",0.82,2.76
@@ -960,7 +960,7 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 9659,Angola,Bengo,271343,"['H', 'J', 'V', 'X', 'G', 'M']",0.69,2.49
 9695,Grenada,Southern Grenadine Islands,306216,"['B', 'I', 'Q', 'N', 'V']",0.83,1.82
 9717,Cocos (Keeling) Islands,,774862,['K'],0.69,2.43
-9721,"Taiwan, Province of China",Keelung,979346,['C'],0.8,2.39
+9721,Province of China Taiwan,Keelung,979346,['C'],0.8,2.39
 9722,Martinique,,109783,"['D', 'Y']",0.79,2.72
 9729,Austria,Salzburg,328453,"['L', 'W', 'R', 'O']",0.96,2.66
 9733,Algeria,El Oued,761809,"['Z', 'F', 'N', 'L', 'G', 'P', 'W']",0.61,2.48
@@ -981,21 +981,21 @@ warehouse_id,country,city_name,capacity (NA),product_types,Operations Expenses,R
 9825,Antarctica,,261779,"['N', 'B', 'T', 'M', 'A', 'J', 'Y']",0.57,2.73
 9830,Namibia,Ohangwena,883015,"['D', 'B']",0.75,2.05
 9867,Austria,Salzburg,157220,"['D', 'L', 'S', 'U', 'F']",0.82,2.96
-9872,Kazakhstan,Turkestankaya oblast',589685,"['H', 'P', 'F', 'V', 'R', 'T']",0.64,2.72
+9872,Kazakhstan,Turkestankaya oblast,589685,"['H', 'P', 'F', 'V', 'R', 'T']",0.64,2.72
 9888,Saint Martin (French part),,297511,"['D', 'N']",0.63,2.9
-9901,"Saint Helena, Ascension and Tristan da Cunha",Ascension,741996,"['S', 'Y', 'N', 'F', 'K']",0.87,2.41
+9901,Saint Helena Ascension and Tristan da Cunha,Ascension,741996,"['S', 'Y', 'N', 'F', 'K']",0.87,2.41
 9911,Niger,Agadez,564324,"['N', 'P']",0.6,2.47
-9924,"Tanzania, United Republic of",Katavi,320349,"['K', 'F', 'P', 'T', 'H', 'R']",0.65,1.78
+9924,United Republic of Tanzania,Katavi,320349,"['K', 'F', 'P', 'T', 'H', 'R']",0.65,1.78
 9926,New Caledonia,,896112,"['B', 'S', 'W', 'I', 'M', 'A', 'K']",0.6,2.51
 9936,American Samoa,,111594,"['S', 'D']",0.66,2.36
 9941,Kazakhstan,Pavlodar oblysy,663101,"['N', 'Z', 'V', 'S', 'T', 'L']",0.79,2.55
 9942,Burkina Faso,Séno,281245,"['J', 'Y', 'A', 'K', 'X']",0.52,2.3
-9949,Russian Federation,Kirovskaja oblast',158437,"['U', 'G', 'J', 'R', 'L', 'W', 'F']",0.69,2.68
+9949,Russian Federation,Kirovskaja oblast,158437,"['U', 'G', 'J', 'R', 'L', 'W', 'F']",0.69,2.68
 1010,Rwanda,City of Kigali,628883,"['P', 'F', 'M', 'C', 'K', 'B']",0.53,2.17
 9953,Western Sahara,,270715,"['W', 'G', 'F', 'P', 'A']",0.59,2.41
-9957,"Taiwan, Province of China",Chiayi,796093,['H'],0.67,2.46
+9957,Province of China Taiwan,Chiayi,796093,['H'],0.67,2.46
 9964,Norway,Jan Mayen (Arctic Region),918141,"['U', 'T', 'H', 'L']",0.66,1.88
 9970,Bouvet Island,,654580,"['B', 'W']",0.74,1.91
-9975,"Bolivia, Plurinational State of",Tarija,850849,"['I', 'K', 'W', 'A', 'V', 'Y', 'Z']",0.54,2.13
+9975, Plurinational State of Bolivia,Tarija,850849,"['I', 'K', 'W', 'A', 'V', 'Y', 'Z']",0.54,2.13
 9981,Qatar,Ash Shamāl,105036,"['Q', 'A']",0.7,2.91
 9996,Tunisia,Ben Arous,741178,"['M', 'N', 'U', 'L']",0.7,2.49

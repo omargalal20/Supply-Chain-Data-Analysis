@@ -314,666 +314,631 @@
  'High school' 64]"
 149,customer,47008,"['F' 'Lauren' 'Toscanini' 'Liechtenstein' 'United States'
  'Sport and exercise psychologist' 'Divorced' 'Masters holder' 37]"
-150,retailer,91089,['Tunisia' 'Kairouan' 'distributer' 650 5 7 169554 set()]
-151,retailer,95444,['Kuwait' 'Al Farwānīyah' 'vendor' 441 1 8 325442 set()]
-152,retailer,66051,['Qatar' 'Ash Shīḩānīyah' 'abroad' 821 2 9 426160 set()]
-153,retailer,41072,"['Greece' 'Dytikí Makedonía' 'customer end' 123 2 4 1347204
- {'Healthcare Systems & Services'}]"
-154,retailer,34083,['Gambia' 'Banjul' 'vendor' 815 4 7 1843949 set()]
-155,retailer,89362,"['Greece' 'Kentrikí Makedonía' 'abroad' 529 5 1 1057000
- {'Paper, Forest Products & Packaging'}]"
-156,retailer,12318,['Tajikistan' 'Kŭhistoni Badakhshon' 'vendor' 356 3 8 1133068 set()]
-157,retailer,21359,['Cambodia' 'Kaoh Kong' 'vendor' 826 1 9 1741565 {'Metals & Mining'}]
-158,retailer,42411,"['Saint Kitts and Nevis' 'Saint Mary Cayon' 'customer end' 352 1 9 19522
- set()]"
-159,retailer,60940,['Georgia' 'Mtskheta-Mtianeti' 'customer end' 677 3 4 1136762 set()]
-160,retailer,75619,"['Samoa' 'Tuamasaga' 'customer end' 992 2 3 1728641
- {'Paper, Forest Products & Packaging'}]"
-161,retailer,22692,['South Sudan' 'Northern Bahr el Ghazal' 'vendor' 400 4 6 934590 set()]
-162,retailer,44162,['Nauru' 'Uaboe' 'distributer' 814 3 9 469890 set()]
-163,retailer,75353,"['French Southern Territories' 'Unknown' 'abroad' 473 3 2 442904
- {'Retail'}]"
-164,retailer,52005,['Puerto Rico' 'Unknown' 'vendor' 988 5 7 1929635 set()]
-165,retailer,97673,['Albania' 'Tirana' 'abroad' 699 2 2 1169168 set()]
-166,retailer,76384,['Belgium' 'Limburg' 'abroad' 316 3 2 1908953 set()]
-167,retailer,56948,['Finland' 'Norra Savolax' 'distributer' 300 2 8 1209087 set()]
-168,retailer,13633,['Qatar' 'Al Wakrah' 'customer end' 159 3 9 1090841 set()]
-169,retailer,15035,['Equatorial Guinea' 'Região Insular' 'vendor' 421 5 4 1559544 set()]
-170,retailer,93440,['Brazil' 'Minas Gerais' 'abroad' 819 4 2 1401456 {'Aerospace & Defense'}]
-171,retailer,81901,['Jamaica' 'Westmoreland' 'abroad' 882 4 8 104875 set()]
-172,retailer,38001,['Jordan' 'Al ‘A̅şimah' 'customer end' 402 2 7 1880010 set()]
-173,retailer,18410,['Malaysia' 'Johor' 'distributer' 738 4 9 124498 set()]
-174,retailer,44544,['Cabo Verde' 'Ribeira Grande' 'distributer' 353 4 7 1761624 set()]
-175,retailer,43132,['Guinea' 'Gaoual' 'distributer' 279 1 5 715465 set()]
-176,retailer,64989,['French Polynesia' 'Unknown' 'customer end' 488 1 1 1202212 set()]
-177,retailer,28960,['North Macedonia' 'Brvenica' 'abroad' 860 3 9 1893264 {'Life Sciences'}]
-178,retailer,92087,['Greece' 'Anatolikí Makedonía kai Thráki' 'vendor' 455 4 2 1085603 set()]
-179,retailer,22940,['Ireland' 'Munster' 'vendor' 721 5 8 1951557 {'Aerospace & Defense'}]
+150,retailer,91089,['Tunisia' 'Kairouan' 'distributer' 650 5 7 169554]
+151,retailer,95444,['Kuwait' 'Al Farwānīyah' 'vendor' 441 1 8 325442]
+152,retailer,66051,['Qatar' 'Ash Shīḩānīyah' 'abroad' 821 2 9 426160]
+153,retailer,41072,"['Greece', 'Dytikí Makedonía', 'customer end', 123, {'Healthcare Systems & Services'}, 2, 4, 1347204]"
+154,retailer,34083,['Gambia' 'Banjul' 'vendor' 815 4 7 1843949]
+155,retailer,89362,"['Greece', 'Kentrikí Makedonía', 'abroad', 529, {'Paper, Forest Products & Packaging'}, 5, 1, 1057000]"
+156,retailer,12318,['Tajikistan' 'Kŭhistoni Badakhshon' 'vendor' 356 3 8 1133068]
+157,retailer,21359,"['Cambodia', 'Kaoh Kong', 'vendor', 826, {'Metals & Mining'}, 1, 9, 1741565]"
+158,retailer,42411,['Saint Kitts and Nevis' 'Saint Mary Cayon' 'customer end' 352 1 9 19522]
+159,retailer,60940,['Georgia' 'Mtskheta-Mtianeti' 'customer end' 677 3 4 1136762]
+160,retailer,75619,"['Samoa', 'Tuamasaga', 'customer end', 992, {'Paper, Forest Products & Packaging'}, 2, 3, 1728641]"
+161,retailer,22692,['South Sudan' 'Northern Bahr el Ghazal' 'vendor' 400 4 6 934590]
+162,retailer,44162,['Nauru' 'Uaboe' 'distributer' 814 3 9 469890]
+163,retailer,75353,"['French Southern Territories', 'Unknown', 'abroad', 473, {'Retail'}, 3, 2, 442904]"
+164,retailer,52005,['Puerto Rico' 'Unknown' 'vendor' 988 5 7 1929635]
+165,retailer,97673,['Albania' 'Tirana' 'abroad' 699 2 2 1169168]
+166,retailer,76384,['Belgium' 'Limburg' 'abroad' 316 3 2 1908953]
+167,retailer,56948,['Finland' 'Norra Savolax' 'distributer' 300 2 8 1209087]
+168,retailer,13633,['Qatar' 'Al Wakrah' 'customer end' 159 3 9 1090841]
+169,retailer,15035,['Equatorial Guinea' 'Região Insular' 'vendor' 421 5 4 1559544]
+170,retailer,93440,"['Brazil', 'Minas Gerais', 'abroad', 819, {'Aerospace & Defense'}, 4, 2, 1401456]"
+171,retailer,81901,['Jamaica' 'Westmoreland' 'abroad' 882 4 8 104875]
+172,retailer,38001,['Jordan' 'Al ‘A̅şimah' 'customer end' 402 2 7 1880010]
+173,retailer,18410,['Malaysia' 'Johor' 'distributer' 738 4 9 124498]
+174,retailer,44544,['Cabo Verde' 'Ribeira Grande' 'distributer' 353 4 7 1761624]
+175,retailer,43132,['Guinea' 'Gaoual' 'distributer' 279 1 5 715465]
+176,retailer,64989,['French Polynesia' 'Unknown' 'customer end' 488 1 1 1202212]
+177,retailer,28960,"['North Macedonia', 'Brvenica', 'abroad', 860, {'Life Sciences'}, 3, 9, 1893264]"
+178,retailer,92087,['Greece' 'Anatolikí Makedonía kai Thráki' 'vendor' 455 4 2 1085603]
+179,retailer,22940,"['Ireland', 'Munster', 'vendor', 721, {'Aerospace & Defense'}, 5, 8, 1951557]"
 180,retailer,75419,"['Iran, Islamic Republic of' 'Kohgīlūyeh va Bowyer Aḩmad' 'distributer'
- 747 5 4 819022 set()]"
-181,retailer,10327,['Oman' 'Al Wusţá' 'distributer' 356 3 9 814119 set()]
-182,retailer,61580,['French Polynesia' 'Unknown' 'customer end' 535 5 6 987153 set()]
-183,retailer,61892,"['Congo, The Democratic Republic of the' 'Tshuapa' 'customer end' 125 1 1
- 1606404 {'Electric Power & Natural Gas'}]"
-184,retailer,73217,"['Sweden' 'Gävleborgs län [SE-21]' 'abroad' 660 3 5 1031212
- {'Public & Social Sector'}]"
-185,retailer,26654,['South Sudan' 'Central Equatoria' 'abroad' 377 1 2 1653851 set()]
-186,retailer,54549,"['Micronesia, Federated States of' 'Chuuk' 'abroad' 749 1 4 92910 set()]"
-187,retailer,85978,['Norfolk Island' 'Unknown' 'vendor' 854 2 9 1923235 set()]
-188,retailer,31857,"['Albania' 'Korçë' 'customer end' 862 1 1 1178695
- {'Public & Social Sector', 'Education', 'Healthcare Systems & Services'}]"
-189,retailer,17462,['Sierra Leone' 'Eastern' 'distributer' 790 4 4 642703 set()]
-190,retailer,12527,['Svalbard and Jan Mayen' 'Unknown' 'customer end' 677 1 1 1147524 set()]
-191,retailer,74653,['Slovenia' 'Rače-Fram' 'customer end' 283 4 4 661934 {'Retail'}]
-192,retailer,48109,['Cambodia' 'Kandaal' 'distributer' 886 1 1 1505690 set()]
-193,retailer,76987,['New Zealand' 'Marlborough' 'vendor' 578 2 5 1095963 {'Real Estate'}]
-194,retailer,62821,"['Croatia' 'Virovitičko-podravska županija' 'abroad' 133 1 3 1079674
- {'Financial Services'}]"
-195,retailer,14737,['Gabon' 'Woleu-Ntem' 'customer end' 331 1 4 1524443 set()]
+ 747 5 4 819022]"
+181,retailer,10327,['Oman' 'Al Wusţá' 'distributer' 356 3 9 814119]
+182,retailer,61580,['French Polynesia' 'Unknown' 'customer end' 535 5 6 987153]
+183,retailer,61892,"['Congo, The Democratic Republic of the', 'Tshuapa', 'customer end', 125, {'Electric Power & Natural Gas'}, 1, 1, 1606404]"
+184,retailer,73217,"['Sweden', 'Gävleborgs län [SE-21]', 'abroad', 660, {'Public & Social Sector'}, 3, 5, 1031212]"
+185,retailer,26654,['South Sudan' 'Central Equatoria' 'abroad' 377 1 2 1653851]
+186,retailer,54549,"['Micronesia, Federated States of' 'Chuuk' 'abroad' 749 1 4 92910]"
+187,retailer,85978,['Norfolk Island' 'Unknown' 'vendor' 854 2 9 1923235]
+188,retailer,31857,"['Albania', 'Korçë', 'customer end', 862, {'Public & Social Sector', 'Healthcare Systems & Services', 'Education'}, 1, 1, 1178695]"
+189,retailer,17462,['Sierra Leone' 'Eastern' 'distributer' 790 4 4 642703]
+190,retailer,12527,['Svalbard and Jan Mayen' 'Unknown' 'customer end' 677 1 1 1147524]
+191,retailer,74653,"['Slovenia', 'Rače-Fram', 'customer end', 283, {'Retail'}, 4, 4, 661934]"
+192,retailer,48109,['Cambodia' 'Kandaal' 'distributer' 886 1 1 1505690]
+193,retailer,76987,"['New Zealand', 'Marlborough', 'vendor', 578, {'Real Estate'}, 2, 5, 1095963]"
+194,retailer,62821,"['Croatia', 'Virovitičko-podravska županija', 'abroad', 133, {'Financial Services'}, 1, 3, 1079674]"
+195,retailer,14737,['Gabon' 'Woleu-Ntem' 'customer end' 331 1 4 1524443]
 196,retailer,58391,"['Central African Republic' 'Bamingui-Bangoran' 'customer end' 198 3 7
- 904945 set()]"
-197,retailer,49955,"['Bouvet Island' 'Unknown' 'vendor' 693 1 2 136577
- {'Oil & Gas', 'Chemicals'}]"
-198,retailer,57882,"['British Indian Ocean Territory' 'Unknown' 'distributer' 253 4 8 1141762
- set()]"
-199,retailer,20289,['Tajikistan' 'nohiyahoi tobei jumhurí' 'vendor' 572 3 2 452788 set()]
-200,retailer,96028,['Cabo Verde' 'São Salvador do Mundo' 'abroad' 773 1 3 1137167 set()]
-201,retailer,76059,['Malawi' 'Dowa' 'customer end' 687 4 3 1926475 {'Automotive & Assembly'}]
+ 904945]"
+197,retailer,49955,"['Bouvet Island', 'Unknown', 'vendor', 693, {'Oil & Gas', 'Chemicals'}, 1, 2, 136577]"
+198,retailer,57882,['British Indian Ocean Territory' 'Unknown' 'distributer' 253 4 8 1141762]
+199,retailer,20289,['Tajikistan' 'nohiyahoi tobei jumhurí' 'vendor' 572 3 2 452788]
+200,retailer,96028,['Cabo Verde' 'São Salvador do Mundo' 'abroad' 773 1 3 1137167]
+201,retailer,76059,"['Malawi', 'Dowa', 'customer end', 687, {'Automotive & Assembly'}, 4, 3, 1926475]"
 202,retailer,70666,"['Saint Helena, Ascension and Tristan da Cunha' 'Saint Helena' 'vendor'
- 315 1 8 1662706 set()]"
-203,retailer,47196,"['Albania' 'Elbasan' 'abroad' 527 4 2 1569819
- {'Life Sciences', 'Advanced Electronics'}]"
+ 315 1 8 1662706]"
+203,retailer,47196,"['Albania', 'Elbasan', 'abroad', 527, {'Life Sciences', 'Advanced Electronics'}, 4, 2, 1569819]"
 204,retailer,26461,"['Saint Vincent and the Grenadines' 'Charlotte' 'customer end' 996 2 8
- 276071 set()]"
-205,retailer,91566,['Anguilla' 'Unknown' 'abroad' 313 4 4 592968 set()]
-206,retailer,48462,['Niger' 'Dosso' 'distributer' 284 2 9 234649 set()]
-207,retailer,29540,"['Bangladesh' 'Shariatpur' 'distributer' 536 2 3 1933670
- {'Paper, Forest Products & Packaging'}]"
-208,retailer,54756,['Kiribati' 'Line Islands' 'distributer' 189 1 8 1222269 set()]
-209,retailer,68441,['Macao' 'Unknown' 'customer end' 349 2 7 748767 set()]
-210,retailer,66663,"['Luxembourg' 'Mersch' 'customer end' 549 2 1 1786531
- {'Paper, Forest Products & Packaging', 'Metals & Mining'}]"
-211,retailer,61003,"['Iran, Islamic Republic of' 'Zanjān' 'vendor' 871 1 6 683362 set()]"
-212,retailer,82777,"['Slovenia' 'Ivančna Gorica' 'abroad' 191 1 7 915672
- {'Advanced Electronics'}]"
-213,retailer,78692,['Mali' 'Gao' 'distributer' 846 2 5 1134350 set()]
-214,retailer,22459,"['Kazakhstan' ""Turkestankaya oblast'"" 'customer end' 706 4 4 323272 set()]"
-215,retailer,67833,['El Salvador' 'Usulután' 'vendor' 297 1 2 1977961 set()]
-216,retailer,26336,"['Djibouti' 'Tadjourah' 'distributer' 621 4 6 1098430
- {'Advanced Electronics'}]"
-217,retailer,46954,"['Curaçao' 'Unknown' 'distributer' 660 1 5 1638664
- {'Engineering, Construction & Building Materials'}]"
-218,retailer,28549,['New Caledonia' 'Unknown' 'distributer' 450 4 9 1905955 set()]
-219,retailer,62920,"['Belarus' 'Mahilioŭskaja voblasć' 'abroad' 988 4 5 367437
- {'Automotive & Assembly'}]"
-220,retailer,95909,['Ghana' 'Savannah' 'abroad' 813 5 9 604532 set()]
-221,retailer,98026,['Canada' 'Manitoba' 'vendor' 252 4 6 1283308 set()]
-222,retailer,45151,['Brunei Darussalam' 'Belait' 'distributer' 537 1 8 1445965 set()]
-223,retailer,53380,['Åland Islands' 'Unknown' 'customer end' 770 5 1 1898111 set()]
-224,retailer,92733,['Fiji' 'Serua' 'vendor' 949 2 1 348510 set()]
-225,retailer,82256,['Oman' 'Al Buraymī' 'distributer' 535 4 1 1662653 set()]
-226,retailer,61236,['Turkmenistan' 'Balkan' 'abroad' 244 3 9 1924299 set()]
-227,retailer,55061,"['Virgin Islands, U.S.' 'Unknown' 'abroad' 721 1 8 1366503 set()]"
-228,retailer,38017,"['Kyrgyzstan' ""Dzhalal-Abadskaya oblast'"" 'abroad' 615 3 5 1532622 set()]"
-229,retailer,96831,['Lebanon' 'Jabal Lubnān' 'distributer' 944 2 2 1963377 set()]
-230,retailer,29575,['Falkland Islands (Malvinas)' 'Unknown' 'abroad' 685 5 2 640608 set()]
-231,retailer,67690,['Isle of Man' 'Unknown' 'customer end' 414 2 8 189504 set()]
-232,retailer,60804,['Armenia' 'Tavuš' 'abroad' 866 2 8 1279430 set()]
-233,retailer,70517,['Ecuador' 'Cañar' 'distributer' 214 5 9 471451 set()]
-234,retailer,26669,['Norfolk Island' 'Unknown' 'distributer' 533 4 1 982403 set()]
-235,retailer,56680,['Palau' 'Ngardmau' 'distributer' 420 1 6 1535193 set()]
-236,retailer,69173,['Finland' 'Egentliga Finland' 'distributer' 369 1 7 67540 set()]
-237,retailer,35367,"['Martinique' 'Unknown' 'distributer' 204 4 9 499769
- {'Aerospace & Defense'}]"
-238,retailer,31412,['France' 'Saint-Martin' 'abroad' 754 2 4 1550866 {'Real Estate'}]
-239,retailer,64102,"['Greenland' 'Kommuneqarfik Sermersooq' 'customer end' 411 1 1 1039319
- set()]"
-240,retailer,35734,['Pakistan' 'Khyber Pakhtunkhwa' 'vendor' 139 4 9 1396971 set()]
-241,retailer,78981,"['Afghanistan' 'Laghmān' 'customer end' 850 1 8 1347744
- {'Advanced Electronics'}]"
-242,retailer,65811,['Fiji' 'Kadavu' 'customer end' 931 5 2 1474819 {'Chemicals'}]
-243,retailer,69912,['China' 'Shanxi Sheng' 'distributer' 154 3 5 632673 set()]
+ 276071]"
+205,retailer,91566,['Anguilla' 'Unknown' 'abroad' 313 4 4 592968]
+206,retailer,48462,['Niger' 'Dosso' 'distributer' 284 2 9 234649]
+207,retailer,29540,"['Bangladesh', 'Shariatpur', 'distributer', 536, {'Paper, Forest Products & Packaging'}, 2, 3, 1933670]"
+208,retailer,54756,['Kiribati' 'Line Islands' 'distributer' 189 1 8 1222269]
+209,retailer,68441,['Macao' 'Unknown' 'customer end' 349 2 7 748767]
+210,retailer,66663,"['Luxembourg', 'Mersch', 'customer end', 549, {'Paper, Forest Products & Packaging', 'Metals & Mining'}, 2, 1, 1786531]"
+211,retailer,61003,"['Iran, Islamic Republic of' 'Zanjān' 'vendor' 871 1 6 683362]"
+212,retailer,82777,"['Slovenia', 'Ivančna Gorica', 'abroad', 191, {'Advanced Electronics'}, 1, 7, 915672]"
+213,retailer,78692,['Mali' 'Gao' 'distributer' 846 2 5 1134350]
+214,retailer,22459,"['Kazakhstan' ""Turkestankaya oblast'"" 'customer end' 706 4 4 323272]"
+215,retailer,67833,['El Salvador' 'Usulután' 'vendor' 297 1 2 1977961]
+216,retailer,26336,"['Djibouti', 'Tadjourah', 'distributer', 621, {'Advanced Electronics'}, 4, 6, 1098430]"
+217,retailer,46954,"['Curaçao', 'Unknown', 'distributer', 660, {'Engineering, Construction & Building Materials'}, 1, 5, 1638664]"
+218,retailer,28549,['New Caledonia' 'Unknown' 'distributer' 450 4 9 1905955]
+219,retailer,62920,"['Belarus', 'Mahilioŭskaja voblasć', 'abroad', 988, {'Automotive & Assembly'}, 4, 5, 367437]"
+220,retailer,95909,['Ghana' 'Savannah' 'abroad' 813 5 9 604532]
+221,retailer,98026,['Canada' 'Manitoba' 'vendor' 252 4 6 1283308]
+222,retailer,45151,['Brunei Darussalam' 'Belait' 'distributer' 537 1 8 1445965]
+223,retailer,53380,['Åland Islands' 'Unknown' 'customer end' 770 5 1 1898111]
+224,retailer,92733,['Fiji' 'Serua' 'vendor' 949 2 1 348510]
+225,retailer,82256,['Oman' 'Al Buraymī' 'distributer' 535 4 1 1662653]
+226,retailer,61236,['Turkmenistan' 'Balkan' 'abroad' 244 3 9 1924299]
+227,retailer,55061,"['Virgin Islands, U.S.' 'Unknown' 'abroad' 721 1 8 1366503]"
+228,retailer,38017,"['Kyrgyzstan' ""Dzhalal-Abadskaya oblast'"" 'abroad' 615 3 5 1532622]"
+229,retailer,96831,['Lebanon' 'Jabal Lubnān' 'distributer' 944 2 2 1963377]
+230,retailer,29575,['Falkland Islands (Malvinas)' 'Unknown' 'abroad' 685 5 2 640608]
+231,retailer,67690,['Isle of Man' 'Unknown' 'customer end' 414 2 8 189504]
+232,retailer,60804,['Armenia' 'Tavuš' 'abroad' 866 2 8 1279430]
+233,retailer,70517,['Ecuador' 'Cañar' 'distributer' 214 5 9 471451]
+234,retailer,26669,['Norfolk Island' 'Unknown' 'distributer' 533 4 1 982403]
+235,retailer,56680,['Palau' 'Ngardmau' 'distributer' 420 1 6 1535193]
+236,retailer,69173,['Finland' 'Egentliga Finland' 'distributer' 369 1 7 67540]
+237,retailer,35367,"['Martinique', 'Unknown', 'distributer', 204, {'Aerospace & Defense'}, 4, 9, 499769]"
+238,retailer,31412,"['France', 'Saint-Martin', 'abroad', 754, {'Real Estate'}, 2, 4, 1550866]"
+239,retailer,64102,['Greenland' 'Kommuneqarfik Sermersooq' 'customer end' 411 1 1 1039319]
+240,retailer,35734,['Pakistan' 'Khyber Pakhtunkhwa' 'vendor' 139 4 9 1396971]
+241,retailer,78981,"['Afghanistan', 'Laghmān', 'customer end', 850, {'Advanced Electronics'}, 1, 8, 1347744]"
+242,retailer,65811,"['Fiji', 'Kadavu', 'customer end', 931, {'Chemicals'}, 5, 2, 1474819]"
+243,retailer,69912,['China' 'Shanxi Sheng' 'distributer' 154 3 5 632673]
 244,retailer,56222,"[""Korea, Democratic People's Republic of"" ""P'yǒngyang"" 'customer end' 211
- 1 1 1459909 set()]"
-245,retailer,92403,['Algeria' 'Souk Ahras' 'vendor' 262 4 8 1196547 set()]
-246,retailer,40821,['United Kingdom' 'Merton' 'distributer' 556 5 1 1446269 set()]
+ 1 1 1459909]"
+245,retailer,92403,['Algeria' 'Souk Ahras' 'vendor' 262 4 8 1196547]
+246,retailer,40821,['United Kingdom' 'Merton' 'distributer' 556 5 1 1446269]
 247,retailer,90345,"['Chile' 'Aisén del General Carlos Ibañez del Campo' 'abroad' 309 5 7
- 688060 set()]"
-248,retailer,71308,['Ireland' 'Dublin' 'vendor' 129 5 7 1510373 set()]
-249,retailer,41879,"['Djibouti' 'Awbūk' 'distributer' 924 1 3 464028
- {'Healthcare Systems & Services'}]"
-250,retailer,69506,['Oman' 'Shamāl al Bāţinah' 'distributer' 712 4 8 273648 set()]
-251,retailer,90349,"['French Guiana' 'Unknown' 'abroad' 817 5 3 1878523
- {'Aerospace & Defense'}]"
-252,retailer,67158,['India' 'Manipur' 'customer end' 185 3 6 1813466 set()]
-253,retailer,38871,['Guatemala' 'Chimaltenango' 'vendor' 997 3 2 439001 set()]
-254,retailer,59906,['Lebanon' 'Bayrūt' 'vendor' 390 5 4 1541808 set()]
-255,retailer,31062,['Mali' 'Taoudénit' 'vendor' 163 4 5 548122 set()]
-256,retailer,87755,['Cambodia' 'Kampong Spueu' 'distributer' 860 4 1 303166 set()]
-257,retailer,23758,['Serbia' 'Zaječarski okrug' 'abroad' 248 2 2 310912 set()]
-258,retailer,22049,"[""Korea, Democratic People's Republic of"" 'Nampho' 'customer end' 676 3 3
- 1357300 {'Engineering, Construction & Building Materials'}]"
-259,retailer,43964,['Norway' 'Vestfold og Telemark' 'distributer' 268 3 4 503646 set()]
-260,retailer,10661,['Mexico' 'Baja California' 'abroad' 301 3 3 1889514 set()]
-261,retailer,25889,"['Oman' 'Shamāl al Bāţinah' 'customer end' 959 1 8 1650639
- {'Aerospace & Defense'}]"
-262,retailer,17198,"[""Côte d'Ivoire"" 'Denguélé' 'distributer' 218 3 6 544883
- {'Automotive & Assembly'}]"
-263,retailer,67361,"['Suriname' 'Wanica' 'abroad' 236 1 1 1747881
- {'Aerospace & Defense', 'Paper, Forest Products & Packaging'}]"
-264,retailer,98717,['Lithuania' 'Panevėžio miestas' 'distributer' 848 2 7 29006 set()]
-265,retailer,34779,['Réunion' 'Unknown' 'customer end' 464 3 2 191216 {'Oil & Gas'}]
-266,retailer,48381,['Uruguay' 'Rocha' 'customer end' 478 4 4 183792 set()]
-267,retailer,82830,['Congo' 'Bouenza' 'customer end' 994 4 7 1140131 {'Semiconductors'}]
-268,retailer,94027,"['Kenya' 'Embu' 'customer end' 675 2 7 1715176
- {'Engineering, Construction & Building Materials'}]"
-269,retailer,56575,['Turkmenistan' 'Balkan' 'customer end' 878 4 1 525049 {'Semiconductors'}]
-270,retailer,87615,['Pitcairn' 'Unknown' 'distributer' 845 3 6 260035 set()]
-271,retailer,69655,['Barbados' 'Saint Michael' 'abroad' 632 2 1 770439 set()]
-272,retailer,83982,"['Cayman Islands' 'Unknown' 'distributer' 225 3 9 351603
- {'Semiconductors'}]"
-273,retailer,24037,['Greenland' 'Kommuneqarfik Sermersooq' 'vendor' 943 4 8 310122 set()]
-274,retailer,65500,['Bhutan' 'Monggar' 'distributer' 835 5 1 1826044 set()]
-275,retailer,91326,['Mayotte' 'Unknown' 'customer end' 846 1 7 1601112 set()]
-276,retailer,14803,['Bermuda' 'Unknown' 'vendor' 747 5 3 1890234 set()]
-277,retailer,84290,['Cook Islands' 'Unknown' 'abroad' 445 2 3 1534951 set()]
-278,retailer,61174,['Finland' 'Etelä-Karjala' 'vendor' 888 3 5 183016 set()]
-279,retailer,28898,['Liberia' 'Margibi' 'vendor' 880 1 5 1168243 set()]
-280,retailer,64571,['Uganda' 'Ntungamo' 'vendor' 832 2 6 1104319 {'Advanced Electronics'}]
-281,retailer,63898,['Fiji' 'Rotuma' 'abroad' 703 4 9 1607287 set()]
-282,retailer,16322,['Mayotte' 'Unknown' 'abroad' 864 3 7 1533329 set()]
-283,retailer,23228,"['Botswana' 'Ghanzi' 'distributer' 961 4 7 1771606
- {'Paper, Forest Products & Packaging'}]"
-284,retailer,49119,['Qatar' 'Ash Shamāl' 'distributer' 943 1 9 181658 set()]
-285,retailer,14114,['Paraguay' 'Misiones' 'customer end' 215 5 1 1000569 set()]
-286,retailer,53319,"['Bonaire, Sint Eustatius and Saba' 'Bonaire' 'vendor' 974 5 9 1992674
- set()]"
-287,retailer,14965,['Algeria' 'Djelfa' 'vendor' 800 2 4 1323070 {'Financial Services'}]
-288,retailer,11854,"['Slovenia' 'Štore' 'abroad' 144 4 3 131631
- {'Private Equity & Principal Investors'}]"
-289,retailer,63788,['Namibia' 'Kunene' 'customer end' 358 4 8 1898070 set()]
-290,retailer,40164,"['Guadeloupe' 'Unknown' 'abroad' 651 2 1 309772
- {'Aerospace & Defense', 'Semiconductors'}]"
-291,retailer,45657,['Guinea' 'Lola' 'customer end' 609 4 5 861244 set()]
-292,retailer,78323,['Maldives' 'South Miladhunmadulu' 'distributer' 473 5 7 527164 set()]
-293,retailer,38623,['El Salvador' 'La Libertad' 'abroad' 849 4 1 1286511 set()]
-294,retailer,76954,['Montenegro' 'Rožaje' 'distributer' 191 5 3 309798 set()]
-295,retailer,86308,"['Ukraine' 'Chernihivska oblast' 'vendor' 987 4 8 1316087
- {'Financial Services'}]"
-296,retailer,18464,['Haiti' 'Grandans' 'customer end' 295 2 5 1686073 set()]
-297,retailer,57039,"[""Lao People's Democratic Republic"" 'Viangchan' 'vendor' 450 2 7 1019346
- set()]"
-298,retailer,33250,['South Sudan' 'Lakes' 'customer end' 318 4 6 716050 set()]
-299,retailer,21789,['Cyprus' 'Ammochostos' 'distributer' 907 3 5 284423 set()]
+ 688060]"
+248,retailer,71308,['Ireland' 'Dublin' 'vendor' 129 5 7 1510373]
+249,retailer,41879,"['Djibouti', 'Awbūk', 'distributer', 924, {'Healthcare Systems & Services'}, 1, 3, 464028]"
+250,retailer,69506,['Oman' 'Shamāl al Bāţinah' 'distributer' 712 4 8 273648]
+251,retailer,90349,"['French Guiana', 'Unknown', 'abroad', 817, {'Aerospace & Defense'}, 5, 3, 1878523]"
+252,retailer,67158,['India' 'Manipur' 'customer end' 185 3 6 1813466]
+253,retailer,38871,['Guatemala' 'Chimaltenango' 'vendor' 997 3 2 439001]
+254,retailer,59906,['Lebanon' 'Bayrūt' 'vendor' 390 5 4 1541808]
+255,retailer,31062,['Mali' 'Taoudénit' 'vendor' 163 4 5 548122]
+256,retailer,87755,['Cambodia' 'Kampong Spueu' 'distributer' 860 4 1 303166]
+257,retailer,23758,['Serbia' 'Zaječarski okrug' 'abroad' 248 2 2 310912]
+258,retailer,22049,"[""Korea, Democratic People's Republic of"", 'Nampho', 'customer end', 676, {'Engineering, Construction & Building Materials'}, 3, 3, 1357300]"
+259,retailer,43964,['Norway' 'Vestfold og Telemark' 'distributer' 268 3 4 503646]
+260,retailer,10661,['Mexico' 'Baja California' 'abroad' 301 3 3 1889514]
+261,retailer,25889,"['Oman', 'Shamāl al Bāţinah', 'customer end', 959, {'Aerospace & Defense'}, 1, 8, 1650639]"
+262,retailer,17198,"[""Côte d'Ivoire"", 'Denguélé', 'distributer', 218, {'Automotive & Assembly'}, 3, 6, 544883]"
+263,retailer,67361,"['Suriname', 'Wanica', 'abroad', 236, {'Paper, Forest Products & Packaging', 'Aerospace & Defense'}, 1, 1, 1747881]"
+264,retailer,98717,['Lithuania' 'Panevėžio miestas' 'distributer' 848 2 7 29006]
+265,retailer,34779,"['Réunion', 'Unknown', 'customer end', 464, {'Oil & Gas'}, 3, 2, 191216]"
+266,retailer,48381,['Uruguay' 'Rocha' 'customer end' 478 4 4 183792]
+267,retailer,82830,"['Congo', 'Bouenza', 'customer end', 994, {'Semiconductors'}, 4, 7, 1140131]"
+268,retailer,94027,"['Kenya', 'Embu', 'customer end', 675, {'Engineering, Construction & Building Materials'}, 2, 7, 1715176]"
+269,retailer,56575,"['Turkmenistan', 'Balkan', 'customer end', 878, {'Semiconductors'}, 4, 1, 525049]"
+270,retailer,87615,['Pitcairn' 'Unknown' 'distributer' 845 3 6 260035]
+271,retailer,69655,['Barbados' 'Saint Michael' 'abroad' 632 2 1 770439]
+272,retailer,83982,"['Cayman Islands', 'Unknown', 'distributer', 225, {'Semiconductors'}, 3, 9, 351603]"
+273,retailer,24037,['Greenland' 'Kommuneqarfik Sermersooq' 'vendor' 943 4 8 310122]
+274,retailer,65500,['Bhutan' 'Monggar' 'distributer' 835 5 1 1826044]
+275,retailer,91326,['Mayotte' 'Unknown' 'customer end' 846 1 7 1601112]
+276,retailer,14803,['Bermuda' 'Unknown' 'vendor' 747 5 3 1890234]
+277,retailer,84290,['Cook Islands' 'Unknown' 'abroad' 445 2 3 1534951]
+278,retailer,61174,['Finland' 'Etelä-Karjala' 'vendor' 888 3 5 183016]
+279,retailer,28898,['Liberia' 'Margibi' 'vendor' 880 1 5 1168243]
+280,retailer,64571,"['Uganda', 'Ntungamo', 'vendor', 832, {'Advanced Electronics'}, 2, 6, 1104319]"
+281,retailer,63898,['Fiji' 'Rotuma' 'abroad' 703 4 9 1607287]
+282,retailer,16322,['Mayotte' 'Unknown' 'abroad' 864 3 7 1533329]
+283,retailer,23228,"['Botswana', 'Ghanzi', 'distributer', 961, {'Paper, Forest Products & Packaging'}, 4, 7, 1771606]"
+284,retailer,49119,['Qatar' 'Ash Shamāl' 'distributer' 943 1 9 181658]
+285,retailer,14114,['Paraguay' 'Misiones' 'customer end' 215 5 1 1000569]
+286,retailer,53319,"['Bonaire, Sint Eustatius and Saba' 'Bonaire' 'vendor' 974 5 9 1992674]"
+287,retailer,14965,"['Algeria', 'Djelfa', 'vendor', 800, {'Financial Services'}, 2, 4, 1323070]"
+288,retailer,11854,"['Slovenia', 'Štore', 'abroad', 144, {'Private Equity & Principal Investors'}, 4, 3, 131631]"
+289,retailer,63788,['Namibia' 'Kunene' 'customer end' 358 4 8 1898070]
+290,retailer,40164,"['Guadeloupe', 'Unknown', 'abroad', 651, {'Aerospace & Defense', 'Semiconductors'}, 2, 1, 309772]"
+291,retailer,45657,['Guinea' 'Lola' 'customer end' 609 4 5 861244]
+292,retailer,78323,['Maldives' 'South Miladhunmadulu' 'distributer' 473 5 7 527164]
+293,retailer,38623,['El Salvador' 'La Libertad' 'abroad' 849 4 1 1286511]
+294,retailer,76954,['Montenegro' 'Rožaje' 'distributer' 191 5 3 309798]
+295,retailer,86308,"['Ukraine', 'Chernihivska oblast', 'vendor', 987, {'Financial Services'}, 4, 8, 1316087]"
+296,retailer,18464,['Haiti' 'Grandans' 'customer end' 295 2 5 1686073]
+297,retailer,57039,"[""Lao People's Democratic Republic"" 'Viangchan' 'vendor' 450 2 7 1019346]"
+298,retailer,33250,['South Sudan' 'Lakes' 'customer end' 318 4 6 716050]
+299,retailer,21789,['Cyprus' 'Ammochostos' 'distributer' 907 3 5 284423]
 300,supplier,34258,"['Taylor PLC' ""Lao People's Democratic Republic"" 'Viangchan' 'Dollars'
- 'Financial Services' 446 465.22 5565 48 597000000000.0]"
+ 'Financial Services' 446 465.22 5565 48 597384000000.0]"
 301,supplier,40868,"['Sorrentino SPA' 'Mozambique' 'Gaza' 'Dollars' 'Real Estate' 533 8881.74
- 1871 98 917000000000.0]"
+ 1871 98 916817000000.0]"
 302,supplier,27813,"['Persico e figli' 'Saint Martin (French part)' 'Unknown' 'Dollars'
- 'Paper, Forest Products & Packaging' 578 58.99 8611 9 698000000000.0]"
+ 'Paper, Forest Products & Packaging' 578 58.99 8611 9 697777000000.0]"
 303,supplier,57551,"['Karge OHG mbH' 'Brunei Darussalam' 'Belait' 'Dollars' 'Oil & Gas' 145
- 3.35 4320 41 879000000000.0]"
+ 3.35 4320 41 878641000000.0]"
 304,supplier,50099,"['Smith, Porter and Lynch' 'Palau' 'Ngatpang' 'Dollars'
- 'Automotive & Assembly' 872 8.39 2090 78 605000000000.0]"
+ 'Automotive & Assembly' 872 8.39 2090 78 604646000000.0]"
 305,supplier,68240,"['Mary Breton S.A.' 'Iran, Islamic Republic of' 'Āz̄ārbāyjān-e Shārqī'
- 'Ngultrum' 'Life Sciences' 278 246.17 3731 28 671000000000.0]"
+ 'Ngultrum' 'Life Sciences' 278 246.17 3731 28 671335000000.0]"
 306,supplier,46204,"['Renner' 'Guinea-Bissau' 'Sul' 'Dollars' 'Metals & Mining' 202 4.71 7360
- 4 360000000000.0]"
+ 4 360381000000.0]"
 307,supplier,44351,"['Collins Inc' 'Czechia' 'Prachatice' 'Dollars' 'Advanced Electronics' 912
- 6222.61 4121 74 432000000000.0]"
+ 6222.61 4121 74 432280000000.0]"
 308,supplier,43284,"['Lombard et Fils' 'Romania' 'Brașov' 'Dollars' 'Retail' 525 6.18 6336 86
- 251000000000.0]"
+ 251048000000.0]"
 309,supplier,47804,"['Mattarella, Chiappetta e Farinelli Group' 'Monaco' 'Vallon de la Rousse'
- 'Dollars' 'Public & Social Sector' 522 178.37 9266 91 960000000000.0]"
+ 'Dollars' 'Public & Social Sector' 522 178.37 9266 91 960444000000.0]"
 310,supplier,61874,"['Agnesi-Donatoni e figli' 'Suriname' 'Paramaribo' 'Dollars' 'Oil & Gas'
- 498 3.51 7503 23 288000000000.0]"
+ 498 3.51 7503 23 287869000000.0]"
 311,supplier,10161,"['Marchand Salmon et Fils' 'Iceland' 'Rangárþing eystra' 'Dollars'
  'Technology, Media & Telecommunications' 706 450.56 8872 6 73010024548.0]"
 312,supplier,27880,"['Faust Gierschner GmbH & Co. KG' 'French Southern Territories' 'Unknown'
- 'Dollars' 'Oil & Gas' 711 9.61 6063 42 496000000000.0]"
+ 'Dollars' 'Oil & Gas' 711 9.61 6063 42 495824000000.0]"
 313,supplier,58199,"['Müller' 'Antigua and Barbuda' 'Saint Peter' 'Dollars'
  'Technology, Media & Telecommunications' 920 4274.6 8637 93
- 868000000000.0]"
+ 867596000000.0]"
 314,supplier,75581,"['Giulietti, Casaleggio e Nibali e figli' 'Lebanon' 'An Nabaţīyah'
- 'Dollars' 'Metals & Mining' 794 40.52 9856 92 948000000000.0]"
+ 'Dollars' 'Metals & Mining' 794 40.52 9856 92 948234000000.0]"
 315,supplier,89467,"['Langern' 'Qatar' 'Umm Şalāl' 'Dollars'
  'Engineering, Construction & Building Materials' 344 1.14 1502 44
- 437000000000.0]"
+ 437082000000.0]"
 316,supplier,61433,"['Ginesio-Majewski e figli' 'Marshall Islands' 'Likiep' 'Dollars'
- 'Electric Power & Natural Gas' 362 650.1 6018 27 920000000000.0]"
+ 'Electric Power & Natural Gas' 362 650.1 6018 27 919631000000.0]"
 317,supplier,57453,"['Wong PLC' 'Russian Federation' 'Altajskij kraj' 'Dollars'
  'Technology, Media & Telecommunications' 337 4386.47 7968 79
- 407000000000.0]"
+ 406769000000.0]"
 318,supplier,77332,"['Fischer' 'Saint Lucia' 'Choiseul' 'Dollars'
- 'Electric Power & Natural Gas' 314 99.1 3207 94 991000000000.0]"
+ 'Electric Power & Natural Gas' 314 99.1 3207 94 990969000000.0]"
 319,supplier,70443,"['Tamburini-Endrizzi Group' 'Åland Islands' 'Unknown' 'Dollars'
- 'Travel, Logistics & Infrastructure' 225 48.46 7592 69 943000000000.0]"
+ 'Travel, Logistics & Infrastructure' 225 48.46 7592 69 943490000000.0]"
 320,supplier,85351,"['Bohnbach Schulz GmbH & Co. OHG' 'Brazil' 'Piauí' 'Dollars'
- 'Electric Power & Natural Gas' 320 94.75 2613 43 762000000000.0]"
+ 'Electric Power & Natural Gas' 320 94.75 2613 43 762017000000.0]"
 321,supplier,29277,"['Ortmann Eigenwillig GbR' 'Cook Islands' 'Unknown' 'Dollars'
  'Technology, Media & Telecommunications' 630 936.91 8268 69
- 778000000000.0]"
+ 777816000000.0]"
 322,supplier,97749,"['Daniels and Sons' 'French Southern Territories' 'Unknown' 'Dollars'
- 'Retail' 531 48.35 3181 20 463000000000.0]"
+ 'Retail' 531 48.35 3181 20 463229000000.0]"
 323,supplier,93661,"['Mastandrea, Faranda e Crispi SPA' 'Ecuador' 'Sucumbíos' 'Dollars'
- 'Consumer Packaged Goods' 768 520.91 3030 32 576000000000.0]"
+ 'Consumer Packaged Goods' 768 520.91 3030 32 575747000000.0]"
 324,supplier,47339,"['Parent Boulanger S.A.' 'Colombia' 'Cauca' 'Dollars'
  'Travel, Logistics & Infrastructure' 684 96.64 6011 59 90469483609.0]"
 325,supplier,26090,"['Lange GmbH' 'Algeria' 'Tamanrasset' 'Dollars'
- 'Electric Power & Natural Gas' 935 9.31 7225 1 322000000000.0]"
+ 'Electric Power & Natural Gas' 935 9.31 7225 1 322497000000.0]"
 326,supplier,17977,"['Reynaud' 'Yemen' 'Ḩaḑramawt' 'Dollars' 'Chemicals' 813 3851.88 4098 53
- 837000000000.0]"
+ 836527000000.0]"
 327,supplier,68081,"['Garcia-Garcia' 'Madagascar' 'Antsiranana' 'Dollars'
- 'Electric Power & Natural Gas' 830 6.54 4668 93 247000000000.0]"
+ 'Electric Power & Natural Gas' 830 6.54 4668 93 247419000000.0]"
 328,supplier,83468,"['Couturier' 'Ireland' 'Louth' 'Dollars' 'Chemicals' 430 8920.61 2771 14
- 593000000000.0]"
+ 592762000000.0]"
 329,supplier,65468,"['Devaux SARL' 'Georgia' 'Samtskhe-Javakheti' 'Dollars' 'Chemicals' 211
- 395.56 6002 12 291000000000.0]"
+ 395.56 6002 12 291299000000.0]"
 330,supplier,35841,"['Richard' 'Austria' 'Tirol' 'Dollars' 'Consumer Packaged Goods' 184 71.56
- 4777 32 269000000000.0]"
+ 4777 32 268557000000.0]"
 331,supplier,27896,"['Taylor, Rees and Burke' 'Samoa' ""Gaga'emauga"" 'Dollars'
- 'Metals & Mining' 554 265.88 6696 55 734000000000.0]"
+ 'Metals & Mining' 554 265.88 6696 55 733737000000.0]"
 332,supplier,19974,"['Legendre' 'Hungary' 'Kaposvár' 'Dollars' 'Public & Social Sector' 369
  9.33 1204 19 77674664573.0]"
 333,supplier,63319,"['Donati e figli' 'Djibouti' 'Ali Sabieh' 'Dollars' 'Education' 731 65.25
- 6910 2 106000000000.0]"
+ 6910 2 105782000000.0]"
 334,supplier,58047,"['Sanders-Yoder' 'Cook Islands' 'Unknown' 'Dollars'
  'Engineering, Construction & Building Materials' 358 126.5 1459 15
  85648381584.0]"
 335,supplier,55441,"['Boezio, Galvani e Mazzeo Group' 'Argentina' 'Neuquén' 'Dollars'
- 'Agriculture' 429 548.43 2247 55 259000000000.0]"
+ 'Agriculture' 429 548.43 2247 55 259405000000.0]"
 336,supplier,69142,"['Fisher-Wright' 'Chad' 'Madīnat Injamīnā' 'Dollars'
- 'Public & Social Sector' 660 9348.77 7618 7 326000000000.0]"
+ 'Public & Social Sector' 660 9348.77 7618 7 325730000000.0]"
 337,supplier,29604,"['Frazier-Snyder' 'Thailand' 'Kalasin' 'Dollars' 'Agriculture' 751 8462.13
- 3844 16 219000000000.0]"
+ 3844 16 218589000000.0]"
 338,supplier,22560,"['Bernini-Mascheroni s.r.l.' 'Japan' 'Fukui' 'Dollars'
- 'Consumer Packaged Goods' 332 2.41 2230 52 916000000000.0]"
+ 'Consumer Packaged Goods' 332 2.41 2230 52 916225000000.0]"
 339,supplier,74660,"['Niemeier Käster AG' 'Argentina' 'Santa Fe' 'Dollars' 'Retail' 227 1.5
- 8102 89 754000000000.0]"
+ 8102 89 753905000000.0]"
 340,supplier,47093,"['Garnier S.A.' 'France' 'Gironde' 'Dollars'
  'Engineering, Construction & Building Materials' 713 94.16 1244 92
- 576000000000.0]"
+ 575609000000.0]"
 341,supplier,58976,"['Murray-Lowe' 'Jamaica' 'Saint Andrew' 'Dollars' 'Retail' 248 5077.25
  2848 41 13261847684.0]"
 342,supplier,27107,"['Loiseau' 'Indonesia' 'Jawa Tengah' 'Dollars'
- 'Electric Power & Natural Gas' 263 7.49 4483 62 560000000000.0]"
+ 'Electric Power & Natural Gas' 263 7.49 4483 62 559954000000.0]"
 343,supplier,11283,"['Godard' 'United States Minor Outlying Islands' 'Wake Island' 'Dollars'
- 'Healthcare Systems & Services' 382 518.82 7902 43 993000000000.0]"
+ 'Healthcare Systems & Services' 382 518.82 7902 43 992983000000.0]"
 344,supplier,63113,"['Ajello, Pavanello e Vasari e figli' 'Afghanistan' 'Baghlān' 'Dollars'
  'Technology, Media & Telecommunications' 109 448.29 5809 97
- 744000000000.0]"
+ 744454000000.0]"
 345,supplier,24741,"['Lange' 'Ghana' 'Bono' 'Dollars'
  'Engineering, Construction & Building Materials' 199 411.41 4001 24
- 801000000000.0]"
+ 801454000000.0]"
 346,supplier,67421,"['Bourgeois Guillaume S.A.R.L.' 'Gabon' 'Nyanga' 'Dollars'
- 'Electric Power & Natural Gas' 585 62.64 7382 57 871000000000.0]"
+ 'Electric Power & Natural Gas' 585 62.64 7382 57 870815000000.0]"
 347,supplier,43691,"['Legros' 'Chad' 'Borkou' 'Dollars' 'Life Sciences' 505 423.94 5206 90
- 534000000000.0]"
+ 533868000000.0]"
 348,supplier,18952,"['Calvo-Satriani e figli' 'Bahamas' 'Spanish Wells' 'Dollars'
- 'Semiconductors' 212 1080.19 2108 97 425000000000.0]"
+ 'Semiconductors' 212 1080.19 2108 97 424599000000.0]"
 349,supplier,64251,"['Parker, Golden and Vasquez' 'Tonga' ""Ha'apai"" 'Dollars'
- 'Travel, Logistics & Infrastructure' 958 285.39 6012 71 372000000000.0]"
+ 'Travel, Logistics & Infrastructure' 958 285.39 6012 71 372251000000.0]"
 350,supplier,71819,"['Hale-Robinson' 'Sint Maarten (Dutch part)' 'Unknown' 'Dollars'
- 'Consumer Packaged Goods' 143 67.7 9620 67 737000000000.0]"
+ 'Consumer Packaged Goods' 143 67.7 9620 67 737401000000.0]"
 351,supplier,24646,"['Thanel Schlosser AG & Co. KG' 'American Samoa' 'Unknown' 'Dollars'
- 'Private Equity & Principal Investors' 666 8.58 6375 52 564000000000.0]"
+ 'Private Equity & Principal Investors' 666 8.58 6375 52 564367000000.0]"
 352,supplier,72315,"['Phillips and Sons' 'Argentina' 'Tierra del Fuego' 'Dollars'
- 'Aerospace & Defense' 682 5.35 3930 33 321000000000.0]"
+ 'Aerospace & Defense' 682 5.35 3930 33 320703000000.0]"
 353,supplier,56382,"['Campbell LLC' 'Antigua and Barbuda' 'Saint Philip' 'Dollars' 'Retail'
- 911 6854.47 7625 4 972000000000.0]"
+ 911 6854.47 7625 4 972462000000.0]"
 354,supplier,31532,"['Williams-Carter' 'Seychelles' 'Au Cap' 'Dollars'
- 'Private Equity & Principal Investors' 200 73.33 5919 65 726000000000.0]"
+ 'Private Equity & Principal Investors' 200 73.33 5919 65 726452000000.0]"
 355,supplier,33037,"['Schinke' 'Saint Pierre and Miquelon' 'Unknown' 'Dollars' 'Retail' 568
  7.65 5517 77 96739764422.0]"
 356,supplier,13951,"['Santoro-Bignami SPA' 'Belize' 'Belize' 'Dollars' 'Oil & Gas' 569 20.98
  5075 26 98321109644.0]"
 357,supplier,88882,"['Copeland, Briggs and Taylor' 'French Guiana' 'Unknown' 'Dollars'
- 'Real Estate' 133 464.75 1036 1 987000000000.0]"
+ 'Real Estate' 133 464.75 1036 1 986561000000.0]"
 358,supplier,18141,"['Röhrdanz AG & Co. KG' 'Zambia' 'North-Western' 'Dollars'
- 'Public & Social Sector' 123 317.36 6687 88 562000000000.0]"
+ 'Public & Social Sector' 123 317.36 6687 88 561989000000.0]"
 359,supplier,73593,"['Simon Dijoux SA' 'French Guiana' 'Unknown' 'Dollars'
- 'Aerospace & Defense' 956 7.48 4612 30 294000000000.0]"
+ 'Aerospace & Defense' 956 7.48 4612 30 293624000000.0]"
 360,supplier,92416,"['Tonisto s.r.l.' 'Niue' 'Unknown' 'Dollars' 'Life Sciences' 221 5396.52
- 6068 65 215000000000.0]"
+ 6068 65 215163000000.0]"
 361,supplier,73487,"['Bishop Ltd' 'Italy' 'Marche' 'Dollars' 'Metals & Mining' 455 8.57 8447
- 51 240000000000.0]"
+ 51 239942000000.0]"
 362,supplier,99762,"['Hammond Inc' 'Netherlands' 'Saba' 'Dollars' 'Real Estate' 762 40.24 5322
- 77 534000000000.0]"
+ 77 534027000000.0]"
 363,supplier,86815,"['Giorgetti-Rossetti SPA' 'Equatorial Guinea' 'Bioko Sud' 'Dollars'
  'Technology, Media & Telecommunications' 269 180.97 8566 46
- 358000000000.0]"
+ 357993000000.0]"
 364,supplier,53699,"['Köster Walter GmbH & Co. KGaA' 'Niger' 'Diffa' 'Dollars' 'Real Estate'
  751 3.8 2347 12 65711062011.0]"
 365,supplier,41898,"['Gray, Walsh and Martin' 'Bouvet Island' 'Unknown' 'Dollars'
- 'Agriculture' 359 506.12 1114 16 181000000000.0]"
+ 'Agriculture' 359 506.12 1114 16 180707000000.0]"
 366,supplier,13889,"['John PLC' 'Benin' 'Alibori' 'Dollars' 'Public & Social Sector' 514 90.57
- 5223 37 559000000000.0]"
+ 5223 37 559407000000.0]"
 367,supplier,21166,"['Martin, Ross and Doyle' 'Gabon' 'Ogooué-Maritime' 'Dollars'
- 'Advanced Electronics' 596 168.81 7106 97 827000000000.0]"
+ 'Advanced Electronics' 596 168.81 7106 97 827493000000.0]"
 368,supplier,52544,"['Baglioni e figli' 'Bolivia, Plurinational State of' 'Pando' 'Dollars'
- 'Semiconductors' 443 50.79 5317 68 852000000000.0]"
+ 'Semiconductors' 443 50.79 5317 68 851818000000.0]"
 369,supplier,68120,"['Humbert et Fils' 'Holy See (Vatican City State)' 'Unknown' 'Dollars'
- 'Financial Services' 392 9626.27 8629 3 286000000000.0]"
+ 'Financial Services' 392 9626.27 8629 3 285701000000.0]"
 370,supplier,14125,"['Dörschner Naser GmbH' 'Bonaire, Sint Eustatius and Saba' 'Saba'
  'Dollars' 'Healthcare Systems & Services' 195 649.86 6139 64
- 854000000000.0]"
+ 853834000000.0]"
 371,supplier,12548,"['Whitehead, Morris and Chan' 'Somalia' 'Shabeellaha Hoose' 'Dollars'
  'Education' 745 35.61 9702 40 56583264482.0]"
 372,supplier,30692,"['Parsons-Miles' 'Saint Barthélemy' 'Unknown' 'Dollars'
  'Aerospace & Defense' 949 76.43 6981 86 89700080724.0]"
 373,supplier,31934,"['Brown Group' 'Wallis and Futuna' 'Alo' 'Dollars' 'Financial Services'
- 814 4.51 4480 49 319000000000.0]"
+ 814 4.51 4480 49 318592000000.0]"
 374,supplier,91465,"['Davis LLC' 'Marshall Islands' 'Enewetak & Ujelang' 'Dollars'
- 'Automotive & Assembly' 582 756.6 8797 3 181000000000.0]"
+ 'Automotive & Assembly' 582 756.6 8797 3 181469000000.0]"
 375,supplier,81423,"['Eco s.r.l.' 'Bouvet Island' 'Unknown' 'Dollars' 'Aerospace & Defense'
- 276 4.17 6658 69 345000000000.0]"
+ 276 4.17 6658 69 344950000000.0]"
 376,supplier,82768,"['Argan-Montesano Group' 'Grenada' 'Saint George' 'Dollars'
  'Consumer Packaged Goods' 982 53.66 4186 17 31804971061.0]"
 377,supplier,32829,"['Le Roux Faure et Fils' 'Kuwait' 'Al ‘Āşimah' 'Dollars' 'Chemicals' 885
- 51.31 5063 54 597000000000.0]"
+ 51.31 5063 54 597312000000.0]"
 378,supplier,39180,"['Lebon S.A.R.L.' 'Australia' 'Queensland' 'Dollars' 'Agriculture' 616
- 350.95 9886 69 820000000000.0]"
+ 350.95 9886 69 819612000000.0]"
 379,supplier,55787,"['Gröttner Stahr KG' 'Saint Vincent and the Grenadines' 'Saint David'
- 'Dollars' 'Advanced Electronics' 981 781.93 2736 92 154000000000.0]"
+ 'Dollars' 'Advanced Electronics' 981 781.93 2736 92 153906000000.0]"
 380,supplier,11770,"['Fantoni-Pareto SPA' 'Eritrea' 'Debubawi K’eyyĭḥ Baḥri' 'Dollars'
- 'Semiconductors' 687 5786.51 5156 97 222000000000.0]"
+ 'Semiconductors' 687 5786.51 5156 97 222249000000.0]"
 381,supplier,75444,"['Schacht KGaA' 'Argentina' 'La Pampa' 'Dollars'
- 'Electric Power & Natural Gas' 565 122.57 7540 14 369000000000.0]"
+ 'Electric Power & Natural Gas' 565 122.57 7540 14 368621000000.0]"
 382,supplier,12179,"['Ferrand Lefebvre SARL' 'Saint Vincent and the Grenadines' 'Saint David'
- 'Dollars' 'Advanced Electronics' 397 98.99 7296 100 445000000000.0]"
+ 'Dollars' 'Advanced Electronics' 397 98.99 7296 100 444562000000.0]"
 383,supplier,12547,"['Eberhardt Ortmann GmbH & Co. KG' 'Mali' 'Ségou' 'Dollars' 'Real Estate'
- 652 455.91 1848 24 524000000000.0]"
+ 652 455.91 1848 24 523779000000.0]"
 384,supplier,46676,"['Davies Group' 'Seychelles' 'Takamaka' 'Dollars'
- 'Healthcare Systems & Services' 184 8646.2 3217 74 333000000000.0]"
+ 'Healthcare Systems & Services' 184 8646.2 3217 74 332531000000.0]"
 385,supplier,89745,"['Stoll' 'New Caledonia' 'Unknown' 'Dollars' 'Metals & Mining' 168 68.59
- 5767 8 290000000000.0]"
+ 5767 8 290298000000.0]"
 386,supplier,46615,"['Brown, Roberts and Williams' 'Moldova, Republic of' 'Călărași' 'Dollars'
- 'Semiconductors' 510 2.99 6535 91 887000000000.0]"
+ 'Semiconductors' 510 2.99 6535 91 886936000000.0]"
 387,supplier,42065,"['Hayward Inc' 'Sint Maarten (Dutch part)' 'Unknown' 'Dollars'
- 'Healthcare Systems & Services' 826 8071.9 5073 63 304000000000.0]"
+ 'Healthcare Systems & Services' 826 8071.9 5073 63 304312000000.0]"
 388,supplier,18262,"['Davies, Anderson and Lewis' 'Saint Lucia' 'Soufrière' 'Dollars'
- 'Semiconductors' 623 3039.43 1257 29 220000000000.0]"
+ 'Semiconductors' 623 3039.43 1257 29 219938000000.0]"
 389,supplier,24451,"['Knapp-Lynch' 'Kuwait' 'Mubārak al Kabīr' 'Dollars'
- 'Electric Power & Natural Gas' 621 629.46 7584 79 458000000000.0]"
+ 'Electric Power & Natural Gas' 621 629.46 7584 79 458221000000.0]"
 390,supplier,64604,"['Jennings-Richards' 'Croatia' 'Varaždinska županija' 'Dollars'
- 'Real Estate' 324 22.57 3816 80 431000000000.0]"
+ 'Real Estate' 324 22.57 3816 80 431280000000.0]"
 391,supplier,46995,"['Moore-Wright' 'Sao Tome and Principe' 'Lembá' 'Dollars'
- 'Advanced Electronics' 726 994.68 1889 34 984000000000.0]"
+ 'Advanced Electronics' 726 994.68 1889 34 983819000000.0]"
 392,supplier,49681,"['Barbe' 'Gibraltar' 'Unknown' 'Dollars' 'Metals & Mining' 791 4938.68
- 3287 5 144000000000.0]"
+ 3287 5 144428000000.0]"
 393,supplier,86580,"['Carlier Bernard SARL' 'Grenada' 'Saint George' 'Dollars'
  'Metals & Mining' 659 1156.14 4041 31 81400493131.0]"
 394,supplier,97142,"['Pietrangeli SPA' 'Belize' 'Belize' 'Dollars'
- 'Paper, Forest Products & Packaging' 542 30.38 6518 38 507000000000.0]"
+ 'Paper, Forest Products & Packaging' 542 30.38 6518 38 506845000000.0]"
 395,supplier,63322,"['Ernst' 'Guinea' 'Télimélé' 'Dollars' 'Metals & Mining' 941 948.26 4995
- 17 991000000000.0]"
+ 17 991382000000.0]"
 396,supplier,90272,"['Tarantino, Monaco e Stefanelli e figli' 'Myanmar' 'Tanintharyi'
  'Dollars' 'Real Estate' 817 4.19 9939 59 67351662587.0]"
 397,supplier,92698,"['Pedroni s.r.l.' 'Antigua and Barbuda' 'Barbuda' 'Dollars' 'Oil & Gas'
- 656 8.45 1477 71 757000000000.0]"
+ 656 8.45 1477 71 757325000000.0]"
 398,supplier,14522,"['Charrier' 'Paraguay' 'Caaguazú' 'Dollars' 'Agriculture' 453 7268.14 1715
- 91 108000000000.0]"
+ 91 107989000000.0]"
 399,supplier,23557,"['Techer S.A.S.' 'Lesotho' ""Qacha's Nek"" 'Dollars' 'Advanced Electronics'
- 766 8.97 8687 56 893000000000.0]"
+ 766 8.97 8687 56 893474000000.0]"
 400,supplier,60591,"['Garcia' 'French Southern Territories' 'Unknown' 'Dollars'
- 'Technology, Media & Telecommunications' 886 5.25 9836 26 341000000000.0]"
+ 'Technology, Media & Telecommunications' 886 5.25 9836 26 340632000000.0]"
 401,supplier,38265,"['Borromini, Ginesio e Tirabassi Group' 'Bhutan' 'Samdrup Jongkhar'
- 'Dollars' 'Oil & Gas' 422 37.16 2854 62 338000000000.0]"
+ 'Dollars' 'Oil & Gas' 422 37.16 2854 62 337701000000.0]"
 402,supplier,55648,"['Scalfaro, Spinola e Alfieri Group' 'Antigua and Barbuda' 'Saint Mary'
  'Dollars' 'Electric Power & Natural Gas' 728 9645.18 8829 65
- 333000000000.0]"
+ 332572000000.0]"
 403,supplier,71574,"['Weller' 'Brazil' 'Mato Grosso' 'Dollars' 'Oil & Gas' 263 1.33 3938 13
- 122000000000.0]"
+ 121560000000.0]"
 404,supplier,71916,"['Wirth AG' 'Afghanistan' 'Bādghīs' 'Dollars'
- 'Healthcare Systems & Services' 988 7903.53 1873 44 168000000000.0]"
+ 'Healthcare Systems & Services' 988 7903.53 1873 44 167961000000.0]"
 405,supplier,76443,"['Duval' 'Malaysia' 'Terengganu' 'Dollars' 'Life Sciences' 326 85.56 5683
- 69 858000000000.0]"
+ 69 858329000000.0]"
 406,supplier,96293,"['Thomas-Stevens' 'Nauru' 'Uaboe' 'Dollars' 'Semiconductors' 586 1.1 7895
- 3 699000000000.0]"
+ 3 699359000000.0]"
 407,supplier,60393,"['Baron' 'Bahamas' 'Ragged Island' 'Dollars'
- 'Electric Power & Natural Gas' 757 903.42 2264 56 719000000000.0]"
+ 'Electric Power & Natural Gas' 757 903.42 2264 56 718964000000.0]"
 408,supplier,13540,"['Scott-Miller' 'Tuvalu' 'Nukufetau' 'Dollars' 'Consumer Packaged Goods'
  765 113.23 1799 98 18982761777.0]"
 409,supplier,16601,"['Krein Schaaf Stiftung & Co. KGaA' 'Comoros' 'Andjouân' 'Dollars'
- 'Automotive & Assembly' 896 466.3 9846 92 195000000000.0]"
+ 'Automotive & Assembly' 896 466.3 9846 92 195028000000.0]"
 410,supplier,98981,"['Calarco, Gregori e Lopresti Group' 'United Arab Emirates' 'Al Fujayrah'
- 'Dollars' 'Financial Services' 844 6.45 1374 98 596000000000.0]"
+ 'Dollars' 'Financial Services' 844 6.45 1374 98 595611000000.0]"
 411,supplier,13283,"['Melendez-Williams' 'Congo' 'Bouenza' 'Dollars' 'Aerospace & Defense' 680
- 792.86 6739 10 838000000000.0]"
+ 792.86 6739 10 838448000000.0]"
 412,supplier,12748,"['Dossetti, Sobrero e Padovano SPA' 'Liberia' 'Grand Bassa' 'Dollars'
- 'Life Sciences' 294 7.32 9449 88 676000000000.0]"
+ 'Life Sciences' 294 7.32 9449 88 676316000000.0]"
 413,supplier,51293,"['Cusano s.r.l.' 'Niue' 'Unknown' 'Dollars'
- 'Paper, Forest Products & Packaging' 402 107.13 4671 75 735000000000.0]"
+ 'Paper, Forest Products & Packaging' 402 107.13 4671 75 734968000000.0]"
 414,supplier,61570,"['Morris PLC' 'Afghanistan' 'Paktiyā' 'Dollars'
- 'Paper, Forest Products & Packaging' 229 342.72 8971 24 412000000000.0]"
+ 'Paper, Forest Products & Packaging' 229 342.72 8971 24 412137000000.0]"
 415,supplier,55515,"['Price, Carroll and Cook' 'Oman' 'Shamāl al Bāţinah' 'Dollars'
- 'Metals & Mining' 633 9383.99 8260 15 372000000000.0]"
+ 'Metals & Mining' 633 9383.99 8260 15 371582000000.0]"
 416,supplier,46942,"['Monduzzi-Pellico Group' 'Greenland' 'Qeqqata Kommunia' 'Dollars'
- 'Paper, Forest Products & Packaging' 751 9611.85 9922 85 679000000000.0]"
+ 'Paper, Forest Products & Packaging' 751 9611.85 9922 85 679459000000.0]"
 417,supplier,13362,"['Martin, Summers and Edwards' 'Dominican Republic' 'Peravia' 'Dollars'
- 'Financial Services' 550 2505.77 1288 44 260000000000.0]"
+ 'Financial Services' 550 2505.77 1288 44 259812000000.0]"
 418,supplier,11513,"['Cohen' 'Antarctica' 'Unknown' 'Dollars'
- 'Travel, Logistics & Infrastructure' 709 964.4 5343 87 978000000000.0]"
+ 'Travel, Logistics & Infrastructure' 709 964.4 5343 87 977766000000.0]"
 419,supplier,78265,"['Karge GmbH & Co. KG' 'Sao Tome and Principe' 'Água Grande' 'Dollars'
- 'Metals & Mining' 172 943.46 7289 41 321000000000.0]"
+ 'Metals & Mining' 172 943.46 7289 41 320562000000.0]"
 420,supplier,76088,"['Römer GmbH' 'Belgium' 'Limburg' 'Dollars' 'Metals & Mining' 687 310.85
- 3574 15 645000000000.0]"
+ 3574 15 645453000000.0]"
 421,supplier,52578,"['Morin S.A.S.' 'Costa Rica' 'Guanacaste' 'Dollars'
- 'Travel, Logistics & Infrastructure' 606 3.89 4869 79 436000000000.0]"
+ 'Travel, Logistics & Infrastructure' 606 3.89 4869 79 435812000000.0]"
 422,supplier,85924,"['Bertrand' 'Sao Tome and Principe' 'Lembá' 'Dollars' 'Real Estate' 437
- 3.52 2494 58 353000000000.0]"
+ 3.52 2494 58 353428000000.0]"
 423,supplier,71597,"['Roccabonella-Lamborghini e figli' 'Guadeloupe' 'Unknown' 'Dollars'
- 'Chemicals' 781 6.77 1925 13 636000000000.0]"
+ 'Chemicals' 781 6.77 1925 13 636376000000.0]"
 424,supplier,70050,"['Talbot-Smith' 'Belize' 'Stann Creek' 'Dollars' 'Retail' 403 734.96 9448
- 96 246000000000.0]"
+ 96 246440000000.0]"
 425,supplier,26533,"['Miller PLC' 'Northern Mariana Islands' 'Unknown' 'Dollars'
- 'Consumer Packaged Goods' 244 7.79 5367 89 903000000000.0]"
+ 'Consumer Packaged Goods' 244 7.79 5367 89 903396000000.0]"
 426,supplier,90236,"['Schönland AG' 'United Arab Emirates' 'Al Fujayrah' 'Dollars'
- 'Electric Power & Natural Gas' 481 8203.36 7561 82 408000000000.0]"
+ 'Electric Power & Natural Gas' 481 8203.36 7561 82 408336000000.0]"
 427,supplier,91409,"['Sauvage' 'Seychelles' 'Saint Louis' 'Dollars'
  'Engineering, Construction & Building Materials' 251 7287.92 9734 20
- 226000000000.0]"
+ 226306000000.0]"
 428,supplier,72631,"['Berger Kohl GmbH & Co. KGaA' 'Bosnia and Herzegovina' 'Republika Srpska'
  'Dollars' 'Consumer Packaged Goods' 161 69.39 5812 55 90745418271.0]"
 429,supplier,33368,"['Sagese e figli' 'Slovakia' 'Nitriansky kraj' 'Dollars' 'Chemicals' 225
- 7018.83 8297 10 549000000000.0]"
+ 7018.83 8297 10 549467000000.0]"
 430,supplier,48580,"['Patel LLC' 'Moldova, Republic of' 'Călărași' 'Dollars' 'Oil & Gas' 941
- 40.9 8036 81 493000000000.0]"
+ 40.9 8036 81 493444000000.0]"
 431,supplier,83378,"['Taylor Ltd' 'Thailand' 'Sing Buri' 'Dollars' 'Financial Services' 572
- 352.29 8023 84 580000000000.0]"
+ 352.29 8023 84 580348000000.0]"
 432,supplier,68177,"['Davies, James and Singh' 'Central African Republic' 'Ouham-Pendé'
- 'Dollars' 'Life Sciences' 892 867.8 6922 10 102000000000.0]"
+ 'Dollars' 'Life Sciences' 892 867.8 6922 10 101934000000.0]"
 433,supplier,21232,"['Wong, Garcia and Ford' 'Bermuda' 'Unknown' 'Dollars' 'Chemicals' 679
  6.66 4404 33 96977509746.0]"
 434,supplier,68800,"['Williams-Armstrong' 'Spain' 'Valencia' 'Dollars' 'Education' 436 14.32
- 9959 77 974000000000.0]"
+ 9959 77 973524000000.0]"
 435,supplier,42179,"['Casagrande e figli' 'Argentina' 'Tierra del Fuego' 'Dollars'
- 'Semiconductors' 103 570.8 7126 100 467000000000.0]"
+ 'Semiconductors' 103 570.8 7126 100 467068000000.0]"
 436,supplier,81015,"['Bohlander GbR' 'Georgia' ""Rach'a-Lechkhumi-Kvemo Svaneti"" 'Dollars'
- 'Retail' 838 6828.48 6455 99 625000000000.0]"
+ 'Retail' 838 6828.48 6455 99 624584000000.0]"
 437,supplier,72157,"['Salazar, Robinson and Williams' 'Antarctica' 'Unknown' 'Dollars'
- 'Oil & Gas' 784 5.1 3620 40 439000000000.0]"
+ 'Oil & Gas' 784 5.1 3620 40 438883000000.0]"
 438,supplier,77743,"['Cianciolo, Leblanc e Petrucelli s.r.l.' 'Chad' 'Salamat' 'Dollars'
- 'Retail' 666 1.49 2244 4 861000000000.0]"
+ 'Retail' 666 1.49 2244 4 860710000000.0]"
 439,supplier,23083,"['Rodriguez Inc' 'Egypt' 'Al Minyā' 'Dollars' 'Oil & Gas' 639 806.3 3681
- 30 666000000000.0]"
+ 30 666114000000.0]"
 440,supplier,83444,"['Henry Ledoux S.A.' 'Switzerland' 'Appenzell Ausserrhoden' 'Dollars'
- 'Oil & Gas' 730 265.12 2796 87 361000000000.0]"
+ 'Oil & Gas' 730 265.12 2796 87 361063000000.0]"
 441,supplier,34582,"['West-Lane' 'Wallis and Futuna' 'Uvea' 'Dollars' 'Real Estate' 187
- 8890.56 2421 77 947000000000.0]"
+ 8890.56 2421 77 947457000000.0]"
 442,supplier,90059,"['Velez-Walker' 'Malawi' 'Dowa' 'Dollars' 'Healthcare Systems & Services'
- 476 41.3 9287 30 633000000000.0]"
+ 476 41.3 9287 30 632544000000.0]"
 443,supplier,24401,"['Johnson-Gardner' 'Curaçao' 'Unknown' 'Dollars' 'Aerospace & Defense' 826
- 18.29 3909 95 120000000000.0]"
+ 18.29 3909 95 120477000000.0]"
 444,supplier,41112,"['Iannotti, Abatantuono e Vecoli SPA' 'Gibraltar' 'Unknown' 'Dollars'
- 'Private Equity & Principal Investors' 579 5658.14 8488 64 961000000000.0]"
+ 'Private Equity & Principal Investors' 579 5658.14 8488 64 960959000000.0]"
 445,supplier,59005,"['Allen PLC' 'Uruguay' 'Flores' 'Dollars'
- 'Technology, Media & Telecommunications' 204 8.36 9952 7 631000000000.0]"
+ 'Technology, Media & Telecommunications' 204 8.36 9952 7 631122000000.0]"
 446,supplier,69003,"['Germano, Luxardo e Botta s.r.l.' 'Austria' 'Salzburg' 'Dollars' 'Retail'
- 702 25.4 9626 96 621000000000.0]"
+ 702 25.4 9626 96 620824000000.0]"
 447,supplier,54218,"['Weaver, Fitzgerald and Anderson' 'Seychelles' 'Bel Air' 'Dollars'
- 'Metals & Mining' 375 4015.65 9802 55 380000000000.0]"
+ 'Metals & Mining' 375 4015.65 9802 55 380343000000.0]"
 448,supplier,61603,"['Giraud S.A.R.L.' 'Ireland' 'Munster' 'Dollars' 'Education' 332 5687.64
- 9657 95 924000000000.0]"
+ 9657 95 924391000000.0]"
 449,supplier,72867,"['Roberts, Ramirez and Ellis' 'French Polynesia' 'Unknown' 'Dollars'
- 'Healthcare Systems & Services' 324 2867.82 5928 92 426000000000.0]"
+ 'Healthcare Systems & Services' 324 2867.82 5928 92 426204000000.0]"
 450,supplier,65204,"['Bolnbach Gorlitz AG' 'Russian Federation' ""Kaluzhskaya oblast'""
  'Dollars' 'Engineering, Construction & Building Materials' 863 48.58 6380
- 67 659000000000.0]"
+ 67 658685000000.0]"
 451,supplier,29185,"['Depero, Saragat e Ziani s.r.l.' 'Greece' 'Kentrikí Makedonía' 'Dollars'
- 'Life Sciences' 740 809.68 8860 45 379000000000.0]"
+ 'Life Sciences' 740 809.68 8860 45 378838000000.0]"
 452,supplier,80325,"['Söding' 'Bahamas' 'Central Andros' 'Dollars' 'Aerospace & Defense' 994
- 87.14 9184 78 586000000000.0]"
+ 87.14 9184 78 585900000000.0]"
 453,supplier,10753,"['Tlustek' 'Romania' 'Călărași' 'Dollars' 'Life Sciences' 846 1305.3 3584
- 67 264000000000.0]"
+ 67 263604000000.0]"
 454,supplier,93778,"['Mcfarland-Gibson' 'Azerbaijan' 'Astara' 'Dollars'
- 'Healthcare Systems & Services' 146 4.3 7277 90 956000000000.0]"
+ 'Healthcare Systems & Services' 146 4.3 7277 90 955672000000.0]"
 455,supplier,78843,"['Camilleri-Rubbia s.r.l.' 'Norway' 'Oslo' 'Dollars' 'Life Sciences' 879
- 5.6 5727 46 849000000000.0]"
+ 5.6 5727 46 848607000000.0]"
 456,supplier,74432,"['Deschamps' 'Turkey' 'Balıkesir' 'Dollars' 'Public & Social Sector' 804
- 8.34 3428 55 782000000000.0]"
+ 8.34 3428 55 782204000000.0]"
 457,supplier,29196,"['Hecker' ""Korea, Democratic People's Republic of"" 'Hwanghae-namdo'
  'Dollars' 'Semiconductors' 399 74.12 1958 77 37208678956.0]"
 458,supplier,23640,"['Perez' 'Georgia' 'Imereti' 'Dollars' 'Oil & Gas' 711 31.2 6475 2
- 697000000000.0]"
+ 697103000000.0]"
 459,supplier,87916,"['Ball PLC' 'Japan' 'Tochigi' 'Dollars'
- 'Paper, Forest Products & Packaging' 766 5.21 6855 40 797000000000.0]"
+ 'Paper, Forest Products & Packaging' 766 5.21 6855 40 797374000000.0]"
 460,supplier,41099,"['Krein' 'Macao' 'Unknown' 'Dollars' 'Aerospace & Defense' 211 5.55 4738
- 16 404000000000.0]"
+ 16 404091000000.0]"
 461,supplier,80737,"['Humphreys, Roberts and Dean' 'Uruguay' 'Rivera' 'Dollars'
- 'Technology, Media & Telecommunications' 622 90.55 1620 99 897000000000.0]"
+ 'Technology, Media & Telecommunications' 622 90.55 1620 99 896610000000.0]"
 462,supplier,54921,"['Villarreal and Sons' 'El Salvador' 'Chalatenango' 'Dollars'
- 'Agriculture' 217 1164.21 8336 43 188000000000.0]"
+ 'Agriculture' 217 1164.21 8336 43 188158000000.0]"
 463,supplier,57113,"['Dehmel GbR' 'Suriname' 'Nickerie' 'Dollars' 'Advanced Electronics' 146
  75.51 2720 85 72804181579.0]"
 464,supplier,52160,"['Zorbach e.V.' 'Albania' 'Fier' 'Dollars' 'Healthcare Systems & Services'
- 325 5.21 4600 19 164000000000.0]"
+ 325 5.21 4600 19 164104000000.0]"
 465,supplier,19878,"['Morales, Walker and Garcia' 'Bermuda' 'Unknown' 'Dollars'
- 'Electric Power & Natural Gas' 960 10.98 3849 11 630000000000.0]"
+ 'Electric Power & Natural Gas' 960 10.98 3849 11 630059000000.0]"
 466,supplier,81114,"['Junck Keudel AG' 'Gambia' 'North Bank' 'Dollars'
- 'Private Equity & Principal Investors' 784 3575.62 2907 31 441000000000.0]"
+ 'Private Equity & Principal Investors' 784 3575.62 2907 31 440679000000.0]"
 467,supplier,68562,"['Cavalcanti e figli' 'Mayotte' 'Unknown' 'Dollars'
- 'Travel, Logistics & Infrastructure' 758 95.71 2636 10 502000000000.0]"
+ 'Travel, Logistics & Infrastructure' 758 95.71 2636 10 501566000000.0]"
 468,supplier,20226,"['Merle' 'Bulgaria' 'Dobrich' 'Dollars' 'Chemicals' 829 11.89 9611 76
- 765000000000.0]"
+ 764717000000.0]"
 469,supplier,47070,"['Boyer' 'Northern Mariana Islands' 'Unknown' 'Dollars' 'Oil & Gas' 896
- 1.47 1383 40 386000000000.0]"
+ 1.47 1383 40 385797000000.0]"
 470,supplier,36417,"['Webster Group' 'Switzerland' 'Aargau' 'Dollars' 'Metals & Mining' 238
- 7924.26 9098 85 103000000000.0]"
+ 7924.26 9098 85 102639000000.0]"
 471,supplier,36243,"['Togliatti, Segni e Carfagna s.r.l.' 'Azerbaijan' 'Sumqayıt' 'Dollars'
- 'Paper, Forest Products & Packaging' 986 64.48 5152 83 423000000000.0]"
+ 'Paper, Forest Products & Packaging' 986 64.48 5152 83 423450000000.0]"
 472,supplier,36985,"['De Sousa' 'Australia' 'New South Wales' 'Dollars'
  'Technology, Media & Telecommunications' 656 1698.49 2473 98
- 971000000000.0]"
+ 970965000000.0]"
 473,supplier,77189,"['Davis, Wilson and Strickland' 'Gabon' 'Moyen-Ogooué' 'Dollars'
- 'Metals & Mining' 615 62.24 7435 63 377000000000.0]"
+ 'Metals & Mining' 615 62.24 7435 63 377222000000.0]"
 474,supplier,56104,"['Calbo e figli' 'Solomon Islands' 'Central' 'Dollars'
- 'Technology, Media & Telecommunications' 680 78.92 4725 33 776000000000.0]"
+ 'Technology, Media & Telecommunications' 680 78.92 4725 33 776381000000.0]"
 475,supplier,54148,"['Riley, Harding and Johnson' 'Argentina' 'Misiones' 'Dollars'
- 'Paper, Forest Products & Packaging' 969 9.92 3703 81 995000000000.0]"
+ 'Paper, Forest Products & Packaging' 969 9.92 3703 81 994582000000.0]"
 476,supplier,79479,"['Trommler' 'Saint Kitts and Nevis' 'Saint Paul Capisterre' 'Dollars'
- 'Healthcare Systems & Services' 698 27.91 9285 41 153000000000.0]"
+ 'Healthcare Systems & Services' 698 27.91 9285 41 152836000000.0]"
 477,supplier,30890,"['Monicelli-Bartoli Group' 'Haiti' 'Centre' 'Dollars'
- 'Healthcare Systems & Services' 306 3398.8 9341 52 555000000000.0]"
+ 'Healthcare Systems & Services' 306 3398.8 9341 52 555089000000.0]"
 478,supplier,81548,"['Iannotti s.r.l.' 'Sudan' 'Sennar' 'Dollars'
- 'Paper, Forest Products & Packaging' 569 8.27 9080 67 519000000000.0]"
+ 'Paper, Forest Products & Packaging' 569 8.27 9080 67 519004000000.0]"
 479,supplier,48251,"['Lucarelli-Borsellino s.r.l.' 'Saint Lucia' 'Canaries' 'Dollars'
- 'Aerospace & Defense' 611 374.27 5814 84 658000000000.0]"
+ 'Aerospace & Defense' 611 374.27 5814 84 658400000000.0]"
 480,supplier,85572,"['Iannucci-Gualandi SPA' 'Martinique' 'Unknown' 'Dollars'
- 'Financial Services' 353 9.94 3057 27 121000000000.0]"
+ 'Financial Services' 353 9.94 3057 27 120515000000.0]"
 481,supplier,90456,"['Johnston-Jones' 'Papua New Guinea' 'Milne Bay' 'Dollars' 'Real Estate'
- 665 5778.26 8166 55 846000000000.0]"
+ 665 5778.26 8166 55 845918000000.0]"
 482,supplier,58421,"['Tacchini, Cilibrasi e Panicucci s.r.l.' 'Virgin Islands, U.S.' 'Unknown'
- 'Dollars' 'Real Estate' 317 353.76 8773 50 869000000000.0]"
+ 'Dollars' 'Real Estate' 317 353.76 8773 50 869346000000.0]"
 483,supplier,25123,"['Hamann Benthin Stiftung & Co. KGaA' 'Belize' 'Corozal' 'Dollars'
- 'Oil & Gas' 725 9.42 2750 98 740000000000.0]"
+ 'Oil & Gas' 725 9.42 2750 98 739815000000.0]"
 484,supplier,74318,"['Hart Inc' 'Uganda' 'Mpigi' 'Dollars' 'Healthcare Systems & Services' 159
- 658.93 7009 100 941000000000.0]"
+ 658.93 7009 100 941428000000.0]"
 485,supplier,66206,"['Gramsci SPA' ""Côte d'Ivoire"" 'Savanes' 'Dollars' 'Aerospace & Defense'
- 914 4.12 6136 54 531000000000.0]"
+ 914 4.12 6136 54 530544000000.0]"
 486,supplier,84844,"['Fornaciari-Cristoforetti SPA' 'Peru' 'Moquegua' 'Dollars'
- 'Public & Social Sector' 232 248.58 5956 47 117000000000.0]"
+ 'Public & Social Sector' 232 248.58 5956 47 116502000000.0]"
 487,supplier,47789,"['Bouvet Paris SARL' 'Cameroon' 'West' 'Dollars' 'Consumer Packaged Goods'
- 436 9.11 6201 80 959000000000.0]"
+ 436 9.11 6201 80 958656000000.0]"
 488,supplier,68357,"['Fields, Mathis and Ross' 'Romania' 'Brașov' 'Dollars' 'Retail' 983
- 3096.12 6612 40 279000000000.0]"
+ 3096.12 6612 40 279188000000.0]"
 489,supplier,54953,['Riou' 'Fiji' 'Ra' 'Dollars' 'Oil & Gas' 191 23.72 8884 3 22589653442.0]
 490,supplier,46070,"['Tedesco Group' 'Madagascar' 'Toamasina' 'Dollars' 'Real Estate' 815
- 8682.88 9822 83 920000000000.0]"
+ 8682.88 9822 83 919969000000.0]"
 491,supplier,75482,"['Cooper-Price' 'Bosnia and Herzegovina' 'Brčko distrikt' 'Dollars'
- 'Healthcare Systems & Services' 548 1.43 3819 5 997000000000.0]"
+ 'Healthcare Systems & Services' 548 1.43 3819 5 997190000000.0]"
 492,supplier,77683,"['Ebert' 'Grenada' 'Saint David' 'Dollars'
- 'Paper, Forest Products & Packaging' 693 1.53 6260 27 660000000000.0]"
+ 'Paper, Forest Products & Packaging' 693 1.53 6260 27 659918000000.0]"
 493,supplier,70468,"['Giammusso SPA' 'Georgia' 'Samtskhe-Javakheti' 'Dollars'
- 'Financial Services' 344 7028.92 1247 66 986000000000.0]"
+ 'Financial Services' 344 7028.92 1247 66 986032000000.0]"
 494,supplier,38957,"['Lejeune' 'Western Sahara' 'Unknown' 'Dollars' 'Life Sciences' 466 5.71
- 9117 46 356000000000.0]"
+ 9117 46 355775000000.0]"
 495,supplier,73575,"['Foley Inc' 'Réunion' 'Unknown' 'Dollars' 'Retail' 365 6586.89 2080 74
- 278000000000.0]"
+ 277667000000.0]"
 496,supplier,75434,"['Medina-Williams' 'Solomon Islands' 'Rennell and Bellona' 'Dollars'
- 'Retail' 972 4.99 9295 63 355000000000.0]"
+ 'Retail' 972 4.99 9295 63 354824000000.0]"
 497,supplier,80991,"['Oneal-Young' ""Côte d'Ivoire"" 'Comoé' 'Dollars'
- 'Paper, Forest Products & Packaging' 330 8114.81 4692 33 289000000000.0]"
+ 'Paper, Forest Products & Packaging' 330 8114.81 4692 33 288673000000.0]"
 498,supplier,45056,"['Dehmel Birnbaum AG' 'Malta' 'Birgu' 'Dollars' 'Financial Services' 650
- 2.21 9988 58 871000000000.0]"
+ 2.21 9988 58 870745000000.0]"
 499,supplier,16082,"['Gaito SPA' 'Chile' 'Coquimbo' 'Denar' 'Oil & Gas' 899 999.94 8088 71
- 247000000000.0]"
+ 246791000000.0]"
 500,supplier,28873,"['Herrmann' 'United States' 'Alabama' 'Dollars'
  'Engineering, Construction & Building Materials' 183 753.73 5904 41
- 329000000000.0]"
+ 328916000000.0]"
 501,supplier,71339,"['Gilbert PLC' 'Holy See (Vatican City State)' 'Unknown' 'Dollars'
  'Electric Power & Natural Gas' 721 654.54 3371 38 74576815055.0]"
 502,supplier,75613,"['Tommaseo SPA' 'Christmas Island' 'Unknown' 'Dollars' 'Chemicals' 900
- 2.25 8147 31 142000000000.0]"
+ 2.25 8147 31 141926000000.0]"
 503,supplier,52082,"['Mcfarland-Gill' 'San Marino' 'Acquaviva' 'Dollars'
- 'Paper, Forest Products & Packaging' 608 5.91 2563 90 211000000000.0]"
+ 'Paper, Forest Products & Packaging' 608 5.91 2563 90 210967000000.0]"
 504,supplier,25563,"['Rismondo e figli' 'Kiribati' 'Line Islands' 'Dollars'
- 'Paper, Forest Products & Packaging' 615 76.56 8891 67 772000000000.0]"
+ 'Paper, Forest Products & Packaging' 615 76.56 8891 67 771933000000.0]"
 505,supplier,41542,"['Montanari-Gucci SPA' 'Finland' 'Egentliga Finland' 'Dollars' 'Chemicals'
- 732 7670.95 4999 31 562000000000.0]"
+ 732 7670.95 4999 31 561645000000.0]"
 506,supplier,47017,"['Faure S.A.S.' 'Moldova, Republic of' 'Chișinău' 'Dollars' 'Education'
- 221 8112.61 8031 69 616000000000.0]"
+ 221 8112.61 8031 69 616257000000.0]"
 507,supplier,46894,"['Pitts, Stokes and Hardin' 'Ethiopia' 'Dire Dawa' 'Dollars'
- 'Public & Social Sector' 666 69.83 9757 28 928000000000.0]"
+ 'Public & Social Sector' 666 69.83 9757 28 928345000000.0]"
 508,supplier,43160,"['Häring Fechner GmbH & Co. KG' 'Saint Pierre and Miquelon' 'Unknown'
- 'Dollars' 'Advanced Electronics' 238 73.32 1697 34 499000000000.0]"
+ 'Dollars' 'Advanced Electronics' 238 73.32 1697 34 499472000000.0]"
 509,supplier,94512,"['Breton Delorme SA' 'Uruguay' 'Tacuarembó' 'Dollars' 'Retail' 321 9.89
- 2583 60 532000000000.0]"
+ 2583 60 531558000000.0]"
 510,supplier,79389,"['Drub KGaA' 'Curaçao' 'Unknown' 'Dollars' 'Retail' 719 57.5 4327 1
- 835000000000.0]"
+ 834889000000.0]"
 511,supplier,60009,"['Klapp AG' 'Oman' 'Al Wusţá' 'Dollars' 'Education' 868 6966.14 3892 84
  16594453544.0]"
 512,supplier,30764,"['Fletcher, Page and Hill' 'Venezuela, Bolivarian Republic of' 'Bolívar'
  'Dollars' 'Paper, Forest Products & Packaging' 439 9.43 8848 6
- 357000000000.0]"
+ 357380000000.0]"
 513,supplier,82144,"['Scott-Hughes' 'Sierra Leone' 'Northern' 'Dollars' 'Financial Services'
- 313 55.4 7747 95 133000000000.0]"
+ 313 55.4 7747 95 133499000000.0]"
 514,supplier,42191,"['Blanchet' 'United Kingdom' 'Walsall' 'Dollars' 'Advanced Electronics'
- 565 6602.96 5251 14 530000000000.0]"
+ 565 6602.96 5251 14 530014000000.0]"
 515,supplier,99869,"['Barnes Ltd' 'Aruba' 'Unknown' 'Dollars' 'Oil & Gas' 912 878.67 3120 7
- 746000000000.0]"
+ 745996000000.0]"
 516,supplier,99559,"['Monnier SA' 'Sierra Leone' 'Eastern' 'Dollars' 'Advanced Electronics'
- 233 60.75 9948 76 558000000000.0]"
+ 233 60.75 9948 76 557633000000.0]"
 517,supplier,21602,"['Wells-Shaw' 'Taiwan, Province of China' 'Penghu' 'Dollars'
- 'Life Sciences' 477 4022.61 2889 37 186000000000.0]"
+ 'Life Sciences' 477 4022.61 2889 37 185515000000.0]"
 518,supplier,10797,"['Davis-Ward' 'Sao Tome and Principe' 'Mé-Zóchi' 'Dollars' 'Retail' 761
- 183.64 8686 39 529000000000.0]"
+ 183.64 8686 39 528649000000.0]"
 519,supplier,68814,"['Patterson-Barnes' 'Mozambique' 'Zambézia' 'Dollars' 'Education' 165 9.8
- 9751 13 612000000000.0]"
+ 9751 13 611668000000.0]"
 520,supplier,81099,"['Caldwell-Taylor' 'Cayman Islands' 'Unknown' 'Dollars'
- 'Paper, Forest Products & Packaging' 570 10.26 1508 98 619000000000.0]"
+ 'Paper, Forest Products & Packaging' 570 10.26 1508 98 618617000000.0]"
 521,supplier,35703,"['Treves-Carli e figli' 'Venezuela, Bolivarian Republic of' 'Lara'
- 'Dollars' 'Public & Social Sector' 109 992.4 1082 74 841000000000.0]"
+ 'Dollars' 'Public & Social Sector' 109 992.4 1082 74 840800000000.0]"
 522,supplier,40125,"['Marsh LLC' 'Honduras' 'Francisco Morazán' 'Dollars' 'Financial Services'
- 843 1637.99 1665 62 164000000000.0]"
+ 843 1637.99 1665 62 164469000000.0]"
 523,supplier,27057,"['Patel, Payne and Lee' 'Zambia' 'Lusaka' 'Dollars' 'Oil & Gas' 508
- 5862.41 8074 79 256000000000.0]"
+ 5862.41 8074 79 255885000000.0]"
 524,supplier,87209,"['Grant Inc' 'United States' 'Nevada' 'Dollars' 'Metals & Mining' 598
- 753.49 8256 26 930000000000.0]"
+ 753.49 8256 26 930148000000.0]"
 525,supplier,85240,"['Dunlap Group' 'Bahrain' 'Al Janūbīyah' 'Dollars' 'Metals & Mining' 792
  32.88 1893 70 92513292352.0]"
 526,supplier,88025,"['Quasimodo, Petrucci e Verdone e figli' 'French Guiana' 'Unknown'
- 'Dollars' 'Oil & Gas' 120 36.28 9823 70 553000000000.0]"
+ 'Dollars' 'Oil & Gas' 120 36.28 9823 70 552601000000.0]"
 527,supplier,13920,"['Brock and Sons' 'Denmark' 'Syddanmark' 'Dollars' 'Aerospace & Defense'
  746 6.18 3965 16 7745977305.0]"
 528,supplier,59027,"['Detti-Muti SPA' 'Réunion' 'Unknown' 'Dollars'
@@ -981,150 +946,150 @@
 529,supplier,25648,"['Ziani, Fischetti e Fittipaldi s.r.l.' 'Tanzania, United Republic of'
  'Ruvuma' 'Dollars' 'Retail' 623 2.22 6785 96 31771223102.0]"
 530,supplier,18997,"['Faust Carsten GmbH & Co. KGaA' 'Bhutan' 'Samdrup Jongkhar' 'Dollars'
- 'Electric Power & Natural Gas' 735 8.63 4189 67 524000000000.0]"
+ 'Electric Power & Natural Gas' 735 8.63 4189 67 524187000000.0]"
 531,supplier,40597,"['Houghton, Shaw and Bell' 'Antigua and Barbuda' 'Saint Peter' 'Dollars'
- 'Real Estate' 793 685.27 9972 67 864000000000.0]"
+ 'Real Estate' 793 685.27 9972 67 864351000000.0]"
 532,supplier,13569,"['Green, Bush and Garcia' 'Liberia' 'Gbarpolu' 'Dollars' 'Real Estate' 978
  424.38 5489 84 30790751329.0]"
 533,supplier,48238,"['Tozzo Group' 'Niue' 'Unknown' 'Dollars'
  'Engineering, Construction & Building Materials' 616 2034.12 4722 77
- 233000000000.0]"
+ 233031000000.0]"
 534,supplier,77347,"['Koch II AG' 'Croatia' 'Zadarska županija' 'Dollars' 'Metals & Mining'
- 608 31.42 9005 60 326000000000.0]"
+ 608 31.42 9005 60 326136000000.0]"
 535,supplier,91265,"['Tozzo-Pace e figli' 'Åland Islands' 'Unknown' 'Dollars'
- 'Aerospace & Defense' 885 870.8 1520 80 913000000000.0]"
+ 'Aerospace & Defense' 885 870.8 1520 80 912946000000.0]"
 536,supplier,28515,"['Schomber' 'Viet Nam' 'Bạc Liêu' 'Dollars' 'Consumer Packaged Goods' 189
- 3.67 1469 79 152000000000.0]"
+ 3.67 1469 79 151669000000.0]"
 537,supplier,70869,"['Shea-Ellis' 'Tajikistan' 'Dushanbe' 'Dollars'
- 'Private Equity & Principal Investors' 263 613.78 4953 54 849000000000.0]"
+ 'Private Equity & Principal Investors' 263 613.78 4953 54 849462000000.0]"
 538,supplier,12116,"['Mills-Bates' 'North Macedonia' 'Jegunovce' 'Dollars' 'Oil & Gas' 225
- 854.72 1176 46 684000000000.0]"
+ 854.72 1176 46 684185000000.0]"
 539,supplier,42091,"['Gute' 'Suriname' 'Saramacca' 'Dollars' 'Education' 790 4.54 8062 75
- 337000000000.0]"
+ 337343000000.0]"
 540,supplier,90942,"['Richards Group' 'British Indian Ocean Territory' 'Unknown' 'Dollars'
- 'Semiconductors' 388 69.92 1825 14 205000000000.0]"
+ 'Semiconductors' 388 69.92 1825 14 205170000000.0]"
 541,supplier,76020,"['Dehmel Schomber KG' ""Lao People's Democratic Republic"" 'Xaignabouli'
  'Dollars' 'Financial Services' 545 7248.43 1286 98 54402705239.0]"
 542,supplier,69229,"['Briggs LLC' 'Seychelles' 'Bel Air' 'Dollars' 'Financial Services' 764
- 306.11 7975 85 805000000000.0]"
+ 306.11 7975 85 805390000000.0]"
 543,supplier,61565,"['Barcaccia Group' 'Croatia' 'Šibensko-kninska županija' 'Dollars'
- 'Oil & Gas' 805 74.83 2132 24 907000000000.0]"
+ 'Oil & Gas' 805 74.83 2132 24 907336000000.0]"
 544,supplier,12435,"['Thomas Fernandez S.A.R.L.' 'Réunion' 'Unknown' 'Dollars'
- 'Automotive & Assembly' 642 747.34 4647 44 447000000000.0]"
+ 'Automotive & Assembly' 642 747.34 4647 44 446649000000.0]"
 545,supplier,79806,"['Maspero, Biagiotti e Bianchini s.r.l.' 'Croatia'
  'Sisačko-moslavačka županija' 'Dollars' 'Aerospace & Defense' 248 64.18
- 8583 51 656000000000.0]"
+ 8583 51 656464000000.0]"
 546,supplier,57109,"['Descamps SA' 'Mali' 'Kayes' 'Dollars' 'Retail' 939 29.23 7001 70
- 856000000000.0]"
+ 856468000000.0]"
 547,supplier,52130,"['Delaunay' 'Sudan' 'Gedaref' 'Dollars' 'Electric Power & Natural Gas' 277
- 2096.83 5794 100 807000000000.0]"
+ 2096.83 5794 100 807098000000.0]"
 548,supplier,42118,"['Day, Howell and Hill' 'Montserrat' 'Unknown' 'Dollars'
- 'Private Equity & Principal Investors' 521 8296.12 1387 13 389000000000.0]"
+ 'Private Equity & Principal Investors' 521 8296.12 1387 13 389223000000.0]"
 549,supplier,40898,"['Brenna Group' 'Kuwait' 'Al Farwānīyah' 'Dollars' 'Metals & Mining' 929
- 1353.54 6865 83 891000000000.0]"
+ 1353.54 6865 83 890842000000.0]"
 550,supplier,39402,"['Martinez' 'Suriname' 'Paramaribo' 'Dollars' 'Retail' 191 2.96 8661 23
- 964000000000.0]"
+ 963923000000.0]"
 551,supplier,73431,"['Monti-Carnera Group' 'Singapore' 'Central Singapore' 'Dollars'
- 'Healthcare Systems & Services' 277 820.4 9984 51 377000000000.0]"
+ 'Healthcare Systems & Services' 277 820.4 9984 51 377096000000.0]"
 552,supplier,58914,"['Munoz SA' 'Timor-Leste' 'Lautein' 'Dollars' 'Aerospace & Defense' 539
- 44.83 2382 100 168000000000.0]"
+ 44.83 2382 100 168321000000.0]"
 553,supplier,34967,"['Scott-Williams' 'Guernsey' 'Unknown' 'Dollars' 'Chemicals' 574 5.84 3124
- 89 664000000000.0]"
+ 89 663969000000.0]"
 554,supplier,99068,"['Geißler' 'Hong Kong' 'Unknown' 'Dollars' 'Real Estate' 894 6.79 4626 18
- 466000000000.0]"
+ 465957000000.0]"
 555,supplier,75772,"['Williams-Ryan' 'Ireland' 'Connaught' 'Dollars' 'Consumer Packaged Goods'
- 529 942.96 8490 6 765000000000.0]"
+ 529 942.96 8490 6 764946000000.0]"
 556,supplier,13901,"['Legrand Ollivier et Fils' 'Netherlands' 'Saba' 'Dollars'
- 'Paper, Forest Products & Packaging' 358 1.85 3107 14 113000000000.0]"
+ 'Paper, Forest Products & Packaging' 358 1.85 3107 14 113265000000.0]"
 557,supplier,57265,"['Guarato e figli' 'Somalia' 'Mudug' 'Dollars' 'Semiconductors' 696
- 4905.39 7379 31 723000000000.0]"
+ 4905.39 7379 31 723115000000.0]"
 558,supplier,71349,"['Blondel' 'Lesotho' 'Leribe' 'Dollars' 'Agriculture' 460 77.5 5993 70
- 257000000000.0]"
+ 256607000000.0]"
 559,supplier,87695,"['Ricci, Omma e Tirabassi SPA' 'Samoa' ""Fa'asaleleaga"" 'Dollars' 'Retail'
- 744 19.24 5488 96 228000000000.0]"
+ 744 19.24 5488 96 228497000000.0]"
 560,supplier,81678,"['Wulf' 'Turkmenistan' 'Lebap' 'Dollars' 'Financial Services' 803 6.62
- 2819 74 323000000000.0]"
+ 2819 74 322713000000.0]"
 561,supplier,56429,"['Maurice SA' 'Benin' 'Alibori' 'Dollars' 'Healthcare Systems & Services'
- 439 28.6 6662 69 854000000000.0]"
+ 439 28.6 6662 69 853846000000.0]"
 562,supplier,16265,"['Prati-Anastasi e figli' 'Liechtenstein' 'Triesen' 'Dollars' 'Retail' 910
- 64.96 4403 49 701000000000.0]"
+ 64.96 4403 49 700661000000.0]"
 563,supplier,38461,"['Chandler, Williams and Stevens' 'Costa Rica' 'Heredia' 'Dollars'
  'Engineering, Construction & Building Materials' 993 99.48 2508 27
- 581000000000.0]"
+ 580755000000.0]"
 564,supplier,28042,"['Gumprich GbR' 'Pitcairn' 'Unknown' 'Dollars'
- 'Electric Power & Natural Gas' 310 6.88 5592 91 738000000000.0]"
+ 'Electric Power & Natural Gas' 310 6.88 5592 91 737877000000.0]"
 565,supplier,27988,"['Thomas' 'Brazil' 'Pará' 'Dollars' 'Agriculture' 634 2.72 5948 77
  959526079.0]"
 566,supplier,85116,"['Löchel' 'Bonaire, Sint Eustatius and Saba' 'Saba' 'Dollars'
- 'Real Estate' 705 8.56 1382 76 503000000000.0]"
+ 'Real Estate' 705 8.56 1382 76 503374000000.0]"
 567,supplier,68615,"['Pacheco, Davies and Randall' 'Portugal' 'Vila Real' 'Dollars'
- 'Paper, Forest Products & Packaging' 372 8.58 3644 48 226000000000.0]"
+ 'Paper, Forest Products & Packaging' 372 8.58 3644 48 226407000000.0]"
 568,supplier,67411,"['Reed, Matthews and Holmes' 'Finland' 'Norra Savolax' 'Dollars'
- 'Automotive & Assembly' 388 4.2 1673 57 501000000000.0]"
+ 'Automotive & Assembly' 388 4.2 1673 57 501313000000.0]"
 569,supplier,11790,"['Campbell-West' 'Chad' 'Tibastī' 'Dollars' 'Semiconductors' 761 1141.39
- 4777 30 644000000000.0]"
+ 4777 30 644128000000.0]"
 570,supplier,21726,"['Voisin' 'New Caledonia' 'Unknown' 'Dollars'
- 'Healthcare Systems & Services' 423 471.96 3919 2 649000000000.0]"
+ 'Healthcare Systems & Services' 423 471.96 3919 2 649247000000.0]"
 571,supplier,15367,"['Schüler' 'Sudan' 'North Darfur' 'Dollars'
  'Engineering, Construction & Building Materials' 432 545.34 2240 48
- 402000000000.0]"
+ 402465000000.0]"
 572,supplier,95496,"['Didier' 'China' 'Hong Kong SAR' 'Dollars' 'Aerospace & Defense' 825 6.59
- 6728 61 806000000000.0]"
+ 6728 61 805924000000.0]"
 573,supplier,93032,"['Smith-Hill' 'Bulgaria' 'Sofia' 'Dollars' 'Aerospace & Defense' 738 72.84
- 7639 55 328000000000.0]"
+ 7639 55 328447000000.0]"
 574,supplier,64580,"['Gotthard Stiftung & Co. KGaA' 'Cyprus' 'Baf' 'Dollars'
- 'Financial Services' 602 75.43 3397 51 747000000000.0]"
+ 'Financial Services' 602 75.43 3397 51 746638000000.0]"
 575,supplier,19072,"['Casarin-Valentino Group' 'Botswana' 'Central' 'Dollars'
- 'Healthcare Systems & Services' 926 5954.35 8479 63 813000000000.0]"
+ 'Healthcare Systems & Services' 926 5954.35 8479 63 813334000000.0]"
 576,supplier,94877,"['Gould Inc' 'United States' 'Vermont' 'Dollars' 'Financial Services' 730
- 372.62 6193 3 855000000000.0]"
+ 372.62 6193 3 855412000000.0]"
 577,supplier,67018,"['Gray-Johnson' 'Brazil' 'Paraíba' 'Dollars' 'Real Estate' 744 4.57 5607
- 45 815000000000.0]"
+ 45 814950000000.0]"
 578,supplier,86494,"['Murphy-Mitchell' 'Slovenia' 'Kozje' 'Dollars'
- 'Private Equity & Principal Investors' 659 24.94 8030 39 111000000000.0]"
+ 'Private Equity & Principal Investors' 659 24.94 8030 39 110884000000.0]"
 579,supplier,71056,"['Christoph KG' 'Mali' 'Ménaka' 'Dollars'
  'Engineering, Construction & Building Materials' 564 7878.81 7403 80
- 651000000000.0]"
+ 650868000000.0]"
 580,supplier,11186,"['Norris, Dominguez and Smith' 'New Caledonia' 'Unknown' 'Dollars'
- 'Paper, Forest Products & Packaging' 809 7.38 9314 25 606000000000.0]"
+ 'Paper, Forest Products & Packaging' 809 7.38 9314 25 605714000000.0]"
 581,supplier,55714,"['Richardson LLC' 'Botswana' 'Lobatse' 'Dollars' 'Education' 674 2589.86
- 2770 14 194000000000.0]"
+ 2770 14 193822000000.0]"
 582,supplier,65285,"['Marty S.A.R.L.' 'Djibouti' 'Tadjourah' 'Dollars' 'Real Estate' 715 4.97
- 3173 51 564000000000.0]"
+ 3173 51 564464000000.0]"
 583,supplier,96448,"['Murillo Group' 'Comoros' 'Andjazîdja' 'Dollars' 'Education' 610 628.14
- 6486 93 982000000000.0]"
+ 6486 93 981946000000.0]"
 584,supplier,68498,"['Tropea, Soprano e Chiappetta s.r.l.' 'Papua New Guinea' 'Bougainville'
- 'Dollars' 'Consumer Packaged Goods' 514 22.93 8291 29 243000000000.0]"
+ 'Dollars' 'Consumer Packaged Goods' 514 22.93 8291 29 243483000000.0]"
 585,supplier,29946,"['Flores-Anderson' 'Guernsey' 'Unknown' 'Dollars' 'Aerospace & Defense'
- 767 670.25 6775 98 227000000000.0]"
+ 767 670.25 6775 98 226677000000.0]"
 586,supplier,35340,"['Hall-Bell' 'Falkland Islands (Malvinas)' 'Unknown' 'Dollars'
- 'Advanced Electronics' 240 7945.64 8289 35 600000000000.0]"
+ 'Advanced Electronics' 240 7945.64 8289 35 600184000000.0]"
 587,supplier,99057,"['Charles PLC' 'Mali' 'Mopti' 'Dollars' 'Public & Social Sector' 990 6.13
- 7048 99 537000000000.0]"
+ 7048 99 536659000000.0]"
 588,supplier,10731,"['Giolitti, Pincherle e Zanazzo Group' 'Paraguay' 'Cordillera' 'Dollars'
- 'Advanced Electronics' 119 5.62 3190 21 523000000000.0]"
+ 'Advanced Electronics' 119 5.62 3190 21 523078000000.0]"
 589,supplier,99101,"['Leblanc and Sons' 'Western Sahara' 'Unknown' 'Dollars'
- 'Advanced Electronics' 109 59.47 9012 60 220000000000.0]"
+ 'Advanced Electronics' 109 59.47 9012 60 219755000000.0]"
 590,supplier,70892,"['Heidrich Christoph KG' 'Curaçao' 'Unknown' 'Dollars'
  'Financial Services' 154 2.4 6927 12 10956758891.0]"
 591,supplier,51207,"['Bolzmann Säuberlich GmbH' 'French Guiana' 'Unknown' 'Dollars'
- 'Travel, Logistics & Infrastructure' 797 71.57 7655 67 351000000000.0]"
+ 'Travel, Logistics & Infrastructure' 797 71.57 7655 67 351263000000.0]"
 592,supplier,94574,"['Harper-Jones' 'Mali' 'Koulikoro' 'Dollars' 'Oil & Gas' 471 58.36 6620 22
- 253000000000.0]"
+ 252745000000.0]"
 593,supplier,30864,"['Rose KG' 'Palau' 'Ngarchelong' 'Dollars' 'Automotive & Assembly' 597
- 4.46 9729 35 282000000000.0]"
+ 4.46 9729 35 282237000000.0]"
 594,supplier,90700,"['Lefebvre' 'Brazil' 'Paraná' 'Dollars' 'Semiconductors' 310 3.25 3748 97
- 112000000000.0]"
+ 111954000000.0]"
 595,supplier,90256,"['Förster' 'Ethiopia' 'Addis Ababa' 'Dollars'
  'Paper, Forest Products & Packaging' 764 7024.13 7003 46 69190139802.0]"
 596,supplier,35266,"['Gotthard Zahn GmbH' 'Finland' 'Pohjanmaa' 'Dollars'
- 'Healthcare Systems & Services' 570 6.51 7985 42 147000000000.0]"
+ 'Healthcare Systems & Services' 570 6.51 7985 42 147139000000.0]"
 597,supplier,52647,"['Cook-Webb' 'Morocco' 'Berkane' 'Dollars'
- 'Paper, Forest Products & Packaging' 762 10.69 2171 35 763000000000.0]"
+ 'Paper, Forest Products & Packaging' 762 10.69 2171 35 763314000000.0]"
 598,supplier,13355,"['Shah-Lowe' 'Central African Republic' 'Bamingui-Bangoran' 'Dollars'
- 'Automotive & Assembly' 862 37.45 6844 50 215000000000.0]"
+ 'Automotive & Assembly' 862 37.45 6844 50 214602000000.0]"
 599,supplier,48467,"['Brandt Ltd' 'Anguilla' 'Unknown' 'Dollars' 'Oil & Gas' 593 788.49 1593
- 20 325000000000.0]"
+ 20 325400000000.0]"
 600,warehouses,1012,"['Sierra Leone' 'Eastern' 870268 list([""'B'"", "" 'N'"", "" 'D'"", "" 'R'""])
  0.51 2.87]"
 601,warehouses,1017,"['Réunion' 'Unknown' 453753 list([""'G'"", "" 'W'"", "" 'O'"", "" 'A'""]) 0.67
@@ -1164,7 +1129,7 @@
 622,warehouses,1205,"['Saudi Arabia' 'Ar Riyāḑ' 531056
  list([""'N'"", "" 'L'"", "" 'X'"", "" 'M'"", "" 'Z'"", "" 'J'""]) 0.85 2.82]"
 623,warehouses,1226,"['Comoros' 'Andjouân' 368856 list([""'F'"", "" 'X'"", "" 'D'""]) 0.71 2.6]"
-624,warehouses,1234,"['Islamic Republic of Iran ' 'Zanjān' 751640
+624,warehouses,1234,"['Iran, Islamic Republic of' 'Zanjān' 751640
  list([""'H'"", "" 'Q'"", "" 'K'"", "" 'J'"", "" 'B'""]) 0.71 2.43]"
 625,warehouses,1245,"['Saint Kitts and Nevis' 'Saint Peter Basseterre' 951570
  list([""'V'"", "" 'C'"", "" 'I'"", "" 'O'"", "" 'P'"", "" 'K'""]) 0.83 2.7]"
@@ -1210,7 +1175,7 @@
 649,warehouses,1505,"['Botswana' 'Gaborone' 127229 list([""'U'""]) 0.8 1.94]"
 650,warehouses,1510,"['Saint Martin (French part)' 'Unknown' 846033
  list([""'Q'"", "" 'S'"", "" 'R'"", "" 'I'"", "" 'B'"", "" 'G'""]) 0.79 2.88]"
-651,warehouses,1526,"['United Republic of Tanzania' 'Morogoro' 174677
+651,warehouses,1526,"['Tanzania, United Republic of' 'Morogoro' 174677
  list([""'R'"", "" 'X'"", "" 'T'"", "" 'K'"", "" 'E'"", "" 'J'"", "" 'C'""]) 0.6 2.47]"
 652,warehouses,1538,"['Isle of Man' 'Unknown' 988986 list([""'O'"", "" 'G'"", "" 'K'""]) 0.63 2.37]"
 653,warehouses,1544,"['Trinidad and Tobago' 'Siparia' 891190 list([""'D'"", "" 'Y'""]) 0.88 2.49]"
@@ -1236,13 +1201,15 @@
  2.86]"
 665,warehouses,1666,"['India' 'Tripura' 708237 list([""'O'"", "" 'S'"", "" 'A'"", "" 'R'"", "" 'F'""])
  0.84 2.45]"
-666,warehouses,1668,"['United States' 'Jarvis Island' 957385 list([""'R'""]) 0.74 2.89]"
+666,warehouses,1668,"['United States Minor Outlying Islands' 'Jarvis Island' 957385
+ list([""'R'""]) 0.74 2.89]"
 667,warehouses,1704,"['Dominica' 'Saint Andrew' 844389
  list([""'N'"", "" 'B'"", "" 'C'"", "" 'E'"", "" 'K'""]) 0.54 2.77]"
 668,warehouses,1707,"['Kiribati' 'Phoenix Islands' 115466
  list([""'Z'"", "" 'N'"", "" 'S'"", "" 'U'"", "" 'T'""]) 0.9 2.52]"
 669,warehouses,1716,"['Holy See (Vatican City State)' 'Unknown' 562643 list([""'L'""]) 0.84 2.1]"
-670,warehouses,1721,"['United States' 'Navassa Island' 721357 list([""'E'""]) 0.71 1.77]"
+670,warehouses,1721,"['United States Minor Outlying Islands' 'Navassa Island' 721357
+ list([""'E'""]) 0.71 1.77]"
 671,warehouses,1728,"['Uganda' 'Zombo' 575957 list([""'O'"", "" 'A'""]) 0.91 2.15]"
 672,warehouses,1735,"['Cocos (Keeling) Islands' 'Unknown' 387594 list([""'J'""]) 0.82 2.56]"
 673,warehouses,1754,"['Israel' 'Al Quds' 473061 list([""'W'"", "" 'P'""]) 0.5 2.62]"
@@ -1305,7 +1272,7 @@
  list([""'T'"", "" 'G'"", "" 'X'"", "" 'N'"", "" 'H'"", "" 'A'"", "" 'S'""]) 0.66 1.75]"
 707,warehouses,2116,"['Mayotte' 'Unknown' 393016
  list([""'Q'"", "" 'X'"", "" 'Z'"", "" 'N'"", "" 'E'"", "" 'B'"", "" 'M'""]) 0.93 1.91]"
-708,warehouses,2125,"[""Democratic People's Republic of Korea"" 'Hamgyǒng-namdo' 669077
+708,warehouses,2125,"[""Korea, Democratic People's Republic of"" 'Hamgyǒng-namdo' 669077
  list([""'Q'"", "" 'X'"", "" 'E'"", "" 'B'"", "" 'P'"", "" 'K'""]) 0.93 2.57]"
 709,warehouses,2140,"['Holy See (Vatican City State)' 'Unknown' 923532
  list([""'F'"", "" 'Z'"", "" 'E'"", "" 'K'""]) 0.79 2.7]"
@@ -1342,12 +1309,12 @@
  0.94 2.94]"
 729,warehouses,2301,"['Montserrat' 'Unknown' 320179
  list([""'U'"", "" 'B'"", "" 'C'"", "" 'F'"", "" 'K'""]) 0.5 2.82]"
-730,warehouses,2304,"[' The Democratic Republic of the Congo' 'Lomami' 277143
+730,warehouses,2304,"['Congo, The Democratic Republic of the' 'Lomami' 277143
  list([""'E'"", "" 'H'"", "" 'L'"", "" 'M'""]) 0.85 2.25]"
 731,warehouses,2321,"['Mayotte' 'Unknown' 302337 list([""'T'"", "" 'M'"", "" 'F'""]) 0.52 2.78]"
 732,warehouses,2324,"['Paraguay' 'Caaguazú' 176403
  list([""'R'"", "" 'U'"", "" 'V'"", "" 'X'"", "" 'I'"", "" 'W'"", "" 'O'""]) 0.91 2.38]"
-733,warehouses,2329,"['Bolivarian Republic of Venezuela' 'Bolívar' 312251
+733,warehouses,2329,"['Venezuela, Bolivarian Republic of' 'Bolívar' 312251
  list([""'F'"", "" 'R'"", "" 'U'"", "" 'Y'"", "" 'J'"", "" 'C'"", "" 'X'""]) 0.93 2.29]"
 734,warehouses,2345,"['France' 'Mayotte' 201442 list([""'B'""]) 0.95 2.83]"
 735,warehouses,2356,"['South Sudan' 'Western Equatoria' 604853
@@ -1366,7 +1333,7 @@
  list([""'Y'"", "" 'X'"", "" 'A'"", "" 'S'"", "" 'T'"", "" 'J'"", "" 'C'""]) 0.83 1.77]"
 743,warehouses,2448,"['Cocos (Keeling) Islands' 'Unknown' 830688
  list([""'E'"", "" 'L'"", "" 'S'"", "" 'W'"", "" 'D'"", "" 'U'"", "" 'Y'""]) 0.73 2.04]"
-744,warehouses,2454,"['Federated States of Micronesia' 'Pohnpei' 130823
+744,warehouses,2454,"['Micronesia, Federated States of' 'Pohnpei' 130823
  list([""'I'"", "" 'B'"", "" 'O'""]) 0.85 2.7]"
 745,warehouses,2468,"['New Caledonia' 'Unknown' 471849
  list([""'X'"", "" 'U'"", "" 'T'"", "" 'Z'"", "" 'J'""]) 0.6 2.06]"
@@ -1411,7 +1378,7 @@
 768,warehouses,2708,"['Sao Tome and Principe' 'Cantagalo' 198084 list([""'P'""]) 0.58 2.54]"
 769,warehouses,2714,"['Saint Martin (French part)' 'Unknown' 162796
  list([""'O'"", "" 'I'"", "" 'Z'""]) 0.51 2.08]"
-770,warehouses,2722,"['Comoros' 'Ngazidja' 523068 list([""'L'""]) 0.85 2.93]"
+770,warehouses,2722,"['Comoros' 'Andjazîdja' 523068 list([""'L'""]) 0.85 2.93]"
 771,warehouses,2727,"['Faroe Islands' 'Unknown' 885712 list([""'X'"", "" 'J'"", "" 'I'"", "" 'N'""])
  0.75 2.11]"
 772,warehouses,2728,"['Dominica' 'Saint Andrew' 871372 list([""'M'"", "" 'S'"", "" 'T'""]) 0.79 2.06]"
@@ -1427,11 +1394,11 @@
 778,warehouses,2797,"['San Marino' 'Montegiardino' 679250 list([""'H'""]) 0.84 2.42]"
 779,warehouses,2798,"['Niue' 'Unknown' 274601
  list([""'E'"", "" 'L'"", "" 'K'"", "" 'Y'"", "" 'W'"", "" 'I'""]) 0.76 1.89]"
-780,warehouses,2804,"['Maldives' 'Unknown' 742500 list([""'O'"", "" 'C'"", "" 'E'"", "" 'M'"", "" 'T'""])
- 0.53 1.95]"
+780,warehouses,2804,"['Maldives' 'Fuvammulah' 742500
+ list([""'O'"", "" 'C'"", "" 'E'"", "" 'M'"", "" 'T'""]) 0.53 1.95]"
 781,warehouses,2805,"['Saint Vincent and the Grenadines' 'Saint David' 861965
  list([""'T'"", "" 'H'"", "" 'J'""]) 0.94 1.92]"
-782,warehouses,2815,"['United States' 'Johnston Atoll' 711521
+782,warehouses,2815,"['United States Minor Outlying Islands' 'Johnston Atoll' 711521
  list([""'X'"", "" 'M'"", "" 'I'"", "" 'L'"", "" 'F'"", "" 'H'""]) 0.72 1.92]"
 783,warehouses,2816,"['Tonga' ""Ha'apai"" 983278 list([""'H'"", "" 'G'"", "" 'X'"", "" 'Q'""]) 0.94 1.91]"
 784,warehouses,2821,"['Turks and Caicos Islands' 'Unknown' 944666
@@ -1461,7 +1428,7 @@
  list([""'E'"", "" 'V'"", "" 'T'"", "" 'M'"", "" 'X'"", "" 'Y'"", "" 'G'""]) 0.8 2.99]"
 800,warehouses,2930,"['Uruguay' 'Río Negro' 569054 list([""'S'"", "" 'W'"", "" 'Z'"", "" 'C'""]) 0.96
  1.81]"
-801,warehouses,2935,"['Federated States of Micronesia' 'Yap' 519448
+801,warehouses,2935,"['Micronesia, Federated States of' 'Yap' 519448
  list([""'X'"", "" 'R'"", "" 'P'"", "" 'W'"", "" 'Z'""]) 0.66 2.12]"
 802,warehouses,2936,"['Norway' 'Svalbard (Arctic Region)' 213297 list([""'I'"", "" 'U'""]) 0.59
  1.96]"
@@ -1498,7 +1465,7 @@
  list([""'C'"", "" 'Z'"", "" 'T'"", "" 'W'"", "" 'N'"", "" 'B'"", "" 'I'""]) 0.63 2.08]"
 822,warehouses,3106,"['Bermuda' 'Unknown' 976610 list([""'E'"", "" 'I'"", "" 'Y'"", "" 'H'""]) 0.67
  2.16]"
-823,warehouses,3112,"['Plurinational State of Bolivia' 'Santa Cruz' 249236
+823,warehouses,3112,"['Bolivia, Plurinational State of' 'Santa Cruz' 249236
  list([""'B'"", "" 'C'"", "" 'Q'"", "" 'X'""]) 0.95 1.95]"
 824,warehouses,3118,"['Cambodia' 'Siem Reab' 179501
  list([""'Y'"", "" 'L'"", "" 'H'"", "" 'F'"", "" 'P'"", "" 'Q'""]) 0.96 2.01]"
@@ -1559,7 +1526,7 @@
 860,warehouses,3468,"['Macao' 'Unknown' 974866 list([""'L'"", "" 'Z'"", "" 'T'""]) 0.58 2.88]"
 861,warehouses,3493,"['Sao Tome and Principe' 'Príncipe' 355769
  list([""'G'"", "" 'W'"", "" 'X'"", "" 'Q'"", "" 'Y'"", "" 'M'""]) 0.56 2.83]"
-862,warehouses,3514,"['United States' 'Jarvis Island' 351248
+862,warehouses,3514,"['United States Minor Outlying Islands' 'Jarvis Island' 351248
  list([""'V'"", "" 'O'"", "" 'J'"", "" 'E'"", "" 'F'"", "" 'Z'"", "" 'C'""]) 0.84 2.27]"
 863,warehouses,3525,"['Dominican Republic' 'Barahona' 780689 list([""'B'""]) 0.68 2.51]"
 864,warehouses,3532,"['Panama' 'Ngöbe-Buglé' 149633
@@ -1599,9 +1566,9 @@
  list([""'Z'"", "" 'B'"", "" 'G'"", "" 'T'"", "" 'F'"", "" 'H'""]) 0.64 2.14]"
 884,warehouses,3742,"['Austria' 'Tirol' 681304
  list([""'M'"", "" 'A'"", "" 'S'"", "" 'W'"", "" 'U'"", "" 'V'""]) 0.72 2.09]"
-885,warehouses,3751,"['United Republic of Tanzania' 'Singida' 995241 list([""'Z'"", "" 'C'""]) 0.64
- 2.89]"
-886,warehouses,3756,"['State of Palestine' 'Gaza' 614629
+885,warehouses,3751,"['Tanzania, United Republic of' 'Singida' 995241 list([""'Z'"", "" 'C'""])
+ 0.64 2.89]"
+886,warehouses,3756,"['Palestine, State of' 'Gaza' 614629
  list([""'R'"", "" 'S'"", "" 'C'"", "" 'P'"", "" 'X'"", "" 'D'""]) 0.93 2.11]"
 887,warehouses,3759,"['Tajikistan' 'Kŭhistoni Badakhshon' 772327 list([""'J'"", "" 'X'""]) 0.59
  2.31]"
@@ -1610,12 +1577,13 @@
  list([""'K'"", "" 'H'"", "" 'E'"", "" 'B'"", "" 'O'"", "" 'C'"", "" 'D'""]) 0.5 2.99]"
 890,warehouses,3766,"['Cameroon' 'South' 578809 list([""'R'"", "" 'E'"", "" 'U'"", "" 'K'"", "" 'T'""])
  0.92 1.84]"
-891,warehouses,3773,"['Belarus' 'Minskaja oblast' 712693 list([""'E'"", "" 'Q'""]) 0.87 2.99]"
+891,warehouses,3773,"['Belarus' ""Minskaja oblast'"" 712693 list([""'E'"", "" 'Q'""]) 0.87 2.99]"
 892,warehouses,3825,"['Antigua and Barbuda' 'Saint Philip' 149484
  list([""'B'"", "" 'R'"", "" 'D'"", "" 'K'""]) 0.93 1.8]"
 893,warehouses,3826,"['Saint Helena, Ascension and Tristan da Cunha' 'Tristan da Cunha' 492313
  list([""'X'"", "" 'O'"", "" 'B'"", "" 'J'"", "" 'U'"", "" 'C'"", "" 'P'""]) 0.77 2.7]"
-894,warehouses,3832,"['Bolivarian Republic of Venezuela' 'Falcón' 368607 list([""'V'""]) 0.6 1.82]"
+894,warehouses,3832,"['Venezuela, Bolivarian Republic of' 'Falcón' 368607 list([""'V'""]) 0.6
+ 1.82]"
 895,warehouses,3841,"['French Polynesia' 'Unknown' 912609 list([""'K'""]) 0.98 2.21]"
 896,warehouses,3852,"['Papua New Guinea' 'National Capital District (Port Moresby)' 626772
  list([""'T'""]) 0.92 2.76]"
@@ -1670,7 +1638,7 @@
 928,warehouses,4098,"['Estonia' 'Lüganuse' 232119 list([""'N'"", "" 'G'"", "" 'K'""]) 0.58 1.75]"
 929,warehouses,4099,"['Cameroon' 'North' 399644 list([""'P'""]) 0.96 2.68]"
 930,warehouses,4123,"['Japan' 'Iwate' 797262 list([""'L'"", "" 'Y'"", "" 'Z'""]) 0.92 2.58]"
-931,warehouses,4127,"['Greece' 'Peloponnese' 527721 list([""'L'"", "" 'X'""]) 0.85 2.52]"
+931,warehouses,4127,"['Greece' 'Pelopónnisos' 527721 list([""'L'"", "" 'X'""]) 0.85 2.52]"
 932,warehouses,4132,"['Samoa' ""Satupa'itea"" 895744
  list([""'H'"", "" 'O'"", "" 'C'"", "" 'V'"", "" 'G'"", "" 'T'""]) 0.96 2.05]"
 933,warehouses,4142,"['Czechia' 'Česká Lípa' 637442
@@ -1679,12 +1647,12 @@
  list([""'O'"", "" 'G'"", "" 'V'"", "" 'A'"", "" 'B'""]) 0.55 2.97]"
 935,warehouses,4167,"['Serbia' 'Južnobački okrug' 225187
  list([""'J'"", "" 'O'"", "" 'N'"", "" 'S'"", "" 'H'"", "" 'G'""]) 0.98 2.33]"
-936,warehouses,4175,"['Russian Federation' 'Volgogradskaja oblast' 311850
+936,warehouses,4175,"['Russian Federation' ""Volgogradskaja oblast'"" 311850
  list([""'V'"", "" 'J'"", "" 'D'"", "" 'K'""]) 0.61 2.63]"
 937,warehouses,4182,"['Antarctica' 'Unknown' 491332
  list([""'P'"", "" 'S'"", "" 'Y'"", "" 'D'"", "" 'V'"", "" 'N'""]) 0.54 2.3]"
 938,warehouses,4186,"['Ukraine' 'Ivano-Frankivska oblast' 630022 list([""'W'""]) 0.68 2.05]"
-939,warehouses,4197,"['Republic of Moldova' 'Rezina' 220124 list([""'M'""]) 0.73 2.82]"
+939,warehouses,4197,"['Moldova, Republic of' 'Rezina' 220124 list([""'M'""]) 0.73 2.82]"
 940,warehouses,4204,"['Sudan' 'North Darfur' 163120
  list([""'F'"", "" 'E'"", "" 'B'"", "" 'P'"", "" 'X'"", "" 'W'""]) 0.92 2.7]"
 941,warehouses,4208,"['Antigua and Barbuda' 'Saint Paul' 641487
@@ -1693,9 +1661,9 @@
  list([""'O'"", "" 'F'"", "" 'C'"", "" 'W'"", "" 'I'"", "" 'T'""]) 0.89 2.46]"
 943,warehouses,4211,"['Svalbard and Jan Mayen' 'Unknown' 863719
  list([""'G'"", "" 'T'"", "" 'V'"", "" 'R'"", "" 'C'"", "" 'H'""]) 0.7 2.12]"
-944,warehouses,4213,"['Kyrgyzstan' ""Issyk-Kul'skaja oblast"" 662434
+944,warehouses,4213,"['Kyrgyzstan' ""Issyk-Kul'skaja oblast'"" 662434
  list([""'E'"", "" 'P'"", "" 'V'"", "" 'T'""]) 0.52 1.92]"
-945,warehouses,4218,"['Republic of Moldova' 'Ungheni' 818477 list([""'G'""]) 0.58 2.16]"
+945,warehouses,4218,"['Moldova, Republic of' 'Ungheni' 818477 list([""'G'""]) 0.58 2.16]"
 946,warehouses,4229,"['New Caledonia' 'Unknown' 704884 list([""'J'"", "" 'U'"", "" 'F'""]) 0.83 2.8]"
 947,warehouses,4232,"['Pakistan' 'Azad Jammu and Kashmir' 180371 list([""'G'"", "" 'K'""]) 0.71
  2.73]"
@@ -1737,7 +1705,7 @@
  0.96 1.86]"
 971,warehouses,4374,"['Ghana' 'Savannah' 125712 list([""'B'"", "" 'N'"", "" 'L'"", "" 'O'"", "" 'K'""])
  0.88 2.6]"
-972,warehouses,4390,"[""Democratic People's Republic of Korea"" 'Hwanghae-bukto' 445126
+972,warehouses,4390,"[""Korea, Democratic People's Republic of"" 'Hwanghae-bukto' 445126
  list([""'I'"", "" 'N'"", "" 'J'""]) 0.71 2.34]"
 973,warehouses,4394,"['Mayotte' 'Unknown' 633097 list([""'P'"", "" 'Y'"", "" 'J'"", "" 'V'"", "" 'L'""])
  0.53 2.59]"
@@ -1748,7 +1716,7 @@
 976,warehouses,4405,"['Macao' 'Unknown' 431059
  list([""'H'"", "" 'I'"", "" 'V'"", "" 'A'"", "" 'O'"", "" 'U'""]) 0.58 2.74]"
 977,warehouses,4406,"['Cambodia' 'Kaoh Kong' 786452 list([""'Y'""]) 0.51 2.02]"
-978,warehouses,4408,"['Federated States of Micronesia ' 'Pohnpei' 887096
+978,warehouses,4408,"['Micronesia, Federated States of' 'Pohnpei' 887096
  list([""'A'"", "" 'L'"", "" 'B'"", "" 'G'"", "" 'S'"", "" 'Y'""]) 0.99 2.42]"
 979,warehouses,4411,"['Anguilla' 'Unknown' 109846
  list([""'G'"", "" 'E'"", "" 'N'"", "" 'A'"", "" 'Z'"", "" 'P'"", "" 'H'""]) 0.65 2.54]"
@@ -1764,7 +1732,7 @@
 985,warehouses,4428,"['Slovakia' 'Trenčiansky kraj' 822672
  list([""'Z'"", "" 'Y'"", "" 'N'"", "" 'H'""]) 0.7 2.62]"
 986,warehouses,4431,"['Nigeria' 'Lagos' 630212 list([""'R'""]) 0.5 1.87]"
-987,warehouses,4445,"['Province of China Taiwan' 'Changhua' 113291 list([""'V'""]) 0.88 1.86]"
+987,warehouses,4445,"['Taiwan, Province of China' 'Changhua' 113291 list([""'V'""]) 0.88 1.86]"
 988,warehouses,4458,"['Liberia' 'Montserrado' 687359 list([""'B'"", "" 'K'"", "" 'A'""]) 0.74 2.49]"
 989,warehouses,4496,"['Holy See (Vatican City State)' 'Unknown' 345694
  list([""'N'"", "" 'M'"", "" 'G'""]) 0.65 2.53]"
@@ -1824,7 +1792,7 @@
 1024,warehouses,4733,"['Egypt' 'Al Uqşur' 361554
  list([""'Y'"", "" 'G'"", "" 'C'"", "" 'X'"", "" 'U'"", "" 'V'""]) 0.94 2.53]"
 1025,warehouses,4744,"['Bahamas' 'Cat Island' 115119 list([""'Q'"", "" 'A'""]) 0.79 2.56]"
-1026,warehouses,4771,"[""Democratic People's Republic of Korea"" 'Hwanghae-namdo' 627901
+1026,warehouses,4771,"[""Korea, Democratic People's Republic of"" 'Hwanghae-namdo' 627901
  list([""'Q'"", "" 'N'"", "" 'F'"", "" 'P'"", "" 'J'"", "" 'C'"", "" 'I'""]) 0.71 2.42]"
 1027,warehouses,4773,"['Zambia' 'Southern' 494311 list([""'Q'"", "" 'M'"", "" 'Z'""]) 0.72 2.75]"
 1028,warehouses,4780,"['Turks and Caicos Islands' 'Unknown' 453375 list([""'Y'"", "" 'X'""]) 0.5
@@ -1835,7 +1803,7 @@
 1031,warehouses,4786,"['Niger' 'Agadez' 447938 list([""'Q'"", "" 'B'"", "" 'G'""]) 0.62 1.96]"
 1032,warehouses,4792,"['Seychelles' 'Baie Sainte Anne' 525832
  list([""'U'"", "" 'D'"", "" 'T'"", "" 'M'"", "" 'Q'""]) 0.91 2.33]"
-1033,warehouses,4797,"['Kazakhstan' 'Turkestankaya oblast' 149443
+1033,warehouses,4797,"['Kazakhstan' ""Turkestankaya oblast'"" 149443
  list([""'B'"", "" 'V'"", "" 'T'"", "" 'X'"", "" 'N'""]) 0.79 2.69]"
 1034,warehouses,4816,"['Chad' 'Hadjer Lamis' 868545 list([""'O'"", "" 'I'""]) 0.52 2.84]"
 1035,warehouses,4817,"['Ecuador' 'Guayas' 246543 list([""'M'"", "" 'J'"", "" 'B'""]) 0.97 2.14]"
@@ -1854,7 +1822,8 @@
  2.78]"
 1043,warehouses,4910,"['Saint Vincent and the Grenadines' 'Saint David' 845048 list([""'J'""])
  0.97 2.2]"
-1044,warehouses,4927,"['Virgin Islands ' 'Unknown' 437645 list([""'H'"", "" 'J'""]) 0.69 2.91]"
+1044,warehouses,4927,"['Virgin Islands, British' 'Unknown' 437645 list([""'H'"", "" 'J'""]) 0.69
+ 2.91]"
 1045,warehouses,4930,"['Svalbard and Jan Mayen' 'Unknown' 943841 list([""'P'"", "" 'R'""]) 0.89 1.81]"
 1046,warehouses,4939,"['Spain' 'Jaén' 309492 list([""'P'""]) 0.52 1.87]"
 1047,warehouses,4956,"['Liberia' 'Sinoe' 134294 list([""'J'"", "" 'G'"", "" 'K'""]) 0.71 2.59]"
@@ -1875,7 +1844,7 @@
  0.89 2.52]"
 1059,warehouses,5084,"['Czechia' 'Rokycany' 137940
  list([""'N'"", "" 'W'"", "" 'U'"", "" 'Y'"", "" 'V'"", "" 'C'"", "" 'I'""]) 0.74 2.74]"
-1060,warehouses,5089,"['Comoros' 'Ngazidja' 918422
+1060,warehouses,5089,"['Comoros' 'Andjazîdja' 918422
  list([""'Z'"", "" 'E'"", "" 'A'"", "" 'J'"", "" 'P'"", "" 'G'"", "" 'W'""]) 0.72 2.96]"
 1061,warehouses,5094,"['Cyprus' 'Lemesos' 316879 list([""'Z'"", "" 'G'""]) 0.88 2.91]"
 1062,warehouses,5111,"['Ukraine' 'Volynska oblast' 872614 list([""'Q'"", "" 'A'"", "" 'O'"", "" 'B'""])
@@ -1910,7 +1879,7 @@
 1080,warehouses,5297,"['Oman' 'Al Buraymī' 399414 list([""'C'""]) 0.81 2.73]"
 1081,warehouses,5299,"['United Kingdom' 'Croydon' 294830
  list([""'C'"", "" 'Z'"", "" 'R'"", "" 'I'"", "" 'S'"", "" 'E'"", "" 'O'""]) 0.91 2.87]"
-1082,warehouses,5303,"['State of Palestine ' 'Hebron' 541047 list([""'J'"", "" 'Q'"", "" 'N'""]) 0.59
+1082,warehouses,5303,"['Palestine, State of' 'Hebron' 541047 list([""'J'"", "" 'Q'"", "" 'N'""]) 0.59
  2.43]"
 1083,warehouses,5315,"['Liberia' 'Bong' 806481 list([""'Z'"", "" 'D'"", "" 'E'"", "" 'V'"", "" 'N'""])
  0.77 2.93]"
@@ -1945,7 +1914,7 @@
 1101,warehouses,5472,"['Guernsey' 'Unknown' 340986 list([""'K'""]) 0.74 2.48]"
 1102,warehouses,5492,"['Greece' 'Thessalía' 357988 list([""'E'"", "" 'O'"", "" 'R'"", "" 'P'""]) 0.5
  1.79]"
-1103,warehouses,5498,"['Kazakhstan' 'oblast' 497920
+1103,warehouses,5498,"['Kazakhstan' ""Kostanajskaja oblast'"" 497920
  list([""'G'"", "" 'B'"", "" 'P'"", "" 'T'"", "" 'U'"", "" 'K'"", "" 'Y'""]) 0.65 2.55]"
 1104,warehouses,5504,"['France' 'Morbihan' 817176 list([""'Z'""]) 0.62 2.12]"
 1105,warehouses,5509,"['Mozambique' 'Maputo' 632213
@@ -1956,13 +1925,13 @@
  list([""'I'"", "" 'A'"", "" 'Q'"", "" 'P'"", "" 'S'"", "" 'V'""]) 0.55 2.07]"
 1109,warehouses,5540,"['Zambia' 'Copperbelt' 362366 list([""'B'""]) 0.96 2.4]"
 1110,warehouses,5569,"['Mozambique' 'Niassa' 756610 list([""'Z'"", "" 'U'"", "" 'V'""]) 0.93 2.09]"
-1111,warehouses,5571,"['Province of China Taiwan' 'Keelung' 320930
+1111,warehouses,5571,"['Taiwan, Province of China' 'Keelung' 320930
  list([""'H'"", "" 'Z'"", "" 'E'"", "" 'B'"", "" 'U'""]) 0.54 2.94]"
 1112,warehouses,5596,"['Argentina' 'Neuquén' 775335 list([""'S'"", "" 'Q'"", "" 'J'"", "" 'M'""]) 0.99
  1.84]"
 1113,warehouses,5597,"['Turkmenistan' 'Lebap' 189669
  list([""'F'"", "" 'K'"", "" 'T'"", "" 'D'"", "" 'P'""]) 0.73 2.98]"
-1114,warehouses,5608,"['United Republic of Tanzania' 'Arusha' 314777 list([""'K'""]) 0.97 2.15]"
+1114,warehouses,5608,"['Tanzania, United Republic of' 'Arusha' 314777 list([""'K'""]) 0.97 2.15]"
 1115,warehouses,5616,"['Bahrain' 'Al Janūbīyah' 748878
  list([""'T'"", "" 'N'"", "" 'U'"", "" 'B'"", "" 'I'"", "" 'S'""]) 0.82 2.58]"
 1116,warehouses,5623,"['Bouvet Island' 'Unknown' 633998 list([""'C'"", "" 'O'""]) 0.65 2.34]"
@@ -2011,7 +1980,7 @@
 1143,warehouses,5886,"['Gabon' 'Moyen-Ogooué' 229159
  list([""'I'"", "" 'H'"", "" 'C'"", "" 'B'"", "" 'S'""]) 0.92 2.24]"
 1144,warehouses,5887,"['Turkmenistan' 'Balkan' 526815 list([""'N'"", "" 'U'"", "" 'O'""]) 0.78 2.37]"
-1145,warehouses,5904,"['Province of China Taiwan' 'Taichung' 168814
+1145,warehouses,5904,"['Taiwan, Province of China' 'Taichung' 168814
  list([""'B'"", "" 'H'"", "" 'J'"", "" 'F'"", "" 'Q'""]) 0.74 1.84]"
 1146,warehouses,5919,"['Réunion' 'Unknown' 325737 list([""'P'"", "" 'S'""]) 0.59 2.86]"
 1147,warehouses,5922,"['Niue' 'Unknown' 687910 list([""'V'""]) 0.6 2.61]"
@@ -2038,7 +2007,7 @@
 1161,warehouses,6062,"['Chad' 'Mayo-Kebbi-Ouest' 339997 list([""'Z'""]) 0.66 2.78]"
 1162,warehouses,6063,"['Guyana' 'Potaro-Siparuni' 442769 list([""'P'"", "" 'Q'"", "" 'G'""]) 0.54 1.93]"
 1163,warehouses,6085,"['Niger' 'Agadez' 596156 list([""'N'"", "" 'F'"", "" 'V'""]) 0.53 2.87]"
-1164,warehouses,6087,"[""Democratic People's Republic of Korea"" 'Hamgyǒng-bukto' 959479
+1164,warehouses,6087,"[""Korea, Democratic People's Republic of"" 'Hamgyǒng-bukto' 959479
  list([""'B'"", "" 'A'"", "" 'T'"", "" 'G'"", "" 'H'""]) 0.66 1.76]"
 1165,warehouses,6090,"['Ireland' 'Laois' 187698 list([""'O'"", "" 'A'""]) 0.9 2.47]"
 1166,warehouses,6096,"['Cook Islands' 'Unknown' 557409
@@ -2065,15 +2034,15 @@
  list([""'Q'"", "" 'I'"", "" 'Z'"", "" 'G'"", "" 'F'"", "" 'L'""]) 0.57 2.96]"
 1178,warehouses,6200,"['Namibia' 'Oshana' 377469 list([""'J'"", "" 'H'"", "" 'V'"", "" 'B'"", "" 'D'""])
  0.95 2.01]"
-1179,warehouses,6205,"[""Democratic People's Republic of Korea"" 'Jeollanam-do' 857194
- list([""'Z'"", "" 'T'"", "" 'O'""]) 0.79 2.56]"
+1179,warehouses,6205,"['Korea, Republic of' 'Jeollanam-do' 857194 list([""'Z'"", "" 'T'"", "" 'O'""])
+ 0.79 2.56]"
 1180,warehouses,6206,"['Cambodia' 'Kampot' 575987 list([""'M'"", "" 'B'"", "" 'C'""]) 0.54 2.42]"
 1181,warehouses,6219,"['Georgia' 'Shida Kartli' 470305 list([""'B'""]) 0.89 1.99]"
 1182,warehouses,6229,"['Martinique' 'Unknown' 291018
  list([""'Y'"", "" 'J'"", "" 'B'"", "" 'K'"", "" 'P'""]) 0.75 2.12]"
 1183,warehouses,6248,"['Qatar' 'Ash Shamāl' 935275
  list([""'T'"", "" 'B'"", "" 'V'"", "" 'H'"", "" 'S'"", "" 'C'"", "" 'I'""]) 0.88 2.15]"
-1184,warehouses,6265,"['Virgin Islands ' 'Unknown' 622459 list([""'X'""]) 0.65 2.14]"
+1184,warehouses,6265,"['Virgin Islands, British' 'Unknown' 622459 list([""'X'""]) 0.65 2.14]"
 1185,warehouses,6266,"['Trinidad and Tobago' 'Siparia' 743117 list([""'K'"", "" 'M'"", "" 'D'""]) 0.92
  2.5]"
 1186,warehouses,6277,"['Belize' 'Cayo' 620408 list([""'X'"", "" 'Q'"", "" 'H'"", "" 'G'""]) 0.75 2.78]"
@@ -2113,7 +2082,7 @@
  list([""'X'"", "" 'Z'"", "" 'E'"", "" 'L'"", "" 'W'"", "" 'B'"", "" 'K'""]) 0.71 2.01]"
 1206,warehouses,6434,"['Iceland' 'Dalabyggð' 567072 list([""'L'"", "" 'X'"", "" 'A'""]) 0.63 2.2]"
 1207,warehouses,6443,"['Estonia' 'Paide' 172956 list([""'Y'"", "" 'B'"", "" 'Q'"", "" 'F'""]) 0.79 1.8]"
-1208,warehouses,6482,"['Russian Federation' 'Evrejskaja avtonomnaja oblast' 843939
+1208,warehouses,6482,"['Russian Federation' ""Evrejskaja avtonomnaja oblast'"" 843939
  list([""'V'"", "" 'W'""]) 0.89 2.28]"
 1209,warehouses,6485,"['Lesotho' 'Maseru' 861693 list([""'J'"", "" 'V'"", "" 'P'""]) 0.53 2.61]"
 1210,warehouses,6492,"['Eritrea' 'Al Awsaţ' 442453 list([""'N'"", "" 'P'"", "" 'B'""]) 0.95 1.97]"
@@ -2135,7 +2104,7 @@
 1220,warehouses,6601,"['Vanuatu' 'Taféa' 870136 list([""'P'"", "" 'I'"", "" 'G'""]) 0.56 2.16]"
 1221,warehouses,6607,"[""Lao People's Democratic Republic"" 'Viangchan' 889570
  list([""'V'"", "" 'D'"", "" 'T'"", "" 'A'"", "" 'Q'"", "" 'H'"", "" 'I'""]) 0.59 2.79]"
-1222,warehouses,6626,"['The Democratic Republic of the Congo' 'Mongala' 897003
+1222,warehouses,6626,"['Congo, The Democratic Republic of the' 'Mongala' 897003
  list([""'D'"", "" 'G'"", "" 'Y'"", "" 'H'"", "" 'W'""]) 0.55 2.92]"
 1223,warehouses,6634,"['Nauru' 'Nibok' 602836 list([""'T'"", "" 'P'"", "" 'Y'"", "" 'R'""]) 0.69 2.98]"
 1224,warehouses,6635,"['Greenland' 'Kommune Qeqertalik' 108316
@@ -2159,7 +2128,7 @@
 1236,warehouses,6787,"['Serbia' 'Moravički okrug' 620217 list([""'Y'"", "" 'U'"", "" 'N'""]) 0.87 2.92]"
 1237,warehouses,6790,"['Saudi Arabia' 'Al Bāḩah' 803731
  list([""'G'"", "" 'S'"", "" 'Q'"", "" 'V'"", "" 'O'""]) 0.53 2.3]"
-1238,warehouses,6804,"['Islamic Republic of Iran' 'Āz̄ārbāyjān-e Shārqī' 555457
+1238,warehouses,6804,"['Iran, Islamic Republic of' 'Āz̄ārbāyjān-e Shārqī' 555457
  list([""'Z'"", "" 'J'""]) 0.72 2.57]"
 1239,warehouses,6818,"['Morocco' 'Médiouna' 518668
  list([""'F'"", "" 'Z'"", "" 'X'"", "" 'Y'"", "" 'T'"", "" 'I'"", "" 'Q'""]) 0.58 2.22]"
@@ -2180,11 +2149,11 @@
 1249,warehouses,6889,"['Peru' 'Ancash' 450015 list([""'K'""]) 0.65 2.91]"
 1250,warehouses,6894,"['Malaysia' 'Wilayah Persekutuan Kuala Lumpur' 622784
  list([""'R'"", "" 'Q'""]) 0.69 2.45]"
-1251,warehouses,6895,"['The Democratic Republic of the Congo' 'Kasaï Oriental' 650151
+1251,warehouses,6895,"['Congo, The Democratic Republic of the' 'Kasaï Oriental' 650151
  list([""'M'"", "" 'D'"", "" 'Z'"", "" 'Q'"", "" 'R'"", "" 'G'""]) 0.55 2.32]"
 1252,warehouses,6898,"['Sierra Leone' 'Southern' 152504 list([""'V'"", "" 'J'""]) 0.89 2.09]"
 1253,warehouses,6915,"['Andorra' 'Encamp' 372980 list([""'I'"", "" 'R'""]) 0.6 2.75]"
-1254,warehouses,6928,"['The Democratic Republic of the Congo' 'Sud-Kivu' 226213
+1254,warehouses,6928,"['Congo, The Democratic Republic of the' 'Sud-Kivu' 226213
  list([""'P'"", "" 'U'""]) 0.54 2.25]"
 1255,warehouses,6958,"['Svalbard and Jan Mayen' 'Unknown' 333627
  list([""'L'"", "" 'C'"", "" 'E'"", "" 'F'"", "" 'W'"", "" 'S'"", "" 'D'""]) 0.76 2.15]"
@@ -2234,7 +2203,7 @@
  list([""'Y'"", "" 'O'"", "" 'C'"", "" 'P'"", "" 'E'"", "" 'R'"", "" 'D'""]) 0.66 2.46]"
 1282,warehouses,7160,"['Israel' 'Ash Shamālī' 160028
  list([""'N'"", "" 'W'"", "" 'Y'"", "" 'G'"", "" 'C'""]) 0.8 2.07]"
-1283,warehouses,7185,"['The Democratic Republic of the Congo' 'Kwango' 906333
+1283,warehouses,7185,"['Congo, The Democratic Republic of the' 'Kwango' 906333
  list([""'F'"", "" 'V'"", "" 'D'"", "" 'U'"", "" 'N'""]) 0.95 1.84]"
 1284,warehouses,7189,"['Netherlands' 'Saba' 182365 list([""'S'""]) 0.83 2.45]"
 1285,warehouses,7196,"['France' 'Aube' 566499 list([""'L'"", "" 'G'"", "" 'D'"", "" 'J'""]) 0.61 2.14]"
@@ -2274,21 +2243,22 @@
  list([""'F'"", "" 'H'"", "" 'P'"", "" 'G'"", "" 'Q'"", "" 'L'""]) 0.71 2.83]"
 1306,warehouses,7377,"['Serbia' 'Prizrenski okrug' 902203 list([""'E'"", "" 'W'"", "" 'T'""]) 0.95
  2.79]"
-1307,warehouses,7382,"['Islamic Republic of Iran' 'Qazvīn' 174895 list([""'H'"", "" 'Z'""]) 0.64
+1307,warehouses,7382,"['Iran, Islamic Republic of' 'Qazvīn' 174895 list([""'H'"", "" 'Z'""]) 0.64
  2.45]"
 1308,warehouses,7400,"['Antarctica' 'Unknown' 521046 list([""'A'""]) 0.58 2.57]"
 1309,warehouses,7402,"['American Samoa' 'Unknown' 174555
  list([""'Q'"", "" 'H'"", "" 'I'"", "" 'J'"", "" 'O'"", "" 'F'"", "" 'P'""]) 0.62 2.53]"
 1310,warehouses,7404,"['Viet Nam' 'Hồ Chí Minh' 302289
  list([""'Z'"", "" 'R'"", "" 'J'"", "" 'N'"", "" 'C'"", "" 'V'""]) 0.68 2.62]"
-1311,warehouses,7408,"['Virgin Islands ' 'Unknown' 770072 list([""'W'"", "" 'F'""]) 0.97 2.87]"
+1311,warehouses,7408,"['Virgin Islands, British' 'Unknown' 770072 list([""'W'"", "" 'F'""]) 0.97
+ 2.87]"
 1312,warehouses,7418,"['Peru' 'Tacna' 435211 list([""'D'""]) 0.57 2.47]"
 1313,warehouses,7425,"['Kenya' ""Murang'a"" 943633 list([""'T'"", "" 'R'"", "" 'V'"", "" 'C'"", "" 'F'""])
  0.76 2.32]"
 1314,warehouses,7434,"['Guadeloupe' 'Unknown' 540139 list([""'I'"", "" 'E'"", "" 'K'"", "" 'Q'""]) 0.81
  2.0]"
 1315,warehouses,7451,"['Macao' 'Unknown' 597844 list([""'F'"", "" 'G'"", "" 'V'""]) 0.5 2.25]"
-1316,warehouses,7461,"['Sint Eustatius and Saba Bonaire' 'Sint Eustatius' 956843 list([""'W'""])
+1316,warehouses,7461,"['Bonaire, Sint Eustatius and Saba' 'Sint Eustatius' 956843 list([""'W'""])
  0.58 2.07]"
 1317,warehouses,7465,"[""Korea, Democratic People's Republic of"" 'Kangweonto' 230422
  list([""'S'"", "" 'I'""]) 0.94 2.66]"
@@ -2300,7 +2270,7 @@
 1321,warehouses,7486,"['Bouvet Island' 'Unknown' 982943 list([""'Q'"", "" 'A'""]) 0.76 2.52]"
 1322,warehouses,7489,"['Algeria' 'Mostaganem' 301828 list([""'T'"", "" 'N'"", "" 'R'"", "" 'G'""]) 0.5
  2.94]"
-1323,warehouses,3108,"['State of Palestine' 'Tulkarm' 785369
+1323,warehouses,3108,"['Palestine, State of' 'Tulkarm' 785369
  list([""'M'"", "" 'V'"", "" 'P'"", "" 'S'"", "" 'C'""]) 0.87 2.65]"
 1324,warehouses,7498,"['Congo' 'Kouilou' 595107 list([""'M'"", "" 'A'"", "" 'P'"", "" 'C'"", "" 'I'""])
  0.99 2.53]"
@@ -2318,11 +2288,11 @@
  list([""'V'"", "" 'I'"", "" 'K'"", "" 'T'"", "" 'P'"", "" 'O'""]) 0.56 2.53]"
 1332,warehouses,7581,"['Bosnia and Herzegovina' 'Federacija Bosne i Hercegovine' 178463
  list([""'F'"", "" 'Z'""]) 0.92 2.91]"
-1333,warehouses,7611,"['Province of China Taiwan' 'Kinmen' 865590
+1333,warehouses,7611,"['Taiwan, Province of China' 'Kinmen' 865590
  list([""'P'"", "" 'E'"", "" 'D'"", "" 'S'"", "" 'I'"", "" 'L'""]) 0.98 1.83]"
 1334,warehouses,7614,"['Brazil' 'Rio de Janeiro' 142029 list([""'I'"", "" 'R'"", "" 'Q'"", "" 'M'""])
  0.72 2.25]"
-1335,warehouses,7618,"['United Republic of Tanzania' 'Njombe' 367160 list([""'G'""]) 0.77 1.82]"
+1335,warehouses,7618,"['Tanzania, United Republic of' 'Njombe' 367160 list([""'G'""]) 0.77 1.82]"
 1336,warehouses,7622,"['Cambodia' 'Mondol Kiri' 541792
  list([""'P'"", "" 'C'"", "" 'N'"", "" 'Y'"", "" 'V'"", "" 'Z'"", "" 'H'""]) 0.74 2.49]"
 1337,warehouses,7634,"['Bangladesh' 'Feni' 819972 list([""'I'""]) 0.89 2.16]"
@@ -2342,10 +2312,10 @@
 1346,warehouses,7709,"['Aruba' 'Unknown' 334039 list([""'N'"", "" 'X'"", "" 'Q'""]) 0.66 1.91]"
 1347,warehouses,4703,"['Holy See (Vatican City State)' 'Unknown' 741867
  list([""'J'"", "" 'M'"", "" 'I'"", "" 'N'"", "" 'P'"", "" 'W'""]) 0.56 2.15]"
-1348,warehouses,7721,"[' Plurinational State of Bolivia' 'Cochabamba' 711640
+1348,warehouses,7721,"['Bolivia, Plurinational State of' 'Cochabamba' 711640
  list([""'W'"", "" 'D'"", "" 'Y'"", "" 'P'"", "" 'A'""]) 0.86 2.54]"
 1349,warehouses,7722,"['Brunei Darussalam' 'Tutong' 385234 list([""'L'""]) 0.96 2.41]"
-1350,warehouses,7727,"['Maldives' 'Unknown' 773389
+1350,warehouses,7727,"['Maldives' 'Fuvammulah' 773389
  list([""'F'"", "" 'U'"", "" 'Y'"", "" 'T'"", "" 'H'"", "" 'S'"", "" 'Q'""]) 0.83 2.24]"
 1351,warehouses,7751,"['Liberia' 'Maryland' 872794 list([""'Y'"", "" 'X'"", "" 'Z'""]) 0.98 1.97]"
 1352,warehouses,7763,"['Saint Vincent and the Grenadines' 'Saint Patrick' 998218
@@ -2357,7 +2327,7 @@
  list([""'D'"", "" 'T'"", "" 'E'"", "" 'J'"", "" 'L'"", "" 'H'""]) 0.67 2.1]"
 1356,warehouses,7808,"['Ukraine' 'Chernihivska oblast' 175293
  list([""'T'"", "" 'W'"", "" 'U'"", "" 'D'"", "" 'E'"", "" 'F'""]) 0.5 1.8]"
-1357,warehouses,7839,"['Federated States of Micronesia' 'Yap' 720523 list([""'I'"", "" 'Y'""]) 0.74
+1357,warehouses,7839,"['Micronesia, Federated States of' 'Yap' 720523 list([""'I'"", "" 'Y'""]) 0.74
  2.73]"
 1358,warehouses,7840,"['Angola' 'Namibe' 522453 list([""'U'"", "" 'P'"", "" 'G'"", "" 'R'"", "" 'C'""])
  0.61 2.8]"
@@ -2401,7 +2371,7 @@
 1384,warehouses,8050,"['Benin' 'Zou' 536470 list([""'P'"", "" 'S'""]) 0.85 1.76]"
 1385,warehouses,8055,"['Norfolk Island' 'Unknown' 783840
  list([""'F'"", "" 'G'"", "" 'M'"", "" 'H'"", "" 'X'""]) 0.57 2.15]"
-1386,warehouses,8060,"['Virgin Islands ' 'Unknown' 888799
+1386,warehouses,8060,"['Virgin Islands, British' 'Unknown' 888799
  list([""'L'"", "" 'Y'"", "" 'Q'"", "" 'X'"", "" 'I'"", "" 'B'""]) 0.57 2.68]"
 1387,warehouses,8064,"['San Marino' 'Fiorentino' 161288
  list([""'Y'"", "" 'H'"", "" 'G'"", "" 'K'"", "" 'R'"", "" 'S'"", "" 'U'""]) 0.77 2.17]"
@@ -2415,7 +2385,7 @@
  list([""'T'"", "" 'G'"", "" 'D'"", "" 'E'""]) 0.99 1.77]"
 1393,warehouses,8117,"['Saint Kitts and Nevis' 'Saint James Windward' 666308
  list([""'D'"", "" 'Y'"", "" 'G'"", "" 'V'"", "" 'U'"", "" 'Q'"", "" 'L'""]) 0.62 2.74]"
-1394,warehouses,8124,"['Bonaire  Sint Eustatius and Saba' 'Saba' 858506
+1394,warehouses,8124,"['Bonaire, Sint Eustatius and Saba' 'Saba' 858506
  list([""'O'"", "" 'I'"", "" 'K'"", "" 'C'"", "" 'X'""]) 0.52 2.86]"
 1395,warehouses,8146,"['Bouvet Island' 'Unknown' 756956
  list([""'W'"", "" 'L'"", "" 'P'"", "" 'M'"", "" 'G'"", "" 'V'""]) 0.76 1.83]"
@@ -2479,7 +2449,7 @@
  list([""'I'"", "" 'L'"", "" 'K'"", "" 'M'"", "" 'F'"", "" 'N'""]) 0.58 2.66]"
 1433,warehouses,8493,"['Kyrgyzstan' 'Bishkek Shaary' 511292
  list([""'X'"", "" 'Y'"", "" 'O'"", "" 'H'""]) 0.83 1.89]"
-1434,warehouses,8511,"[""Democratic People's Republic of Korea"" 'Hamgyǒng-bukto' 388787
+1434,warehouses,8511,"[""Korea, Democratic People's Republic of"" 'Hamgyǒng-bukto' 388787
  list([""'Y'"", "" 'Q'"", "" 'U'"", "" 'F'""]) 0.85 2.21]"
 1435,warehouses,8522,"['Thailand' 'Chon Buri' 784202 list([""'C'"", "" 'G'""]) 0.64 2.51]"
 1436,warehouses,8527,"['Guernsey' 'Unknown' 858397 list([""'U'"", "" 'Q'""]) 0.55 2.02]"
@@ -2514,7 +2484,7 @@
  list([""'X'"", "" 'O'"", "" 'E'"", "" 'B'"", "" 'N'"", "" 'G'"", "" 'V'""]) 0.67 1.75]"
 1452,warehouses,8714,"['Guatemala' 'Izabal' 729980
  list([""'F'"", "" 'Y'"", "" 'N'"", "" 'C'"", "" 'K'"", "" 'S'"", "" 'E'""]) 0.75 2.28]"
-1453,warehouses,8717,"['Kazakhstan' 'oblast' 302558 list([""'C'""]) 0.99 1.87]"
+1453,warehouses,8717,"['Kazakhstan' ""Kostanajskaja oblast'"" 302558 list([""'C'""]) 0.99 1.87]"
 1454,warehouses,8732,"['Niger' 'Maradi' 706756 list([""'A'""]) 0.67 2.94]"
 1455,warehouses,8748,"['Saint Pierre and Miquelon' 'Unknown' 193722
  list([""'E'"", "" 'N'"", "" 'M'"", "" 'O'"", "" 'X'""]) 0.72 2.42]"
@@ -2527,13 +2497,13 @@
 1461,warehouses,8812,"['Sudan' 'Gezira' 123812 list([""'I'"", "" 'U'"", "" 'R'"", "" 'Z'""]) 0.6 2.68]"
 1462,warehouses,8820,"['Andorra' 'Encamp' 797793 list([""'E'"", "" 'R'""]) 0.56 2.49]"
 1463,warehouses,8828,"['Chad' 'Mayo-Kebbi-Ouest' 922654 list([""'B'"", "" 'Q'""]) 0.56 1.85]"
-1464,warehouses,8836,"['Bolivarian Republic of Venezuela' 'Sucre' 606971
+1464,warehouses,8836,"['Venezuela, Bolivarian Republic of' 'Sucre' 606971
  list([""'Q'"", "" 'F'"", "" 'A'""]) 0.71 2.09]"
 1465,warehouses,8848,"['Seychelles' 'Au Cap' 775048 list([""'X'"", "" 'T'"", "" 'P'""]) 0.8 2.13]"
 1466,warehouses,8853,"['Congo' 'Cuvette-Ouest' 902441 list([""'J'"", "" 'C'"", "" 'M'"", "" 'D'""]) 0.67
  2.13]"
 1467,warehouses,8858,"['Marshall Islands' 'Aur' 943584 list([""'W'""]) 0.94 1.86]"
-1468,warehouses,8862,"['Islamic Republic of Iran' 'Qom' 632287
+1468,warehouses,8862,"['Iran, Islamic Republic of' 'Qom' 632287
  list([""'G'"", "" 'W'"", "" 'X'"", "" 'Y'""]) 0.91 2.66]"
 1469,warehouses,8892,"['Madagascar' 'Antananarivo' 520216 list([""'C'"", "" 'K'"", "" 'M'""]) 0.65
  1.88]"
@@ -2567,8 +2537,8 @@
 1486,warehouses,9042,"['Mali' 'Koulikoro' 686790 list([""'R'"", "" 'E'"", "" 'B'""]) 0.77 2.57]"
 1487,warehouses,9043,"['Central African Republic' 'Haut-Mbomou' 176236
  list([""'O'"", "" 'K'"", "" 'D'"", "" 'J'"", "" 'V'"", "" 'I'"", "" 'N'""]) 0.8 1.83]"
-1488,warehouses,9054,"['Virgin Islands ' 'Unknown' 388791 list([""'P'"", "" 'H'"", "" 'D'"", "" 'G'""])
- 0.99 2.0]"
+1488,warehouses,9054,"['Virgin Islands, British' 'Unknown' 388791
+ list([""'P'"", "" 'H'"", "" 'D'"", "" 'G'""]) 0.99 2.0]"
 1489,warehouses,9060,"['Libya' 'Surt' 851601
  list([""'I'"", "" 'X'"", "" 'S'"", "" 'N'"", "" 'A'"", "" 'Y'""]) 0.65 1.98]"
 1490,warehouses,9065,"['Latvia' 'Grobiņas novads' 789953
@@ -2624,7 +2594,7 @@
 1520,warehouses,9349,"['Poland' 'Mazowieckie' 260720 list([""'I'"", "" 'C'""]) 0.93 1.88]"
 1521,warehouses,9357,"['Palestine, State of' 'North Gaza' 934511
  list([""'O'"", "" 'C'"", "" 'J'"", "" 'A'""]) 0.53 2.2]"
-1522,warehouses,9359,"['Province of China Taiwan' 'Taoyuan' 120250
+1522,warehouses,9359,"['Taiwan, Province of China' 'Taoyuan' 120250
  list([""'E'"", "" 'T'"", "" 'J'"", "" 'Z'""]) 0.72 2.68]"
 1523,warehouses,9988,"['Tajikistan' 'Sughd' 459209 list([""'Q'""]) 0.98 2.48]"
 1524,warehouses,9369,"['Dominican Republic' 'María Trinidad Sánchez' 524661
@@ -2635,14 +2605,14 @@
  list([""'L'"", "" 'C'"", "" 'M'"", "" 'F'""]) 0.7 1.98]"
 1527,warehouses,9387,"['Philippines' 'Quirino' 567858 list([""'A'"", "" 'E'"", "" 'G'"", "" 'L'""]) 0.78
  2.11]"
-1528,warehouses,9388,"['Virgin Islands ' 'Unknown' 869118 list([""'F'""]) 0.78 2.64]"
+1528,warehouses,9388,"['Virgin Islands, British' 'Unknown' 869118 list([""'F'""]) 0.78 2.64]"
 1529,warehouses,9399,"['Cambodia' 'Banteay Mean Choăy' 824459 list([""'F'"", "" 'W'"", "" 'C'""]) 0.7
  2.84]"
 1530,warehouses,9403,"['Palau' 'Ngaraard' 867584 list([""'S'"", "" 'X'""]) 0.52 2.26]"
 1531,warehouses,9408,"['Brazil' 'Distrito Federal' 668999 list([""'D'"", "" 'I'""]) 0.56 2.54]"
 1532,warehouses,9423,"['Turkmenistan' 'Mary' 393101 list([""'F'"", "" 'K'"", "" 'H'""]) 0.89 2.29]"
 1533,warehouses,9424,"['Belgium' 'Antwerpen' 900513 list([""'D'"", "" 'N'""]) 0.54 2.07]"
-1534,warehouses,9426,"['Bonaire Sint Eustatius and Saba' 'Bonaire' 405099
+1534,warehouses,9426,"['Bonaire, Sint Eustatius and Saba' 'Bonaire' 405099
  list([""'F'"", "" 'V'"", "" 'O'""]) 0.99 1.82]"
 1535,warehouses,9444,"['Denmark' 'Hovedstaden' 433893
  list([""'C'"", "" 'S'"", "" 'O'"", "" 'J'"", "" 'P'"", "" 'A'"", "" 'M'""]) 0.53 2.84]"
@@ -2653,11 +2623,11 @@
  list([""'Z'"", "" 'U'"", "" 'X'"", "" 'Q'"", "" 'R'""]) 0.56 2.08]"
 1539,warehouses,9455,"['Bahamas' 'Exuma' 323389 list([""'X'"", "" 'H'"", "" 'N'""]) 0.61 2.16]"
 1540,warehouses,9471,"['Nigeria' 'Bauchi' 793827 list([""'J'""]) 0.94 2.88]"
-1541,warehouses,9473,"['Russian Federation' 'Brjanskaja oblast' 317035
+1541,warehouses,9473,"['Russian Federation' ""Brjanskaja oblast'"" 317035
  list([""'F'"", "" 'U'"", "" 'D'"", "" 'N'"", "" 'Q'""]) 0.77 2.19]"
-1542,warehouses,9506,"['Bolivarian Republic of Venezuela' 'Nueva Esparta' 807177
+1542,warehouses,9506,"['Venezuela, Bolivarian Republic of' 'Nueva Esparta' 807177
  list([""'P'"", "" 'W'"", "" 'J'"", "" 'I'"", "" 'L'""]) 0.92 2.56]"
-1543,warehouses,9509,"['Bolivarian Republic of Venezuela' 'Sucre' 549357
+1543,warehouses,9509,"['Venezuela, Bolivarian Republic of' 'Sucre' 549357
  list([""'M'"", "" 'D'"", "" 'E'""]) 0.69 2.24]"
 1544,warehouses,9510,"['Eswatini' 'Manzini' 799903 list([""'T'"", "" 'C'"", "" 'D'"", "" 'V'"", "" 'L'""])
  0.98 1.86]"
@@ -2668,7 +2638,7 @@
 1547,warehouses,9563,"['Vanuatu' 'Pénama' 365128 list([""'R'"", "" 'L'"", "" 'M'"", "" 'Y'"", "" 'V'""])
  0.9 2.7]"
 1548,warehouses,9565,"['Guernsey' 'Unknown' 457879 list([""'E'""]) 0.52 2.49]"
-1549,warehouses,9582,"['Federated States of Micronesia' 'Kosrae' 508562 list([""'G'""]) 0.66 2.19]"
+1549,warehouses,9582,"['Micronesia, Federated States of' 'Kosrae' 508562 list([""'G'""]) 0.66 2.19]"
 1550,warehouses,9589,"['Anguilla' 'Unknown' 642654 list([""'G'"", "" 'E'""]) 0.63 2.5]"
 1551,warehouses,9596,"['Dominican Republic' 'Distrito Nacional (Santo Domingo)' 883699
  list([""'F'"", "" 'Q'"", "" 'H'"", "" 'W'"", "" 'G'""]) 0.85 2.68]"
@@ -2687,7 +2657,7 @@
 1559,warehouses,9695,"['Grenada' 'Southern Grenadine Islands' 306216
  list([""'B'"", "" 'I'"", "" 'Q'"", "" 'N'"", "" 'V'""]) 0.83 1.82]"
 1560,warehouses,9717,"['Cocos (Keeling) Islands' 'Unknown' 774862 list([""'K'""]) 0.69 2.43]"
-1561,warehouses,9721,"['Province of China Taiwan' 'Keelung' 979346 list([""'C'""]) 0.8 2.39]"
+1561,warehouses,9721,"['Taiwan, Province of China' 'Keelung' 979346 list([""'C'""]) 0.8 2.39]"
 1562,warehouses,9722,"['Martinique' 'Unknown' 109783 list([""'D'"", "" 'Y'""]) 0.79 2.72]"
 1563,warehouses,9729,"['Austria' 'Salzburg' 328453 list([""'L'"", "" 'W'"", "" 'R'"", "" 'O'""]) 0.96
  2.66]"
@@ -2722,14 +2692,14 @@
 1580,warehouses,9830,"['Namibia' 'Ohangwena' 883015 list([""'D'"", "" 'B'""]) 0.75 2.05]"
 1581,warehouses,9867,"['Austria' 'Salzburg' 157220 list([""'D'"", "" 'L'"", "" 'S'"", "" 'U'"", "" 'F'""])
  0.82 2.96]"
-1582,warehouses,9872,"['Kazakhstan' 'Turkestankaya oblast' 589685
+1582,warehouses,9872,"['Kazakhstan' ""Turkestankaya oblast'"" 589685
  list([""'H'"", "" 'P'"", "" 'F'"", "" 'V'"", "" 'R'"", "" 'T'""]) 0.64 2.72]"
 1583,warehouses,9888,"['Saint Martin (French part)' 'Unknown' 297511 list([""'D'"", "" 'N'""]) 0.63
  2.9]"
-1584,warehouses,9901,"['Saint Helena Ascension and Tristan da Cunha' 'Ascension' 741996
+1584,warehouses,9901,"['Saint Helena, Ascension and Tristan da Cunha' 'Ascension' 741996
  list([""'S'"", "" 'Y'"", "" 'N'"", "" 'F'"", "" 'K'""]) 0.87 2.41]"
 1585,warehouses,9911,"['Niger' 'Agadez' 564324 list([""'N'"", "" 'P'""]) 0.6 2.47]"
-1586,warehouses,9924,"['United Republic of Tanzania' 'Katavi' 320349
+1586,warehouses,9924,"['Tanzania, United Republic of' 'Katavi' 320349
  list([""'K'"", "" 'F'"", "" 'P'"", "" 'T'"", "" 'H'"", "" 'R'""]) 0.65 1.78]"
 1587,warehouses,9926,"['New Caledonia' 'Unknown' 896112
  list([""'B'"", "" 'S'"", "" 'W'"", "" 'I'"", "" 'M'"", "" 'A'"", "" 'K'""]) 0.6 2.51]"
@@ -2738,17 +2708,17 @@
  list([""'N'"", "" 'Z'"", "" 'V'"", "" 'S'"", "" 'T'"", "" 'L'""]) 0.79 2.55]"
 1590,warehouses,9942,"['Burkina Faso' 'Séno' 281245
  list([""'J'"", "" 'Y'"", "" 'A'"", "" 'K'"", "" 'X'""]) 0.52 2.3]"
-1591,warehouses,9949,"['Russian Federation' 'Kirovskaja oblast' 158437
+1591,warehouses,9949,"['Russian Federation' ""Kirovskaja oblast'"" 158437
  list([""'U'"", "" 'G'"", "" 'J'"", "" 'R'"", "" 'L'"", "" 'W'"", "" 'F'""]) 0.69 2.68]"
 1592,warehouses,1010,"['Rwanda' 'City of Kigali' 628883
  list([""'P'"", "" 'F'"", "" 'M'"", "" 'C'"", "" 'K'"", "" 'B'""]) 0.53 2.17]"
 1593,warehouses,9953,"['Western Sahara' 'Unknown' 270715
  list([""'W'"", "" 'G'"", "" 'F'"", "" 'P'"", "" 'A'""]) 0.59 2.41]"
-1594,warehouses,9957,"['Province of China Taiwan' 'Chiayi' 796093 list([""'H'""]) 0.67 2.46]"
+1594,warehouses,9957,"['Taiwan, Province of China' 'Chiayi' 796093 list([""'H'""]) 0.67 2.46]"
 1595,warehouses,9964,"['Norway' 'Jan Mayen (Arctic Region)' 918141
  list([""'U'"", "" 'T'"", "" 'H'"", "" 'L'""]) 0.66 1.88]"
 1596,warehouses,9970,"['Bouvet Island' 'Unknown' 654580 list([""'B'"", "" 'W'""]) 0.74 1.91]"
-1597,warehouses,9975,"[' Plurinational State of Bolivia' 'Tarija' 850849
+1597,warehouses,9975,"['Bolivia, Plurinational State of' 'Tarija' 850849
  list([""'I'"", "" 'K'"", "" 'W'"", "" 'A'"", "" 'V'"", "" 'Y'"", "" 'Z'""]) 0.54 2.13]"
 1598,warehouses,9981,"['Qatar' 'Ash Shamāl' 105036 list([""'Q'"", "" 'A'""]) 0.7 2.91]"
 1599,warehouses,9996,"['Tunisia' 'Ben Arous' 741178 list([""'M'"", "" 'N'"", "" 'U'"", "" 'L'""]) 0.7

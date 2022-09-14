@@ -186,7 +186,7 @@ class GraphAnalysis:
     # takes the command and send it to neo4ji, converts neo4ji output to dataframe and returns it
     def execute_Command(self,command):
         from neo4j import GraphDatabase
-        data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "123"))
+        data_base_connection = GraphDatabase.driver(uri=self.myGraph.DBuri, auth=(self.myGraph.DBusername, self.myGraph.DBpassword))
         session = data_base_connection.session()
         # sends the output to neo4ji
         output = session.run(command)
@@ -278,7 +278,7 @@ class GraphAnalysis:
         validUntilNow = False
         # loop over the paths 
         for path in range(len(pathsWithCorrectTargetNodes)):
-            ### noteee
+            ### note
             if(len(nodeNamesColumn[path]) == 1):
                 dataFramePaths = dataFramePaths.drop(path)
                 continue
@@ -306,39 +306,42 @@ class GraphAnalysis:
         return finalApprovedPaths
 
     ## check if the type of the connected direct nodes matches or not
-    def lastCheckOnPath(self,dataFrameOfPaths,nodeTables,theDesiredType=''):
-        NodeLabel = ""
-        NodeID = 0
+    def lastCheckOnPath(self,dataFrameOfPaths,nodesTable,theDesiredType=''):
         FinalPaths = dataFrameOfPaths
+        isDirect = ""
+        print(range(len(dataFrameOfPaths)))
         for path in range(len(dataFrameOfPaths)):
             if(dataFrameOfPaths.loc[path]["isDirect"] == True):
-                ## source node elly fel table
-                sourceNodeName = dataFrameOfPaths.loc[path]['sourceNodeName'].split(" ")
-                NodeLabel = sourceNodeName[0].lower()
-                NodeID = int(sourceNodeName[1])
-                ## get attributes of source node
-                x = nodeTables[(nodeTables.Label == NodeLabel) & (nodeTables.ID == NodeID)]
-                nodeType = ((x.Attributes).iloc[0])[4]
-                ## check on type
-                if(nodeType != theDesiredType):
-                    FinalPaths = FinalPaths.drop(path)
+                isDirect = dataFrameOfPaths.loc[path]['sourceNodeName']
             else:
                 pathNodeNames = dataFrameOfPaths.loc[path]['nodeNames']
-                ### supplier ---- Customer "Indirect
-                ### retailer ---- customer
-                pathNodeNames[-3]
-                if (pathNodeNames[-3]).find('retailer') : 
-                    ## nkmelha deh bokra
-                    sourceNodeName = dataFrameOfPaths.loc[path]['sourceNodeName'].split(" ")
-                    NodeLabel = sourceNodeName[0].lower()
-                    NodeID = int(sourceNodeName[1])
-                    x = nodeTables[(nodeTables.Label == NodeLabel) & (nodeTables.ID == NodeID)]
-                    nodeType = ((x.Attributes).iloc[0])[4]
-                    if(theDesiredType not in nodeType):
-                        FinalPaths = FinalPaths.drop(path)
-                    print()
-        FinalPaths = FinalPaths.reset_index(drop=True) 
-        FinalPaths.to_csv("final4.csv")
+                isDirect = pathNodeNames[-3]
+            
+            nodeType = self.getType(isDirect,nodesTable)
+            
+            if(type(nodeType) == set):
+                if(theDesiredType not in nodeType):
+                    if len(pathNodeNames)>=5:
+                        nodeType = self.getType(pathNodeNames[-5],nodesTable)
+                        if((theDesiredType not in nodeType)):
+                            FinalPaths = FinalPaths.drop(path)
+            else:
+                 if(nodeType != theDesiredType):
+                    FinalPaths = FinalPaths.drop(path)
+
+        return FinalPaths.reset_index(drop=True) 
+
+    def getType(self,sourceNodeName,nodesTable):
+        NodeLabel = ""
+        NodeID = 0
+        arrayOfNodeName =sourceNodeName.split(" ")
+        NodeLabel = arrayOfNodeName[0].lower()
+        NodeID = int(arrayOfNodeName[1])
+        nodeItSelf= nodesTable[(nodesTable.Label == NodeLabel) & (nodesTable.ID == NodeID)]
+        nodeType = ((nodeItSelf.Attributes).iloc[0])[4]
+        return nodeType    
+
+
     
     # add type attribute to retailer, the type based on the types of suppliers connected to the retailer
     def addColumnToRetailer(self,nodesTable,edgesTable):
@@ -364,8 +367,8 @@ class GraphAnalysis:
                     ## adding column
                     listOfAttributes = list(nodesTable.loc[node]['Attributes'])
                     listOfAttributes.insert(4,RetailerTypes)
-                    nodesTable.loc[node]['Attributes'] = listOfAttributes
-        
+                    nodesTable.loc[node]['Attributes'] = listOfAttributes    
+       # nodesTable.to_csv("nodesTable.csv")
 
 
 

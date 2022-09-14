@@ -3,6 +3,9 @@ import pandas as pd
 import random
 import numpy as np
 from functools import reduce
+import geopy.geocoders
+
+from nodes_edges_df import nodes_edges_dfs
 
 
 class ReadingDataSet:
@@ -138,6 +141,7 @@ class ReadingDataSet:
         self.All_dfs["SRIntShip".lower()] = SRIntShip
         self.All_dfs["SSIntShip".lower()] = SSIntShip
 
+
     def splittingOrdersTables(self):
         filter_list = self.All_dfs["rcextship"]["ExtShip_id"]
         self.All_dfs["rcextorders"] = self.All_dfs["externalorders"][
@@ -162,8 +166,8 @@ class ReadingDataSet:
 
     def removeNans(self):
         for table in self.All_dfs:
-            self.All_dfs[table].fillna('Unknown', inplace=True)
-
+            self.All_dfs[table].fillna('Unknown',inplace = True)
+        
     def addProductsToOrders(self):
         x = self.All_dfs['ssintship']['listSuppIds']
         # print(len(x))
