@@ -3,6 +3,10 @@ from AddTransportationWeightsToEdges import AddTransportationWeightsToEdges
 from selenium import webdriver
 from selenium.webdriver.edge.service import Service
 import os.path
+from geopy.geocoders import Nominatim
+from geopy.distance import geodesic
+import math
+
 class nodes_edges_dfs:
 
     def __init__(self, nodes, edges, properties, pk, fk, ref_in, All_dfs,edges_as_edges):
@@ -13,17 +17,25 @@ class nodes_edges_dfs:
         self.fk = fk
         self.ref_in = ref_in
         self.All_dfs = All_dfs
+        self.geolocator = Nominatim(user_agent="trialApp")
         self.nodesTable = pd.DataFrame(columns=['Label', 'ID', 'Attributes'])
         self.edgesTable = pd.DataFrame(columns=['From_Node_ID', 'To_Node_ID', 'order/service'])
-
         self.nodes_df_edges_as_nodes = pd.DataFrame(columns=['Label', 'ID', 'Attributes'])
-        self.edges_df_edges_as_nodes = pd.DataFrame(columns=['From', 'To', 'From_Table', 'To_Table', 'Weight', 'Transportation_Cost', 'Transportation_Distance', 'Transportation_Duration','Transportation_Type', 'Rental price', 'price', 'profit_margin (%)', 'market_share (%)', 'Annual_sales', 'Edge_Name'])
+        self.edges_df_edges_as_nodes = pd.DataFrame(columns=['From', 'To', 'From_Table', 'To_Table', 'Weight', 'Transportation_Cost', 'Transportation_Distance', 'Transportation_Duration','Transportation_Type', 'Rental price', 'price', 'profit_margin (%)', 'market_share (%)', 'Annual_sales', 'Distance','Edge_Name'])
 
         self.edges_as_edges = edges_as_edges
 
         self.distanceAndDuration_df = pd.DataFrame(columns=['From','To', 'Distance', 'Duration', 'typeOfTransportation'])
 
         self.create_nodes_and_edges_df()
+        self.fromCoordinates = set()
+        self.toCoordinates= set()
+        self.distance = 0
+
+
+
+
+
 
     def create_nodes_and_edges_df(self):
         if(self.edges_as_edges):
@@ -366,7 +378,7 @@ class nodes_edges_dfs:
             dfNumpy =  property_df.to_numpy()
             for index in range(dfNumpy.shape[0]):
                 att = {}
-                reference_id = None;
+                reference_id = None
 
                 for i in range(1, len(column_names)):
                     column_name = column_names[i]
@@ -394,7 +406,7 @@ class nodes_edges_dfs:
                         new_property_edge_row = [{'From': referenced_node_id, 'To': property_node_index,
                                                   'From_Table': referenced_table_name.capitalize(),
                                                   'To_Table': property_name.capitalize()
-                                                     , 'Weight': 100, 'Transportation_Type': 'N/A','Edge_Name': "Related_To"}]
+                                                     , 'Weight': 100, 'Transportation_Type': 'N/A', 'Distance': 0,'Edge_Name': "Related_To"}]
                         tmp = pd.DataFrame(new_property_edge_row)
                         self.edges_df_edges_as_nodes = pd.concat([self.edges_df_edges_as_nodes, tmp], ignore_index=True)
 
@@ -405,17 +417,86 @@ class nodes_edges_dfs:
                     new_property_edge_row = [{'From': referenced_node_id, 'To': property_node_index,
                                               'From_Table': referenced_table_name.capitalize(),
                                               'To_Table': property_name.capitalize()
-                                                 , 'Weight': 100, 'Transportation_Type': 'N/A', 'Edge_Name': "Related_To"}]
+                                                 , 'Weight': 100, 'Transportation_Type': 'N/A', 'Distance': 0,'Edge_Name': "Related_To"}]
                     tmp = pd.DataFrame(new_property_edge_row)
                     self.edges_df_edges_as_nodes = pd.concat([self.edges_df_edges_as_nodes, tmp], ignore_index=True)
         print('Finish Properties Method')
 
     # Method to relate the products to the suppliers that produce a certain product
+    def warehouseSupplierFromCoordinates(self,city_name,country_name):
+        try:
+            if(city_name == 'Unknown'):
+                location = self.geolocator.geocode(country_name)    
+                self.fromCoordinates = (location.latitude, location.longitude)
+            else:
+                location = self.geolocator.geocode(city_name+", "+country_name)
+                self.fromCoordinates = (location.latitude, location.longitude)
+        except AttributeError:
+                self.fromCoordinates = (0.0, 0.0)
+
+    def warehouseSupplierToCoordinates(self,city_name,country_name):      
+        try:
+            if(city_name == 'Unknown'):
+                location = self.geolocator.geocode(country_name)    
+                self.toCoordinates = (location.latitude, location.longitude)
+            else:
+                location = self.geolocator.geocode(city_name+", "+country_name)
+                self.toCoordinates = (location.latitude, location.longitude)
+
+        except AttributeError:
+                self.toCoordinates = (0.0, 0.0)
+
+    def calaculateDistance(self):
+        self.distance= geodesic(self.fromCoordinates,self.toCoordinates).km
+        return self.distance
+
+    def __calculateFinalWeightForWarehouseSupplier(self):
+        def calculateWeight(row):
+            
+            if (math.isnan(row['Distance'])):
+                row["Weight"] = row["Weight"] - 0
+                return row["Weight"]
+            elif row['Distance'] == 0:
+                row["Weight"] = row["Weight"] - 0
+                return row["Weight"]
+            elif 1 <= row['Distance'] < 20 :
+                row["Weight"] = row["Weight"] - 25
+                return row["Weight"]
+            elif 20 <= row['Distance'] < 40 :
+                row["Weight"] = row["Weight"] - 20
+                return row["Weight"]
+            elif 40 <= row['Distance'] < 60 :
+                row["Weight"] = row["Weight"] - 15
+                return row["Weight"]
+            elif 60 <= row['Distance'] < 80 :
+                row["Weight"] = row["Weight"] - 10
+                return row["Weight"]        
+            elif 80 <= row['Distance'] <= 100:
+                row["Weight"] = row["Weight"] - 5
+                return row["Weight"]
+
+            return 0
+        
+        print("*********FINAL************")
+        self.edges_df_edges_as_nodes["Weight"] = self.edges_df_edges_as_nodes.apply(lambda row : calculateWeight(row),axis = 1)
+
+    def __calculateNewValueWarehouse(self, x, columnName):
+        minMax = self.edges_df_edges_as_nodes[columnName].agg(['min', 'max']).to_numpy()
+                        
+        if(x != 0):
+            OldRange = (minMax[1] - minMax[0])  
+            NewRange = (100 - 1)  
+            NewValue = (((x - minMax[0]) * NewRange) / OldRange) + 1
+            return NewValue
+                    
+        return 0
+
     def __add_manufacturing_relation_to_dfs(self):
         manufacturing_df = self.All_dfs["manufacturing"]
         manufacturing_columns = list(self.All_dfs["manufacturing"].columns)
         factory_id_index = manufacturing_columns.index("Factory_id")
         product_id_index = manufacturing_columns.index("Product_id")
+        supplier_df= pd.DataFrame(columns=['From', 'To', 'From_Table', 'To_Table', 'Weight', 'Distance','Edge_Name'])
 
         # for _, manufacturing_row in manufacturing_df.iterrows():
         dfNumpy =  manufacturing_df.to_numpy()
@@ -425,16 +506,46 @@ class nodes_edges_dfs:
 
             product_id = dfNumpy[index][product_id_index]
             product_node_index = self.nodes_df_edges_as_nodes.query(f"(Label == 'products' ) and (ID == {product_id}) ").index[0]
+            warehouse_node_index = self.warehousesOfProducts(product_node_index)
 
-            new_edge_row = [
-                {'From': supplier_node_index, 'To': product_node_index, 'From_Table': "supplier".capitalize(),
-                 'To_Table': "products".capitalize()
-                    , 'Weight': 100, 'Transportation_Type': 'N/A', 'Edge_Name': "Manufactures"}]
-            tmp = pd.DataFrame(new_edge_row)
-            self.edges_df_edges_as_nodes = pd.concat([self.edges_df_edges_as_nodes, tmp], ignore_index=True)
+
+            ware_house_country_name = self.nodes_df_edges_as_nodes.iloc[warehouse_node_index]['Attributes']['country']
+            ware_house_city_name = self.nodes_df_edges_as_nodes.iloc[warehouse_node_index]['Attributes']['city_name']
+
+            supplier_country_name = self.nodes_df_edges_as_nodes.iloc[supplier_node_index]['Attributes']['country']
+            supplier_city_name = self.nodes_df_edges_as_nodes.iloc[supplier_node_index]['Attributes']['city_name'] 
+
+            self.warehouseSupplierFromCoordinates(ware_house_city_name,ware_house_country_name)
+            self.warehouseSupplierToCoordinates(supplier_city_name,supplier_country_name)
+            self.calaculateDistance()
+
+            # #supplier -> products
+            new_supplier_edge_row = [
+                {'From': supplier_node_index, 'To': product_node_index,
+                    'From_Table': "supplier".capitalize(),
+                    'To_Table': "products".capitalize()
+                    ,'Weight': 100, 'Distance': 0, 'Edge_Name': "Related_To"}]            
+            suppliertmp = pd.DataFrame(new_supplier_edge_row)
+            self.edges_df_edges_as_nodes = pd.concat([self.edges_df_edges_as_nodes, suppliertmp], ignore_index=True)
+            supplier_df= pd.concat([supplier_df,suppliertmp],ignore_index=True)
+
+            self.edges_df_edges_as_nodes.loc[self.edges_df_edges_as_nodes["From"]==warehouse_node_index,"Distance"]=self.calaculateDistance()
+
+        self.edges_df_edges_as_nodes["Distance"] = self.edges_df_edges_as_nodes["Distance"].apply(lambda x: self.__calculateNewValueWarehouse(x, "Distance"))
+
+        self.__calculateFinalWeightForWarehouseSupplier()
+
+        self.edges_df_edges_as_nodes.to_csv("edges.csv")
         print('Finish Manufacturing')
 
-    # Method to relate the products to the orders to know which product this order contains
+    
+    def warehousesOfProducts(self,prodId):
+        for r, row in self.edges_df_edges_as_nodes.iterrows():
+            product_node_index = row['To']
+            warehouse_node_index = row['From']
+            if prodId == product_node_index:
+                return warehouse_node_index
+
     def __add_internal_orders_to_dfs(self):
         ss_internal_orders_df = self.All_dfs["ssintorders"]
 
@@ -470,6 +581,7 @@ class nodes_edges_dfs:
                     , 'Weight': 100, 'Transportation_Type': 'N/A', 'Edge_Name': "Order"}]
             tmp = pd.DataFrame(new_from_edge_row)
             self.edges_df_edges_as_nodes = pd.concat([self.edges_df_edges_as_nodes, tmp], ignore_index=True)
+            
             # edge --->to
             new_to_edge_row = [
                 {'From': internal_order_index, 'To': product_node_index, 'From_Table': "ssintorders".capitalize(),
@@ -478,6 +590,7 @@ class nodes_edges_dfs:
             tmp = pd.DataFrame(new_to_edge_row)
             self.edges_df_edges_as_nodes = pd.concat([self.edges_df_edges_as_nodes, tmp], ignore_index=True)
         print('Finish Internal Orders')
+
 
 
 
