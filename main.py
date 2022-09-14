@@ -68,7 +68,7 @@ print('-------------------------')
 myGraph = Neo4jGraph(nodes_df,edges_df)
 graphAnalysis = GraphAnalysis(myGraph,nodesTable,edgesTable)
 
-myGraph.draw_graph("Supply")
+##myGraph.draw_graph("Supply")
 
 #graphAnalysis.findAllPathsViseVerse('Retailer','Retailer 83982','Supplier','Chemicals',nodesTable,'supplyChain',nodes,edges)
 
@@ -116,16 +116,18 @@ final = pd.concat([final,temp], ignore_index=True)
 #output = graphAnalysis.findAllPaths(sourceNodeName="Supplier 11790",sourceLabel="Supplier",cases=0,graphName="supplyChain")
 
 
-# print(type(nodesTable))
+#print(type(nodesTable))
 #nodesTable[(nodesTable.Label == "Supplier")&(nodesTable.ID == 34967)]
 #print(output)
 #xp = graphAnalysis.targetNodeValidation(paths=final,sourceNodeName="Supplier 20226",nodeNames=nodes)
 #x = graphAnalysis.targetNodeValidation(paths=xp,sourceNodeName="Supplier 20226",nodeNames=nodes)
 #graphAnalysis.validatePath(output,"Supplier 11790",nodes,edges)
 #print("---------------Case 1-------------------")
-output = graphAnalysis.findAllPaths(sourceNodeName="Supplier 34967",sourceLabel="Supplier",cases=1,graphName="Supply",k=4,targetNodeName="Customer 31548",targetLabel="Customer")
-out = graphAnalysis.validatePath(paths=output,sourceNodeName="Supplier 34967",nodeNames=nodes,edgesNames=edges)
-out.to_csv("trail1.csv")
+output = graphAnalysis.findAllPaths(sourceNodeName="Supplier 65468",sourceLabel="Supplier",cases=1,graphName="supplyChain",k=4,targetNodeName="Customer 31548",targetLabel="Customer")
+out = graphAnalysis.validatePath(paths=output,sourceNodeName="Supplier 65468",nodeNames=nodes,edgesNames=edges)
+out.to_csv("out.csv")
+result = graphAnalysis.lastCheckOnPath(out,nodesTable,'Chemicals')
+result.to_csv("trail3.csv")
 ##graphAnalysis.lastCheckOnPath(dataFrameOfPaths=out,nodeTables=nodesTable,theDesiredType="Financial Services")
 #print(graphAnalysis.targetNodeValidation(paths=output,sourceNodeName="Retailer 83982",nodeNames=nodes,targetNodeName="Customer 31548"))
 #print("---------------Case2-------------------")
