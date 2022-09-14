@@ -187,6 +187,7 @@ class GraphAnalysis:
     def execute_Command(self,command):
         from neo4j import GraphDatabase
         data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "123"))
+        #data_base_connection = GraphDatabase.driver(uri="bolt://127.0.0.1:7687", auth=("neo4j", "123"))
         session = data_base_connection.session()
         # sends the output to neo4ji
         output = session.run(command)
@@ -318,7 +319,6 @@ class GraphAnalysis:
                 isDirect = pathNodeNames[-3]
             
             nodeType = self.getType(isDirect,nodesTable)
-            
             if(type(nodeType) == set):
                 if(theDesiredType not in nodeType):
                     if len(pathNodeNames)>=5:
