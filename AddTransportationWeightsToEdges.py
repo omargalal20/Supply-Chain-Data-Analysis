@@ -263,6 +263,7 @@ class AddTransportationWeightsToEdges:
         self.getResults(countryFromValue, countryToValue)
     
     # Using web scraping to gather the distance and duration data
+    # This method is to get the type of shipment and click on the corresponding button
     def chooseTransportationMode(self):
         buttonList =  WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located((By.XPATH, '//*[@id="distance__time-app"]/div/form/div[1]/div[1]/ul'))
@@ -276,6 +277,7 @@ class AddTransportationWeightsToEdges:
         else:
             items[2].click()
 
+    # This method is to get the from country and insert in the corresponding search
     def insertFrom(self):
         searchFrom = self.driver.find_element(By.XPATH, '//*[@id="distance__time-app"]/div/form/div[1]/div[2]/div[1]/div/input')
         searchFrom.clear()
@@ -320,6 +322,7 @@ class AddTransportationWeightsToEdges:
         finally:
             return searchFrom.get_attribute('value')
 
+    # This method is to get the to country and insert in the corresponding search
     def insertTo(self):
         searchTo = self.driver.find_element(By.XPATH, '//*[@id="distance__time-app"]/div/form/div[1]/div[2]/div[2]/div/input')
         searchTo.clear()
@@ -365,6 +368,7 @@ class AddTransportationWeightsToEdges:
         finally:
             return searchTo.get_attribute('value')
 
+    # This method is to get the results and accumalate the duration and distance betweeen the two countries
     def getResults(self, countryFrom, countryTo):
         # Click Search
         searchButton = WebDriverWait(self.driver, 20).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="distance__time-app"]/div/form/div[1]/button')))
@@ -425,7 +429,7 @@ class AddTransportationWeightsToEdges:
             # print('------------------')
             self.toName = resultsList[-1].find_elements(By.TAG_NAME, 'span')[0].get_attribute('innerHTML')   
     
-    # Tried Geopy to calculate only distances
+    # Tried Geopy to calculate only distances between two countries, but only returned distance
     def calculateCoordinatesForFromGeoPy(self):
         # print(f"Class From Row {self.fromNode['Attributes']}".encode('utf-8'))
         try:

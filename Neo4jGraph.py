@@ -1,4 +1,3 @@
-# from asyncio.windows_events import NULL
 from neo4j import GraphDatabase
 class Neo4jGraph:
 
@@ -19,33 +18,40 @@ class Neo4jGraph:
 
     ## draw and save graph if graph name doesn't exist in the database else print error
     def draw_graph(self,name):
+        # check if the graph name doesn't exists in the database
         if(self.ExistingGraph(name)==False):
+            # draw the graph
             self.__transaction_execution_commands = []
             self.__add_delete_statement()
             self.__add_nodes_statements()
             self.__add_edges_statemnts()
             self.execute_transactions()
+            # save the graph
             self.saveGraph(name,nodeList=['Customer','Products','Retailer','Supplier','Rcextship','Scextship','Srintship','Ssintship','Facilities','Warehouses','Rcextorders',
             'Scextorders','Srintorders','Ssintorders','Externalservices','Internalservices','Externaltransactions','Internaltransactions'],
             edgeList=['Order','rcextship','scextship','srintship','ssintship','Related_To',
             'Manufactures','Orders_Prodcut','externaltransactions','internaltransactions'])
+        # if the graph exists, nothing happens
         else:
             print("Graph Already Exists")
                    
 
     ## get all graphs names in the DB and save it in array (global variable)  return array        
     def getGraphs(self):
+        # send the graph list command
         stat = "CALL gds.graph.list()"
         graphs = self.execute_Command(stat)
         temp = []
+        # loop on the graphs and convert it to dictionary and add it to the array
         for graph in graphs:
             x = dict(graph)
             temp.append(x['graphName'])
+        # return the array of all graphs exists in the database
         return temp
 
       ## excute command function
     def execute_Command(self,command):
-        data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "password"))
+        data_base_connection = GraphDatabase.driver(uri=self.__DBuri, auth=(self.__DBusername, self.__DBpassword))
         session = data_base_connection.session()
         output = session.run(command)
         print("------------executed-----------------")
@@ -80,8 +86,6 @@ class Neo4jGraph:
         YIELD
         graphName AS graph, nodeProjection, nodeCount AS nodes, relationshipCount AS rels
         ''' %(name,nodeList,edgeList)
-        print("-------statment---------")
-        print(saveStatment)
         print("----------------GRAPH SAVINGGGG----------------")
         self.execute_Command(saveStatment)
         self.allExistingGraphs.append(name)
@@ -93,14 +97,11 @@ class Neo4jGraph:
             if(n == name):
                 return True
         return False
-            
-
-
 
     def execute_transactions(self):
         from neo4j import GraphDatabase
-        # data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "123"))
-        data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "password"))
+        data_base_connection = GraphDatabase.driver(uri=self.__DBuri, auth=(self.__DBusername, self.__DBpassword))
+        #data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "password"))
         session = data_base_connection.session()
         for command in self.__transaction_execution_commands:
             session.run(command)
@@ -148,7 +149,18 @@ class Neo4jGraph:
         to_name = edge['To_Table']
         rel_name = edge['Edge_Name']
         weight = edge['Weight']
+        Transportation_Cost = edge['Transportation_Cost']
+        Transportation_Distance = edge['Transportation_Distance']
+        Transportation_Duration = edge['Transportation_Duration']
+        Transportation_Type = edge['Transportation_Type']
+        Rental_price = edge['Rental price']
+        price = edge['price']
+        profit_margin = edge['profit_margin (%)']
+        market_share = edge['market_share (%)']
+        Annual_sales = edge['Annual_sales']
         match_statement = f"Match (a:{from_name}),(b:{to_name}) WHERE a.index ={from_id} AND b.index = {to_id} "
-        create_statement = f"CREATE (a) - [r:{rel_name} {'{ weight: ' + str(weight) + ' }'}]->(b)"
+        create_statement = "CREATE (a) - [r:%s { weight: %f , Transportation_Cost: %f , Transportation_Distance: %f , Transportation_Duration: %f , Transportation_Type: '%s' , Rental_price: %i, product_price: %f , profit_margin: %f , market_share: %i, Annual_sales:%f }]->(b)" % (rel_name,weight,Transportation_Cost,Transportation_Distance,Transportation_Duration,Transportation_Type,Rental_price,price,profit_margin,market_share,Annual_sales)
+        print("-------statment---------")
+        print(create_statement)
         create_relation_statement = match_statement + create_statement
         return create_relation_statement

@@ -43,12 +43,15 @@ initialize_nodes_edges_df = nodes_edges_dfs(nodes, edges, properties, All_pks, A
 
 nodesTable = initialize_nodes_edges_df.nodesTable
 print("Nodes Table: ")
+nodesTable.to_csv('CSV Files/nodesTable.csv')
+
 # print(nodesTable)
 print('-------------------------')
 
 
 edgesTable = initialize_nodes_edges_df.edgesTable
 print("Edges Table: ")
+edgesTable.to_csv('CSV Files/edgesTable.csv')
 # print(edgesTable)
 print('-------------------------')
 
