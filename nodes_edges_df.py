@@ -515,9 +515,9 @@ class nodes_edges_dfs:
             supplier_country_name = self.nodes_df_edges_as_nodes.iloc[supplier_node_index]['Attributes']['country']
             supplier_city_name = self.nodes_df_edges_as_nodes.iloc[supplier_node_index]['Attributes']['city_name'] 
 
-            self.warehouseSupplierFromCoordinates(ware_house_city_name,ware_house_country_name)
-            self.warehouseSupplierToCoordinates(supplier_city_name,supplier_country_name)
-            self.calaculateDistance()
+            #self.warehouseSupplierFromCoordinates(ware_house_city_name,ware_house_country_name)
+            #self.warehouseSupplierToCoordinates(supplier_city_name,supplier_country_name)
+            #self.calaculateDistance()
 
             # #supplier -> products
             new_supplier_edge_row = [
@@ -529,8 +529,8 @@ class nodes_edges_dfs:
             self.edges_df_edges_as_nodes = pd.concat([self.edges_df_edges_as_nodes, suppliertmp], ignore_index=True)
             supplier_df= pd.concat([supplier_df,suppliertmp],ignore_index=True)
 
-            self.edges_df_edges_as_nodes.loc[self.edges_df_edges_as_nodes["From"]==warehouse_node_index,"Distance"]=self.calaculateDistance()
-
+            #self.edges_df_edges_as_nodes.loc[self.edges_df_edges_as_nodes["From"]==warehouse_node_index,"Distance"]=self.calaculateDistance()
+            self.edges_df_edges_as_nodes.loc[self.edges_df_edges_as_nodes["From"]==warehouse_node_index,"Distance"]= 100000
         self.edges_df_edges_as_nodes["Distance"] = self.edges_df_edges_as_nodes["Distance"].apply(lambda x: self.__calculateNewValueWarehouse(x, "Distance"))
 
         self.__calculateFinalWeightForWarehouseSupplier()

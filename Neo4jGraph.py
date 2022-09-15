@@ -14,7 +14,7 @@ class Neo4jGraph:
 
         self.deleteSpecificNode = {}
 
-        self.allExistingGraphs = self.getGraphs()
+        self.allExistingGraphs = ["supplyChain"]
 
     ## draw and save graph if graph name doesn't exist in the database else print error
     def draw_graph(self,name):
@@ -31,30 +31,32 @@ class Neo4jGraph:
             'Scextorders','Srintorders','Ssintorders','Externalservices','Internalservices','Externaltransactions','Internaltransactions'],
             edgeList=['Order','rcextship','scextship','srintship','ssintship','Related_To',
             'Manufactures','Orders_Prodcut','externaltransactions','internaltransactions'])
+            print(self.allExistingGraphs)
         # if the graph exists, nothing happens
         else:
             print("Graph Already Exists")
                    
 
     ## get all graphs names in the DB and save it in array (global variable)  return array        
-    def getGraphs(self):
-        # send the graph list command
-        stat = "CALL gds.graph.list()"
-        graphs = self.execute_Command(stat)
-        temp = []
-        # loop on the graphs and convert it to dictionary and add it to the array
-        for graph in graphs:
-            x = dict(graph)
-            temp.append(x['graphName'])
-        # return the array of all graphs exists in the database
-        return temp
+    # def getGraphs(self):
+    #     # send the graph list command
+    #     stat = "CALL gds.graph.list()"
+    #     graphs = self.execute_Command(stat)
+    #     temp = []
+    #     # loop on the graphs and convert it to dictionary and add it to the array
+    #     for graph in graphs:
+    #         x = dict(graph)
+    #         temp.append(x['graphName'])
+    #     # return the array of all graphs exists in the database
+    #     return temp
 
       ## excute command function
     def execute_Command(self,command):
         data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "123"))
         #data_base_connection = GraphDatabase.driver(uri="bolt://127.0.0.1:7687", auth=("neo4j", "123"))
-        session = data_base_connection.session()
-        output = session.run(command)
+        #session = data_base_connection.session()
+        with data_base_connection.session() as session:
+            output = session.run(command)
         print("------------executed-----------------")
         return output
 
