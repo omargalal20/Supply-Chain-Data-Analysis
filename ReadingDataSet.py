@@ -3,7 +3,6 @@ import pandas as pd
 import random
 import numpy as np
 from functools import reduce
-import geopy.geocoders
 
 from nodes_edges_df import nodes_edges_dfs
 
@@ -212,8 +211,8 @@ class ReadingDataSet:
 
                 supplier_type = suppliers_in_shipments_df[suppliers_in_shipments_df.supp_id == supplier_id].iloc[0].type
                 retailer_types.add(supplier_type)
-            retailers_types_column.append(retailer_types)
+            retailers_types_column.append(list(retailer_types))
 
-        retailer_df["RetailerTypes"] = retailers_types_column
+        retailer_df["retailer_types"] = retailers_types_column
         self.All_dfs["retailer"] =retailer_df
 

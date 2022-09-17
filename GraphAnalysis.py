@@ -318,7 +318,6 @@ class GraphAnalysis:
                 isDirect = pathNodeNames[-3]
             
             nodeType = self.getType(isDirect,nodesTable)
-            
             if(type(nodeType) == set):
                 if(theDesiredType not in nodeType):
                     if len(pathNodeNames)>=5:

@@ -3,9 +3,10 @@ class Neo4jGraph:
 
     def __init__(self, nodes_df, edges_df):
 
-        self.DBusername = "neo4j"
-        self.DBpassword = "password"
-        self.DBuri = "bolt://localhost:7687"
+        self.__DBusername = "neo4j"
+        self.__DBpassword = "password"
+        self.__DBuri = "bolt://localhost:7687"
+        self.Driver = GraphDatabase.driver(uri=self.__DBuri, auth=(self.__DBusername, self.__DBpassword))
 
         self.nodes_df = nodes_df
         self.edges_df = edges_df
@@ -14,26 +15,27 @@ class Neo4jGraph:
 
         self.deleteSpecificNode = {}
 
-        self.allExistingGraphs = self.getGraphs()
+
+        self.allExistingGraphs = []
 
     ## draw and save graph if graph name doesn't exist in the database else print error
-    def draw_graph(self,name):
+    def draw_graph(self,name=""):
         # check if the graph name doesn't exists in the database
-        if(self.ExistingGraph(name)==False):
+        # if(self.ExistingGraph(name)==False):
             # draw the graph
-            self.__transaction_execution_commands = []
-            self.__add_delete_statement()
-            self.__add_nodes_statements()
-            self.__add_edges_statemnts()
-            self.execute_transactions()
+        self.__transaction_execution_commands = []
+        self.__add_delete_statement()
+        self.__add_nodes_statements()
+        self.__add_edges_statements()
+        self.execute_transactions()
             # save the graph
-            self.saveGraph(name,nodeList=['Customer','Products','Retailer','Supplier','Rcextship','Scextship','Srintship','Ssintship','Facilities','Warehouses','Rcextorders',
-            'Scextorders','Srintorders','Ssintorders','Externalservices','Internalservices','Externaltransactions','Internaltransactions'],
-            edgeList=['Order','rcextship','scextship','srintship','ssintship','Related_To',
-            'Manufactures','Orders_Prodcut','externaltransactions','internaltransactions'])
+            # self.saveGraph(name,nodeList=['Customer','Products','Retailer','Supplier','Rcextship','Scextship','Srintship','Ssintship','Facilities','Warehouses','Rcextorders',
+            # 'Scextorders','Srintorders','Ssintorders','Externalservices','Internalservices','Externaltransactions','Internaltransactions'],
+            # edgeList=['Order','rcextship','scextship','srintship','ssintship','Related_To',
+            # 'Manufactures','Orders_Prodcut','externaltransactions','internaltransactions'])
         # if the graph exists, nothing happens
-        else:
-            print("Graph Already Exists")
+        # else:
+        #     print("Graph Already Exists")
                    
 
     ## get all graphs names in the DB and save it in array (global variable)  return array        
@@ -42,6 +44,8 @@ class Neo4jGraph:
         stat = "CALL gds.graph.list()"
         graphs = self.execute_Command(stat)
         temp = []
+        print(graphs)
+
         # loop on the graphs and convert it to dictionary and add it to the array
         for graph in graphs:
             x = dict(graph)
@@ -51,11 +55,15 @@ class Neo4jGraph:
 
       ## excute command function
     def execute_Command(self,command):
-        data_base_connection = GraphDatabase.driver(uri=self.DBuri, auth=(self.DBusername, self.DBpassword))
-        session = data_base_connection.session()
-        output = session.run(command)
-        print("------------executed-----------------")
-        return output
+        # data_base_connection = GraphDatabase.driver(uri=self.DBuri, auth=(self.DBusername, self.DBpassword))
+        #data_base_connection = GraphDatabase.driver(uri="bolt://127.0.0.1:7687", auth=("neo4j", "123"))
+        output = ""
+        with self.Driver.session() as session:
+            # session = data_base_connection.session()
+            output = session.run(command)
+            print("------------executed-----------------")
+            return output
+
 
     ## delete the node "for future works"
     def deleteNode(self,label,id,nodeID):
@@ -100,12 +108,12 @@ class Neo4jGraph:
 
     def execute_transactions(self):
         from neo4j import GraphDatabase
-        data_base_connection = GraphDatabase.driver(uri=self.DBuri, auth=(self.DBusername, self.DBpassword))
+
         #data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "password"))
-        session = data_base_connection.session()
-        
-        for command in self.__transaction_execution_commands:
-            session.run(command)
+        # session = data_base_connection.session()
+        with self.Driver.session() as session:
+            for command in self.__transaction_execution_commands:
+                session.execute_write(lambda tx,c: tx.run(c),command)
 
     def __add_delete_statement(self):
         delete_statement = "match (n) detach delete n"
@@ -138,7 +146,7 @@ class Neo4jGraph:
                 value) + ","
         return attributes_string[:-1]
 
-    def __add_edges_statemnts(self):
+    def __add_edges_statements(self):
         for i, edge in self.edges_df.iterrows():
             create_relation_statement = self.__relation_create_statement(edge)
             self.__transaction_execution_commands.append(create_relation_statement)

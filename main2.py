@@ -69,7 +69,7 @@ edges_df.to_csv('CSV Files/edges_df.csv')
 print('-------------------------')
 
 myGraph = Neo4jGraph(nodes_df,edges_df)
-
+myGraph.draw_graph("supplyChain")
 
 # graphAnalysis = GraphAnalysis(nodes_df,edges_df,nodesTable,edgesTable)
 #

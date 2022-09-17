@@ -314,197 +314,208 @@
  'High school' 64]"
 149,customer,47008,"['F' 'Lauren' 'Toscanini' 'Liechtenstein' 'United States'
  'Sport and exercise psychologist' 'Divorced' 'Masters holder' 37]"
-150,retailer,91089,['Tunisia' 'Kairouan' 'distributer' 650 5 7 169554 set()]
-151,retailer,95444,['Kuwait' 'Al Farwānīyah' 'vendor' 441 1 8 325442 set()]
-152,retailer,66051,['Qatar' 'Ash Shīḩānīyah' 'abroad' 821 2 9 426160 set()]
+150,retailer,91089,['Tunisia' 'Kairouan' 'distributer' 650 5 7 169554 list([])]
+151,retailer,95444,['Kuwait' 'Al Farwānīyah' 'vendor' 441 1 8 325442 list([])]
+152,retailer,66051,['Qatar' 'Ash Shīḩānīyah' 'abroad' 821 2 9 426160 list([])]
 153,retailer,41072,"['Greece' 'Dytikí Makedonía' 'customer end' 123 2 4 1347204
- {'Healthcare Systems & Services'}]"
-154,retailer,34083,['Gambia' 'Banjul' 'vendor' 815 4 7 1843949 set()]
+ list(['Healthcare Systems & Services'])]"
+154,retailer,34083,['Gambia' 'Banjul' 'vendor' 815 4 7 1843949 list([])]
 155,retailer,89362,"['Greece' 'Kentrikí Makedonía' 'abroad' 529 5 1 1057000
- {'Paper, Forest Products & Packaging'}]"
-156,retailer,12318,['Tajikistan' 'Kŭhistoni Badakhshon' 'vendor' 356 3 8 1133068 set()]
-157,retailer,21359,['Cambodia' 'Kaoh Kong' 'vendor' 826 1 9 1741565 {'Metals & Mining'}]
+ list(['Paper, Forest Products & Packaging'])]"
+156,retailer,12318,['Tajikistan' 'Kŭhistoni Badakhshon' 'vendor' 356 3 8 1133068 list([])]
+157,retailer,21359,['Cambodia' 'Kaoh Kong' 'vendor' 826 1 9 1741565 list(['Metals & Mining'])]
 158,retailer,42411,"['Saint Kitts and Nevis' 'Saint Mary Cayon' 'customer end' 352 1 9 19522
- set()]"
-159,retailer,60940,['Georgia' 'Mtskheta-Mtianeti' 'customer end' 677 3 4 1136762 set()]
+ list([])]"
+159,retailer,60940,['Georgia' 'Mtskheta-Mtianeti' 'customer end' 677 3 4 1136762 list([])]
 160,retailer,75619,"['Samoa' 'Tuamasaga' 'customer end' 992 2 3 1728641
- {'Paper, Forest Products & Packaging'}]"
-161,retailer,22692,['South Sudan' 'Northern Bahr el Ghazal' 'vendor' 400 4 6 934590 set()]
-162,retailer,44162,['Nauru' 'Uaboe' 'distributer' 814 3 9 469890 set()]
+ list(['Paper, Forest Products & Packaging'])]"
+161,retailer,22692,['South Sudan' 'Northern Bahr el Ghazal' 'vendor' 400 4 6 934590 list([])]
+162,retailer,44162,['Nauru' 'Uaboe' 'distributer' 814 3 9 469890 list([])]
 163,retailer,75353,"['French Southern Territories' 'Unknown' 'abroad' 473 3 2 442904
- {'Retail'}]"
-164,retailer,52005,['Puerto Rico' 'Unknown' 'vendor' 988 5 7 1929635 set()]
-165,retailer,97673,['Albania' 'Tirana' 'abroad' 699 2 2 1169168 set()]
-166,retailer,76384,['Belgium' 'Limburg' 'abroad' 316 3 2 1908953 set()]
-167,retailer,56948,['Finland' 'Norra Savolax' 'distributer' 300 2 8 1209087 set()]
-168,retailer,13633,['Qatar' 'Al Wakrah' 'customer end' 159 3 9 1090841 set()]
-169,retailer,15035,['Equatorial Guinea' 'Região Insular' 'vendor' 421 5 4 1559544 set()]
-170,retailer,93440,['Brazil' 'Minas Gerais' 'abroad' 819 4 2 1401456 {'Aerospace & Defense'}]
-171,retailer,81901,['Jamaica' 'Westmoreland' 'abroad' 882 4 8 104875 set()]
-172,retailer,38001,['Jordan' 'Al ‘A̅şimah' 'customer end' 402 2 7 1880010 set()]
-173,retailer,18410,['Malaysia' 'Johor' 'distributer' 738 4 9 124498 set()]
-174,retailer,44544,['Cabo Verde' 'Ribeira Grande' 'distributer' 353 4 7 1761624 set()]
-175,retailer,43132,['Guinea' 'Gaoual' 'distributer' 279 1 5 715465 set()]
-176,retailer,64989,['French Polynesia' 'Unknown' 'customer end' 488 1 1 1202212 set()]
-177,retailer,28960,['North Macedonia' 'Brvenica' 'abroad' 860 3 9 1893264 {'Life Sciences'}]
-178,retailer,92087,['Greece' 'Anatolikí Makedonía kai Thráki' 'vendor' 455 4 2 1085603 set()]
-179,retailer,22940,['Ireland' 'Munster' 'vendor' 721 5 8 1951557 {'Aerospace & Defense'}]
+ list(['Retail'])]"
+164,retailer,52005,['Puerto Rico' 'Unknown' 'vendor' 988 5 7 1929635 list([])]
+165,retailer,97673,['Albania' 'Tirana' 'abroad' 699 2 2 1169168 list([])]
+166,retailer,76384,['Belgium' 'Limburg' 'abroad' 316 3 2 1908953 list([])]
+167,retailer,56948,['Finland' 'Norra Savolax' 'distributer' 300 2 8 1209087 list([])]
+168,retailer,13633,['Qatar' 'Al Wakrah' 'customer end' 159 3 9 1090841 list([])]
+169,retailer,15035,['Equatorial Guinea' 'Região Insular' 'vendor' 421 5 4 1559544 list([])]
+170,retailer,93440,"['Brazil' 'Minas Gerais' 'abroad' 819 4 2 1401456
+ list(['Aerospace & Defense'])]"
+171,retailer,81901,['Jamaica' 'Westmoreland' 'abroad' 882 4 8 104875 list([])]
+172,retailer,38001,['Jordan' 'Al ‘A̅şimah' 'customer end' 402 2 7 1880010 list([])]
+173,retailer,18410,['Malaysia' 'Johor' 'distributer' 738 4 9 124498 list([])]
+174,retailer,44544,['Cabo Verde' 'Ribeira Grande' 'distributer' 353 4 7 1761624 list([])]
+175,retailer,43132,['Guinea' 'Gaoual' 'distributer' 279 1 5 715465 list([])]
+176,retailer,64989,['French Polynesia' 'Unknown' 'customer end' 488 1 1 1202212 list([])]
+177,retailer,28960,"['North Macedonia' 'Brvenica' 'abroad' 860 3 9 1893264
+ list(['Life Sciences'])]"
+178,retailer,92087,"['Greece' 'Anatolikí Makedonía kai Thráki' 'vendor' 455 4 2 1085603
+ list([])]"
+179,retailer,22940,"['Ireland' 'Munster' 'vendor' 721 5 8 1951557
+ list(['Aerospace & Defense'])]"
 180,retailer,75419,"['Iran, Islamic Republic of' 'Kohgīlūyeh va Bowyer Aḩmad' 'distributer'
- 747 5 4 819022 set()]"
-181,retailer,10327,['Oman' 'Al Wusţá' 'distributer' 356 3 9 814119 set()]
-182,retailer,61580,['French Polynesia' 'Unknown' 'customer end' 535 5 6 987153 set()]
+ 747 5 4 819022 list([])]"
+181,retailer,10327,['Oman' 'Al Wusţá' 'distributer' 356 3 9 814119 list([])]
+182,retailer,61580,['French Polynesia' 'Unknown' 'customer end' 535 5 6 987153 list([])]
 183,retailer,61892,"['Congo, The Democratic Republic of the' 'Tshuapa' 'customer end' 125 1 1
- 1606404 {'Electric Power & Natural Gas'}]"
+ 1606404 list(['Electric Power & Natural Gas'])]"
 184,retailer,73217,"['Sweden' 'Gävleborgs län [SE-21]' 'abroad' 660 3 5 1031212
- {'Public & Social Sector'}]"
-185,retailer,26654,['South Sudan' 'Central Equatoria' 'abroad' 377 1 2 1653851 set()]
-186,retailer,54549,"['Micronesia, Federated States of' 'Chuuk' 'abroad' 749 1 4 92910 set()]"
-187,retailer,85978,['Norfolk Island' 'Unknown' 'vendor' 854 2 9 1923235 set()]
+ list(['Public & Social Sector'])]"
+185,retailer,26654,['South Sudan' 'Central Equatoria' 'abroad' 377 1 2 1653851 list([])]
+186,retailer,54549,"['Micronesia, Federated States of' 'Chuuk' 'abroad' 749 1 4 92910 list([])]"
+187,retailer,85978,['Norfolk Island' 'Unknown' 'vendor' 854 2 9 1923235 list([])]
 188,retailer,31857,"['Albania' 'Korçë' 'customer end' 862 1 1 1178695
- {'Public & Social Sector', 'Education', 'Healthcare Systems & Services'}]"
-189,retailer,17462,['Sierra Leone' 'Eastern' 'distributer' 790 4 4 642703 set()]
-190,retailer,12527,['Svalbard and Jan Mayen' 'Unknown' 'customer end' 677 1 1 1147524 set()]
-191,retailer,74653,['Slovenia' 'Rače-Fram' 'customer end' 283 4 4 661934 {'Retail'}]
-192,retailer,48109,['Cambodia' 'Kandaal' 'distributer' 886 1 1 1505690 set()]
-193,retailer,76987,['New Zealand' 'Marlborough' 'vendor' 578 2 5 1095963 {'Real Estate'}]
+ list(['Public & Social Sector', 'Education', 'Healthcare Systems & Services'])]"
+189,retailer,17462,['Sierra Leone' 'Eastern' 'distributer' 790 4 4 642703 list([])]
+190,retailer,12527,"['Svalbard and Jan Mayen' 'Unknown' 'customer end' 677 1 1 1147524
+ list([])]"
+191,retailer,74653,['Slovenia' 'Rače-Fram' 'customer end' 283 4 4 661934 list(['Retail'])]
+192,retailer,48109,['Cambodia' 'Kandaal' 'distributer' 886 1 1 1505690 list([])]
+193,retailer,76987,"['New Zealand' 'Marlborough' 'vendor' 578 2 5 1095963
+ list(['Real Estate'])]"
 194,retailer,62821,"['Croatia' 'Virovitičko-podravska županija' 'abroad' 133 1 3 1079674
- {'Financial Services'}]"
-195,retailer,14737,['Gabon' 'Woleu-Ntem' 'customer end' 331 1 4 1524443 set()]
+ list(['Financial Services'])]"
+195,retailer,14737,['Gabon' 'Woleu-Ntem' 'customer end' 331 1 4 1524443 list([])]
 196,retailer,58391,"['Central African Republic' 'Bamingui-Bangoran' 'customer end' 198 3 7
- 904945 set()]"
+ 904945 list([])]"
 197,retailer,49955,"['Bouvet Island' 'Unknown' 'vendor' 693 1 2 136577
- {'Oil & Gas', 'Chemicals'}]"
+ list(['Oil & Gas', 'Chemicals'])]"
 198,retailer,57882,"['British Indian Ocean Territory' 'Unknown' 'distributer' 253 4 8 1141762
- set()]"
-199,retailer,20289,['Tajikistan' 'nohiyahoi tobei jumhurí' 'vendor' 572 3 2 452788 set()]
-200,retailer,96028,['Cabo Verde' 'São Salvador do Mundo' 'abroad' 773 1 3 1137167 set()]
-201,retailer,76059,['Malawi' 'Dowa' 'customer end' 687 4 3 1926475 {'Automotive & Assembly'}]
+ list([])]"
+199,retailer,20289,['Tajikistan' 'nohiyahoi tobei jumhurí' 'vendor' 572 3 2 452788 list([])]
+200,retailer,96028,['Cabo Verde' 'São Salvador do Mundo' 'abroad' 773 1 3 1137167 list([])]
+201,retailer,76059,"['Malawi' 'Dowa' 'customer end' 687 4 3 1926475
+ list(['Automotive & Assembly'])]"
 202,retailer,70666,"['Saint Helena, Ascension and Tristan da Cunha' 'Saint Helena' 'vendor'
- 315 1 8 1662706 set()]"
+ 315 1 8 1662706 list([])]"
 203,retailer,47196,"['Albania' 'Elbasan' 'abroad' 527 4 2 1569819
- {'Life Sciences', 'Advanced Electronics'}]"
+ list(['Advanced Electronics', 'Life Sciences'])]"
 204,retailer,26461,"['Saint Vincent and the Grenadines' 'Charlotte' 'customer end' 996 2 8
- 276071 set()]"
-205,retailer,91566,['Anguilla' 'Unknown' 'abroad' 313 4 4 592968 set()]
-206,retailer,48462,['Niger' 'Dosso' 'distributer' 284 2 9 234649 set()]
+ 276071 list([])]"
+205,retailer,91566,['Anguilla' 'Unknown' 'abroad' 313 4 4 592968 list([])]
+206,retailer,48462,['Niger' 'Dosso' 'distributer' 284 2 9 234649 list([])]
 207,retailer,29540,"['Bangladesh' 'Shariatpur' 'distributer' 536 2 3 1933670
- {'Paper, Forest Products & Packaging'}]"
-208,retailer,54756,['Kiribati' 'Line Islands' 'distributer' 189 1 8 1222269 set()]
-209,retailer,68441,['Macao' 'Unknown' 'customer end' 349 2 7 748767 set()]
+ list(['Paper, Forest Products & Packaging'])]"
+208,retailer,54756,['Kiribati' 'Line Islands' 'distributer' 189 1 8 1222269 list([])]
+209,retailer,68441,['Macao' 'Unknown' 'customer end' 349 2 7 748767 list([])]
 210,retailer,66663,"['Luxembourg' 'Mersch' 'customer end' 549 2 1 1786531
- {'Paper, Forest Products & Packaging', 'Metals & Mining'}]"
-211,retailer,61003,"['Iran, Islamic Republic of' 'Zanjān' 'vendor' 871 1 6 683362 set()]"
+ list(['Metals & Mining', 'Paper, Forest Products & Packaging'])]"
+211,retailer,61003,"['Iran, Islamic Republic of' 'Zanjān' 'vendor' 871 1 6 683362 list([])]"
 212,retailer,82777,"['Slovenia' 'Ivančna Gorica' 'abroad' 191 1 7 915672
- {'Advanced Electronics'}]"
-213,retailer,78692,['Mali' 'Gao' 'distributer' 846 2 5 1134350 set()]
-214,retailer,22459,"['Kazakhstan' ""Turkestankaya oblast'"" 'customer end' 706 4 4 323272 set()]"
-215,retailer,67833,['El Salvador' 'Usulután' 'vendor' 297 1 2 1977961 set()]
+ list(['Advanced Electronics'])]"
+213,retailer,78692,['Mali' 'Gao' 'distributer' 846 2 5 1134350 list([])]
+214,retailer,22459,"['Kazakhstan' ""Turkestankaya oblast'"" 'customer end' 706 4 4 323272
+ list([])]"
+215,retailer,67833,['El Salvador' 'Usulután' 'vendor' 297 1 2 1977961 list([])]
 216,retailer,26336,"['Djibouti' 'Tadjourah' 'distributer' 621 4 6 1098430
- {'Advanced Electronics'}]"
+ list(['Advanced Electronics'])]"
 217,retailer,46954,"['Curaçao' 'Unknown' 'distributer' 660 1 5 1638664
- {'Engineering, Construction & Building Materials'}]"
-218,retailer,28549,['New Caledonia' 'Unknown' 'distributer' 450 4 9 1905955 set()]
+ list(['Engineering, Construction & Building Materials'])]"
+218,retailer,28549,['New Caledonia' 'Unknown' 'distributer' 450 4 9 1905955 list([])]
 219,retailer,62920,"['Belarus' 'Mahilioŭskaja voblasć' 'abroad' 988 4 5 367437
- {'Automotive & Assembly'}]"
-220,retailer,95909,['Ghana' 'Savannah' 'abroad' 813 5 9 604532 set()]
-221,retailer,98026,['Canada' 'Manitoba' 'vendor' 252 4 6 1283308 set()]
-222,retailer,45151,['Brunei Darussalam' 'Belait' 'distributer' 537 1 8 1445965 set()]
-223,retailer,53380,['Åland Islands' 'Unknown' 'customer end' 770 5 1 1898111 set()]
-224,retailer,92733,['Fiji' 'Serua' 'vendor' 949 2 1 348510 set()]
-225,retailer,82256,['Oman' 'Al Buraymī' 'distributer' 535 4 1 1662653 set()]
-226,retailer,61236,['Turkmenistan' 'Balkan' 'abroad' 244 3 9 1924299 set()]
-227,retailer,55061,"['Virgin Islands, U.S.' 'Unknown' 'abroad' 721 1 8 1366503 set()]"
-228,retailer,38017,"['Kyrgyzstan' ""Dzhalal-Abadskaya oblast'"" 'abroad' 615 3 5 1532622 set()]"
-229,retailer,96831,['Lebanon' 'Jabal Lubnān' 'distributer' 944 2 2 1963377 set()]
-230,retailer,29575,['Falkland Islands (Malvinas)' 'Unknown' 'abroad' 685 5 2 640608 set()]
-231,retailer,67690,['Isle of Man' 'Unknown' 'customer end' 414 2 8 189504 set()]
-232,retailer,60804,['Armenia' 'Tavuš' 'abroad' 866 2 8 1279430 set()]
-233,retailer,70517,['Ecuador' 'Cañar' 'distributer' 214 5 9 471451 set()]
-234,retailer,26669,['Norfolk Island' 'Unknown' 'distributer' 533 4 1 982403 set()]
-235,retailer,56680,['Palau' 'Ngardmau' 'distributer' 420 1 6 1535193 set()]
-236,retailer,69173,['Finland' 'Egentliga Finland' 'distributer' 369 1 7 67540 set()]
+ list(['Automotive & Assembly'])]"
+220,retailer,95909,['Ghana' 'Savannah' 'abroad' 813 5 9 604532 list([])]
+221,retailer,98026,['Canada' 'Manitoba' 'vendor' 252 4 6 1283308 list([])]
+222,retailer,45151,['Brunei Darussalam' 'Belait' 'distributer' 537 1 8 1445965 list([])]
+223,retailer,53380,['Åland Islands' 'Unknown' 'customer end' 770 5 1 1898111 list([])]
+224,retailer,92733,['Fiji' 'Serua' 'vendor' 949 2 1 348510 list([])]
+225,retailer,82256,['Oman' 'Al Buraymī' 'distributer' 535 4 1 1662653 list([])]
+226,retailer,61236,['Turkmenistan' 'Balkan' 'abroad' 244 3 9 1924299 list([])]
+227,retailer,55061,"['Virgin Islands, U.S.' 'Unknown' 'abroad' 721 1 8 1366503 list([])]"
+228,retailer,38017,"['Kyrgyzstan' ""Dzhalal-Abadskaya oblast'"" 'abroad' 615 3 5 1532622
+ list([])]"
+229,retailer,96831,['Lebanon' 'Jabal Lubnān' 'distributer' 944 2 2 1963377 list([])]
+230,retailer,29575,['Falkland Islands (Malvinas)' 'Unknown' 'abroad' 685 5 2 640608 list([])]
+231,retailer,67690,['Isle of Man' 'Unknown' 'customer end' 414 2 8 189504 list([])]
+232,retailer,60804,['Armenia' 'Tavuš' 'abroad' 866 2 8 1279430 list([])]
+233,retailer,70517,['Ecuador' 'Cañar' 'distributer' 214 5 9 471451 list([])]
+234,retailer,26669,['Norfolk Island' 'Unknown' 'distributer' 533 4 1 982403 list([])]
+235,retailer,56680,['Palau' 'Ngardmau' 'distributer' 420 1 6 1535193 list([])]
+236,retailer,69173,['Finland' 'Egentliga Finland' 'distributer' 369 1 7 67540 list([])]
 237,retailer,35367,"['Martinique' 'Unknown' 'distributer' 204 4 9 499769
- {'Aerospace & Defense'}]"
-238,retailer,31412,['France' 'Saint-Martin' 'abroad' 754 2 4 1550866 {'Real Estate'}]
+ list(['Aerospace & Defense'])]"
+238,retailer,31412,['France' 'Saint-Martin' 'abroad' 754 2 4 1550866 list(['Real Estate'])]
 239,retailer,64102,"['Greenland' 'Kommuneqarfik Sermersooq' 'customer end' 411 1 1 1039319
- set()]"
-240,retailer,35734,['Pakistan' 'Khyber Pakhtunkhwa' 'vendor' 139 4 9 1396971 set()]
+ list([])]"
+240,retailer,35734,['Pakistan' 'Khyber Pakhtunkhwa' 'vendor' 139 4 9 1396971 list([])]
 241,retailer,78981,"['Afghanistan' 'Laghmān' 'customer end' 850 1 8 1347744
- {'Advanced Electronics'}]"
-242,retailer,65811,['Fiji' 'Kadavu' 'customer end' 931 5 2 1474819 {'Chemicals'}]
-243,retailer,69912,['China' 'Shanxi Sheng' 'distributer' 154 3 5 632673 set()]
+ list(['Advanced Electronics'])]"
+242,retailer,65811,['Fiji' 'Kadavu' 'customer end' 931 5 2 1474819 list(['Chemicals'])]
+243,retailer,69912,['China' 'Shanxi Sheng' 'distributer' 154 3 5 632673 list([])]
 244,retailer,56222,"[""Korea, Democratic People's Republic of"" ""P'yǒngyang"" 'customer end' 211
- 1 1 1459909 set()]"
-245,retailer,92403,['Algeria' 'Souk Ahras' 'vendor' 262 4 8 1196547 set()]
-246,retailer,40821,['United Kingdom' 'Merton' 'distributer' 556 5 1 1446269 set()]
+ 1 1 1459909 list([])]"
+245,retailer,92403,['Algeria' 'Souk Ahras' 'vendor' 262 4 8 1196547 list([])]
+246,retailer,40821,['United Kingdom' 'Merton' 'distributer' 556 5 1 1446269 list([])]
 247,retailer,90345,"['Chile' 'Aisén del General Carlos Ibañez del Campo' 'abroad' 309 5 7
- 688060 set()]"
-248,retailer,71308,['Ireland' 'Dublin' 'vendor' 129 5 7 1510373 set()]
+ 688060 list([])]"
+248,retailer,71308,['Ireland' 'Dublin' 'vendor' 129 5 7 1510373 list([])]
 249,retailer,41879,"['Djibouti' 'Awbūk' 'distributer' 924 1 3 464028
- {'Healthcare Systems & Services'}]"
-250,retailer,69506,['Oman' 'Shamāl al Bāţinah' 'distributer' 712 4 8 273648 set()]
+ list(['Healthcare Systems & Services'])]"
+250,retailer,69506,['Oman' 'Shamāl al Bāţinah' 'distributer' 712 4 8 273648 list([])]
 251,retailer,90349,"['French Guiana' 'Unknown' 'abroad' 817 5 3 1878523
- {'Aerospace & Defense'}]"
-252,retailer,67158,['India' 'Manipur' 'customer end' 185 3 6 1813466 set()]
-253,retailer,38871,['Guatemala' 'Chimaltenango' 'vendor' 997 3 2 439001 set()]
-254,retailer,59906,['Lebanon' 'Bayrūt' 'vendor' 390 5 4 1541808 set()]
-255,retailer,31062,['Mali' 'Taoudénit' 'vendor' 163 4 5 548122 set()]
-256,retailer,87755,['Cambodia' 'Kampong Spueu' 'distributer' 860 4 1 303166 set()]
-257,retailer,23758,['Serbia' 'Zaječarski okrug' 'abroad' 248 2 2 310912 set()]
+ list(['Aerospace & Defense'])]"
+252,retailer,67158,['India' 'Manipur' 'customer end' 185 3 6 1813466 list([])]
+253,retailer,38871,['Guatemala' 'Chimaltenango' 'vendor' 997 3 2 439001 list([])]
+254,retailer,59906,['Lebanon' 'Bayrūt' 'vendor' 390 5 4 1541808 list([])]
+255,retailer,31062,['Mali' 'Taoudénit' 'vendor' 163 4 5 548122 list([])]
+256,retailer,87755,['Cambodia' 'Kampong Spueu' 'distributer' 860 4 1 303166 list([])]
+257,retailer,23758,['Serbia' 'Zaječarski okrug' 'abroad' 248 2 2 310912 list([])]
 258,retailer,22049,"[""Korea, Democratic People's Republic of"" 'Nampho' 'customer end' 676 3 3
- 1357300 {'Engineering, Construction & Building Materials'}]"
-259,retailer,43964,['Norway' 'Vestfold og Telemark' 'distributer' 268 3 4 503646 set()]
-260,retailer,10661,['Mexico' 'Baja California' 'abroad' 301 3 3 1889514 set()]
+ 1357300 list(['Engineering, Construction & Building Materials'])]"
+259,retailer,43964,['Norway' 'Vestfold og Telemark' 'distributer' 268 3 4 503646 list([])]
+260,retailer,10661,['Mexico' 'Baja California' 'abroad' 301 3 3 1889514 list([])]
 261,retailer,25889,"['Oman' 'Shamāl al Bāţinah' 'customer end' 959 1 8 1650639
- {'Aerospace & Defense'}]"
+ list(['Aerospace & Defense'])]"
 262,retailer,17198,"[""Côte d'Ivoire"" 'Denguélé' 'distributer' 218 3 6 544883
- {'Automotive & Assembly'}]"
+ list(['Automotive & Assembly'])]"
 263,retailer,67361,"['Suriname' 'Wanica' 'abroad' 236 1 1 1747881
- {'Aerospace & Defense', 'Paper, Forest Products & Packaging'}]"
-264,retailer,98717,['Lithuania' 'Panevėžio miestas' 'distributer' 848 2 7 29006 set()]
-265,retailer,34779,['Réunion' 'Unknown' 'customer end' 464 3 2 191216 {'Oil & Gas'}]
-266,retailer,48381,['Uruguay' 'Rocha' 'customer end' 478 4 4 183792 set()]
-267,retailer,82830,['Congo' 'Bouenza' 'customer end' 994 4 7 1140131 {'Semiconductors'}]
+ list(['Paper, Forest Products & Packaging', 'Aerospace & Defense'])]"
+264,retailer,98717,['Lithuania' 'Panevėžio miestas' 'distributer' 848 2 7 29006 list([])]
+265,retailer,34779,['Réunion' 'Unknown' 'customer end' 464 3 2 191216 list(['Oil & Gas'])]
+266,retailer,48381,['Uruguay' 'Rocha' 'customer end' 478 4 4 183792 list([])]
+267,retailer,82830,['Congo' 'Bouenza' 'customer end' 994 4 7 1140131 list(['Semiconductors'])]
 268,retailer,94027,"['Kenya' 'Embu' 'customer end' 675 2 7 1715176
- {'Engineering, Construction & Building Materials'}]"
-269,retailer,56575,['Turkmenistan' 'Balkan' 'customer end' 878 4 1 525049 {'Semiconductors'}]
-270,retailer,87615,['Pitcairn' 'Unknown' 'distributer' 845 3 6 260035 set()]
-271,retailer,69655,['Barbados' 'Saint Michael' 'abroad' 632 2 1 770439 set()]
+ list(['Engineering, Construction & Building Materials'])]"
+269,retailer,56575,"['Turkmenistan' 'Balkan' 'customer end' 878 4 1 525049
+ list(['Semiconductors'])]"
+270,retailer,87615,['Pitcairn' 'Unknown' 'distributer' 845 3 6 260035 list([])]
+271,retailer,69655,['Barbados' 'Saint Michael' 'abroad' 632 2 1 770439 list([])]
 272,retailer,83982,"['Cayman Islands' 'Unknown' 'distributer' 225 3 9 351603
- {'Semiconductors'}]"
-273,retailer,24037,['Greenland' 'Kommuneqarfik Sermersooq' 'vendor' 943 4 8 310122 set()]
-274,retailer,65500,['Bhutan' 'Monggar' 'distributer' 835 5 1 1826044 set()]
-275,retailer,91326,['Mayotte' 'Unknown' 'customer end' 846 1 7 1601112 set()]
-276,retailer,14803,['Bermuda' 'Unknown' 'vendor' 747 5 3 1890234 set()]
-277,retailer,84290,['Cook Islands' 'Unknown' 'abroad' 445 2 3 1534951 set()]
-278,retailer,61174,['Finland' 'Etelä-Karjala' 'vendor' 888 3 5 183016 set()]
-279,retailer,28898,['Liberia' 'Margibi' 'vendor' 880 1 5 1168243 set()]
-280,retailer,64571,['Uganda' 'Ntungamo' 'vendor' 832 2 6 1104319 {'Advanced Electronics'}]
-281,retailer,63898,['Fiji' 'Rotuma' 'abroad' 703 4 9 1607287 set()]
-282,retailer,16322,['Mayotte' 'Unknown' 'abroad' 864 3 7 1533329 set()]
+ list(['Semiconductors'])]"
+273,retailer,24037,['Greenland' 'Kommuneqarfik Sermersooq' 'vendor' 943 4 8 310122 list([])]
+274,retailer,65500,['Bhutan' 'Monggar' 'distributer' 835 5 1 1826044 list([])]
+275,retailer,91326,['Mayotte' 'Unknown' 'customer end' 846 1 7 1601112 list([])]
+276,retailer,14803,['Bermuda' 'Unknown' 'vendor' 747 5 3 1890234 list([])]
+277,retailer,84290,['Cook Islands' 'Unknown' 'abroad' 445 2 3 1534951 list([])]
+278,retailer,61174,['Finland' 'Etelä-Karjala' 'vendor' 888 3 5 183016 list([])]
+279,retailer,28898,['Liberia' 'Margibi' 'vendor' 880 1 5 1168243 list([])]
+280,retailer,64571,"['Uganda' 'Ntungamo' 'vendor' 832 2 6 1104319
+ list(['Advanced Electronics'])]"
+281,retailer,63898,['Fiji' 'Rotuma' 'abroad' 703 4 9 1607287 list([])]
+282,retailer,16322,['Mayotte' 'Unknown' 'abroad' 864 3 7 1533329 list([])]
 283,retailer,23228,"['Botswana' 'Ghanzi' 'distributer' 961 4 7 1771606
- {'Paper, Forest Products & Packaging'}]"
-284,retailer,49119,['Qatar' 'Ash Shamāl' 'distributer' 943 1 9 181658 set()]
-285,retailer,14114,['Paraguay' 'Misiones' 'customer end' 215 5 1 1000569 set()]
+ list(['Paper, Forest Products & Packaging'])]"
+284,retailer,49119,['Qatar' 'Ash Shamāl' 'distributer' 943 1 9 181658 list([])]
+285,retailer,14114,['Paraguay' 'Misiones' 'customer end' 215 5 1 1000569 list([])]
 286,retailer,53319,"['Bonaire, Sint Eustatius and Saba' 'Bonaire' 'vendor' 974 5 9 1992674
- set()]"
-287,retailer,14965,['Algeria' 'Djelfa' 'vendor' 800 2 4 1323070 {'Financial Services'}]
+ list([])]"
+287,retailer,14965,['Algeria' 'Djelfa' 'vendor' 800 2 4 1323070 list(['Financial Services'])]
 288,retailer,11854,"['Slovenia' 'Štore' 'abroad' 144 4 3 131631
- {'Private Equity & Principal Investors'}]"
-289,retailer,63788,['Namibia' 'Kunene' 'customer end' 358 4 8 1898070 set()]
+ list(['Private Equity & Principal Investors'])]"
+289,retailer,63788,['Namibia' 'Kunene' 'customer end' 358 4 8 1898070 list([])]
 290,retailer,40164,"['Guadeloupe' 'Unknown' 'abroad' 651 2 1 309772
- {'Aerospace & Defense', 'Semiconductors'}]"
-291,retailer,45657,['Guinea' 'Lola' 'customer end' 609 4 5 861244 set()]
-292,retailer,78323,['Maldives' 'South Miladhunmadulu' 'distributer' 473 5 7 527164 set()]
-293,retailer,38623,['El Salvador' 'La Libertad' 'abroad' 849 4 1 1286511 set()]
-294,retailer,76954,['Montenegro' 'Rožaje' 'distributer' 191 5 3 309798 set()]
+ list(['Semiconductors', 'Aerospace & Defense'])]"
+291,retailer,45657,['Guinea' 'Lola' 'customer end' 609 4 5 861244 list([])]
+292,retailer,78323,['Maldives' 'South Miladhunmadulu' 'distributer' 473 5 7 527164 list([])]
+293,retailer,38623,['El Salvador' 'La Libertad' 'abroad' 849 4 1 1286511 list([])]
+294,retailer,76954,['Montenegro' 'Rožaje' 'distributer' 191 5 3 309798 list([])]
 295,retailer,86308,"['Ukraine' 'Chernihivska oblast' 'vendor' 987 4 8 1316087
- {'Financial Services'}]"
-296,retailer,18464,['Haiti' 'Grandans' 'customer end' 295 2 5 1686073 set()]
+ list(['Financial Services'])]"
+296,retailer,18464,['Haiti' 'Grandans' 'customer end' 295 2 5 1686073 list([])]
 297,retailer,57039,"[""Lao People's Democratic Republic"" 'Viangchan' 'vendor' 450 2 7 1019346
- set()]"
-298,retailer,33250,['South Sudan' 'Lakes' 'customer end' 318 4 6 716050 set()]
-299,retailer,21789,['Cyprus' 'Ammochostos' 'distributer' 907 3 5 284423 set()]
+ list([])]"
+298,retailer,33250,['South Sudan' 'Lakes' 'customer end' 318 4 6 716050 list([])]
+299,retailer,21789,['Cyprus' 'Ammochostos' 'distributer' 907 3 5 284423 list([])]
 300,supplier,34258,"['Taylor PLC' ""Lao People's Democratic Republic"" 'Viangchan' 'Dollars'
  'Financial Services' 446 465.22 5565 48 597000000000.0]"
 301,supplier,40868,"['Sorrentino SPA' 'Mozambique' 'Gaza' 'Dollars' 'Real Estate' 533 8881.74
