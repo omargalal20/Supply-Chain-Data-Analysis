@@ -446,7 +446,7 @@ class nodes_edges_dfs:
         except AttributeError:
                 self.toCoordinates = (0.0, 0.0)
 
-    def calaculateDistance(self):
+    def calculateDistanceBetweenSupplierAndWarehouse(self):
         self.distance= geodesic(self.fromCoordinates,self.toCoordinates).km
         return self.distance
 
@@ -476,8 +476,7 @@ class nodes_edges_dfs:
                 return row["Weight"]
 
             return 0
-        
-        print("*********FINAL************")
+
         self.edges_df_edges_as_nodes["Weight"] = self.edges_df_edges_as_nodes.apply(lambda row : calculateWeight(row),axis = 1)
 
     def __calculateNewValueWarehouse(self, x, columnName):
@@ -490,13 +489,20 @@ class nodes_edges_dfs:
             return NewValue
                     
         return 0
+    
+    def warehousesOfProducts(self,prodId):
+        for _, row in self.edges_df_edges_as_nodes.iterrows():
+            product_node_index = row['To']
+            warehouse_node_index = row['From']
+            if prodId == product_node_index:
+                return warehouse_node_index
 
     def __add_manufacturing_relation_to_dfs(self):
         manufacturing_df = self.All_dfs["manufacturing"]
         manufacturing_columns = list(self.All_dfs["manufacturing"].columns)
         factory_id_index = manufacturing_columns.index("Factory_id")
         product_id_index = manufacturing_columns.index("Product_id")
-        supplier_df= pd.DataFrame(columns=['From', 'To', 'From_Table', 'To_Table', 'Weight', 'Distance','Edge_Name'])
+        supplier_df= pd.DataFrame(columns=['From', 'To', 'From_Table', 'To_Table', 'Weight', 'Distance', 'Edge_Name'])
 
         # for _, manufacturing_row in manufacturing_df.iterrows():
         dfNumpy =  manufacturing_df.to_numpy()
@@ -517,7 +523,7 @@ class nodes_edges_dfs:
 
             self.warehouseSupplierFromCoordinates(ware_house_city_name,ware_house_country_name)
             self.warehouseSupplierToCoordinates(supplier_city_name,supplier_country_name)
-            self.calaculateDistance()
+            self.calculateDistanceBetweenSupplierAndWarehouse()
 
             # #supplier -> products
             new_supplier_edge_row = [
@@ -529,22 +535,15 @@ class nodes_edges_dfs:
             self.edges_df_edges_as_nodes = pd.concat([self.edges_df_edges_as_nodes, suppliertmp], ignore_index=True)
             supplier_df= pd.concat([supplier_df,suppliertmp],ignore_index=True)
 
-            self.edges_df_edges_as_nodes.loc[self.edges_df_edges_as_nodes["From"]==warehouse_node_index,"Distance"]=self.calaculateDistance()
+            self.edges_df_edges_as_nodes.loc[self.edges_df_edges_as_nodes["From"]==warehouse_node_index,"Distance"]=self.calculateDistanceBetweenSupplierAndWarehouse()
 
         self.edges_df_edges_as_nodes["Distance"] = self.edges_df_edges_as_nodes["Distance"].apply(lambda x: self.__calculateNewValueWarehouse(x, "Distance"))
 
         self.__calculateFinalWeightForWarehouseSupplier()
 
-        self.edges_df_edges_as_nodes.to_csv("edges.csv")
+        # self.edges_df_edges_as_nodes.to_csv("edges.csv")
         print('Finish Manufacturing')
 
-    
-    def warehousesOfProducts(self,prodId):
-        for r, row in self.edges_df_edges_as_nodes.iterrows():
-            product_node_index = row['To']
-            warehouse_node_index = row['From']
-            if prodId == product_node_index:
-                return warehouse_node_index
 
     def __add_internal_orders_to_dfs(self):
         ss_internal_orders_df = self.All_dfs["ssintorders"]

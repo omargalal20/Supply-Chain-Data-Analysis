@@ -3,14 +3,12 @@ import pandas as pd
 import random
 import numpy as np
 from functools import reduce
-import geopy.geocoders
-
-from nodes_edges_df import nodes_edges_dfs
+import spacy
+from CheckSynonymForColumns import ConvertColumnsUsingSynonym
 
 class ReadingDataSet:
 
     def __init__(self):
-        # self.path = path
         self.All_dfs = {}
         self.createDataframes()
         self.removeNans()
@@ -26,11 +24,15 @@ class ReadingDataSet:
     def createDataframes(self):
         path_of_the_directory = './DataSet/'
         ext = ('.csv')
+        nlp = spacy.load('en_core_web_md')
         for file in os.listdir(path_of_the_directory):
             if file.endswith(ext):
                 # print(file) 
                 temp = (file.replace("_"," ").replace("."," ").split(" ")[0].lower())
                 self.All_dfs[temp] = pd.read_csv(path_of_the_directory+file)
+                # Adjust Naming Convention For Columns
+                convertNaming = ConvertColumnsUsingSynonym(self.All_dfs, temp, nlp)
+                self.All_dfs[temp].columns = convertNaming.convertedColumn
             else:
                 continue
 
@@ -185,6 +187,4 @@ class ReadingDataSet:
         for i in range(len(z)):
             prod_id.append(self.All_dfs["manufacturing"]['Product_id'][z[i]])
         self.All_dfs['ssintorders'].insert(8,'prod_id',prod_id,True)
-
-
     
