@@ -1,3 +1,4 @@
+from warnings import catch_warnings
 from Neo4jGraph import Neo4jGraph
 from ReadingDataSet import ReadingDataSet
 from keys import keys
@@ -5,75 +6,108 @@ from InitializingNodesAndEdges import InitializeNodesAndEdges
 from nodes_edges_df import nodes_edges_dfs
 from GraphAnalysis import GraphAnalysis
 import pandas as pd
+from os.path import exists
+import pickle
 
-dataSet = ReadingDataSet()
-# Dictionary containing all dataframes
-All_dfs = dataSet.All_dfs
-print(f"Df Keys: {All_dfs.keys()}")
+if not exists("Pickle Files/nodes_df.pkl"):
 
-key = keys(All_dfs)
-# Dictionary indicating the column of each table that represents the primary key
-All_pks = key.primaryKeyGetter()
-print(f"Primary Keys: {All_pks}")
-print('-------------------------')
-# Dictionary indicating the column of each table that represents the foreign key and the referenced table name
-All_fks = key.foreignKeyGetter()
-print(f"Foreign Keys: {All_fks}")
-print('-------------------------')
-# Dictionary indicating which tables references the table
-All_ref_ins = key.ref_in
-print(f"Ref In Keys: {All_ref_ins}")
-print('-------------------------')
+    dataSet = ReadingDataSet()
+    # Dictionary containing all dataframes
+    All_dfs = dataSet.All_dfs
+    print(f"Df Keys: {All_dfs.keys()}")
 
-initializingNodesAndEdges = InitializeNodesAndEdges(All_dfs, All_fks)
-nodes = initializingNodesAndEdges.nodes
-print(f"Nodes: {nodes}")
-print('-------------------------')
-edges = initializingNodesAndEdges.edges
-print(f"Edges: {edges}")
-print('-------------------------')
-properties = initializingNodesAndEdges.properties
-print(f"Properties: {properties}")
-print('-------------------------')
+    key = keys(All_dfs)
+    # Dictionary indicating the column of each table that represents the primary key
+    All_pks = key.primaryKeyGetter()
+    print(f"Primary Keys: {All_pks}")
+    print('-------------------------')
+    # Dictionary indicating the column of each table that represents the foreign key and the referenced table name
+    All_fks = key.foreignKeyGetter()
+    print(f"Foreign Keys: {All_fks}")
+    print('-------------------------')
+    # Dictionary indicating which tables references the table
+    All_ref_ins = key.ref_in
+    print(f"Ref In Keys: {All_ref_ins}")
+    print('-------------------------')
 
-
-# True to output nodes table and edges table as a normal graph
-# False to output nodes table and edges table but edges are nodes
-initialize_nodes_edges_df = nodes_edges_dfs(nodes, edges, properties, All_pks, All_fks, All_ref_ins, All_dfs, True)
-
-nodesTable = initialize_nodes_edges_df.nodesTable
-print("Nodes Table: ")
-nodesTable.to_csv('nodesTable.csv')
-
-# print(nodesTable)
-print('-------------------------')
+    initializingNodesAndEdges = InitializeNodesAndEdges(All_dfs, All_fks)
+    nodes = initializingNodesAndEdges.nodes
+    print(f"Nodes: {nodes}")
+    with open("Pickle Files/nodes.pkl","wb") as f:
+        pickle.dump(nodes,f)
+    print('-------------------------')
+    edges = initializingNodesAndEdges.edges
+    with open("Pickle Files/edges.pkl","wb") as f:
+        pickle.dump(edges,f)
+    print(f"Edges: {edges}")
+    print('-------------------------')
+    properties = initializingNodesAndEdges.properties
+    print(f"Properties: {properties}")
+    with open("Pickle Files/properties.pkl","wb") as f:
+        pickle.dump(properties,f)
+    print('-------------------------')
 
 
-edgesTable = initialize_nodes_edges_df.edgesTable
-print("Edges Table: ")
-edgesTable.to_csv('edgesTable.csv')
-# print(edgesTable)
-print('-------------------------')
+    # True to output nodes table and edges table as a normal graph
+    # False to output nodes table and edges table but edges are nodes
+    initialize_nodes_edges_df = nodes_edges_dfs(nodes, edges, properties, All_pks, All_fks, All_ref_ins, All_dfs, True)
 
-initialize_nodes_edges_df = nodes_edges_dfs(nodes, edges, properties, All_pks, All_fks, All_ref_ins, All_dfs, False)
-
-nodes_df = initialize_nodes_edges_df.nodes_df_edges_as_nodes
-print("Nodes DF: ")
-nodes_df.to_csv('nodes_df.csv')
-print('-------------------------')
+    nodesTable = initialize_nodes_edges_df.nodesTable
+    print("Nodes Table: ")
+    nodesTable.to_csv('nodesTable.csv')
+    # print(nodesTable)
+    print('-------------------------')
 
 
-edges_df = initialize_nodes_edges_df.edges_df_edges_as_nodes
-print("Edges DF: ")
-print(edges_df)
-print('-------------------------')
+    edgesTable = initialize_nodes_edges_df.edgesTable
+    print("Edges Table: ")
+    edgesTable.to_csv('edgesTable.csv')
+    # print(edgesTable)
+    print('-------------------------')
+
+    initialize_nodes_edges_df = nodes_edges_dfs(nodes, edges, properties, All_pks, All_fks, All_ref_ins, All_dfs, False)
+
+    nodes_df = initialize_nodes_edges_df.nodes_df_edges_as_nodes
+    print("Nodes DF: ")
+    nodes_df.to_csv('nodes_df.csv')
+    print('-------------------------')
+
+
+    edges_df = initialize_nodes_edges_df.edges_df_edges_as_nodes
+    print("Edges DF: ")
+    edges_df.to_csv('edges_df.csv')
+    # print(edges_df)
+    print('-------------------------')
+
+    nodesTable.to_pickle("Pickle Files/nodesTable.pkl")
+    edgesTable.to_pickle("Pickle Files/edgesTable.pkl")
+    nodes_df.to_pickle("Pickle Files/nodes_df.pkl")
+    edges_df.to_pickle("Pickle Files/edges_df.pkl")
+
+else:
+    with open("Pickle Files/nodes.pkl","rb") as f:
+        nodes = pickle.load(f)
+    with open("Pickle Files/edges.pkl","rb") as f:
+        edges = pickle.load(f)
+    with open("Pickle Files/properties.pkl","rb") as f:
+        properties = pickle.load(f)
+    nodes_df = pd.read_pickle("Pickle Files/nodes_df.pkl")
+    edges_df = pd.read_pickle("Pickle Files/edges_df.pkl")
+    nodesTable = pd.read_pickle("Pickle Files/nodesTable.pkl")
+    edgesTable = pd.read_pickle("Pickle Files/edgesTable.pkl")
 
 myGraph = Neo4jGraph(nodes_df,edges_df)
-
 graphAnalysis = GraphAnalysis(myGraph,nodesTable,edgesTable)
 
-findAllPathsSet = {'targetNodeName': "" , 'cases': 0, 'graphName': "supplyChain",'relationship':"",'k':1,'TargetType':""}
-validaPathsSet = {'nodesNames':nodes,'edgesNames':edges,'nodesTable':nodesTable,"desiredType":"Paper, Forest Products & Packaging"}
+# try:
+
+
+#     findAllPathsSet = {'targetNodeName': "" , 'cases': 0, 'graphName': "supplyChain",'relationship':"",'k':1,'TargetType':""}
+#     validaPathsSet = {'nodesNames':nodes,'edgesNames':edges,'nodesTable':nodesTable,"desiredType":"Paper, Forest Products & Packaging"}
+# except  Exception as e: print(e)
+# finally:
+#     print("Terminating")
+#     myGraph.close()
 ##Supplier 65468
 # x = graphAnalysis.mainMethod("Supplier 65468",True,findAllPathsSet,validaPathsSet)
 # x.to_csv("lastcheck")

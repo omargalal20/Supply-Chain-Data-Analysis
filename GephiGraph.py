@@ -10,7 +10,7 @@ class GephiGraph:
         self.edges = set()
         self.properties = set()
     
-    def draw_graph_Gephi(self, nodes_table,edges_table, workSpaceName):
+    def draw_graph_Gephi(self, nodesTable, edgesTable, nodes_df, edges_df, workSpaceName):
         stream = streamer.Streamer(streamer.GephiWS(hostname="localhost",port=8080,workspace="trial1"))
 
         szfak = 100  # this scales up everything - somehow it is needed

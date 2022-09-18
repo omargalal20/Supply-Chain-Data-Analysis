@@ -28,7 +28,7 @@ class Neo4jGraph:
             self.__transaction_execution_commands = []
             self.__add_delete_statement()
             self.__add_nodes_statements()
-            self.__add_edges_statemnets()
+            self.__add_edges_statements()
             self.execute_transactions()
             # save the graph
             self.saveGraph(name, nodeList=['Customer', 'Products', 'Retailer', 'Supplier', 'Rcextship', 'Scextship',

@@ -378,10 +378,6 @@ class AddTransportationWeightsToEdges:
             try:
                 results = self.driver.find_element(By.XPATH, '//*[@id="panel"]/div[2]/ul')
                 resultsList = results.find_elements(By.TAG_NAME, 'li')
-                # print(countryFrom.split(',')[0])
-                # print(resultsList[0].find_elements(By.TAG_NAME, 'span')[0].get_attribute("innerHTML").split(','))
-                # print(countryTo.split(',')[0])
-                # print(resultsList[-1].find_elements(By.TAG_NAME, 'span')[0].get_attribute("innerHTML").split(','))
                 
                 if(((countryFrom.split(',')[0] in sum([html.unescape(x.lstrip(' ')).split(' ') for x in resultsList[0].find_elements(By.TAG_NAME, 'span')[0].get_attribute("innerHTML").split(',')], [])) or (countryFrom.split(',')[0] in sum([html.unescape(x.lstrip(' ')) for x in resultsList[0].find_elements(By.TAG_NAME, 'span')[0].get_attribute("innerHTML").split(',')], []))) or ((countryTo.split(',')[0] in sum([html.unescape(x.lstrip(' ')).split(' ') for x in resultsList[-1].find_elements(By.TAG_NAME, 'span')[0].get_attribute("innerHTML").split(',')], [])) or (countryTo.split(',')[0] in sum([html.unescape(x.lstrip(' ')) for x in resultsList[-1].find_elements(By.TAG_NAME, 'span')[0].get_attribute("innerHTML").split(',')], [])))):
                     break
@@ -395,7 +391,6 @@ class AddTransportationWeightsToEdges:
                         break
                 except:
                     results = 'No Path'
-                    # print(results)
                     break
     
         totalDuration = 0
@@ -429,9 +424,8 @@ class AddTransportationWeightsToEdges:
             # print('------------------')
             self.toName = resultsList[-1].find_elements(By.TAG_NAME, 'span')[0].get_attribute('innerHTML')   
     
-    # Tried Geopy to calculate only distances between two countries, but only returned distance
+    # Tried Geopy to calculate only distances between two countries, but only returned distance and duration was needed
     def calculateCoordinatesForFromGeoPy(self):
-        # print(f"Class From Row {self.fromNode['Attributes']}".encode('utf-8'))
         try:
             if ("city_name" in self.fromNode['Attributes']):
                 if(self.fromNode['Attributes']['city_name'] == 'Unknown'):
@@ -452,7 +446,6 @@ class AddTransportationWeightsToEdges:
                 self.fromCoordinates = (0.0, 0.0)
             
     def calculateCoordinatesForToGeoPy(self):
-        # print(f"Class To Row {self.toNode['Attributes']}".encode('utf-8'))
         try:
             if ("city_name" in self.toNode['Attributes']):
                 if(self.toNode['Attributes']['city_name'] == 'Unknown'):
@@ -473,9 +466,6 @@ class AddTransportationWeightsToEdges:
                 self.toCoordinates = (0.0, 0.0)
     
     def calculateDistanceGeoPy(self):
-        # print(f"From Coordinates are {self.fromCoordinates}".encode('utf-8'))
-        # print(f"To Coordinates are {self.toCoordinates}".encode('utf-8'))
-        # print(f"Distance is {self.distance}".encode('utf-8'))
         self.distance = geodesic(self.fromCoordinates, self.toCoordinates).miles
         
     # Tried SeaRates Api, which returns distance and duration but needed to subscribe to a paid plan
