@@ -4,7 +4,6 @@ from keys import keys
 from InitializingNodesAndEdges import InitializeNodesAndEdges
 from nodes_edges_df import nodes_edges_dfs
 from GraphAnalysis import GraphAnalysis
-import pandas as pd
 
 dataSet = ReadingDataSet()
 # Dictionary containing all dataframes
@@ -65,12 +64,12 @@ print("Edges DF: ")
 print(edges_df)
 print('-------------------------')
 
-myGraph = Neo4jGraph(nodes_df,edges_df)
+# myGraph = Neo4jGraph(nodes_df,edges_df)
 
-graphAnalysis = GraphAnalysis(myGraph,nodesTable,edgesTable)
+# graphAnalysis = GraphAnalysis(myGraph,nodesTable,edgesTable)
 
-findAllPathsSet = {'targetNodeName': "" , 'cases': 0, 'graphName': "supplyChain",'relationship':"",'k':1,'TargetType':""}
-validaPathsSet = {'nodesNames':nodes,'edgesNames':edges,'nodesTable':nodesTable,"desiredType":"Paper, Forest Products & Packaging"}
+# findAllPathsSet = {'targetNodeName': "" , 'cases': 0, 'graphName': "supplyChain",'relationship':"",'k':1,'TargetType':""}
+# validaPathsSet = {'nodesNames':nodes,'edgesNames':edges,'nodesTable':nodesTable,"desiredType":"Paper, Forest Products & Packaging"}
 ##Supplier 65468
 # x = graphAnalysis.mainMethod("Supplier 65468",True,findAllPathsSet,validaPathsSet)
 # x.to_csv("lastcheck")
