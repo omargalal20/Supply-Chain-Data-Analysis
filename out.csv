@@ -1,0 +1,5 @@
+,index,sourceNodeName,targetNodeName,totalCost,isDirect,costs,nodeNames
+0,0,Supplier 65468,Supplier 48580,185.0,True,"[0.0, 100.0, 185.0]","['Supplier 65468', 'Ssintship 10007', 'Supplier 48580']"
+1,1,Supplier 65468,Supplier 48580,454.5,False,"[0.0, 100.0, 170.0, 227.25, 269.5, 369.5, 454.5]","['Supplier 65468', 'Ssintship 10249', 'Supplier 16265', 'Ssintship 10256', 'Supplier 51293', 'Ssintship 10006', 'Supplier 48580']"
+2,2,Supplier 65468,Supplier 48580,555.0,False,"[0.0, 100.0, 185.0, 285.0, 370.0, 470.0, 555.0]","['Supplier 65468', 'Ssintship 10023', 'Supplier 87695', 'Ssintship 10040', 'Supplier 82144', 'Ssintship 10444', 'Supplier 48580']"
+3,3,Supplier 65468,Supplier 48580,624.5,False,"[0.0, 100.0, 170.0, 270.0, 340.0, 397.25, 439.5, 539.5, 624.5]","['Supplier 65468', 'Ssintship 10227', 'Supplier 87916', 'Ssintship 10248', 'Supplier 16265', 'Ssintship 10256', 'Supplier 51293', 'Ssintship 10006', 'Supplier 48580']"
