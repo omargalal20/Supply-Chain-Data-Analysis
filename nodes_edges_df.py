@@ -67,7 +67,7 @@ class nodes_edges_dfs:
                 nodesTB = pd.concat([nodesTB, tmp], ignore_index=True)
         return nodesTB
 
-    # 
+    #
     def __convert_prop(self, edge_key, pk_value):
         for referenced_table_name in self.ref_in[edge_key]:
             referenced_table = self.All_dfs[referenced_table_name]
@@ -142,7 +142,7 @@ class nodes_edges_dfs:
             to_id = row['To']
 
             # attribute_from= pd.Series( mynodes.loc[from_id]['Attributes'])
-            attribute_to = pd.Series(mynodes.loc[to_id]['Attributes'], dtype=pd.DataFrame)
+            attribute_to = pd.Series(mynodes.loc[to_id]['Attributes'],dtype=object)
 
             if not attribute_to.empty:
                 intersectto_sup = set(attribute_to.index).intersection(costs_sup)
@@ -167,21 +167,21 @@ class nodes_edges_dfs:
                             myedges.loc[index, 'Weight'] = myedges.loc[
                                                                index, 'Weight'] - 5 if val >= avg_AnuualSales else \
                             myedges.loc[index, 'Weight'] - 10
-                        if ind == 'market_share (%)':
+                        elif ind == 'market_share (%)':
                             myedges.loc[index, 'market_share (%)'] = val
                             myedges.loc[index, 'Weight'] = myedges.loc[
                                                                index, 'Weight'] - 5 if val >= avg_MarketShare else \
                             myedges.loc[index, 'Weight'] - 20
-                        if ind == 'price':
+                        elif ind == 'price':
                             myedges.loc[index, 'price'] = val
                             myedges.loc[index, 'Weight'] = myedges.loc[index, 'Weight'] - 30 if val >= avg_price else \
                             myedges.loc[index, 'Weight'] - 50
-                        if ind == 'profit_margin (%)':
+                        elif ind == 'profit_margin (%)':
                             myedges.loc[index, 'profit_margin (%)'] = val
                             myedges.loc[index, 'Weight'] = myedges.loc[
                                                                index, 'Weight'] - 15 if val >= avg_ProfitMargin else \
                             myedges.loc[index, 'Weight'] - 30
-                        if ind == 'Rental price':
+                        elif ind == 'Rental price':
                             myedges.loc[index, 'Rental price'] = val
                             myedges.loc[index, 'Weight'] = myedges.loc[
                                                                index, 'Weight'] - 40 if val >= avg_RentalPrice else \
@@ -389,10 +389,9 @@ class nodes_edges_dfs:
 
     # Method to add the dataframes that are determined as properties to the nodes dataframe
     def __add_properties_to_dfs(self):
-        print("STARTING WITH PROPERTIES")
         for property_name in self.properties:
             # print(property_name)
-            print("Property: ", property_name)
+
             property_df = self.All_dfs[property_name]
 
             foreign_keys = list(self.fk[property_name].keys())
@@ -404,7 +403,6 @@ class nodes_edges_dfs:
 
             # for index, _ in property_df.iterrows():
             dfNumpy = property_df.to_numpy()
-            print("starting.....")
             for index in range(dfNumpy.shape[0]):
                 att = {}
                 reference_id = None
@@ -453,7 +451,6 @@ class nodes_edges_dfs:
                                               'Edge_Name': "Related_To"}]
                     tmp = pd.DataFrame(new_property_edge_row)
                     self.edges_df_edges_as_nodes = pd.concat([self.edges_df_edges_as_nodes, tmp], ignore_index=True)
-            print("End")
         print('Finish Properties Method')
 
     # Method to relate the products to the suppliers that produce a certain product
@@ -551,8 +548,8 @@ class nodes_edges_dfs:
             supplier_country_name = self.nodes_df_edges_as_nodes.iloc[supplier_node_index]['Attributes']['country']
             supplier_city_name = self.nodes_df_edges_as_nodes.iloc[supplier_node_index]['Attributes']['city_name']
 
-            self.warehouseSupplierFromCoordinates(ware_house_city_name, ware_house_country_name)
-            self.warehouseSupplierToCoordinates(supplier_city_name, supplier_country_name)
+            self.warehouseSupplierFromCoordinates(ware_house_city_name,ware_house_country_name)
+            self.warehouseSupplierToCoordinates(supplier_city_name,supplier_country_name)
             self.calaculateDistance()
 
             # #supplier -> products
@@ -565,9 +562,9 @@ class nodes_edges_dfs:
             self.edges_df_edges_as_nodes = pd.concat([self.edges_df_edges_as_nodes, suppliertmp], ignore_index=True)
             supplier_df = pd.concat([supplier_df, suppliertmp], ignore_index=True)
 
+            # self.edges_df_edges_as_nodes.loc[self.edges_df_edges_as_nodes["From"]==warehouse_node_index,"Distance"]=self.calaculateDistance()
             self.edges_df_edges_as_nodes.loc[
-                self.edges_df_edges_as_nodes["From"] == warehouse_node_index, "Distance"] = self.calaculateDistance()
-
+                self.edges_df_edges_as_nodes["From"] == warehouse_node_index, "Distance"] = 100000
         self.edges_df_edges_as_nodes["Distance"] = self.edges_df_edges_as_nodes["Distance"].apply(
             lambda x: self.__calculateNewValueWarehouse(x, "Distance"))
 
@@ -629,3 +626,7 @@ class nodes_edges_dfs:
             tmp = pd.DataFrame(new_to_edge_row)
             self.edges_df_edges_as_nodes = pd.concat([self.edges_df_edges_as_nodes, tmp], ignore_index=True)
         print('Finish Internal Orders')
+
+
+
+

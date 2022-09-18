@@ -41,6 +41,39 @@ class ReadingDataSet:
         for table_nm in self.All_dfs:
             table = self.All_dfs[table_nm]
             for column_name in table.columns:
+                column =  table[column_name]
+                if column.dtype=='O' and isinstance(column[0],str):
+                    if  (isinstance(column[0],str) and column.apply(lambda x: (str(x).startswith('[') and str(x).endswith(']'))
+                                or 
+                                (str(x).startswith('(') and str(x).endswith(')'))).agg(self.and_agg)):
+                        print(table_nm,column_name)
+
+                        s = column.apply(lambda x: x.strip("[](,)").split(','))
+                        if (s[0][0].isdigit()):
+                            
+                            new_s = pd.Series(dtype=object)                
+                            for index,item in s.iteritems():
+                                new_item = []
+                                for element in item:
+                                    new_item.append(np.int64(element))
+                                new_s.at[index] = new_item
+                            s=new_s
+
+                        else:
+                            new_s = pd.Series(dtype=object)                
+                            for index,item in s.iteritems():
+                                new_item = []
+                                for element in item:
+                                    new_item.append(element.strip().strip('"').strip("'").strip())
+                                new_s.at[index] = new_item
+                            s=new_s
+
+                        self.All_dfs[table_nm][column_name] = s
+                
+
+        for table_nm in self.All_dfs:
+            table = self.All_dfs[table_nm]
+            for column_name in table.columns:
                 column = table[column_name]
                 if column.dtype == 'O' and isinstance(column[0], str):
                     if (isinstance(column[0], str) and column.apply(

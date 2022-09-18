@@ -1,3 +1,4 @@
+
 from Neo4jGraph import Neo4jGraph
 from ReadingDataSet import ReadingDataSet
 from keys import keys
@@ -5,72 +6,90 @@ from InitializingNodesAndEdges import InitializeNodesAndEdges
 from nodes_edges_df import nodes_edges_dfs
 from GraphAnalysis import GraphAnalysis
 import pandas as pd
-
-dataSet = ReadingDataSet()
-# Dictionary containing all dataframes
-All_dfs = dataSet.All_dfs
-print(f"Df Keys: {All_dfs}")
-
-key = keys(All_dfs)
-# Dictionary indicating the column of each table that represents the primary key
-All_pks = key.primaryKeyGetter()
-print(f"Primary Keys: {All_pks}")
-print('-------------------------')
-# Dictionary indicating the column of each table that represents the foreign key and the referenced table name
-All_fks = key.foreignKeyGetter()
-print(f"Foreign Keys: {All_fks}")
-print('-------------------------')
-# Dictionary indicating which tables references the table 
-All_ref_ins = key.ref_in
-print(f"Ref In Keys: {All_ref_ins}")
-print('-------------------------')
-
-initializingNodesAndEdges = InitializeNodesAndEdges(All_dfs, All_fks)
-nodes = initializingNodesAndEdges.nodes
-print(f"Nodes: {nodes}")
-print('-------------------------')
-edges = initializingNodesAndEdges.edges
-print(f"Edges: {edges}")
-print('-------------------------')
-properties = initializingNodesAndEdges.properties
-print(f"Properties: {properties}")
-print('-------------------------')
+from os.path import exists
 
 
-# True to output nodes table and edges table as a normal graph
-# False to output nodes table and edges table but edges are nodes
-initialize_nodes_edges_df = nodes_edges_dfs(nodes, edges, properties, All_pks, All_fks, All_ref_ins, All_dfs, True)
-
-nodesTable = initialize_nodes_edges_df.nodesTable
-print("Nodes Table: ")
-nodesTable.to_csv('CSV Files/nodesTable.csv')
-
-# print(nodesTable)
-print('-------------------------')
 
 
-edgesTable = initialize_nodes_edges_df.edgesTable
-print("Edges Table: ")
-edgesTable.to_csv('CSV Files/edgesTable.csv')
-# print(edgesTable)
-print('-------------------------')
+if not exists("Pickle Files/nodes_df.pkl"):
+    dataSet = ReadingDataSet()
+    # Dictionary containing all dataframes
+    All_dfs = dataSet.All_dfs
+    print(f"Df Keys: {All_dfs}")
 
-initialize_nodes_edges_df = nodes_edges_dfs(nodes, edges, properties, All_pks, All_fks, All_ref_ins, All_dfs, False)
+    key = keys(All_dfs)
+    # Dictionary indicating the column of each table that represents the primary key
+    All_pks = key.primaryKeyGetter()
+    print(f"Primary Keys: {All_pks}")
+    print('-------------------------')
+    # Dictionary indicating the column of each table that represents the foreign key and the referenced table name
+    All_fks = key.foreignKeyGetter()
+    print(f"Foreign Keys: {All_fks}")
+    print('-------------------------')
+    # Dictionary indicating which tables references the table 
+    All_ref_ins = key.ref_in
+    print(f"Ref In Keys: {All_ref_ins}")
+    print('-------------------------')
 
-nodes_df = initialize_nodes_edges_df.nodes_df_edges_as_nodes
-print("Nodes DF: ")
-nodes_df.to_csv('CSV Files/nodes_df.csv')
-print('-------------------------')
+    initializingNodesAndEdges = InitializeNodesAndEdges(All_dfs, All_fks)
+    nodes = initializingNodesAndEdges.nodes
+    print(f"Nodes: {nodes}")
+    print('-------------------------')
+    edges = initializingNodesAndEdges.edges
+    print(f"Edges: {edges}")
+    print('-------------------------')
+    properties = initializingNodesAndEdges.properties
+    print(f"Properties: {properties}")
+    print('-------------------------')
 
 
-edges_df = initialize_nodes_edges_df.edges_df_edges_as_nodes
-print("Edges DF: ")
-edges_df.to_csv('CSV Files/edges_df.csv')
-print('-------------------------')
+    # True to output nodes table and edges table as a normal graph
+    # False to output nodes table and edges table but edges are nodes
+    initialize_nodes_edges_df = nodes_edges_dfs(nodes, edges, properties, All_pks, All_fks, All_ref_ins, All_dfs, True)
 
-myGraph = Neo4jGraph(nodes_df,edges_df)
-myGraph.draw_graph("supplyChain")
+    nodesTable = initialize_nodes_edges_df.nodesTable
+    print("Nodes Table: ")
+    # nodesTable.to_csv('CSV Files/nodesTable.csv')
+    # print(nodesTable)
+    print('-------------------------')
 
+
+    edgesTable = initialize_nodes_edges_df.edgesTable
+    print("Edges Table: ")
+    # edgesTable.to_csv('CSV Files/edgesTable.csv')
+
+    # print(edgesTable)
+    print('-------------------------')
+
+    initialize_nodes_edges_df = nodes_edges_dfs(nodes, edges, properties, All_pks, All_fks, All_ref_ins, All_dfs, False)
+
+    nodes_df = initialize_nodes_edges_df.nodes_df_edges_as_nodes
+    print("Nodes DF: ")
+    # nodes_df.to_csv('CSV Files/nodes_df.csv')
+    print('-------------------------')
+
+
+    edges_df = initialize_nodes_edges_df.edges_df_edges_as_nodes
+    print("Edges DF: ")
+    # edges_df.to_csv('CSV Files/edges_df.csv')
+    print('-------------------------')
+
+
+    nodesTable.to_pickle("Pickle Files/nodesTable.pkl")
+    edgesTable.to_pickle("Pickle Files/edgesTable.pkl")
+    nodes_df.to_pickle("Pickle Files/nodes_df.pkl")
+    edges_df.to_pickle("Pickle Files/edges_df.pkl")
+
+else:
+    nodes_df = pd.read_pickle("Pickle Files/nodes_df.pkl")
+    edges_df = pd.read_pickle("Pickle Files/edges_df.pkl")
+    nodesTable = pd.read_pickle("Pickle Files/nodesTable.pkl")
+    edgesTable = pd.read_pickle("Pickle Files/edgesTable.pkl")
+try:
+    myGraph = Neo4jGraph(nodes_df,edges_df)
+    myGraph.draw_graph("supplyChain")
+finally:
+    myGraph.close()
 # graphAnalysis = GraphAnalysis(nodes_df,edges_df,nodesTable,edgesTable)
 #
 #

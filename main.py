@@ -69,45 +69,52 @@ print(edges_df)
 print('-------------------------')
 
 myGraph = Neo4jGraph(nodes_df,edges_df)
+
 graphAnalysis = GraphAnalysis(myGraph,nodesTable,edgesTable)
 
-##myGraph.draw_graph("Supply")
+findAllPathsSet = {'targetNodeName': "" , 'cases': 0, 'graphName': "supplyChain",'relationship':"",'k':1,'TargetType':""}
+validaPathsSet = {'nodesNames':nodes,'edgesNames':edges,'nodesTable':nodesTable,"desiredType":"Paper, Forest Products & Packaging"}
+##Supplier 65468
+# x = graphAnalysis.mainMethod("Supplier 65468",True,findAllPathsSet,validaPathsSet)
+# x.to_csv("lastcheck")
+
+#myGraph.draw_graph("supplyChain")
 
 #graphAnalysis.findAllPathsViseVerse('Retailer','Retailer 83982','Supplier','Chemicals',nodesTable,'supplyChain',nodes,edges)
 
 ##graphAnalysis.findAllPathsViseVerse(SourceLabel='Customer',SourceNodeName='Customer 48071',TargetLabel='Supplier',nodesTable=nodesTable,graphName='SupplyChain',nodeNames=nodes,edgesNames=edges,TargetType='Chemicals')
 
-x = ['Supplier 20226', 'Ssintship 10465', 'Supplier 30864', 'Ssintship 10482', 'Supplier 18952', 'Ssintship 10173', 'Supplier 13951', 'Ssintship 10350', 'Supplier 21232', 'Internaltransactions 9683', 'Supplier 78265', 'Ssintship 10290']
-y = ['Supplier 20226', 'Ssintship 10465', 'Supplier 30864', 'Ssintship 10482', 'Supplier 18952', 'Ssintship 10173', 'Supplier 13951', 'Ssintship 10350', 'Supplier 21232', 'srintorders 9683', 'Supplier 78265', 'Ssintship 10290']
-z = ['Supplier 20226', 'Ssintship 10113', 'Supplier 54148']
-m = ['Supplier 20226', 'Ssintship 10206', 'Supplier 68814']
-o = ['Supplier 20226', 'Ssintship 10206', 'srintorders 9683','Supplier 68814']
-t = ['Supplier 20226', 'Ssintship 10206', 'Supplier 68814','Ssintship 10482','Supplier 68814' ]
-temp = pd.DataFrame()
-final = pd.DataFrame()
-tmp = pd.DataFrame({'index': [1,2,3,4,5,6],
-                    'sourceNodeName': ["Supplier 20226","Supplier 20226","Supplier 20226","Supplier 20226","Supplier 20226","Supplier 20226"],
-                    'targetNodeName': ["Ssintship 10290","Ssintship 10291","Supplier 54148",'Supplier 68814','Supplier 68814','Supplier 68814'],
-                    'totalCost': [20,21,44,55,66,99]})
+# x = ['Supplier 20226', 'Ssintship 10465', 'Supplier 30864', 'Ssintship 10482', 'Supplier 18952', 'Ssintship 10173', 'Supplier 13951', 'Ssintship 10350', 'Supplier 21232', 'Internaltransactions 9683', 'Supplier 78265', 'Ssintship 10290']
+# y = ['Supplier 20226', 'Ssintship 10465', 'Supplier 30864', 'Ssintship 10482', 'Supplier 18952', 'Ssintship 10173', 'Supplier 13951', 'Ssintship 10350', 'Supplier 21232', 'srintorders 9683', 'Supplier 78265', 'Ssintship 10290']
+# z = ['Supplier 20226', 'Ssintship 10113', 'Supplier 54148']
+# m = ['Supplier 20226', 'Ssintship 10206', 'Supplier 68814']
+# o = ['Supplier 20226', 'Ssintship 10206', 'srintorders 9683','Supplier 68814']
+# t = ['Supplier 20226', 'Ssintship 10206', 'Supplier 68814','Ssintship 10482','Supplier 68814' ]
+# temp = pd.DataFrame()
+# final = pd.DataFrame()
+# tmp = pd.DataFrame({'index': [1,2,3,4,5,6],
+#                     'sourceNodeName': ["Supplier 20226","Supplier 20226","Supplier 20226","Supplier 20226","Supplier 20226","Supplier 20226"],
+#                     'targetNodeName': ["Ssintship 10290","Ssintship 10291","Supplier 54148",'Supplier 68814','Supplier 68814','Supplier 68814'],
+#                     'totalCost': [20,21,44,55,66,99]})
 
-costs_df = pd.DataFrame({'costs': [[1,2,3,4],[1,2,3,4],[1,2,3,4],[1,2,3,4],[1,2,3,4],[1,2,3,4]]})
-result = pd.merge(
-                 tmp,
-                 costs_df,
-                 how='left',
-                 left_index=True, 
-                 right_index=True 
-                 )
+# costs_df = pd.DataFrame({'costs': [[1,2,3,4],[1,2,3,4],[1,2,3,4],[1,2,3,4],[1,2,3,4],[1,2,3,4]]})
+# result = pd.merge(
+#                  tmp,
+#                  costs_df,
+#                  how='left',
+#                  left_index=True, 
+#                  right_index=True 
+#                  )
           
-nodeNames_df = pd.DataFrame({'nodeNames': [x,y,z,m,o,t]})
-temp = pd.merge(
-                result,
-                nodeNames_df,
-                how='left',
-                left_index=True, 
-                right_index=True 
-            )
-final = pd.concat([final,temp], ignore_index=True)
+# nodeNames_df = pd.DataFrame({'nodeNames': [x,y,z,m,o,t]})
+# temp = pd.merge(
+#                 result,
+#                 nodeNames_df,
+#                 how='left',
+#                 left_index=True, 
+#                 right_index=True 
+#             )
+# final = pd.concat([final,temp], ignore_index=True)
 
 
 #graphAnalysis.lastCheckOnPath(dataFrameOfPaths=final,nodeTables=nodesTable)
@@ -116,9 +123,9 @@ final = pd.concat([final,temp], ignore_index=True)
 #print(myGraph.allExistingGraphs)
 
 #print("---------------Case 0-------------------")
-#output = graphAnalysis.findAllPaths(sourceNodeName="Supplier 11790",sourceLabel="Supplier",cases=0,graphName="supplyChain")
-
-
+# output = graphAnalysis.findAllPaths(sourceNodeName="Supplier 65468",cases=0,graphName="supplyChain")
+# out = graphAnalysis.validatePath(paths=output,sourceNodeName="Supplier 65468",nodeNames=nodes,edgesNames=edges,nodesTable=nodesTable,theDesiredType="Paper, Forest Products & Packaging")
+# out.to_csv("result.csv")
 #print(type(nodesTable))
 #nodesTable[(nodesTable.Label == "Supplier")&(nodesTable.ID == 34967)]
 #print(output)
@@ -126,12 +133,12 @@ final = pd.concat([final,temp], ignore_index=True)
 #x = graphAnalysis.targetNodeValidation(paths=xp,sourceNodeName="Supplier 20226",nodeNames=nodes)
 #graphAnalysis.validatePath(output,"Supplier 11790",nodes,edges)
 #print("---------------Case 1-------------------")
-output = graphAnalysis.findAllPaths(sourceNodeName="Supplier 65468",sourceLabel="Supplier",cases=1,graphName="supplyChain",k=4,targetNodeName="Customer 10613",targetLabel="Customer")
-out = graphAnalysis.validatePath(paths=output,sourceNodeName="Supplier 65468",nodeNames=nodes,edgesNames=edges)
-out.to_csv("out.csv")
-result = graphAnalysis.lastCheckOnPath(out,nodesTable,'Chemicals')
-result.to_csv("trail4.csv")
-##graphAnalysis.lastCheckOnPath(dataFrameOfPaths=out,nodeTables=nodesTable,theDesiredType="Financial Services")
+# output = graphAnalysis.findAllPaths(sourceNodeName="Supplier 65468",sourceLabel="Supplier",cases=1,graphName="supplyChain",k=4,targetNodeName="Supplier 48580",targetLabel="Supplier")
+# out = graphAnalysis.validatePath(paths=output,sourceNodeName="Supplier 65468",nodeNames=nodes,edgesNames=edges)
+# out.to_csv("out.csv")
+# result = graphAnalysis.lastCheckOnPath(out,nodesTable,'Paper, Forest Products & Packaging')
+# result.to_csv("trail5.csv")
+#graphAnalysis.lastCheckOnPath(dataFrameOfPaths=out,nodeTables=nodesTable,theDesiredType="Financial Services")
 #print(graphAnalysis.targetNodeValidation(paths=output,sourceNodeName="Retailer 83982",nodeNames=nodes,targetNodeName="Customer 31548"))
 #print("---------------Case2-------------------")
 #print(graphAnalysis.findAllPaths(sourceNodeName="Supplier 34967",sourceLabel="Supplier",cases=2,graphName="supplyChain",targetNodeName="Supplier 14125",targetLabel="Supplier"))
