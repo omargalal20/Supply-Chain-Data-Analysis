@@ -2,7 +2,6 @@ from queue import Empty
 import pandas as pd
 from neo4j import GraphDatabase
 
-
 class GraphAnalysis:
 
 
@@ -30,6 +29,7 @@ class GraphAnalysis:
             paths = self.findAllPaths(sourceNodeName=sourceNodeName,cases=cases,graphName=graphName,relationShip=relationship,k=k,targetNodeName=targetNodeName)
         else:
             paths = self.findAllPathsViseVerse(sourceNodeName=sourceNodeName,nodesTable=nodesTable,graphName=graphName,nodeNames=nodesName,edgesNames=edgesName,k=k,TargetType=targetType)
+        print(paths)
         if paths.empty :
             print("there are no paths to be validated")
             return
@@ -46,6 +46,7 @@ class GraphAnalysis:
 
         # check if the graph already exists in the database or not
         if(self.myGraph.ExistingGraph(graphName) == False):
+            print(self.myGraph.allExistingGraphs)
             print("Graph doesn't exist in the database")
             return
         executedStatment ="" # the statment that will be sent to neo4ji
@@ -206,9 +207,8 @@ class GraphAnalysis:
     def filterType(self,filteredTable,desiredType):
         temp = filteredTable
         for node in range(len(filteredTable)):
-            # if the node is retailer, its attributes will be a set
-            if type(list(temp["Attributes"].loc[node])[4]) == set:
-            ## if type(list(temp["Attributes"].loc[node])[4]) == list: "ahmed merge"
+            # if the node is retailer, its attributes will be a list
+            if type(list(temp["Attributes"].loc[node])[4]) == list:
                 # search if the desired type isn't in the set of attributes
                 if desiredType not in (list(temp["Attributes"].loc[node])[4]):
                     # drop it
@@ -364,8 +364,8 @@ class GraphAnalysis:
             nodeType = self.getType(isDirect,nodesTable)
             
             # check if the node is retailer
-            if(type(nodeType) == set):
-        # if(type(nodeType) == list) after merging with ahmed
+            #if(type(nodeType) == set):
+            if(type(nodeType) == list):
                 # if the retailer has the same type of the desired
                 if(theDesiredType in nodeType):
                     # check the type of first supplier connected to the retailer 

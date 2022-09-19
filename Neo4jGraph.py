@@ -1,6 +1,19 @@
 from lib2to3.pgen2 import driver
+
+import pandas as pd
 from neo4j import GraphDatabase
 from neo4j import unit_of_work
+
+def do_cypher_tx(tx, cypher):
+    result = tx.run(cypher)
+    values = []
+    for record in result:
+        values.append(dict(record))
+        print("here")
+        print("______________________________________________________________")
+        print(dict(record)["graphName"])
+        print(record.values())
+    return values
 
 
 class Neo4jGraph:
@@ -18,7 +31,8 @@ class Neo4jGraph:
 
         self.deleteSpecificNode = {}
 
-        self.allExistingGraphs = ["supplychain"]
+        self.allExistingGraphs = self.getGraphs()
+
 
     ## draw and save graph if graph name doesn't exist in the database else print error
     def build_database(self):
@@ -46,17 +60,19 @@ class Neo4jGraph:
             print("Graph Already Exists")
 
     ## get all graphs names in the DB and save it in array (global variable)  return array
-    # def getGraphs(self):
-    #     # send the graph list command
-    #     stat = "CALL gds.graph.list()"
-    #     graphs = self.execute_Command(stat)
-    #     temp = []
-    #     # loop on the graphs and convert it to dictionary and add it to the array
-    #     for graph in graphs:
-    #         x = dict(graph)
-    #         temp.append(x['graphName'])
-    #     # return the array of all graphs exists in the database
-    #     return temp
+    def getGraphs(self):
+        # send the graph list command
+        stat = "CALL gds.graph.list()"
+        graphs = self.execute_Command(stat)
+        temp = []
+        # loop on the graphs and convert it to dictionary and add it to the array
+        for graph in graphs:
+            x = dict(graph)
+            temp.append(x['graphName'])
+
+        # return the array of all graphs exists in the database
+        print(temp)
+        return temp
 
 
     def close(self):
@@ -64,18 +80,31 @@ class Neo4jGraph:
 
     ## excute command function
     def execute_Command(self, command,write=False):
-        # data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "123"))
+        data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "123"))
         # data_base_connection = GraphDatabase.driver(uri="bolt://127.0.0.1:7687", auth=("neo4j", "123"))
         # session = data_base_connection.session()
-            with self.__driver.session() as session:
-                # output = session.run(command)
-                if write:
-                    output = session.execute_write(self.run_command_and_return_output,command)
-                    sess
-                else:
-                    output = session.execute_read(self.run_command_and_return_output,command)
-                print("------------executed-----------------")
-                return output
+        # with data_base_connection.session() as session:
+        #     output = session.run(command)
+        #     # # output = pd.DataFrame()
+        #     # # if write:
+        #     # #     output = session.write_transaction(do_cypher_tx,command)
+        #     # # else:
+        #     # #     output = session.read_transaction(do_cypher_tx,command)
+        #     # # print(output)
+        #     # for graph in output:
+        #     #     y=dict(graph)
+        #     #     print(y['graphName'])
+
+        #     # print("------------executed-----------------")
+        #     return output
+            # return pd.DataFrame(output)
+        x = self.__driver.session().read_transaction(do_cypher_tx,command)
+        print("****************************")
+        print(x)
+        for y in x:
+            print(x.values())
+        return x
+        
     ## get output of run:
     def run_command_and_return_output(self,tx,command):
         result = tx.run(command)
@@ -125,7 +154,7 @@ class Neo4jGraph:
         from neo4j import GraphDatabase
         with self.__driver.session() as session:
             for command in self.__transaction_execution_commands:
-                session.execute_write(lambda tx: tx.run(command))
+                session.write_transaction(self.run_command_and_return_output,command)
 
             print("------------executed-----------------")
 
@@ -188,7 +217,5 @@ class Neo4jGraph:
         create_statement = "CREATE (a) - [r:%s { weight: %f , Transportation_Cost: %f , Transportation_Distance: %f , Transportation_Duration: %f , Transportation_Type: '%s' , Rental_price: %i, product_price: %f , profit_margin: %f , market_share: %i, Annual_sales:%f }]->(b)" % (
         rel_name, weight, Transportation_Cost, Transportation_Distance, Transportation_Duration, Transportation_Type,
         Rental_price, price, profit_margin, market_share, Annual_sales)
-        print("-------statment---------")
-        print(create_statement)
         create_relation_statement = match_statement + create_statement
         return create_relation_statement
