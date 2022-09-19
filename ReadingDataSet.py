@@ -1,13 +1,10 @@
 import os
-import time
-
 import pandas as pd
 import random
 import numpy as np
 from functools import reduce
 import spacy
 from CheckSynonymForColumns import ConvertColumnsUsingSynonym
-
 
 class ReadingDataSet:
 

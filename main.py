@@ -1,4 +1,3 @@
-from warnings import catch_warnings
 from Neo4jGraph import Neo4jGraph
 from ReadingDataSet import ReadingDataSet
 from keys import keys
