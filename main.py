@@ -95,21 +95,17 @@ else:
     edges_df = pd.read_pickle("Pickle Files/edges_df.pkl")
     nodesTable = pd.read_pickle("Pickle Files/nodesTable.pkl")
     edgesTable = pd.read_pickle("Pickle Files/edgesTable.pkl")
-myGraph = Neo4jGraph(nodes_df,edges_df)
+   
 try:
     print("beginning")
-    # myGraph = Neo4jGraph(nodes_df,edges_df)
-    myGraph.draw_graph("supplyChain1")
-
-    # x=  myGraph.execute_Command('CALL gds.graph.list()')
-    # for graph in x:
-    #     y=dict(graph)
-    #     print(y['graphName'])
-    # graphAnalysis = GraphAnalysis(myGraph,nodesTable,edgesTable)
-    # findAllPathsSet = {'targetNodeName': "" , 'cases': 0, 'graphName': "supplyChain1",'relationship':"",'k':1,'TargetType':""}
-    # validaPathsSet = {'nodesNames':nodes,'edgesNames':edges,'nodesTable':nodesTable,"desiredType":"Education"}
-    # x = graphAnalysis.mainMethod('Supplier 68814',True,findAllPathsSet,validaPathsSet)
-    # x.to_csv('./CSV Files/result.csv')
+    myGraph = Neo4jGraph(nodes_df,edges_df)
+    myGraph.populate_database()
+    #myGraph.draw_graph("supplyChain4")
+    graphAnalysis = GraphAnalysis(myGraph,nodesTable,edgesTable)
+    findAllPathsSet = {'targetNodeName': "Supplier 48580" , 'cases': 1, 'graphName': "supplyChain1",'relationship':"",'k':4,'TargetType':""}
+    validaPathsSet = {'nodesNames':nodes,'edgesNames':edges,'nodesTable':nodesTable,"desiredType":"Chemicals"}
+    x = graphAnalysis.mainMethod('Supplier 65468',True,findAllPathsSet,validaPathsSet)
+    x.to_csv('./CSV Files/result.csv')
 except  Exception as e: print(e)
 finally:
     print("Terminating")
@@ -175,7 +171,7 @@ finally:
 #x = graphAnalysis.targetNodeValidation(paths=xp,sourceNodeName="Supplier 20226",nodeNames=nodes)
 #graphAnalysis.validatePath(output,"Supplier 11790",nodes,edges)
 #print("---------------Case 1-------------------")
-# output = graphAnalysis.findAllPaths(sourceNodeName="Supplier 65468",sourceLabel="Supplier",cases=1,graphName="supplyChain",k=4,targetNodeName="Supplier 48580",targetLabel="Supplier")
+#tput = graphAnalysis.findAllPaths(sourceNodeName="Supplier 65468",cases=1,graphName="supplyChain",k=4,targetNodeName="Supplier 48580",targetLabel="Supplier")
 # out = graphAnalysis.validatePath(paths=output,sourceNodeName="Supplier 65468",nodeNames=nodes,edgesNames=edges)
 # out.to_csv("out.csv")
 # result = graphAnalysis.lastCheckOnPath(out,nodesTable,'Paper, Forest Products & Packaging')
@@ -183,7 +179,7 @@ finally:
 #graphAnalysis.lastCheckOnPath(dataFrameOfPaths=out,nodeTables=nodesTable,theDesiredType="Financial Services")
 #print(graphAnalysis.targetNodeValidation(paths=output,sourceNodeName="Retailer 83982",nodeNames=nodes,targetNodeName="Customer 31548"))
 #print("---------------Case2-------------------")
-#print(graphAnalysis.findAllPaths(sourceNodeName="Supplier 34967",sourceLabel="Supplier",cases=2,graphName="supplyChain",targetNodeName="Supplier 14125",targetLabel="Supplier"))
+#print(graphAnalysis.findAllPaths(sourceNodeName="Supplier 34967",cases=2,graphName="supplyChain",targetNodeName="Supplier 14125",targetLabel="Supplier"))
 #output = myGraph.trail(label="Warehouses",id=8750,nodeID="warehouses 8750")
 #print(output)
 #print(myGraph.getGraphs())
