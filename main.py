@@ -98,9 +98,10 @@ else:
 try:
     print("beginning")
     myGraph = Neo4jGraph(nodes_df,edges_df)
-    #myGraph.draw_graph("supplyChain")
+    # myGraph.populate_database()
+    #myGraph.draw_graph("supplyChain4")
     graphAnalysis = GraphAnalysis(myGraph,nodesTable,edgesTable)
-    findAllPathsSet = {'targetNodeName': "Supplier 48580" , 'cases': 1, 'graphName': "supplyChain",'relationship':"",'k':4,'TargetType':""}
+    findAllPathsSet = {'targetNodeName': "Supplier 48580" , 'cases': 1, 'graphName': "supplyChain1",'relationship':"",'k':4,'TargetType':""}
     validaPathsSet = {'nodesNames':nodes,'edgesNames':edges,'nodesTable':nodesTable,"desiredType":"Chemicals"}
     x = graphAnalysis.mainMethod('Supplier 65468',True,findAllPathsSet,validaPathsSet)
     x.to_csv('./CSV Files/result.csv')
