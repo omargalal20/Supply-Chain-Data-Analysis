@@ -1,0 +1,2 @@
+,index,sourceNodeName,targetNodeName,totalCost,isDirect,costs,nodeNames
+0,0,Supplier 65468,Supplier 48580,185.0,True,"[0.0, 100.0, 185.0]","['Supplier 65468', 'Ssintship 10007', 'Supplier 48580']"

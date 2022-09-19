@@ -18,7 +18,7 @@ class Neo4jGraph:
 
         self.deleteSpecificNode = {}
 
-        self.allExistingGraphs = []
+        self.allExistingGraphs = self.getGraphs()
 
     ## draw and save graph if graph name doesn't exist in the database else print error
     def build_database(self):
@@ -46,17 +46,19 @@ class Neo4jGraph:
             print("Graph Already Exists")
 
     ## get all graphs names in the DB and save it in array (global variable)  return array
-    # def getGraphs(self):
-    #     # send the graph list command
-    #     stat = "CALL gds.graph.list()"
-    #     graphs = self.execute_Command(stat)
-    #     temp = []
-    #     # loop on the graphs and convert it to dictionary and add it to the array
-    #     for graph in graphs:
-    #         x = dict(graph)
-    #         temp.append(x['graphName'])
-    #     # return the array of all graphs exists in the database
-    #     return temp
+    def getGraphs(self):
+        # send the graph list command
+        stat = "CALL gds.graph.list()"
+        print(stat)
+        graphs = self.execute_Command(stat)
+        temp = []
+        # loop on the graphs and convert it to dictionary and add it to the array
+        for graph in graphs:
+            x = dict(graph)
+            temp.append(x['graphName'])
+        # return the array of all graphs exists in the database
+        print(temp)
+        return temp
 
 
     def close(self):
@@ -64,17 +66,9 @@ class Neo4jGraph:
 
     ## excute command function
     def execute_Command(self, command,write=False):
-        # data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "123"))
-        # data_base_connection = GraphDatabase.driver(uri="bolt://127.0.0.1:7687", auth=("neo4j", "123"))
-        # session = data_base_connection.session()
-            with self.__driver.session() as session:
-                # output = session.run(command)
-                if write:
-                    output = session.write_transaction(self.run_command_and_return_output,command)
-                else:
-                    output = session.read_transaction(self.run_command_and_return_output,command)
-                print("------------executed-----------------")
-                return output
+            output = self.__driver.session().run(command)
+            print("------------executed-----------------")
+            return output
     ## get output of run:
     def run_command_and_return_output(self,tx,command):
         result = tx.run(command)

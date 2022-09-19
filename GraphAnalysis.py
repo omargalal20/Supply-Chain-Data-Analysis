@@ -46,7 +46,6 @@ class GraphAnalysis:
 
         # check if the graph already exists in the database or not
         if(self.myGraph.ExistingGraph(graphName) == False):
-            print(self.myGraph.allExistingGraphs)
             print("Graph doesn't exist in the database")
             return
         executedStatment ="" # the statment that will be sent to neo4ji
@@ -74,7 +73,7 @@ class GraphAnalysis:
                 ''' % (sourceLabel,sourceNodeName,graphName,relationShip )
             # if the relationship isn't given
             else:
-               
+                print("norelation")
                 executedStatment = '''
                 MATCH (source:%s {name:'%s'} )
                 CALL gds.allShortestPaths.dijkstra.stream('%s', {
@@ -173,8 +172,11 @@ class GraphAnalysis:
         print("----------------CASE EXCUTION----------------")
         # execute the command and returns the dataframe with the paths returned from neo4ji
         # dataFrameOutPut = self.execute_Command(executedStatment)
-        neo4j_output = self.myGraph.execute_Command(executedStatment)
-        dataFrameOutPut = self.returnPaths(neo4j_output)
+        #neo4j_output = self.myGraph.execute_Command(executedStatment)
+        dataFrameOutPut = self.execute_Command(executedStatment)
+        #dataFrameOutPut = self.returnPaths(neo4j_output)
+        print("dataFrame")
+        print(dataFrameOutPut)
         print("-------------------done--------------")
         return dataFrameOutPut
 
@@ -274,6 +276,8 @@ class GraphAnalysis:
                 right_index=True 
             )
             final = pd.concat([final,temp], ignore_index=True)
+        print("finalllll")
+        print(final)
         return final
     
     ## validate paths and return the final approved paths
