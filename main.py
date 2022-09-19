@@ -1,4 +1,5 @@
 from warnings import catch_warnings
+from CriticalNodeTask import CriticalNodeTask
 from Neo4jGraph import Neo4jGraph
 from ReadingDataSet import ReadingDataSet
 from keys import keys
@@ -102,10 +103,16 @@ try:
     # myGraph.populate_database()
     #myGraph.draw_graph("supplyChain4")
     graphAnalysis = GraphAnalysis(myGraph,nodesTable,edgesTable)
+    criticalNodeTask = CriticalNodeTask(myGraph,nodes)
+    x = criticalNodeTask.getCriticalNodes('supplyChain')
+    print("---------------------------------------------")
+    x = criticalNodeTask.getCriticalNodes('supplyChain','undirected')
+    z = criticalNodeTask.criticalNodesRespectToGraph(x)
+    z.to_csv("./CSV Files/nodesFilter.csv")
     findAllPathsSet = {'targetNodeName': "Supplier 48580" , 'cases': 1, 'graphName': "supplyChain",'relationship':"",'k':4,'TargetType':""}
     validaPathsSet = {'nodesNames':nodes,'edgesNames':edges,'nodesTable':nodesTable,"desiredType":"Chemicals"}
-    x = graphAnalysis.mainMethod('Supplier 65468',True,findAllPathsSet,validaPathsSet)
-    x.to_csv('./CSV Files/result.csv')
+    # x = graphAnalysis.mainMethod('Supplier 65468',True,findAllPathsSet,validaPathsSet)
+    # x.to_csv('./CSV Files/result.csv')
 except  Exception as e: print(e)
 finally:
     print("Terminating")
