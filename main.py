@@ -8,7 +8,7 @@ import pandas as pd
 from os.path import exists
 import pickle
 
-if not exists("Pickle Files/nodes_df.pkl"):
+if exists("Pickle Files/nodes_df.pkl"):
 
     dataSet = ReadingDataSet()
     # Dictionary containing all dataframes
@@ -95,20 +95,20 @@ else:
     nodesTable = pd.read_pickle("Pickle Files/nodesTable.pkl")
     edgesTable = pd.read_pickle("Pickle Files/edgesTable.pkl")
    
-try:
-    print("beginning")
-    myGraph = Neo4jGraph(nodes_df,edges_df)
-    # myGraph.populate_database()
-    #myGraph.draw_graph("supplyChain4")
-    graphAnalysis = GraphAnalysis(myGraph,nodesTable,edgesTable)
-    findAllPathsSet = {'targetNodeName': "Supplier 48580" , 'cases': 1, 'graphName': "supplyChain1",'relationship':"",'k':4,'TargetType':""}
-    validaPathsSet = {'nodesNames':nodes,'edgesNames':edges,'nodesTable':nodesTable,"desiredType":"Chemicals"}
-    x = graphAnalysis.mainMethod('Supplier 65468',True,findAllPathsSet,validaPathsSet)
-    x.to_csv('./CSV Files/result.csv')
-except  Exception as e: print(e)
-finally:
-    print("Terminating")
-    myGraph.close()
+# try:
+#     print("beginning")
+#     myGraph = Neo4jGraph(nodes_df,edges_df)
+#     # myGraph.populate_database()
+#     #myGraph.draw_graph("supplyChain4")
+#     graphAnalysis = GraphAnalysis(myGraph,nodesTable,edgesTable)
+#     findAllPathsSet = {'targetNodeName': "Supplier 48580" , 'cases': 1, 'graphName': "supplyChain1",'relationship':"",'k':4,'TargetType':""}
+#     validaPathsSet = {'nodesNames':nodes,'edgesNames':edges,'nodesTable':nodesTable,"desiredType":"Chemicals"}
+#     x = graphAnalysis.mainMethod('Supplier 65468',True,findAllPathsSet,validaPathsSet)
+#     x.to_csv('./CSV Files/result.csv')
+# except  Exception as e: print(e)
+# finally:
+#     print("Terminating")
+#     myGraph.close()
 
     
 ##Supplier 65468
