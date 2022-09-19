@@ -96,11 +96,14 @@ else:
     edgesTable = pd.read_pickle("Pickle Files/edgesTable.pkl")
 
 try:
+    print("beginning")
     myGraph = Neo4jGraph(nodes_df,edges_df)
-    myGraph.draw_graph("supplyChain")
+    myGraph.draw_graph("supplyChain1")
     graphAnalysis = GraphAnalysis(myGraph,nodesTable,edgesTable)
-    findAllPathsSet = {'targetNodeName': "" , 'cases': 0, 'graphName': "supplyChain",'relationship':"",'k':1,'TargetType':""}
-    validaPathsSet = {'nodesNames':nodes,'edgesNames':edges,'nodesTable':nodesTable,"desiredType":"Paper, Forest Products & Packaging"}
+    findAllPathsSet = {'targetNodeName': "" , 'cases': 0, 'graphName': "supplyChain1",'relationship':"",'k':1,'TargetType':""}
+    validaPathsSet = {'nodesNames':nodes,'edgesNames':edges,'nodesTable':nodesTable,"desiredType":"Education"}
+    x = graphAnalysis.mainMethod('Supplier 68814',True,findAllPathsSet,validaPathsSet)
+    x.to_csv('./CSV Files/result.csv')
 except  Exception as e: print(e)
 finally:
     print("Terminating")

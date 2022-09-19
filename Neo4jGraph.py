@@ -70,9 +70,9 @@ class Neo4jGraph:
             with self.__driver.session() as session:
                 # output = session.run(command)
                 if write:
-                    output = session.execute_write(self.run_command_and_return_output,command)
+                    output = session.write_transaction(self.run_command_and_return_output,command)
                 else:
-                    output = session.execute_read(self.run_command_and_return_output,command)
+                    output = session.read_transaction(self.run_command_and_return_output,command)
                 print("------------executed-----------------")
                 return output
     ## get output of run:
@@ -124,7 +124,7 @@ class Neo4jGraph:
         from neo4j import GraphDatabase
         with self.__driver.session() as session:
             for command in self.__transaction_execution_commands:
-                session.execute_write(lambda tx: tx.run(command))
+                session.write_transaction(lambda tx: tx.run(command))
 
             print("------------executed-----------------")
 
@@ -187,7 +187,5 @@ class Neo4jGraph:
         create_statement = "CREATE (a) - [r:%s { weight: %f , Transportation_Cost: %f , Transportation_Distance: %f , Transportation_Duration: %f , Transportation_Type: '%s' , Rental_price: %i, product_price: %f , profit_margin: %f , market_share: %i, Annual_sales:%f }]->(b)" % (
         rel_name, weight, Transportation_Cost, Transportation_Distance, Transportation_Duration, Transportation_Type,
         Rental_price, price, profit_margin, market_share, Annual_sales)
-        print("-------statment---------")
-        print(create_statement)
         create_relation_statement = match_statement + create_statement
         return create_relation_statement
