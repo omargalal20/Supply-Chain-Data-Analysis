@@ -424,37 +424,3 @@ class GraphAnalysis:
                     listOfAttributes.insert(4,RetailerTypes)
                     nodesTable.loc[node]['Attributes'] = listOfAttributes    
        # nodesTable.to_csv("nodesTable.csv")
-
-
-
-  
-                
-                
-                        
-
-        
-
-
-        
-
-
-
-                    
-
-                
-
-            
-
-
-
-
-
-
-
-        
-
-                        
-
-
-
-
