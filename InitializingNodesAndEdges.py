@@ -10,7 +10,7 @@ class InitializeNodesAndEdges:
         self.nodes_edges(fk)
 
     def convert_using_naming(self):
-        nodesNames = ('supplier', 'customer',  'retailer','service providers', 'distributors', 'sales channels', 'consumers', 'producers', 'vendors', 'transportation', 'wholesaler', 'distribution center', 'warehouses')
+        nodesNames = ('supplier', 'customer',  'retailer', 'service providers', 'distributors', 'sales channels', 'consumers', 'producers', 'vendors', 'transportation', 'wholesaler', 'distribution center', 'warehouses')
 
         for name in list(self.All_dfs.keys()):
             lowerCasedName = name.lower()

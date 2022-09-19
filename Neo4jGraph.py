@@ -1,12 +1,16 @@
+from lib2to3.pgen2 import driver
 from neo4j import GraphDatabase
+from neo4j import unit_of_work
+
+
 class Neo4jGraph:
 
     def __init__(self, nodes_df, edges_df):
 
         self.__DBusername = "neo4j"
-        self.__DBpassword = "password"
+        self.__DBpassword = "123"
         self.__DBuri = "bolt://localhost:7687"
-
+        self.__driver = GraphDatabase.driver(uri=self.__DBuri, auth=(self.__DBusername, self.__DBpassword))
         self.nodes_df = nodes_df
         self.edges_df = edges_df
 
@@ -14,30 +18,34 @@ class Neo4jGraph:
 
         self.deleteSpecificNode = {}
 
-        self.allExistingGraphs = ["supplyChain"]
+        self.allExistingGraphs = []
 
     ## draw and save graph if graph name doesn't exist in the database else print error
-    def draw_graph(self,name):
+    def build_database(self):
+        pass
+
+    def draw_graph(self, name):
         # check if the graph name doesn't exists in the database
-        if(self.ExistingGraph(name)==False):
+        if (self.ExistingGraph(name) == False):
             # draw the graph
             self.__transaction_execution_commands = []
             self.__add_delete_statement()
             self.__add_nodes_statements()
-            self.__add_edges_statemnts()
+            self.__add_edges_statements()
             self.execute_transactions()
             # save the graph
-            self.saveGraph(name,nodeList=['Customer','Products','Retailer','Supplier','Rcextship','Scextship','Srintship','Ssintship','Facilities','Warehouses','Rcextorders',
-            'Scextorders','Srintorders','Ssintorders','Externalservices','Internalservices','Externaltransactions','Internaltransactions'],
-            edgeList=['Order','rcextship','scextship','srintship','ssintship','Related_To',
-            'Manufactures','Orders_Prodcut','externaltransactions','internaltransactions'])
+            self.saveGraph(name, nodeList=['Customer', 'Products', 'Retailer', 'Supplier', 'Rcextship', 'Scextship',
+                                           'Srintship', 'Ssintship', 'Facilities', 'Warehouses', 'Rcextorders',
+                                           'Scextorders', 'Srintorders', 'Ssintorders', 'Externalservices',
+                                           'Internalservices', 'Externaltransactions', 'Internaltransactions'],
+                           edgeList=['Order', 'rcextship', 'scextship', 'srintship', 'ssintship', 'Related_To',
+                                     'Manufactures', 'Orders_Prodcut', 'externaltransactions', 'internaltransactions'])
             print(self.allExistingGraphs)
         # if the graph exists, nothing happens
         else:
             print("Graph Already Exists")
-                   
 
-    ## get all graphs names in the DB and save it in array (global variable)  return array        
+    ## get all graphs names in the DB and save it in array (global variable)  return array
     # def getGraphs(self):
     #     # send the graph list command
     #     stat = "CALL gds.graph.list()"
@@ -50,34 +58,45 @@ class Neo4jGraph:
     #     # return the array of all graphs exists in the database
     #     return temp
 
-      ## excute command function
-    def execute_Command(self,command):
-        data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "123"))
-        #data_base_connection = GraphDatabase.driver(uri="bolt://127.0.0.1:7687", auth=("neo4j", "123"))
-        #session = data_base_connection.session()
-        with data_base_connection.session() as session:
-            output = session.run(command)
-        print("------------executed-----------------")
-        return output
 
+    def close(self):
+        self.__driver.close()
+
+    ## excute command function
+    def execute_Command(self, command,write=False):
+        # data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "123"))
+        # data_base_connection = GraphDatabase.driver(uri="bolt://127.0.0.1:7687", auth=("neo4j", "123"))
+        # session = data_base_connection.session()
+            with self.__driver.session() as session:
+                # output = session.run(command)
+                if write:
+                    output = session.execute_write(self.run_command_and_return_output,command)
+                else:
+                    output = session.execute_read(self.run_command_and_return_output,command)
+                print("------------executed-----------------")
+                return output
+    ## get output of run:
+    def run_command_and_return_output(self,tx,command):
+        result = tx.run(command)
+        return result
     ## delete the node "for future works"
-    def deleteNode(self,label,id,nodeID):
+    def deleteNode(self, label, id, nodeID):
         print("-----------Beginning --------------")
-        print(label,id,nodeID)
-        deleteNodeStatement = f"MATCH (a:{label} " + "{"+ f"ID: {id}" + "}) DELETE a" 
+        print(label, id, nodeID)
+        deleteNodeStatement = f"MATCH (a:{label} " + "{" + f"ID: {id}" + "}) DELETE a"
         print("------------Statment----------------")
         print(deleteNodeStatement)
         print("-----------Create DIC --------------")
         self.deletedNode = [{
-            id:{
-                'Label':label,
+            id: {
+                'Label': label,
             }
         }]
         self.execute_Command(deleteNodeStatement)
         return self.deletedNode
-    
+
     ## save graph and add its name in the array of graph names (the global variable)
-    def saveGraph(self,name,nodeList,edgeList):
+    def saveGraph(self, name, nodeList, edgeList):
         saveStatment = '''
         CALL gds.graph.project(
         '%s',
@@ -88,27 +107,29 @@ class Neo4jGraph:
         })
         YIELD
         graphName AS graph, nodeProjection, nodeCount AS nodes, relationshipCount AS rels
-        ''' %(name,nodeList,edgeList)
+        ''' % (name, nodeList, edgeList)
         print("----------------GRAPH SAVINGGGG----------------")
         self.execute_Command(saveStatment)
         self.allExistingGraphs.append(name)
         print("----------------GRAPH SAVED----------------")
-        
+
     ## check if the graphname gived as an input already exists or not
-    def ExistingGraph(self,name):
+    def ExistingGraph(self, name):
         for n in self.allExistingGraphs:
-            if(n == name):
+            if (n == name):
                 return True
         return False
 
     def execute_transactions(self):
         from neo4j import GraphDatabase
-        data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "123"))
-        #data_base_connection = GraphDatabase.driver(uri="bolt://127.0.0.1:7687", auth=("neo4j", "123"))
-        #data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "password"))
-        session = data_base_connection.session()
-        for command in self.__transaction_execution_commands:
-            session.run(command)
+        with self.__driver.session() as session:
+            for command in self.__transaction_execution_commands:
+                session.execute_write(lambda tx: tx.run(command))
+
+            print("------------executed-----------------")
+
+
+
 
     def __add_delete_statement(self):
         delete_statement = "match (n) detach delete n"
@@ -141,7 +162,7 @@ class Neo4jGraph:
                 value) + ","
         return attributes_string[:-1]
 
-    def __add_edges_statemnts(self):
+    def __add_edges_statements(self):
         for i, edge in self.edges_df.iterrows():
             create_relation_statement = self.__relation_create_statement(edge)
             self.__transaction_execution_commands.append(create_relation_statement)
@@ -163,7 +184,9 @@ class Neo4jGraph:
         market_share = edge['market_share (%)']
         Annual_sales = edge['Annual_sales']
         match_statement = f"Match (a:{from_name}),(b:{to_name}) WHERE a.index ={from_id} AND b.index = {to_id} "
-        create_statement = "CREATE (a) - [r:%s { weight: %f , Transportation_Cost: %f , Transportation_Distance: %f , Transportation_Duration: %f , Transportation_Type: '%s' , Rental_price: %i, product_price: %f , profit_margin: %f , market_share: %i, Annual_sales:%f }]->(b)" % (rel_name,weight,Transportation_Cost,Transportation_Distance,Transportation_Duration,Transportation_Type,Rental_price,price,profit_margin,market_share,Annual_sales)
+        create_statement = "CREATE (a) - [r:%s { weight: %f , Transportation_Cost: %f , Transportation_Distance: %f , Transportation_Duration: %f , Transportation_Type: '%s' , Rental_price: %i, product_price: %f , profit_margin: %f , market_share: %i, Annual_sales:%f }]->(b)" % (
+        rel_name, weight, Transportation_Cost, Transportation_Distance, Transportation_Duration, Transportation_Type,
+        Rental_price, price, profit_margin, market_share, Annual_sales)
         print("-------statment---------")
         print(create_statement)
         create_relation_statement = match_statement + create_statement

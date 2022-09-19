@@ -7,7 +7,7 @@ class GraphAnalysis:
     def __init__(self,myGraph,nodesTable,edgesTable):
         self.myGraph = myGraph
         self.pathsWithCorrectTargetNodes = set()
-        self.addColumnToRetailer(nodesTable,edgesTable)
+        # self.addColumnToRetailer(nodesTable,edgesTable)
     # takes the attributes below and returns the final dataframe which has the validated paths
         ## sourceNodeName --- represents source node
         ## whichMethod --- if true, findAllPaths used; otherwise, findAllPathsViseVerse used
@@ -169,7 +169,9 @@ class GraphAnalysis:
                 ''' % (sourceLabel,sourceNodeName,targetLabel,targetNodeName,graphName) 
         print("----------------CASE EXCUTION----------------")
         # execute the command and returns the dataframe with the paths returned from neo4ji
-        dataFrameOutPut = self.execute_Command(executedStatment)
+        # dataFrameOutPut = self.execute_Command(executedStatment)
+        neo4j_output = self.myGraph.execute_Command(executedStatment)
+        dataFrameOutPut = self.returnPaths(neo4j_output)
         print("-------------------done--------------")
         return dataFrameOutPut
 
@@ -217,7 +219,6 @@ class GraphAnalysis:
 
     # takes the command and send it to neo4ji, converts neo4ji output to dataframe and returns it
     def execute_Command(self,command):
-        from neo4j import GraphDatabase
         data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "123"))
         #data_base_connection = GraphDatabase.driver(uri="bolt://127.0.0.1:7687", auth=("neo4j", "123"))
         #session = data_base_connection.session()
@@ -316,7 +317,6 @@ class GraphAnalysis:
         validUntilNow = False
         # loop over the paths 
         for path in range(len(pathsWithCorrectTargetNodes)):
-
             # loop over the path and check if the path moving from node -> edge -> node -> edge
             for element in  range(len(nodeNamesColumn[path])-1):
                 previousNode = (((nodeNamesColumn[path])[element]).split(" ")[0]).lower()
@@ -399,28 +399,62 @@ class GraphAnalysis:
         return nodeType    
 
     # add type attribute to retailer, the type based on the types of suppliers connected to the retailer
-    def addColumnToRetailer(self,nodesTable,edgesTable):
-        for node in range(len(nodesTable)):
-            if(nodesTable.loc[node]['Label'] == 'retailer'):
-                RetailerTypes = set()
-                ### all nodes that is connected to the retailer with node as ID
-                whatisConnectedToRetailer = edgesTable[(edgesTable.To_Node_ID == node)].reset_index(drop=True)
-                if(whatisConnectedToRetailer.empty):
-                    continue
-                ## loop on the all node connected to retailer to get the suppliers connected to retailer
-                for edge in range(len(whatisConnectedToRetailer)):
-                    ## From_Node_ID 
-                    idConnectedtoRetailer = whatisConnectedToRetailer.loc[edge]['From_Node_ID']
-                    ## check if From_Node_ID is supplier
-                    if nodesTable.loc[idConnectedtoRetailer]['Label'] == 'supplier':
-                        ## list of attributes of supplier connected to the retailer
-                        AttributesOfSupplier = list(nodesTable.loc[idConnectedtoRetailer]['Attributes'])
-                        ## type of supplier that is connected to the retailer
-                        typeOfSupplier = AttributesOfSupplier[4]
-                        RetailerTypes.add(typeOfSupplier)
-                if(len(RetailerTypes) != 0):
-                    ## adding column
-                    listOfAttributes = list(nodesTable.loc[node]['Attributes'])
-                    listOfAttributes.insert(4,RetailerTypes)
-                    nodesTable.loc[node]['Attributes'] = listOfAttributes    
-       # nodesTable.to_csv("nodesTable.csv")
+    # def addColumnToRetailer(self,nodesTable,edgesTable):
+    #     for node in range(len(nodesTable)):
+    #         if(nodesTable.loc[node]['Label'] == 'retailer'):
+    #             RetailerTypes = set()
+    #             ### all nodes that is connected to the retailer with node as ID
+    #             whatisConnectedToRetailer = edgesTable[(edgesTable.To_Node_ID == node)].reset_index(drop=True)
+    #             if(whatisConnectedToRetailer.empty):
+    #                 continue
+    #             ## loop on the all node connected to retailer to get the suppliers connected to retailer
+    #             for edge in range(len(whatisConnectedToRetailer)):
+    #                 ## From_Node_ID 
+    #                 idConnectedtoRetailer = whatisConnectedToRetailer.loc[edge]['From_Node_ID']
+    #                 ## check if From_Node_ID is supplier
+    #                 if nodesTable.loc[idConnectedtoRetailer]['Label'] == 'supplier':
+    #                     ## list of attributes of supplier connected to the retailer
+    #                     AttributesOfSupplier = list(nodesTable.loc[idConnectedtoRetailer]['Attributes'])
+    #                     ## type of supplier that is connected to the retailer
+    #                     typeOfSupplier = AttributesOfSupplier[4]
+    #                     RetailerTypes.add(typeOfSupplier)
+    #             if(len(RetailerTypes) != 0):
+    #                 ## adding column
+    #                 listOfAttributes = list(nodesTable.loc[node]['Attributes'])
+    #                 listOfAttributes.insert(4,RetailerTypes)
+    #                 nodesTable.loc[node]['Attributes'] = listOfAttributes    
+    #    # nodesTable.to_csv("nodesTable.csv")
+
+
+
+  
+                
+                
+                        
+
+        
+
+
+        
+
+
+
+                    
+
+                
+
+            
+
+
+
+
+
+
+
+        
+
+                        
+
+
+
+
