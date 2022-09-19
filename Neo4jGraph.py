@@ -57,7 +57,6 @@ class Neo4jGraph:
             x = dict(graph)
             temp.append(x['graphName'])
         # return the array of all graphs exists in the database
-        print(temp)
         return temp
 
 

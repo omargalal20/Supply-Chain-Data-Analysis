@@ -29,7 +29,6 @@ class GraphAnalysis:
             paths = self.findAllPaths(sourceNodeName=sourceNodeName,cases=cases,graphName=graphName,relationShip=relationship,k=k,targetNodeName=targetNodeName)
         else:
             paths = self.findAllPathsViseVerse(sourceNodeName=sourceNodeName,nodesTable=nodesTable,graphName=graphName,nodeNames=nodesName,edgesNames=edgesName,k=k,TargetType=targetType)
-        print(paths)
         if paths.empty :
             print("there are no paths to be validated")
             return
@@ -53,7 +52,6 @@ class GraphAnalysis:
         if(cases == 0):
             # if the relationship is given
             if(relationShip!=""):
-                print("All paths with no target and with relation")
                 executedStatment = '''
                 MATCH (source:%s {name:'%s'} )
                 CALL gds.allShortestPaths.dijkstra.stream('%s', {
@@ -73,7 +71,6 @@ class GraphAnalysis:
                 ''' % (sourceLabel,sourceNodeName,graphName,relationShip )
             # if the relationship isn't given
             else:
-                print("norelation")
                 executedStatment = '''
                 MATCH (source:%s {name:'%s'} )
                 CALL gds.allShortestPaths.dijkstra.stream('%s', {
@@ -150,7 +147,6 @@ class GraphAnalysis:
             ''' % (sourceLabel,sourceNodeName,targetLabel,targetNodeName,graphName,relationShip)
             # if the relationship isn't given
             else:   
-                print("only one path with no relationship")
                 executedStatment = '''
                 MATCH (source:%s {name: '%s'}), (target:%s {name: '%s'})
                 CALL gds.shortestPath.dijkstra.stream('%s', {
@@ -175,8 +171,6 @@ class GraphAnalysis:
         #neo4j_output = self.myGraph.execute_Command(executedStatment)
         dataFrameOutPut = self.execute_Command(executedStatment)
         #dataFrameOutPut = self.returnPaths(neo4j_output)
-        print("dataFrame")
-        print(dataFrameOutPut)
         print("-------------------done--------------")
         return dataFrameOutPut
 
@@ -276,8 +270,6 @@ class GraphAnalysis:
                 right_index=True 
             )
             final = pd.concat([final,temp], ignore_index=True)
-        print("finalllll")
-        print(final)
         return final
     
     ## validate paths and return the final approved paths
