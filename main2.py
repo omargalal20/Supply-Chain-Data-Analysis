@@ -3,7 +3,7 @@ from Neo4jGraph import Neo4jGraph
 from ReadingDataSet import ReadingDataSet
 from keys import keys
 from InitializingNodesAndEdges import InitializeNodesAndEdges
-from nodes_edges_df import nodes_edges_dfs
+from NodesEdgesManager import NodesEdgesManager
 from GraphAnalysis import GraphAnalysis
 import pandas as pd
 from os.path import exists
@@ -45,7 +45,7 @@ if not exists("Pickle Files/nodes_df.pkl"):
 
     # True to output nodes table and edges table as a normal graph
     # False to output nodes table and edges table but edges are nodes
-    initialize_nodes_edges_df = nodes_edges_dfs(nodes, edges, properties, All_pks, All_fks, All_ref_ins, All_dfs, True)
+    initialize_nodes_edges_df = NodesEdgesManager(nodes, edges, properties, All_pks, All_fks, All_ref_ins, All_dfs, True)
 
     nodesTable = initialize_nodes_edges_df.nodesTable
     print("Nodes Table: ")
@@ -61,7 +61,7 @@ if not exists("Pickle Files/nodes_df.pkl"):
     # print(edgesTable)
     print('-------------------------')
 
-    initialize_nodes_edges_df = nodes_edges_dfs(nodes, edges, properties, All_pks, All_fks, All_ref_ins, All_dfs, False)
+    initialize_nodes_edges_df = NodesEdgesManager(nodes, edges, properties, All_pks, All_fks, All_ref_ins, All_dfs, False)
 
     nodes_df = initialize_nodes_edges_df.nodes_df_edges_as_nodes
     print("Nodes DF: ")

@@ -3,7 +3,7 @@ from Neo4jGraph import Neo4jGraph
 from ReadingDataSet import ReadingDataSet
 from keys import keys
 from InitializingNodesAndEdges import InitializeNodesAndEdges
-from nodes_edges_df import nodes_edges_dfs
+from NodesEdgesManager import NodesEdgesManager
 from GraphAnalysis import GraphAnalysis
 import pandas as pd
 from os.path import exists
@@ -50,32 +50,32 @@ if not exists("Pickle Files/nodes_df.pkl"):
 
     # True to output nodes table and edges table as a normal graph
     # False to output nodes table and edges table but edges are nodes
-    initialize_nodes_edges_df = nodes_edges_dfs(nodes, edges, properties, All_pks, All_fks, All_ref_ins, All_dfs, True)
+    initialize_nodes_edges_df = NodesEdgesManager(nodes, edges, properties, All_pks, All_fks, All_ref_ins, All_dfs, True)
 
     nodesTable = initialize_nodes_edges_df.nodesTable
     print("Nodes Table: ")
-    nodesTable.to_csv('nodesTable.csv')
+    nodesTable.to_csv('./CSV Files/nodesTable.csv')
     # print(nodesTable)
     print('-------------------------')
 
 
     edgesTable = initialize_nodes_edges_df.edgesTable
     print("Edges Table: ")
-    edgesTable.to_csv('edgesTable.csv')
+    edgesTable.to_csv('./CSV Files/edgesTable.csv')
     # print(edgesTable)
     print('-------------------------')
 
-    initialize_nodes_edges_df = nodes_edges_dfs(nodes, edges, properties, All_pks, All_fks, All_ref_ins, All_dfs, False)
+    initialize_nodes_edges_df = NodesEdgesManager(nodes, edges, properties, All_pks, All_fks, All_ref_ins, All_dfs, False)
 
     nodes_df = initialize_nodes_edges_df.nodes_df_edges_as_nodes
     print("Nodes DF: ")
-    nodes_df.to_csv('nodes_df.csv')
+    nodes_df.to_csv('./CSV Files/nodes_df.csv')
     print('-------------------------')
 
 
     edges_df = initialize_nodes_edges_df.edges_df_edges_as_nodes
     print("Edges DF: ")
-    edges_df.to_csv('edges_df.csv')
+    edges_df.to_csv('./CSV Files/edges_df.csv')
     # print(edges_df)
     print('-------------------------')
 
@@ -96,18 +96,18 @@ else:
     nodesTable = pd.read_pickle("Pickle Files/nodesTable.pkl")
     edgesTable = pd.read_pickle("Pickle Files/edgesTable.pkl")
 
-myGraph = Neo4jGraph(nodes_df,edges_df)
-graphAnalysis = GraphAnalysis(myGraph,nodesTable,edgesTable)
+try:
+    myGraph = Neo4jGraph(nodes_df,edges_df)
+    myGraph.draw_graph("supplyChain")
+    graphAnalysis = GraphAnalysis(myGraph,nodesTable,edgesTable)
+    findAllPathsSet = {'targetNodeName': "" , 'cases': 0, 'graphName': "supplyChain",'relationship':"",'k':1,'TargetType':""}
+    validaPathsSet = {'nodesNames':nodes,'edgesNames':edges,'nodesTable':nodesTable,"desiredType":"Paper, Forest Products & Packaging"}
+except  Exception as e: print(e)
+finally:
+    print("Terminating")
+    myGraph.close()
 
-# try:
-
-
-#     findAllPathsSet = {'targetNodeName': "" , 'cases': 0, 'graphName': "supplyChain",'relationship':"",'k':1,'TargetType':""}
-#     validaPathsSet = {'nodesNames':nodes,'edgesNames':edges,'nodesTable':nodesTable,"desiredType":"Paper, Forest Products & Packaging"}
-# except  Exception as e: print(e)
-# finally:
-#     print("Terminating")
-#     myGraph.close()
+    
 ##Supplier 65468
 # x = graphAnalysis.mainMethod("Supplier 65468",True,findAllPathsSet,validaPathsSet)
 # x.to_csv("lastcheck")

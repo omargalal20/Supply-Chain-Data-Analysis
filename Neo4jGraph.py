@@ -18,9 +18,12 @@ class Neo4jGraph:
 
         self.deleteSpecificNode = {}
 
-        self.allExistingGraphs = ["supplyChain"]
+        self.allExistingGraphs = []
 
     ## draw and save graph if graph name doesn't exist in the database else print error
+    def build_database(self):
+        pass
+
     def draw_graph(self, name):
         # check if the graph name doesn't exists in the database
         if (self.ExistingGraph(name) == False):
