@@ -32,11 +32,6 @@ class nodes_edges_dfs:
         self.toCoordinates= set()
         self.distance = 0
 
-
-
-
-
-
     def create_nodes_and_edges_df(self):
         if(self.edges_as_edges):
             print('TRUEEEE')
@@ -51,10 +46,8 @@ class nodes_edges_dfs:
         self.nodesTable = self.__add_nodes()
         self.edgesTable = self.__add_edges()
 
-
     # Create nodes table
     def __add_nodes(self):
-
         nodesTB = pd.DataFrame(columns=['Label', 'ID', 'Attributes'])
         
         allDfsKeys = list(self.All_dfs.keys())
