@@ -28,7 +28,6 @@ class GraphAnalysis:
             paths = self.findAllPaths(sourceNodeName=sourceNodeName,cases=cases,graphName=graphName,relationShip=relationship,k=k,targetNodeName=targetNodeName)
         else:
             paths = self.findAllPathsViseVerse(sourceNodeName=sourceNodeName,nodesTable=nodesTable,graphName=graphName,nodeNames=nodesName,edgesNames=edgesName,k=k,TargetType=targetType)
-        print(paths)
         if paths.empty :
             print("there are no paths to be validated")
             return
@@ -45,7 +44,6 @@ class GraphAnalysis:
 
         # check if the graph already exists in the database or not
         if(self.myGraph.ExistingGraph(graphName) == False):
-            print(self.myGraph.allExistingGraphs)
             print("Graph doesn't exist in the database")
             return
         executedStatment ="" # the statment that will be sent to neo4ji
@@ -53,7 +51,6 @@ class GraphAnalysis:
         if(cases == 0):
             # if the relationship is given
             if(relationShip!=""):
-                print("All paths with no target and with relation")
                 executedStatment = '''
                 MATCH (source:%s {name:'%s'} )
                 CALL gds.allShortestPaths.dijkstra.stream('%s', {
@@ -73,7 +70,6 @@ class GraphAnalysis:
                 ''' % (sourceLabel,sourceNodeName,graphName,relationShip )
             # if the relationship isn't given
             else:
-               
                 executedStatment = '''
                 MATCH (source:%s {name:'%s'} )
                 CALL gds.allShortestPaths.dijkstra.stream('%s', {
@@ -150,7 +146,6 @@ class GraphAnalysis:
             ''' % (sourceLabel,sourceNodeName,targetLabel,targetNodeName,graphName,relationShip)
             # if the relationship isn't given
             else:   
-                print("only one path with no relationship")
                 executedStatment = '''
                 MATCH (source:%s {name: '%s'}), (target:%s {name: '%s'})
                 CALL gds.shortestPath.dijkstra.stream('%s', {
@@ -172,8 +167,9 @@ class GraphAnalysis:
         print("----------------CASE EXCUTION----------------")
         # execute the command and returns the dataframe with the paths returned from neo4ji
         # dataFrameOutPut = self.execute_Command(executedStatment)
-        neo4j_output = self.myGraph.execute_Command(executedStatment)
-        dataFrameOutPut = self.returnPaths(neo4j_output)
+        #neo4j_output = self.myGraph.execute_Command(executedStatment)
+        dataFrameOutPut = self.execute_Command(executedStatment)
+        #dataFrameOutPut = self.returnPaths(neo4j_output)
         print("-------------------done--------------")
         return dataFrameOutPut
 

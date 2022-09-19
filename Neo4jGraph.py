@@ -1,6 +1,19 @@
 from lib2to3.pgen2 import driver
+
+import pandas as pd
 from neo4j import GraphDatabase
 from neo4j import unit_of_work
+
+def do_cypher_tx(tx, cypher):
+    result = tx.run(cypher)
+    values = []
+    for record in result:
+        values.append(dict(record))
+        print("here")
+        print("______________________________________________________________")
+        print(dict(record)["graphName"])
+        print(record.values())
+    return values
 
 
 class Neo4jGraph:
@@ -18,21 +31,22 @@ class Neo4jGraph:
 
         self.deleteSpecificNode = {}
 
-        self.allExistingGraphs = []
+        self.allExistingGraphs = self.getGraphs()
 
     ## draw and save graph if graph name doesn't exist in the database else print error
     def build_database(self):
         pass
 
-    def draw_graph(self, name):
-        # check if the graph name doesn't exists in the database
-        if (self.ExistingGraph(name) == False):
-            # draw the graph
+    def populate_database(self):
             self.__transaction_execution_commands = []
             self.__add_delete_statement()
             self.__add_nodes_statements()
             self.__add_edges_statements()
             self.execute_transactions()
+
+    def draw_graph(self, name):
+        # check if the graph name doesn't exists in the database
+        if (self.ExistingGraph(name) == False):
             # save the graph
             self.saveGraph(name, nodeList=['Customer', 'Products', 'Retailer', 'Supplier', 'Rcextship', 'Scextship',
                                            'Srintship', 'Ssintship', 'Facilities', 'Warehouses', 'Rcextorders',
@@ -46,17 +60,18 @@ class Neo4jGraph:
             print("Graph Already Exists")
 
     ## get all graphs names in the DB and save it in array (global variable)  return array
-    # def getGraphs(self):
-    #     # send the graph list command
-    #     stat = "CALL gds.graph.list()"
-    #     graphs = self.execute_Command(stat)
-    #     temp = []
-    #     # loop on the graphs and convert it to dictionary and add it to the array
-    #     for graph in graphs:
-    #         x = dict(graph)
-    #         temp.append(x['graphName'])
-    #     # return the array of all graphs exists in the database
-    #     return temp
+    def getGraphs(self):
+        # send the graph list command
+        stat = "CALL gds.graph.list()"
+        print(stat)
+        graphs = self.execute_Command(stat)
+        temp = []
+        # loop on the graphs and convert it to dictionary and add it to the array
+        for graph in graphs:
+            x = dict(graph)
+            temp.append(x['graphName'])
+        # return the array of all graphs exists in the database
+        return temp
 
 
     def close(self):
@@ -64,17 +79,9 @@ class Neo4jGraph:
 
     ## excute command function
     def execute_Command(self, command,write=False):
-        # data_base_connection = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j", "123"))
-        # data_base_connection = GraphDatabase.driver(uri="bolt://127.0.0.1:7687", auth=("neo4j", "123"))
-        # session = data_base_connection.session()
-            with self.__driver.session() as session:
-                # output = session.run(command)
-                if write:
-                    output = session.write_transaction(self.run_command_and_return_output,command)
-                else:
-                    output = session.read_transaction(self.run_command_and_return_output,command)
-                print("------------executed-----------------")
-                return output
+            output = self.__driver.session().run(command)
+            print("------------executed-----------------")
+            return output
     ## get output of run:
     def run_command_and_return_output(self,tx,command):
         result = tx.run(command)
@@ -124,7 +131,7 @@ class Neo4jGraph:
         from neo4j import GraphDatabase
         with self.__driver.session() as session:
             for command in self.__transaction_execution_commands:
-                session.write_transaction(lambda tx: tx.run(command))
+                session.write_transaction(self.run_command_and_return_output,command)
 
             print("------------executed-----------------")
 
