@@ -1,6 +1,3 @@
-from logging import critical
-from re import X
-from tkinter import Y
 import pandas as pd
 
 
