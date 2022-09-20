@@ -273,17 +273,17 @@ class GraphAnalysis:
         return final
     
     ## validate paths and return the final approved paths
-    def validatePath(self,paths,sourceNodeName,nodeNames,edgesNames,nodesTable,theDesiredType):
+    def validatePath(self,paths,sourceNodeName,nodeNames,edgesNames,nodesTable,theDesiredType=""):
         # filter Target nodes
         # delete the unvalid rows with unvalid target nodes
         pathsWithCorrectTargetNodes = self.targetNodeValidation(paths,sourceNodeName,nodeNames)
         # Takes valid nodes names from the valid rows
         # validate these rows && classify if they are direct or not
-        secondPaths = self.pathsValidation(pathsWithCorrectTargetNodes,nodeNames,edgesNames)
+        finalPaths = self.pathsValidation(pathsWithCorrectTargetNodes,nodeNames,edgesNames)
         # Takes valid paths with valid target nodes
         # check on the types of the nodes in the path
-        finalPaths = self.lastCheckOnPath(secondPaths,nodesTable,theDesiredType)
-
+        if theDesiredType != "":
+            finalPaths = self.lastCheckOnPath(finalPaths,nodesTable,theDesiredType)
         return finalPaths
     
     ## Valid target nodes
