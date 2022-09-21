@@ -104,11 +104,9 @@ try:
     graphAnalysis = GraphAnalysis(myGraph,nodesTable,edgesTable)
     # z.to_csv("./CSV Files/nodesFilter.csv")
     criticalNodeTask = CriticalNodeTask(myGraph,graphAnalysis,nodes,edges,nodes)
-    # x = criticalNodeTask.getCriticalNodes('supplyChain','undirected')
-    # print(criticalNodeTask.criticalNodesDF)
-    # z = criticalNodeTask.criticalNodesRespectToGraph(x)
-    # print(criticalNodeTask.ifIReachCriticalNode('Supplier 48580','supplyChain'))
-    criticalNodeTask.getCriticalNodesRespectToLocation(nodesTable)
+    x = criticalNodeTask.getNodesWiththeCountsOfConnectedNodes('supplyChain','undirected')
+    print(criticalNodeTask.criticalNodesRespectToConnetedNodes(x))
+    print(criticalNodeTask.getCriticalNodesRespectToLocation(nodesTable))
     findAllPathsSet = {'targetNodeName': "Supplier 48580" , 'cases': 1, 'graphName': "supplyChain",'relationship':"",'k':4,'TargetType':""}
     validaPathsSet = {'nodesNames':nodes,'edgesNames':edges,'nodesTable':nodesTable,"desiredType":"Chemicals"}
     # x = graphAnalysis.mainMethod('Supplier 65468',True,findAllPathsSet,validaPathsSet)
