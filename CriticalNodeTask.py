@@ -56,7 +56,7 @@ class CriticalNodeTask:
         return criticalNodesDF
 
     # takes the criticalNodesDF and nodeNames and return the valid Nodes
-    ## removes the nodes with zeros connected nodes and the nodes that are actucal nodes
+    ## removes the nodes with zeros connected nodes and the nodes that are actual nodes
     def ValidatethecountsOfNodes(self,criticalNodesDF,nodeNames):
         temp = criticalNodesDF
         # loop over the criticalNodes dataFrame
@@ -176,6 +176,17 @@ class CriticalNodeTask:
             location = (tableWhereIgetLocationFrom.loc[node]['Attributes'])[1]
         # return the location
         return location
+
+
+    def criticalNodesRespectToPrices(self,edgesDF,sourceNodeName,graphName):
+        findAllPathsDic = {'targetNodeName': "Retailer 25889" , 'cases': 1, 'graphName': graphName,'relationship':"",'k':7,'TargetType':""}
+        validatPathsDic = {'nodesNames':self.nodeNames,'edgesNames':self.edgesNames,'nodesTable':self.nodeNames,"desiredType":""}
+        pathsDF = self.graphAnalysis.mainMethod(sourceNodeName,True,findAllPathsDic,validatPathsDic)
+        pathsDF.to_csv("check.csv")
+        print(pathsDF)
+
+
+
 
 
 
