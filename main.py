@@ -96,20 +96,24 @@ else:
     edges_df = pd.read_pickle("Pickle Files/edges_df.pkl")
     nodesTable = pd.read_pickle("Pickle Files/nodesTable.pkl")
     edgesTable = pd.read_pickle("Pickle Files/edgesTable.pkl")
-   
+## can get relationName from edges DF, has column name has the relation names
+edgesList = []
+edgesList = ['Order', 'rcextship', 'scextship', 'srintship', 'ssintship', 'Related_To',
+            'Manufactures', 'Orders_Prodcut', 'externaltransactions', 'internaltransactions']   
 try:
     myGraph = Neo4jGraph(nodes_df,edges_df)
     # myGraph.populate_database()
     #myGraph.draw_graph("supplyChain4")
     graphAnalysis = GraphAnalysis(myGraph,nodesTable,edgesTable)
     # z.to_csv("./CSV Files/nodesFilter.csv")
-    criticalNodeTask = CriticalNodeTask(myGraph,graphAnalysis,nodes,edges,nodes)
+    criticalNodeTask = CriticalNodeTask(myGraph,graphAnalysis,nodes,edges,nodes,edgesList)
     # x = criticalNodeTask.getNodesWiththeCountsOfConnectedNodes('supplyChain','undirected')
     # print(criticalNodeTask.criticalNodesRespectToConnetedNodes(x))
     # print(criticalNodeTask.getCriticalNodesRespectToLocation(nodesTable))
-    criticalNodeTask.criticalNodesRespectToPrices(edges_df,"Supplier 90236","supplyChain")
+    #criticalNodeTask.criticalNodesRespectToPrices(edges_df,"Supplier 90236","supplyChain")
     findAllPathsSet = {'targetNodeName': "Supplier 48580" , 'cases': 1, 'graphName': "supplyChain",'relationship':"",'k':4,'TargetType':""}
     validaPathsSet = {'nodesNames':nodes,'edgesNames':edges,'nodesTable':nodesTable,"desiredType":"Chemicals"}
+    criticalNodeTask.criticalNodesRespectToProduct("Supplier",nodesTable,edges_df,nodes_df)
     # x = graphAnalysis.mainMethod('Supplier 65468',True,findAllPathsSet,validaPathsSet)
     # x.to_csv('./CSV Files/result.csv')
 except  Exception as e: print(e)

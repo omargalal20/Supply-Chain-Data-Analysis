@@ -3,12 +3,13 @@ import pandas as pd
 
 class CriticalNodeTask:
 
-    def __init__(self,myGraph,graphAnalysis,nodeNames,edgesNames,nodesTable):
+    def __init__(self,myGraph,graphAnalysis,nodeNames,edgesNames,nodesTable,relationNames):
         self.myGraph = myGraph
         self.graphAnalysis = graphAnalysis
         self.nodeNames = nodeNames
         self.edgesNames = edgesNames
         self.nodesTable = nodesTable
+        self.relationNames = relationNames
 
     # get the nodes and count of connected Nodes to it
     def getNodesWiththeCountsOfConnectedNodes(self,graphName,orientation=""):
@@ -181,11 +182,36 @@ class CriticalNodeTask:
     def criticalNodesRespectToPrices(self,edgesDF,sourceNodeName,graphName):
         findAllPathsDic = {'targetNodeName': "Retailer 25889" , 'cases': 1, 'graphName': graphName,'relationship':"",'k':7,'TargetType':""}
         validatPathsDic = {'nodesNames':self.nodeNames,'edgesNames':self.edgesNames,'nodesTable':self.nodeNames,"desiredType":""}
-        pathsDF = self.graphAnalysis.mainMethod(sourceNodeName,True,findAllPathsDic,validatPathsDic)
-        pathsDF.to_csv("check.csv")
-        print(pathsDF)
-
-
+   
+    # Supplier,Retailer,Warehouse
+    def criticalNodesRespectToProduct(self,sourceLabel,nodesTable,edgesDF,nodes_df):
+        # I have all the supplier
+        filteredEdgesDF = (edgesDF[(edgesDF.From_Table == sourceLabel)&(edgesDF.To_Table == "Products")]).reset_index(drop=True) 
+        filteredEdgesDF.to_csv("hello.csv")
+        # I need to access supplier to -----
+        criticalSupplierWithRespectToProduct = []
+        repeatedProductsIndices = []
+        trail = []
+        for node in range(len(filteredEdgesDF)):
+            if filteredEdgesDF.loc[node]['To'] in repeatedProductsIndices:
+                continue
+            To_Index = filteredEdgesDF.loc[node]['To'] 
+            temp = (filteredEdgesDF[(filteredEdgesDF.To == To_Index)])
+           
+            if len(temp) == 1:
+                sourceID = nodesTable.loc[(filteredEdgesDF.loc[node]['From'])]['ID']
+                sourceNodeName = "Supplier " + str(sourceID)
+                criticalSupplierWithRespectToProduct.append(sourceNodeName)
+                print("to_index")
+                print(To_Index)
+                print(nodes_df.loc[To_Index]['Label'] + " " +str(nodes_df.loc[To_Index]['ID']))
+            else:
+                repeatedProductsIndices.append(filteredEdgesDF.loc[node]['To'])
+        # print(filteredEdgesDF.to_csv("temppp.csv"))
+        # print(criticalSupplierWithRespectToProduct)   
+        # print(len(criticalSupplierWithRespectToProduct)) 
+        
+        #print(repeatedProductsIndices)
 
 
 
