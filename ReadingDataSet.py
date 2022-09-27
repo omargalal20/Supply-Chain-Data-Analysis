@@ -23,6 +23,7 @@ class ReadingDataSet:
         self.removeRedundantTables()
         self.addProductsToOrders()
         self.__add_type_to_retailer()
+        self.__add_manufacturing_price()
 
     def createDataframes(self):
         path_of_the_directory = './DataSet/'
@@ -105,8 +106,8 @@ class ReadingDataSet:
 
         c = 9931
         for id in ship_id_not_in_orders_ship_id:
-            new_row = [{"IntOrders_id": c, "IntShip_id": id, "quantity": 766, "placed_when": "1993-05-08",
-                        "actual_date": "1993-05-30 00:00:00", "expected_date": "1993-06-01", "cost": "38.90",
+            new_row = [{"IntOrders_id": c, "IntShip_id": id, "quantity": (random.randint(1,1000)), "placed_when": "1993-05-08",
+                        "actual_date": "1993-05-30 00:00:00", "expected_date": "1993-06-01", "cost": 38.90,
                         "status": "Closed"}]
             df = pd.DataFrame(new_row)
             c = c + 1
@@ -191,31 +192,38 @@ class ReadingDataSet:
             self.All_dfs[table].fillna('Unknown', inplace=True)
 
     def addProductsToOrders(self):
-        x = self.All_dfs['ssintship']['listSuppIds']
-        # print(len(x))
-        y = self.All_dfs["manufacturing"]['Factory_id']
-        # print(len(y))
-        z = []
-        # print(x.isin(y).value_counts())
-        # z=All_dfs['ssintorders']
-        for i in range(len(x)):
-            temp = np.where(y == x[i])[0]
-            if (len(temp) > 1):  # returns the indices that makes this statement true
-                z.append(random.choice(temp))
-            elif (len(temp) == 1):
-                z.append(temp[0])
-            elif (len(temp) == 0):
-                z.append(random.randint(0, len(y) - 1))
 
-        # now z has size = 537 and the intship has size of 548 so will randomly add 11 more values
-        for i in range(11):
-            z.append(random.randint(0, len(y) - 1))
+        products_df = self.All_dfs['products']
 
-        len(z)
-        prod_id = []
-        for i in range(len(z)):
-            prod_id.append(self.All_dfs["manufacturing"]['Product_id'][z[i]])
-        self.All_dfs['ssintorders'].insert(8, 'prod_id', prod_id, True)
+        factory_ids = self.All_dfs["manufacturing"]['Factory_id']
+        manufactured_products = self.All_dfs["manufacturing"]["Product_id"]
+        product_ids = pd.Series(self.All_dfs["products"]["prod_id"].unique())
+
+        not_manufactured_products = manufactured_products[~product_ids.isin(manufactured_products)].unique()
+
+        products_column = []
+        order_cost = []
+        for index, row in self.All_dfs["ssintorders"].iterrows():
+            ship = row["IntShip_id"]
+            quantity = row['quantity']
+            sup_id = self.All_dfs["ssintship"].query(f'IntShip_id == {ship}')["listSuppIds"].iloc[0]
+            intersection = np.where(factory_ids == sup_id)[0]
+            product = ""
+            if (len(intersection) >= 1):
+                product = manufactured_products[random.choice(intersection)]
+                # products_column.append(manufactured_products[random.choice(intersection)])
+            elif (len(intersection) == 0):
+                product = random.choice(not_manufactured_products)
+                # products_column.append(random.choice(not_manufactured_products))
+            prod_price = products_df[products_df["prod_id"] == product].iloc[0]['price']
+
+            new_prod_price = prod_price * quantity
+
+            products_column.append(product)
+            order_cost.append(new_prod_price)
+
+        self.All_dfs['ssintorders']["prod_id"] = products_column
+        self.All_dfs['ssintorders']["cost"] = order_cost
 
     def __add_type_to_retailer(self):
         supplier_to_retailer_shipment_df = self.All_dfs["srintship"]
@@ -240,3 +248,15 @@ class ReadingDataSet:
         cols = retailer_df.columns.tolist()
         cols = cols[:5] + cols[-1:] + cols[5:-1]
         self.All_dfs["retailer"] = retailer_df[cols]
+
+    def __add_manufacturing_price(self):
+        new_column = []
+        manf_df = self.All_dfs["manufacturing"]
+        products_df = self.All_dfs["products"]
+
+        for _, row in manf_df.iterrows():
+            product_id = row["Product_id"]
+            prod_price = products_df[products_df["prod_id"] == product_id].iloc[0]['price']
+            manf_cost = int(prod_price * random.uniform(0.2, 0.9)*100)/100
+            new_column.append(manf_cost)
+        self.All_dfs["manufacturing"]["ManufacturingCost"] = new_column

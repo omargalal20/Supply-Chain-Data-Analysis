@@ -365,7 +365,7 @@
 186,retailer,54549,"['Micronesia, Federated States of' 'Chuuk' 'abroad' 749 list([]) 1 4 92910]"
 187,retailer,85978,['Norfolk Island' 'Unknown' 'vendor' 854 list([]) 2 9 1923235]
 188,retailer,31857,"['Albania' 'Korçë' 'customer end' 862
- list(['Education', 'Public & Social Sector', 'Healthcare Systems & Services'])
+ list(['Healthcare Systems & Services', 'Public & Social Sector', 'Education'])
  1 1 1178695]"
 189,retailer,17462,['Sierra Leone' 'Eastern' 'distributer' 790 list([]) 4 4 642703]
 190,retailer,12527,"['Svalbard and Jan Mayen' 'Unknown' 'customer end' 677 list([]) 1 1
@@ -390,7 +390,7 @@
 202,retailer,70666,"['Saint Helena, Ascension and Tristan da Cunha' 'Saint Helena' 'vendor'
  315 list([]) 1 8 1662706]"
 203,retailer,47196,"['Albania' 'Elbasan' 'abroad' 527
- list(['Advanced Electronics', 'Life Sciences']) 4 2 1569819]"
+ list(['Life Sciences', 'Advanced Electronics']) 4 2 1569819]"
 204,retailer,26461,"['Saint Vincent and the Grenadines' 'Charlotte' 'customer end' 996
  list([]) 2 8 276071]"
 205,retailer,91566,['Anguilla' 'Unknown' 'abroad' 313 list([]) 4 4 592968]
@@ -400,7 +400,7 @@
 208,retailer,54756,['Kiribati' 'Line Islands' 'distributer' 189 list([]) 1 8 1222269]
 209,retailer,68441,['Macao' 'Unknown' 'customer end' 349 list([]) 2 7 748767]
 210,retailer,66663,"['Luxembourg' 'Mersch' 'customer end' 549
- list(['Metals & Mining', 'Paper, Forest Products & Packaging']) 2 1
+ list(['Paper, Forest Products & Packaging', 'Metals & Mining']) 2 1
  1786531]"
 211,retailer,61003,"['Iran, Islamic Republic of' 'Zanjān' 'vendor' 871 list([]) 1 6 683362]"
 212,retailer,82777,"['Slovenia' 'Ivančna Gorica' 'abroad' 191 list(['Advanced Electronics']) 1

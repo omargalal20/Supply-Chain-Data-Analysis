@@ -1,18 +1,13 @@
-from lib2to3.pgen2 import driver
-
 import pandas as pd
 from neo4j import GraphDatabase
 from neo4j import unit_of_work
+
 
 def do_cypher_tx(tx, cypher):
     result = tx.run(cypher)
     values = []
     for record in result:
         values.append(dict(record))
-        print("here")
-        print("______________________________________________________________")
-        print(dict(record)["graphName"])
-        print(record.values())
     return values
 
 
@@ -33,20 +28,35 @@ class Neo4jGraph:
 
         self.allExistingGraphs = self.getGraphs()
 
-    ## draw and save graph if graph name doesn't exist in the database else print error
-    def build_database(self):
-        pass
-
     def populate_database(self):
-            self.__transaction_execution_commands = []
-            self.__add_delete_statement()
-            self.__add_nodes_statements()
-            self.__add_edges_statements()
-            self.execute_transactions()
+        self.__transaction_execution_commands = []
+        self.__add_delete_statement()
+        # self.__add_constraint()
+        self.__add_nodes_statements()
+        self.__add_edges_statements()
+        self.execute_transactions()
+
+    def draw_graph_reversed(self, name):
+        # check if the graph name doesn't exists in the database
+        if (self.ExistingGraph(name) == False):
+            # save the graph
+            reversed_rels = '{Order: {orientation: "REVERSE"}, rcextship: {orientation: "REVERSE"}, scextship: {orientation: "REVERSE"},' \
+                            ' srintship: {orientation: "REVERSE"}, ssintship: {orientation: "REVERSE"}, Related_To: {orientation: "REVERSE"}, \
+                Manufactures: {orientation: "REVERSE"}, Orders_Prodcut: {orientation: "REVERSE"}, externaltransactions: {orientation: "REVERSE"}, internaltransactions: {orientation: "REVERSE"}}'
+            self.saveGraph(name, nodeList=['Customer', 'Products', 'Retailer', 'Supplier', 'Rcextship', 'Scextship',
+                                           'Srintship', 'Ssintship', 'Facilities', 'Warehouses', 'Rcextorders',
+                                           'Scextorders', 'Srintorders', 'Ssintorders', 'Externalservices',
+                                           'Internalservices', 'Externaltransactions', 'Internaltransactions'],
+
+                           edgeList=reversed_rels)
+            print(self.allExistingGraphs)
+        # if the graph exists, nothing happens
+        else:
+            print("%s Graph Already Exists" % name)
 
     def draw_graph(self, name):
         # check if the graph name doesn't exists in the database
-        if (self.ExistingGraph(name) == False):
+        if self.ExistingGraph(name) == False:
             # save the graph
             self.saveGraph(name, nodeList=['Customer', 'Products', 'Retailer', 'Supplier', 'Rcextship', 'Scextship',
                                            'Srintship', 'Ssintship', 'Facilities', 'Warehouses', 'Rcextorders',
@@ -57,7 +67,7 @@ class Neo4jGraph:
             print(self.allExistingGraphs)
         # if the graph exists, nothing happens
         else:
-            print("Graph Already Exists")
+            print("%s Graph Already Exists" % name)
 
     ## get all graphs names in the DB and save it in array (global variable)  return array
     def getGraphs(self):
@@ -73,19 +83,30 @@ class Neo4jGraph:
         # return the array of all graphs exists in the database
         return temp
 
-
     def close(self):
         self.__driver.close()
 
     ## excute command function
-    def execute_Command(self, command,write=False):
-            output = self.__driver.session().run(command)
-            print("------------executed-----------------")
-            return output
+    def execute_Command(self, command, write=False):
+        # output = self.__driver.session().run(command)
+        # print("------------executed-----------------")
+        # return output
+        if write:
+            with self.__driver.session() as session:
+                output = session.execute_write(do_cypher_tx, command)
+                print("------------executed-----------------")
+                return output
+        else:
+            with self.__driver.session() as session:
+                output = session.execute_read(do_cypher_tx, command)
+                print("------------executed-----------------")
+                return output
+
     ## get output of run:
-    def run_command_and_return_output(self,tx,command):
+    def run_command_and_return_output(self, tx, command):
         result = tx.run(command)
         return result
+
     ## delete the node "for future works"
     def deleteNode(self, label, id, nodeID):
         print("-----------Beginning --------------")
@@ -110,6 +131,7 @@ class Neo4jGraph:
         %s,
         %s,
         {
+        nodeProperties: ['index','ID'],
         relationshipProperties: 'weight'
         })
         YIELD
@@ -131,12 +153,9 @@ class Neo4jGraph:
         from neo4j import GraphDatabase
         with self.__driver.session() as session:
             for command in self.__transaction_execution_commands:
-                session.write_transaction(self.run_command_and_return_output,command)
+                session.write_transaction(self.run_command_and_return_output, command)
 
             print("------------executed-----------------")
-
-
-
 
     def __add_delete_statement(self):
         delete_statement = "match (n) detach delete n"
@@ -149,6 +168,10 @@ class Neo4jGraph:
             attributes = node["Attributes"]
             create_statement = self.__node_create_statement(label, node_index, IDs, attributes)
             self.__transaction_execution_commands.append(create_statement)
+
+    def __add_constraint(self):
+        statement = '''CREATE CONSTRAINT ON (a) ASSERT a.ID IS UNIQUE'''
+        self.__transaction_execution_commands.append(statement)
 
     def __node_create_statement(self, label, index, IDs, attributes):
         att = (", " + self.__destructure_dict(attributes)) if len(attributes) > 0 else ""
@@ -175,6 +198,18 @@ class Neo4jGraph:
             self.__transaction_execution_commands.append(create_relation_statement)
 
     def __relation_create_statement(self, edge):
+
+        def get_custom_properties(s):
+            print(s)
+            if s != 0:
+                out = ""
+                for key in s:
+                    temp = "," + str(key) + ":" + str(s[key])
+                    out += temp
+                return out
+            else:
+                return ""
+
         from_id = edge['From']
         to_id = edge['To']
         from_name = edge['From_Table']
@@ -190,9 +225,30 @@ class Neo4jGraph:
         profit_margin = edge['profit_margin (%)']
         market_share = edge['market_share (%)']
         Annual_sales = edge['Annual_sales']
+        other_attributes = get_custom_properties(edge['CustomProperties'])
         match_statement = f"Match (a:{from_name}),(b:{to_name}) WHERE a.index ={from_id} AND b.index = {to_id} "
-        create_statement = "CREATE (a) - [r:%s { weight: %f , Transportation_Cost: %f , Transportation_Distance: %f , Transportation_Duration: %f , Transportation_Type: '%s' , Rental_price: %i, product_price: %f , profit_margin: %f , market_share: %i, Annual_sales:%f }]->(b)" % (
-        rel_name, weight, Transportation_Cost, Transportation_Distance, Transportation_Duration, Transportation_Type,
-        Rental_price, price, profit_margin, market_share, Annual_sales)
+        create_statement = "CREATE (a) - [r:%s { weight: %f , Transportation_Cost: %f ," \
+                           " Transportation_Distance: %f , Transportation_Duration: %f ," \
+                           " Transportation_Type: '%s' , Rental_price: %i, product_price: %f ," \
+                           " profit_margin: %f , market_share: %i, Annual_sales:%f %s }]->(b)" % \
+                           (
+                               rel_name, weight, Transportation_Cost, Transportation_Distance, Transportation_Duration,
+                               Transportation_Type,
+                               Rental_price, price, profit_margin, market_share, Annual_sales, other_attributes
+                           )
         create_relation_statement = match_statement + create_statement
         return create_relation_statement
+
+    def get_ids_of_connected_nodes(self, node_id, source_label="", relationship_type="", target_label=""):
+        statement = ''' 
+                        match (node %s)
+                        where node.ID = %d
+                        match (node)-[rel %s]->(target %s)
+                        RETURN Collect(target.ID) AS Result
+                    ''' % ("" if source_label == "" else f': {source_label}', node_id,
+                           "" if relationship_type == "" else f': {relationship_type}',
+                           "" if target_label == "" else f': {target_label}')
+        res = self.execute_Command(statement)
+        print(res)
+        print(res)
+        return res
