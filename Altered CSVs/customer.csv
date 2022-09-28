@@ -1,0 +1,151 @@
+,cust_id,gender,first_name,last_name,country,nationality,profession,marital_status,education_level,age
+0,33736,F,Nadia,Scheel,Cabo Verde,Cabo Verde,"Production assistant, television",Single,PHD holder,92
+1,42959,M,Eric,David,Dominica,Italy,"Scientist, clinical (histocompatibility and immunogenetics)",Married,PHD holder,39
+2,50653,F,Alessia,Villegas,"Virgin Islands, British","Virgin Islands, British",directeur de golf,Divorced,PHD holder,43
+3,82485,M,Alexei,Wulf,Samoa,Samoa,"Scientist, audiological",Divorced,Bachelor holder,54
+4,56609,F,Brenda,Fox,Poland,Poland,actuaire,Widow,Bachelor holder,83
+5,45986,F,Evangelista,Campbell,United Kingdom,United Kingdom,Seismic interpreter,Widow,Masters holder,81
+6,58600,M,Daniel,Young,Chile,Chile,Education administrator,Single,Bachelor holder,23
+7,55976,F,Georgia,Valier,Poland,France,Biomedical scientist,Divorced,Masters holder,63
+8,32433,M,Scott,Reid,Slovakia,Slovakia,IT consultant,Widow,PHD holder,81
+9,14142,F,Sylwia,Ladeck,Lithuania,Lithuania,Mechaniker,Single,Bachelor holder,50
+10,49539,F,Marta,Bradley,"Tanzania, United Republic of","Tanzania, United Republic of",Bankkaufmann,Divorced,Bachelor holder,75
+11,31548,M,Martin,Velasquez,Afghanistan,Afghanistan,Advertising copywriter,Widow,High school,44
+12,22043,M,Matthew,Oderwald,Russian Federation,United States,Maintenance engineer,Married,Bachelor holder,22
+13,44945,M,Thomas,Masse,Brazil,Germany,"Geneticist, molecular",Divorced,PHD holder,95
+14,14574,M,Jens-Uwe,Descamps,Hong Kong,United States,"Horticulturist, amenity",Divorced,Bachelor holder,63
+15,36708,M,Samuel,Drubin,Grenada,Germany,Koreanistiker,Widow,Masters holder,19
+16,25357,F,Emma,Nicholson,Pitcairn,Germany,"Scientist, physiological",Single,Bachelor holder,93
+17,48071,F,Sheila,Baroffio,Sweden,Sweden,Tourist information centre manager,Single,Masters holder,33
+18,35953,M,Arnulf,Jenkins,Faroe Islands,Faroe Islands,"Teacher, early years/pre",Divorced,Masters holder,85
+19,42770,M,Roberto,Menard,Faroe Islands,Faroe Islands,Broadcast presenter,Widow,Bachelor holder,39
+20,30824,M,Roland,Rossini,Faroe Islands,Faroe Islands,biologiste médical,Married,High school,56
+21,33597,M,Neil,Reichmann,Gabon,Gabon,Cartographer,Widow,Masters holder,95
+22,22036,M,Auguste,Moretti,Holy See (Vatican City State),Holy See (Vatican City State),commercial export,Married,High school,70
+23,55905,M,Ranieri,Munoz,Paraguay,Paraguay,"Scientist, research (physical sciences)",Divorced,Masters holder,41
+24,53365,M,Louis,Sanchez,Fiji,Fiji,"Teacher, special educational needs",Widow,High school,78
+25,70649,F,Tiffany,Deschamps,Heard Island and McDonald Islands,Heard Island and McDonald Islands,Exhibition designer,Single,High school,28
+26,24642,F,Diane,Palmer,Kuwait,Kuwait,Scientific laboratory technician,Widow,Bachelor holder,33
+27,16956,F,Rebecca,Verdier,French Southern Territories,French Southern Territories,Software engineer,Single,Bachelor holder,92
+28,63453,M,Antonio,Mendès,Zambia,Zambia,"Designer, jewellery",Divorced,PHD holder,15
+29,21156,M,Clifford,Sismondi,Trinidad and Tobago,Trinidad and Tobago,"Surveyor, commercial/residential",Single,Bachelor holder,94
+30,38534,F,Emily,Vasari,Italy,United Kingdom,Ambulance person,Married,Bachelor holder,37
+31,40624,F,Alicia,Bachmann,Saint Lucia,Italy,Winzer,Married,High school,89
+32,19561,M,Denny,Cooke,Eritrea,Eritrea,"Engineer, building services",Single,PHD holder,22
+33,88373,F,Kristi,Mathieu,Guam,Guam,Scientific laboratory technician,Single,Masters holder,88
+34,53519,M,Gary,Hawkins,Niue,Germany,"Conservator, furniture",Widow,Masters holder,83
+35,41538,M,Joshua,Dobes,Aruba,Aruba,Phytotherapist,Married,Bachelor holder,43
+36,81331,M,Robert,Viviani,Slovenia,Slovenia,designer sonore,Married,Masters holder,84
+37,97225,M,Ermes,Green,Panama,Italy,"Copywriter, advertising",Single,PHD holder,85
+38,28053,F,Natalia,Blümel,"Micronesia, Federated States of",Italy,Techniker,Married,Bachelor holder,90
+39,18779,M,Daniel,Turner,United States,United States,Asphaltbauer,Divorced,PHD holder,50
+40,96892,F,Reinhild,Collin,Guatemala,Guatemala,Homeopath,Divorced,Bachelor holder,75
+41,64367,F,Amalia,Ayers,Bhutan,Germany,Sports development officer,Single,Masters holder,38
+42,66152,F,Irene,Jacobi Jäckel,"Korea, Republic of",United Kingdom,barman,Widow,Masters holder,57
+43,95167,F,Dana,Ponti,Curaçao,Curaçao,Paramedic,Married,PHD holder,85
+44,25491,M,Laurent,Plath,Maldives,United States,Chirurgiemechaniker,Widow,PHD holder,65
+45,72090,F,Jennifer,Geißler,Norfolk Island,Italy,Technical brewer,Married,Masters holder,39
+46,69145,M,Craig,Rinaldi,Austria,Austria,technicien biologiste,Married,Bachelor holder,56
+47,15307,F,Henriette,Cameron,Greenland,Greenland,Schornsteinfeger,Widow,High school,65
+48,17040,F,Linda,Gros,Malawi,United States,Technical author,Divorced,High school,17
+49,39892,M,Grégoire,Pope,Macao,Macao,Bankkaufmann,Divorced,Masters holder,39
+50,11346,M,Mitchell,Wood,United Arab Emirates,United Kingdom,contrôleur des douanes et droits indirects,Single,Bachelor holder,16
+51,78650,M,Mohamed,Giraud,Isle of Man,United States,"Runner, broadcasting/film/video",Divorced,PHD holder,29
+52,87252,M,Robert,Fieramosca,"Congo, The Democratic Republic of the","Congo, The Democratic Republic of the",Risk manager,Widow,Bachelor holder,63
+53,24338,M,Sante,Gardiner,Madagascar,Madagascar,Polizist,Married,PHD holder,21
+54,18213,M,Friedo,Stey,Ecuador,United Kingdom,Chief Financial Officer,Single,High school,62
+55,91447,F,Monique,Yates,Tokelau,Tokelau,Equality and diversity officer,Widow,Masters holder,57
+56,18065,M,Otmar,Rose,Honduras,United Kingdom,cadreur,Divorced,High school,63
+57,85900,F,Olivia,Harris,Fiji,Fiji,Veterinary surgeon,Single,Bachelor holder,23
+58,70762,F,Sharon,Glover,Paraguay,France,traffic manager,Widow,Bachelor holder,71
+59,16771,F,Grace,Coates,Slovakia,Slovakia,Communications engineer,Widow,PHD holder,55
+60,24255,M,Ryan,Ortmann,Oman,France,Oceanographer,Widow,Masters holder,94
+61,87878,F,Maureen,Mitchell,"Taiwan, Province of China","Taiwan, Province of China",technicien de l'intervention sociale et familiale,Widow,Bachelor holder,67
+62,79381,M,Nathan,Fabrizi,Belarus,Belarus,Product designer,Divorced,High school,45
+63,84885,M,Thibaut,Kraushaar,New Caledonia,New Caledonia,Pfleger,Divorced,High school,80
+64,91846,F,Paula,Gibson,Norway,Italy,Landscape architect,Divorced,PHD holder,52
+65,80020,F,Giovanna,Baker,Mayotte,United Kingdom,Medical laboratory scientific officer,Married,Bachelor holder,19
+66,63285,F,Susanna,Dippel,South Africa,Germany,Bäcker,Divorced,Masters holder,53
+67,29456,F,Cristina,Bell,France,France,vétérinaire,Married,High school,26
+68,36352,F,Karen,Roger,Eswatini,United States,agent immobilier immobilière,Single,Masters holder,18
+69,62831,F,Carolyn,Sansoni,"Iran, Islamic Republic of","Iran, Islamic Republic of",Metallurgist,Widow,High school,50
+70,98678,M,Antoine,Schenk,Nauru,Nauru,Elektroniker,Single,High school,93
+71,63407,F,Olivie,Barnes,Guatemala,United Kingdom,Hydrographic surveyor,Married,High school,24
+72,99404,F,Jennifer,Luxardo,Kazakhstan,Kazakhstan,"Programme researcher, broadcasting/film/video",Single,Masters holder,58
+73,32489,F,Suzanne,Navarro,Madagascar,Madagascar,Programmierer,Divorced,Masters holder,27
+74,12717,M,Gavin,Cooke,Liberia,United Kingdom,Podiatrist,Widow,PHD holder,80
+75,59444,F,Agnès,Gaggini,Cyprus,Germany,Clinical embryologist,Married,Bachelor holder,48
+76,79671,M,Vincent,Young,Brunei Darussalam,France,"Runner, broadcasting/film/video",Widow,Bachelor holder,61
+77,75571,M,Gerard,Gill,Viet Nam,United Kingdom,Firefighter,Divorced,High school,62
+78,21113,F,Siglinde,Montalti,"Korea, Republic of","Korea, Republic of",Architectural technologist,Single,Bachelor holder,52
+79,45445,M,Richard,Lee,Latvia,United States,Scientific laboratory technician,Married,Masters holder,33
+80,10613,M,Ciro,Pohl,Sao Tome and Principe,Italy,Public relations account executive,Single,High school,90
+81,81344,F,Antonia,Campbell,Ethiopia,Ethiopia,Chartered accountant,Widow,PHD holder,51
+82,95549,M,Giampaolo,Ricolfi,Svalbard and Jan Mayen,United States,"Designer, jewellery",Divorced,High school,67
+83,28243,F,Elizabeth,Cervantes,Réunion,Réunion,Augenoptiker,Divorced,High school,89
+84,83792,M,Gianpaolo,Blake,"Tanzania, United Republic of","Tanzania, United Republic of",Hospital pharmacist,Divorced,PHD holder,71
+85,85709,F,Aimée,Chambers,Gibraltar,Germany,Quality manager,Married,Bachelor holder,65
+86,21478,F,Katy,Letta,Iraq,Iraq,Fleischer,Divorced,Masters holder,29
+87,45506,M,Jose,Parry,Mauritius,Mauritius,"Radiographer, diagnostic",Widow,Bachelor holder,73
+88,14259,F,Annamaria,Lesage,Gibraltar,Gibraltar,Management consultant,Widow,Bachelor holder,46
+89,88466,M,Ullrich,Brown,Latvia,United Kingdom,Informatiker,Widow,High school,54
+90,15908,M,Bobby,Galuppi,Turks and Caicos Islands,Turks and Caicos Islands,Arzt,Divorced,High school,42
+91,66743,M,Timothy,Rodriguez,French Polynesia,French Polynesia,Mental health nurse,Widow,High school,18
+92,87421,F,Fabienne,Gieß,South Africa,South Africa,Krankenschwester,Widow,PHD holder,93
+93,15724,M,Romuald,Rädel,Faroe Islands,United Kingdom,Landscape architect,Single,PHD holder,92
+94,96784,M,Mauro,Parker,Antigua and Barbuda,United States,chef d'exploitation d'usine d'incinération,Divorced,Bachelor holder,26
+95,41344,F,Laura,Petrocelli,Saint Kitts and Nevis,Saint Kitts and Nevis,Techniker,Married,High school,27
+96,64070,F,Sabine,Hendriks,Palau,Germany,Freight forwarder,Divorced,Masters holder,84
+97,90589,M,Volkhard,Spencer,Togo,France,Publishing copy,Single,PHD holder,53
+98,48068,M,Gioffre,Carpentier,Jersey,Jersey,Higher education lecturer,Single,High school,90
+99,81118,M,Gianmarco,Turner,Zambia,United Kingdom,Arzt,Widow,High school,35
+100,23081,M,Ashley,Dodd,Montserrat,Italy,Fleischer,Single,High school,44
+101,60867,M,David,Kranz,French Guiana,United Kingdom,Fachinformatiker,Divorced,PHD holder,63
+102,17879,M,Victor,Haering,Montserrat,France,ingénieur technico-commercial technico-commerciale,Widow,Masters holder,88
+103,83375,F,Beverley,Ehlert,Sudan,United States,"Psychologist, educational",Married,PHD holder,72
+104,90435,M,Lando,Roberts,Peru,Peru,Radiation protection practitioner,Married,Bachelor holder,51
+105,33170,F,Giada,Villanueva,Andorra,United States,Augenoptiker,Divorced,PHD holder,40
+106,51119,M,Dino,Tedesco,Timor-Leste,United States,Commissioning editor,Single,Bachelor holder,36
+107,65924,M,Donald,Kobelt,Serbia,Italy,Geophysical data processor,Single,Masters holder,81
+108,34252,F,Fernanda,Renault,Mauritius,Germany,Careers information officer,Married,High school,71
+109,43022,M,Giampaolo,Dupré,Samoa,France,Actor,Married,High school,70
+110,78934,M,Giuliano,Drub,Åland Islands,Åland Islands,Colour technologist,Married,High school,51
+111,22426,F,Arnaude,Weaver,Bahamas,Bahamas,Cytogeneticist,Divorced,PHD holder,40
+112,11800,M,Antonius,Patberg,Macao,Macao,Fachinformatiker,Divorced,Bachelor holder,25
+113,32819,F,Beverley,Hörle,Austria,Austria,Legal secretary,Divorced,High school,35
+114,72646,F,Fady,Abbas,Egypt,Egypt,mécanicien bateaux,Married,Bachelor holder,73
+115,56182,M,Mohammad,George,Ghana,United States,professeur en activité physique adaptée,Divorced,High school,95
+116,41100,M,Yves,Schmidt,Mozambique,Mozambique,Immigration officer,Married,Bachelor holder,42
+117,75256,F,Anne,Tomlinson,Viet Nam,United States,responsable de réseau d'assainissement,Divorced,Masters holder,50
+118,28691,F,Leanne,Garobbio,South Africa,United States,Senior tax professional/tax inspector,Divorced,Bachelor holder,87
+119,11082,M,Hubertus,Thomas,Ecuador,United States,iconographe,Divorced,Bachelor holder,88
+120,82948,M,Vlado,Grondin,Spain,Spain,Barrister,Married,Bachelor holder,74
+121,49616,F,Deborah,Heath,Paraguay,United Kingdom,"Surveyor, hydrographic",Widow,Masters holder,74
+122,25033,M,Victor,Reynolds,"Virgin Islands, U.S.","Virgin Islands, U.S.",Communications engineer,Married,Masters holder,59
+123,96548,M,Hellmuth,Martinez,Falkland Islands (Malvinas),Falkland Islands (Malvinas),Programmierer,Divorced,PHD holder,23
+124,80996,F,Adele,Lemoine,Falkland Islands (Malvinas),Italy,Polizist,Widow,PHD holder,48
+125,72689,M,Vincent,Lebreton,Mongolia,Germany,orthodontiste,Single,Bachelor holder,37
+126,78170,M,Luc,Williams,Saint Martin (French part),Saint Martin (French part),Asphaltbauer,Single,PHD holder,70
+127,27430,F,Sarah,Benussi,Libya,Libya,Pathologist,Widow,Bachelor holder,71
+128,67646,M,Roland,Banks,United States Minor Outlying Islands,United States,Financial controller,Divorced,Bachelor holder,60
+129,60542,F,Teresa,Gute,Bosnia and Herzegovina,United States,vétérinaire,Divorced,Masters holder,74
+130,81997,M,Hilmar,Smith,Timor-Leste,Timor-Leste,responsable des ouvrages hydroélectriques,Single,High school,36
+131,76264,M,Jason,Schwital,"Korea, Democratic People's Republic of","Korea, Democratic People's Republic of",Winzer,Divorced,Masters holder,25
+132,81529,M,William,Dobes,Montenegro,France,ingénieur plasturgiste,Divorced,Masters holder,80
+133,81782,M,Hugues,Archer,Ecuador,United States,Artist,Married,PHD holder,51
+134,82092,F,Chloe,Johnson,American Samoa,United States,Patent examiner,Divorced,Bachelor holder,39
+135,78075,F,Dana,Rosemann,Bahamas,Bahamas,Textile designer,Single,High school,20
+136,20571,M,Donatello,Payet,Oman,Oman,Passenger transport manager,Single,PHD holder,76
+137,50014,F,Maryse,Sabbatini,Sint Maarten (Dutch part),Germany,"Conservator, furniture",Single,High school,68
+138,49626,F,Nadia,Vollbrecht,"Korea, Republic of",United States,Waste management officer,Married,Masters holder,40
+139,18451,F,Marissa,Thompson,Barbados,Barbados,Florist,Single,PHD holder,18
+140,13248,M,Lorenzo,Klemt,Colombia,Colombia,Dispensing optician,Widow,High school,38
+141,24998,M,Émile,Jäkel,Senegal,Senegal,"Engineer, water",Married,Bachelor holder,76
+142,12666,F,Verena,Parrish,Luxembourg,Luxembourg,"Engineer, mining",Married,High school,21
+143,63479,M,Aaron,Fliegner,Brunei Darussalam,United Kingdom,Chirurgiemechaniker,Married,Bachelor holder,27
+144,22228,M,Patrick,Nunez,Slovenia,France,Designer,Divorced,Bachelor holder,44
+145,82421,F,Mary,Bell,Montserrat,Italy,Network engineer,Widow,Bachelor holder,42
+146,14074,F,Luce,Le Gall,Jersey,Jersey,Games developer,Single,Masters holder,26
+147,95571,M,Timothy,Moreno,Madagascar,Madagascar,"Engineer, civil (consulting)",Single,Masters holder,74
+148,41209,F,Emmi,Fritsch,Colombia,Germany,"ingénieur fluides, énergies, réseaux, environnement",Widow,High school,64
+149,47008,F,Lauren,Toscanini,Liechtenstein,United States,Sport and exercise psychologist,Divorced,Masters holder,37
