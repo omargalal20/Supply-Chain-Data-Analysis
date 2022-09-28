@@ -200,7 +200,6 @@ class Neo4jGraph:
     def __relation_create_statement(self, edge):
 
         def get_custom_properties(s):
-            print(s)
             if s != 0:
                 out = ""
                 for key in s:
