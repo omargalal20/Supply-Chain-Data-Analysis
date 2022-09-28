@@ -37,7 +37,7 @@
 35,26654,South Sudan,Central Equatoria,abroad,377,[],1,2,1653851
 36,54549,"Micronesia, Federated States of",Chuuk,abroad,749,[],1,4,92910
 37,85978,Norfolk Island,Unknown,vendor,854,[],2,9,1923235
-38,31857,Albania,Korçë,customer end,862,"['Public & Social Sector', 'Education', 'Healthcare Systems & Services']",1,1,1178695
+38,31857,Albania,Korçë,customer end,862,"['Education', 'Healthcare Systems & Services', 'Public & Social Sector']",1,1,1178695
 39,17462,Sierra Leone,Eastern,distributer,790,[],4,4,642703
 40,12527,Svalbard and Jan Mayen,Unknown,customer end,677,[],1,1,1147524
 41,74653,Slovenia,Rače-Fram,customer end,283,['Retail'],4,4,661934
@@ -59,7 +59,7 @@
 57,29540,Bangladesh,Shariatpur,distributer,536,"['Paper, Forest Products & Packaging']",2,3,1933670
 58,54756,Kiribati,Line Islands,distributer,189,[],1,8,1222269
 59,68441,Macao,Unknown,customer end,349,[],2,7,748767
-60,66663,Luxembourg,Mersch,customer end,549,"['Paper, Forest Products & Packaging', 'Metals & Mining']",2,1,1786531
+60,66663,Luxembourg,Mersch,customer end,549,"['Metals & Mining', 'Paper, Forest Products & Packaging']",2,1,1786531
 61,61003,"Iran, Islamic Republic of",Zanjān,vendor,871,[],1,6,683362
 62,82777,Slovenia,Ivančna Gorica,abroad,191,['Advanced Electronics'],1,7,915672
 63,78692,Mali,Gao,distributer,846,[],2,5,1134350
@@ -112,7 +112,7 @@
 110,10661,Mexico,Baja California,abroad,301,[],3,3,1889514
 111,25889,Oman,Shamāl al Bāţinah,customer end,959,['Aerospace & Defense'],1,8,1650639
 112,17198,Côte d'Ivoire,Denguélé,distributer,218,['Automotive & Assembly'],3,6,544883
-113,67361,Suriname,Wanica,abroad,236,"['Paper, Forest Products & Packaging', 'Aerospace & Defense']",1,1,1747881
+113,67361,Suriname,Wanica,abroad,236,"['Aerospace & Defense', 'Paper, Forest Products & Packaging']",1,1,1747881
 114,98717,Lithuania,Panevėžio miestas,distributer,848,[],2,7,29006
 115,34779,Réunion,Unknown,customer end,464,['Oil & Gas'],3,2,191216
 116,48381,Uruguay,Rocha,customer end,478,[],4,4,183792

@@ -365,7 +365,7 @@
 186,retailer,54549,"['Micronesia, Federated States of' 'Chuuk' 'abroad' 749 list([]) 1 4 92910]"
 187,retailer,85978,['Norfolk Island' 'Unknown' 'vendor' 854 list([]) 2 9 1923235]
 188,retailer,31857,"['Albania' 'Korçë' 'customer end' 862
- list(['Public & Social Sector', 'Education', 'Healthcare Systems & Services'])
+ list(['Education', 'Healthcare Systems & Services', 'Public & Social Sector'])
  1 1 1178695]"
 189,retailer,17462,['Sierra Leone' 'Eastern' 'distributer' 790 list([]) 4 4 642703]
 190,retailer,12527,"['Svalbard and Jan Mayen' 'Unknown' 'customer end' 677 list([]) 1 1
@@ -400,7 +400,7 @@
 208,retailer,54756,['Kiribati' 'Line Islands' 'distributer' 189 list([]) 1 8 1222269]
 209,retailer,68441,['Macao' 'Unknown' 'customer end' 349 list([]) 2 7 748767]
 210,retailer,66663,"['Luxembourg' 'Mersch' 'customer end' 549
- list(['Paper, Forest Products & Packaging', 'Metals & Mining']) 2 1
+ list(['Metals & Mining', 'Paper, Forest Products & Packaging']) 2 1
  1786531]"
 211,retailer,61003,"['Iran, Islamic Republic of' 'Zanjān' 'vendor' 871 list([]) 1 6 683362]"
 212,retailer,82777,"['Slovenia' 'Ivančna Gorica' 'abroad' 191 list(['Advanced Electronics']) 1
@@ -471,7 +471,7 @@
 262,retailer,17198,"[""Côte d'Ivoire"" 'Denguélé' 'distributer' 218
  list(['Automotive & Assembly']) 3 6 544883]"
 263,retailer,67361,"['Suriname' 'Wanica' 'abroad' 236
- list(['Paper, Forest Products & Packaging', 'Aerospace & Defense']) 1 1
+ list(['Aerospace & Defense', 'Paper, Forest Products & Packaging']) 1 1
  1747881]"
 264,retailer,98717,['Lithuania' 'Panevėžio miestas' 'distributer' 848 list([]) 2 7 29006]
 265,retailer,34779,['Réunion' 'Unknown' 'customer end' 464 list(['Oil & Gas']) 3 2 191216]
