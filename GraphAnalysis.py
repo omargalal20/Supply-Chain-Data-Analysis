@@ -1,4 +1,3 @@
-from queue import Empty
 import pandas as pd
 from neo4j import GraphDatabase
 

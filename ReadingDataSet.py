@@ -1,13 +1,10 @@
 import os
-import time
-
 import pandas as pd
 import random
 import numpy as np
 from functools import reduce
 import spacy
 from CheckSynonymForColumns import ConvertColumnsUsingSynonym
-
 
 class ReadingDataSet:
 
@@ -31,7 +28,7 @@ class ReadingDataSet:
         nlp = spacy.load('en_core_web_md')
         for file in os.listdir(path_of_the_directory):
             if file.endswith(ext):
-                print(file)
+                # print(file)
                 temp = (file.replace("_", " ").replace(".", " ").split(" ")[0].lower())
                 self.All_dfs[temp] = pd.read_csv(path_of_the_directory + file)
                 # Adjust Naming Convention For Columns

@@ -1,4 +1,3 @@
-from warnings import catch_warnings
 from Neo4jGraph import Neo4jGraph
 from ReadingDataSet import ReadingDataSet
 from data_analysis_internship.ProductAnalysis import ProductAnalysis
@@ -10,7 +9,7 @@ import pandas as pd
 from os.path import exists
 import pickle
 
-if not exists("Pickle Files/nodes_df.pkl"):
+if exists("Pickle Files/nodes_df.pkl"):
 
     dataSet = ReadingDataSet()
     # Dictionary containing all dataframes
@@ -110,8 +109,8 @@ products_analyzer.analayze_all_suppliers_products()
 
 try:
     print("beginning")
-    # myGraph = Neo4jGraph(nodes_df, edges_df)
-    # # myGraph.populate_database()
+    myGraph = Neo4jGraph(nodes_df, edges_df)
+    myGraph.populate_database()
     # #______________________________________________
     # # Product Analysis
     #
