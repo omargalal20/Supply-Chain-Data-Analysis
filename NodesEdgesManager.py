@@ -54,7 +54,6 @@ class NodesEdgesManager:
 
     # Create nodes table
     def __add_nodes(self):
-
         nodesTB = pd.DataFrame(columns=['Label', 'ID', 'Attributes'])
 
         allDfsKeys = list(self.All_dfs.keys())

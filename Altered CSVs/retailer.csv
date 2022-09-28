@@ -37,7 +37,7 @@
 35,26654,South Sudan,Central Equatoria,abroad,377,[],1,2,1653851
 36,54549,"Micronesia, Federated States of",Chuuk,abroad,749,[],1,4,92910
 37,85978,Norfolk Island,Unknown,vendor,854,[],2,9,1923235
-38,31857,Albania,Korçë,customer end,862,"['Healthcare Systems & Services', 'Public & Social Sector', 'Education']",1,1,1178695
+38,31857,Albania,Korçë,customer end,862,"['Education', 'Healthcare Systems & Services', 'Public & Social Sector']",1,1,1178695
 39,17462,Sierra Leone,Eastern,distributer,790,[],4,4,642703
 40,12527,Svalbard and Jan Mayen,Unknown,customer end,677,[],1,1,1147524
 41,74653,Slovenia,Rače-Fram,customer end,283,['Retail'],4,4,661934
@@ -52,14 +52,14 @@
 50,96028,Cabo Verde,São Salvador do Mundo,abroad,773,[],1,3,1137167
 51,76059,Malawi,Dowa,customer end,687,['Automotive & Assembly'],4,3,1926475
 52,70666,"Saint Helena, Ascension and Tristan da Cunha",Saint Helena,vendor,315,[],1,8,1662706
-53,47196,Albania,Elbasan,abroad,527,"['Life Sciences', 'Advanced Electronics']",4,2,1569819
+53,47196,Albania,Elbasan,abroad,527,"['Advanced Electronics', 'Life Sciences']",4,2,1569819
 54,26461,Saint Vincent and the Grenadines,Charlotte,customer end,996,[],2,8,276071
 55,91566,Anguilla,Unknown,abroad,313,[],4,4,592968
 56,48462,Niger,Dosso,distributer,284,[],2,9,234649
 57,29540,Bangladesh,Shariatpur,distributer,536,"['Paper, Forest Products & Packaging']",2,3,1933670
 58,54756,Kiribati,Line Islands,distributer,189,[],1,8,1222269
 59,68441,Macao,Unknown,customer end,349,[],2,7,748767
-60,66663,Luxembourg,Mersch,customer end,549,"['Paper, Forest Products & Packaging', 'Metals & Mining']",2,1,1786531
+60,66663,Luxembourg,Mersch,customer end,549,"['Metals & Mining', 'Paper, Forest Products & Packaging']",2,1,1786531
 61,61003,"Iran, Islamic Republic of",Zanjān,vendor,871,[],1,6,683362
 62,82777,Slovenia,Ivančna Gorica,abroad,191,['Advanced Electronics'],1,7,915672
 63,78692,Mali,Gao,distributer,846,[],2,5,1134350
