@@ -135,9 +135,6 @@ class Neo4jGraph:
 
             print("------------executed-----------------")
 
-
-
-
     def __add_delete_statement(self):
         delete_statement = "match (n) detach delete n"
         self.__transaction_execution_commands.append(delete_statement)

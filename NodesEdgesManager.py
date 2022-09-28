@@ -137,9 +137,6 @@ class NodesEdgesManager:
 
         avg_RentalPrice = int(self.All_dfs["warehouses"]["Rental price"].mean())
 
-
-
-
         # print(avg_price,avg_ProfitMargin,avg_AnuualSales,avg_MarketShare)
         myedges = self.edges_df_edges_as_nodes
         mynodes = self.nodes_df_edges_as_nodes
@@ -229,7 +226,7 @@ class NodesEdgesManager:
     def __calculateFinalWeightFromTransportationCost(self):
         def calculateAverage(row):
             # return row['Weight'] + (row['Distance'] + row['Duration'] / 2)
-            return (row['Transportation_Distance'] + row['Transportation_Duration'] / 2)
+            return ((row['Transportation_Distance'] + row['Transportation_Duration']) / 2)
 
         self.edges_df_edges_as_nodes['Transportation_Cost'] = self.edges_df_edges_as_nodes.apply(
             lambda row: calculateAverage(row), axis=1)
