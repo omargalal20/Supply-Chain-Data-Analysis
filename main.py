@@ -107,13 +107,17 @@ try:
     graphAnalysis = GraphAnalysis(myGraph,nodesTable,edgesTable)
     # z.to_csv("./CSV Files/nodesFilter.csv")
     criticalNodeTask = CriticalNodeTask(myGraph,graphAnalysis,nodes,edges,nodes,edgesList)
+    criticalNodeTask.getNodesWiththeCountsOfConnectedNodes("supplyChain",'NATURAL')
     # x = criticalNodeTask.getNodesWiththeCountsOfConnectedNodes('supplyChain','undirected')
     # print(criticalNodeTask.criticalNodesRespectToConnetedNodes(x))
     # print(criticalNodeTask.getCriticalNodesRespectToLocation(nodesTable))
     #criticalNodeTask.criticalNodesRespectToPrices(edges_df,"Supplier 90236","supplyChain")
-    findAllPathsSet = {'targetNodeName': "Supplier 48580" , 'cases': 1, 'graphName': "supplyChain",'relationship':"",'k':4,'TargetType':""}
-    validaPathsSet = {'nodesNames':nodes,'edgesNames':edges,'nodesTable':nodesTable,"desiredType":"Chemicals"}
-    criticalNodeTask.criticalNodesRespectToProduct("Supplier",nodesTable,edges_df,nodes_df)
+    findAllPathsSet = {'targetNodeName': "" , 'cases': 0, 'graphName': "supplyChain",'relationship':"",'k':1,'TargetType':""}
+    validaPathsSet = {'nodesNames':nodes,'edgesNames':edges,'nodesTable':nodesTable,"desiredType":""}
+    #result = graphAnalysis.mainMethod('Supplier 55441',True,findAllPathsSet,validaPathsSet)
+    #result.to_csv("result.csv")
+    #criticalNodeTask.criticalNodesRespectToProduct("Supplier",nodesTable,edges_df,nodes_df)
+    #criticalNodeTask.criticalNodesRespectToWeightAndPrices("Supplier 90236","Retailer 25889","supplyChain")
     # x = graphAnalysis.mainMethod('Supplier 65468',True,findAllPathsSet,validaPathsSet)
     # x.to_csv('./CSV Files/result.csv')
 except  Exception as e: print(e)

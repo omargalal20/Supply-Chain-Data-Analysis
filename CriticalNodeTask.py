@@ -1,4 +1,7 @@
+from sqlite3 import connect
 import pandas as pd
+
+from GraphAnalysis import GraphAnalysis
 
 
 class CriticalNodeTask:
@@ -10,13 +13,12 @@ class CriticalNodeTask:
         self.edgesNames = edgesNames
         self.nodesTable = nodesTable
         self.relationNames = relationNames
-
-    # get the nodes and count of connected Nodes to it
+    # get the nodes and count of connected Nodes to it (det degree of each node)
     def getNodesWiththeCountsOfConnectedNodes(self,graphName,orientation=""):
         executedStatment = ""
         # check if there is orientation give or not
         if orientation == "":
-            # if not, send the below command to neo4ji
+            # if not, send the below command to neo4ji --- orientation natural (default)
             executedStatment = '''CALL gds.degree.stream('%s')
                                     YIELD nodeId, score
                                     RETURN gds.util.asNode(nodeId).name AS name, score AS followers
@@ -36,7 +38,11 @@ class CriticalNodeTask:
         criticalNodesDF = self.returnCriticalNodesDF(criticalNodes)
         # validate the number of connected nodes
         criticalNodesDF = self.ValidatethecountsOfNodes(criticalNodesDF,self.nodeNames)
-        criticalNodesDF.to_csv("critic.csv")
+        print(criticalNodesDF)
+        for criticalNode in range(len(criticalNodesDF)):
+            count = self.validateConnectedNodes(criticalNodesDF.loc[criticalNode]['name'])
+            if count !=0:
+                criticalNodesDF.loc[criticalNode]['followers'] = count
         return criticalNodesDF
 
     # takes the criticalNodes as neo4ji outout and return it as dataframe
@@ -69,11 +75,41 @@ class CriticalNodeTask:
             # check if the current not in not in nodeNames "Not an actual Node" or has zero followers (doesn't connected to any node) or 
             # nodeLabel is customer
             ## if so, it should be removed
-            if (nodeLabel not in nodeNames) | (nodeFollowers == 0) | (nodeLabel == 'customer'):
+            if (nodeLabel not in nodeNames) | (nodeFollowers == 0) | (nodeLabel == 'customer') | (nodeFollowers == 1):
                 criticalNodesDF = criticalNodesDF.drop(node)
         # reindex the dataframe and return it
         return criticalNodesDF.reset_index(drop=True) 
     
+    def validateConnectedNodes(self,sourceNodeName):
+        connectedNodes = self.getConnectedNodes(sourceNodeName)
+        if "Supplier" in sourceNodeName:
+           connectedNodes = list(filter(lambda node: "Facilities" not in node,connectedNodes))
+        if len(connectedNodes) != 0 :
+            findAllPathsSet = {'targetNodeName': "" , 'cases': 0, 'graphName': "supplyChain",'relationship':"",'k':1,'TargetType':""}
+            validatPathsDic = {'nodesNames':self.nodeNames,'edgesNames':self.edgesNames,'nodesTable':self.nodeNames,"desiredType":""}
+            pathsDF = (self.graphAnalysis.mainMethod(sourceNodeName,True,findAllPathsSet,validatPathsDic))['nodeNames']
+            for connectedNode in connectedNodes:
+                found = False
+                for path in range(len(pathsDF)):
+                    nodeNames = pathsDF.loc[path]
+                    if connectedNode == nodeNames[1]:
+                        found = True
+                        break
+                if(not found):
+                    connectedNodes.remove(connectedNode)
+        return len(connectedNodes)
+    
+    def getConnectedNodes(self,souceNodeName):
+        command = '''match(n:Supplier {name:'%s'})-[]->(m) return n.name,m.name''' %(souceNodeName)
+        result = self.myGraph.execute_Command(command)
+        resultNames = []
+        for criticalNode in result:
+            x = dict(criticalNode)
+            resultNames.append(x['m.name'])
+        return resultNames
+
+
+
     #getcritical nodes respect to how many connected nodes coneected to it and returns list with their names
     def criticalNodesRespectToConnetedNodes(self,criticalNodesDF):
         # get followers
@@ -177,41 +213,62 @@ class CriticalNodeTask:
             location = (tableWhereIgetLocationFrom.loc[node]['Attributes'])[1]
         # return the location
         return location
-
-
-    def criticalNodesRespectToPrices(self,edgesDF,sourceNodeName,graphName):
-        findAllPathsDic = {'targetNodeName': "Retailer 25889" , 'cases': 1, 'graphName': graphName,'relationship':"",'k':7,'TargetType':""}
-        validatPathsDic = {'nodesNames':self.nodeNames,'edgesNames':self.edgesNames,'nodesTable':self.nodeNames,"desiredType":""}
    
-    # Supplier,Retailer,Warehouse
+    # Get CriticalNodes Respect to the product --- which the only node that supply specific product 
+    # takes the source label "Supplier,Warehouses,Retailer", nodesTable,edgesDF, nodesDF
     def criticalNodesRespectToProduct(self,sourceLabel,nodesTable,edgesDF,nodes_df):
-        # I have all the supplier
+       # filter the edges table based on the source Label and the products
         filteredEdgesDF = (edgesDF[(edgesDF.From_Table == sourceLabel)&(edgesDF.To_Table == "Products")]).reset_index(drop=True) 
-        filteredEdgesDF.to_csv("hello.csv")
-        # I need to access supplier to -----
-        criticalSupplierWithRespectToProduct = []
+        # for future usages
+        criticalNodesWithRespectToProduct = []
         repeatedProductsIndices = []
-        trail = []
+        # loop oveer the filtered edges df
         for node in range(len(filteredEdgesDF)):
+            # check we checked on the current product or not
             if filteredEdgesDF.loc[node]['To'] in repeatedProductsIndices:
+                # if so, skip what the code below
                 continue
+            # get the currect product
             To_Index = filteredEdgesDF.loc[node]['To'] 
+            # filter the edges table based on the current produc index -- to check if there are more than node supply the current product
             temp = (filteredEdgesDF[(filteredEdgesDF.To == To_Index)])
-           
+           # if the current product doesn't occur again in the table
             if len(temp) == 1:
+                # get the from node "Retailer,Supplier,Warehouse" from nodesTable based on the index mentioned on the egdesTable
                 sourceID = nodesTable.loc[(filteredEdgesDF.loc[node]['From'])]['ID']
-                sourceNodeName = "Supplier " + str(sourceID)
-                criticalSupplierWithRespectToProduct.append(sourceNodeName)
-                print("to_index")
-                print(To_Index)
-                print(nodes_df.loc[To_Index]['Label'] + " " +str(nodes_df.loc[To_Index]['ID']))
+                # get the node name
+                sourceNodeName = sourceLabel + str(sourceID)
+                # append it on the list
+                criticalNodesWithRespectToProduct.append(sourceNodeName)
+            # if the current product occurs more than once in the edgesTable add it to the repeated products 
             else:
                 repeatedProductsIndices.append(filteredEdgesDF.loc[node]['To'])
-        # print(filteredEdgesDF.to_csv("temppp.csv"))
-        # print(criticalSupplierWithRespectToProduct)   
-        # print(len(criticalSupplierWithRespectToProduct)) 
+        return criticalNodesWithRespectToProduct
+    
+
+    def criticalNodesRespectToWeightAndPrices(self,sourceNodeName,targetNodeName,graphName):
+        # criteria 1: using dijkstra's algorithm
+        findAllPathsDic = {'targetNodeName': targetNodeName , 'cases': 2, 'graphName': graphName,'relationship':"",'k':1,'TargetType':""}
+        validatPathsDic = {'nodesNames':self.nodeNames,'edgesNames':self.edgesNames,'nodesTable':self.nodeNames,"desiredType":""}
+        theUniquePath = (self.graphAnalysis.mainMethod(sourceNodeName,True,findAllPathsDic,validatPathsDic))['nodeNames'][0]
+        nodesWithTheirFollowers = self.getNodesWiththeCountsOfConnectedNodes(graphName,"UNDIRECTED") 
+        followersList = []
+        # criteria 2: check on connected Nodes
+        edgesListCapital = list(map(lambda node: node.capitalize(), self.relationNames))
+        result = list(filter(lambda node: ((node.split(" "))[0]) not in edgesListCapital,theUniquePath))
+        for node in result:
+            followers = ((nodesWithTheirFollowers[(nodesWithTheirFollowers.name == node)]).reset_index(drop=True))['followers'][0]
+            followersList.append(followers)
+        followersList.pop(0)
+        followersList.pop(-1)
+        return followersList
         
-        #print(repeatedProductsIndices)
+            
+
+
+
+    
+    
 
 
 
