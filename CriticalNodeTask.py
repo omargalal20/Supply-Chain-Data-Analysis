@@ -36,14 +36,35 @@ class CriticalNodeTask:
         criticalNodes = self.myGraph.execute_Command(executedStatment)
         # convert the output to dataframe
         criticalNodesDF = self.returnCriticalNodesDF(criticalNodes)
-        # validate the number of connected nodes
-        criticalNodesDF = self.ValidatethecountsOfNodes(criticalNodesDF,self.nodeNames)
-        print(criticalNodesDF)
-        for criticalNode in range(len(criticalNodesDF)):
-            count = self.validateConnectedNodes(criticalNodesDF.loc[criticalNode]['name'])
-            if count !=0:
-                criticalNodesDF.loc[criticalNode]['followers'] = count
+
+        suppliersCNDF =  (criticalNodesDF[criticalNodesDF['name'].str.contains("Supplier")]).reset_index(drop=True) 
+        retailerCNDF = (criticalNodesDF[criticalNodesDF['name'].str.contains("Retailer")]).reset_index(drop=True) 
+        warehousesCNDF = (criticalNodesDF[criticalNodesDF['name'].str.contains("Warehouses")]).reset_index(drop=True) 
+
+        suppliersCNDF = self.ValidatethecountsOfNodes(suppliersCNDF,10)
+        retailerCNDF = self.ValidatethecountsOfNodes(retailerCNDF,2)
+        warehousesCNDF = self.ValidatethecountsOfNodes(warehousesCNDF,5)
+        
+        self.validateConnectedNodes(suppliersCNDF)
+        #self.validateConnectedNodes(retailerCNDF)
+        #self.validateConnectedNodes(warehousesCNDF)
+        
+        # for criticalNode in range(len(criticalNodesDF)):
+        #     count = self.validateConnectedNodes(criticalNodesDF.loc[criticalNode]['name'])
+        #     if count !=0:
+        #         criticalNodesDF.at[criticalNode, 'followers'] = count
         return criticalNodesDF
+    
+    
+    def validateConnectedNodes(self,DF):
+        for node in range(len(DF)):
+            connectedNodes = self.getConnectedNodes(DF.loc[node]['name'])
+            print("connectedNodes")
+            print(len(connectedNodes))
+            validConnectedNodes = list(filter(lambda node: (node.split(" ")[0] != "Facilities") or (node.split(" ")[0] != "Products"),connectedNodes))
+            print("AFTER")
+            print(len(validConnectedNodes))
+        #return len(validConnectedNodes)
 
     # takes the criticalNodes as neo4ji outout and return it as dataframe
     def returnCriticalNodesDF(self,criticalNodes):
@@ -62,50 +83,21 @@ class CriticalNodeTask:
         # return the dataframe of nodes with the count of its connected nodes
         return criticalNodesDF
 
-    # takes the criticalNodesDF and nodeNames and return the valid Nodes
-    ## removes the nodes with zeros connected nodes and the nodes that are actual nodes
-    def ValidatethecountsOfNodes(self,criticalNodesDF,nodeNames):
-        temp = criticalNodesDF
-        # loop over the criticalNodes dataFrame
-        for node in range(len(temp)):
-            # get name of the current node
-            nodeLabel = (((criticalNodesDF.loc[node]['name']).split(" "))[0]).lower()
-            # get followers of the current node
-            nodeFollowers = criticalNodesDF.loc[node]['followers']
-            # check if the current not in not in nodeNames "Not an actual Node" or has zero followers (doesn't connected to any node) or 
-            # nodeLabel is customer
-            ## if so, it should be removed
-            if (nodeLabel not in nodeNames) | (nodeFollowers == 0) | (nodeLabel == 'customer') | (nodeFollowers == 1):
-                criticalNodesDF = criticalNodesDF.drop(node)
-        # reindex the dataframe and return it
-        return criticalNodesDF.reset_index(drop=True) 
     
-    def validateConnectedNodes(self,sourceNodeName):
-        connectedNodes = self.getConnectedNodes(sourceNodeName)
-        if "Supplier" in sourceNodeName:
-           connectedNodes = list(filter(lambda node: "Facilities" not in node,connectedNodes))
-        if len(connectedNodes) != 0 :
-            findAllPathsSet = {'targetNodeName': "" , 'cases': 0, 'graphName': "supplyChain",'relationship':"",'k':1,'TargetType':""}
-            validatPathsDic = {'nodesNames':self.nodeNames,'edgesNames':self.edgesNames,'nodesTable':self.nodeNames,"desiredType":""}
-            pathsDF = (self.graphAnalysis.mainMethod(sourceNodeName,True,findAllPathsSet,validatPathsDic))['nodeNames']
-            for connectedNode in connectedNodes:
-                found = False
-                for path in range(len(pathsDF)):
-                    nodeNames = pathsDF.loc[path]
-                    if connectedNode == nodeNames[1]:
-                        found = True
-                        break
-                if(not found):
-                    connectedNodes.remove(connectedNode)
-        return len(connectedNodes)
+    def ValidatethecountsOfNodes(self,DF,min):    
+        return  DF[DF.followers>=min].reset_index(drop=True) 
+    
+
     
     def getConnectedNodes(self,souceNodeName):
-        command = '''match(n:Supplier {name:'%s'})-[]->(m) return n.name,m.name''' %(souceNodeName)
+        nodeLabel = souceNodeName.split(" ")[0]
+        command = '''match(n:%s {name:'%s'})-[]->(m) return n.name,m.name''' %(nodeLabel,souceNodeName)
         result = self.myGraph.execute_Command(command)
         resultNames = []
         for criticalNode in result:
             x = dict(criticalNode)
             resultNames.append(x['m.name'])
+        print(resultNames)
         return resultNames
 
 

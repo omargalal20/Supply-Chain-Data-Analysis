@@ -99,15 +99,17 @@ else:
 ## can get relationName from edges DF, has column name has the relation names
 edgesList = []
 edgesList = ['Order', 'rcextship', 'scextship', 'srintship', 'ssintship', 'Related_To',
-            'Manufactures', 'Orders_Prodcut', 'externaltransactions', 'internaltransactions']   
+            'Manufactures', 'Orders_Prodcut', 'externaltransactions', 'internaltransactions']  
+
+
 try:
     myGraph = Neo4jGraph(nodes_df,edges_df)
-    # myGraph.populate_database()
-    #myGraph.draw_graph("supplyChain4")
+    # # myGraph.populate_database()
+    # #myGraph.draw_graph("supplyChain4")
     graphAnalysis = GraphAnalysis(myGraph,nodesTable,edgesTable)
-    # z.to_csv("./CSV Files/nodesFilter.csv")
+    # # z.to_csv("./CSV Files/nodesFilter.csv")
     criticalNodeTask = CriticalNodeTask(myGraph,graphAnalysis,nodes,edges,nodes,edgesList)
-    criticalNodeTask.getNodesWiththeCountsOfConnectedNodes("supplyChain",'NATURAL')
+    criticalNodeTask.getNodesWiththeCountsOfConnectedNodes("supplyChain") 
     # x = criticalNodeTask.getNodesWiththeCountsOfConnectedNodes('supplyChain','undirected')
     # print(criticalNodeTask.criticalNodesRespectToConnetedNodes(x))
     # print(criticalNodeTask.getCriticalNodesRespectToLocation(nodesTable))
@@ -122,6 +124,7 @@ try:
     # x.to_csv('./CSV Files/result.csv')
 except  Exception as e: print(e)
 finally:
+    
     print("Terminating")
     myGraph.close()
 
