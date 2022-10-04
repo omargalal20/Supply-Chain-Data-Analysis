@@ -19,7 +19,7 @@ class InitializeNodesAndEdges:
 
     def nodes_edges(self, fk):
         for f in fk:
-            if(f not in ['ssintorders','manufacturing']):
+            if(f not in ['ssintorders','manufacturing', 'rcextorders', 'scextorders', 'srintorders']):
                 if len(fk[f]) == 2:
                     self.edges.append(f)
                 elif len(fk[f]) == 1:

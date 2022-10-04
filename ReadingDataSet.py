@@ -1,10 +1,13 @@
 import os
+
+import pandas
 import pandas as pd
 import random
 import numpy as np
 from functools import reduce
 import spacy
 from CheckSynonymForColumns import ConvertColumnsUsingSynonym
+
 
 class ReadingDataSet:
 
@@ -18,8 +21,14 @@ class ReadingDataSet:
         self.splittingShipmentsTables()
         self.splittingOrdersTables()
         self.removeRedundantTables()
-        self.addProductsToOrders()
-        self.__add_type_to_retailer()
+        # self.__add_products_to_ssintorders()
+        # self.__add_products_to_srintorders()
+        self.__add_products_to_internal_orders()
+        self.__add_type_and_products_sold_to_retailer()
+
+        self.__add_products_to_rcextorders()
+        self.__add_products_to_scextorders()
+
         self.__add_manufacturing_price()
 
     def createDataframes(self):
@@ -103,7 +112,8 @@ class ReadingDataSet:
 
         c = 9931
         for id in ship_id_not_in_orders_ship_id:
-            new_row = [{"IntOrders_id": c, "IntShip_id": id, "quantity": (random.randint(1,1000)), "placed_when": "1993-05-08",
+            new_row = [{"IntOrders_id": c, "IntShip_id": id, "quantity": (random.randint(1, 1000)),
+                        "placed_when": "1993-05-08",
                         "actual_date": "1993-05-30 00:00:00", "expected_date": "1993-06-01", "cost": 38.90,
                         "status": "Closed"}]
             df = pd.DataFrame(new_row)
@@ -188,7 +198,7 @@ class ReadingDataSet:
         for table in self.All_dfs:
             self.All_dfs[table].fillna('Unknown', inplace=True)
 
-    def addProductsToOrders(self):
+    def __add_products_to_ssintorders(self):
 
         products_df = self.All_dfs['products']
 
@@ -196,14 +206,15 @@ class ReadingDataSet:
         manufactured_products = self.All_dfs["manufacturing"]["Product_id"]
         product_ids = pd.Series(self.All_dfs["products"]["prod_id"].unique())
 
-        not_manufactured_products = manufactured_products[~product_ids.isin(manufactured_products)].unique()
+        not_manufactured_products = product_ids[~product_ids.isin(manufactured_products)].unique()
 
         products_column = []
         order_cost = []
-        for index, row in self.All_dfs["ssintorders"].iterrows():
+        for _, row in self.All_dfs["ssintorders"].iterrows():
             ship = row["IntShip_id"]
             quantity = row['quantity']
             sup_id = self.All_dfs["ssintship"].query(f'IntShip_id == {ship}')["listSuppIds"].iloc[0]
+
             intersection = np.where(factory_ids == sup_id)[0]
             product = ""
             if (len(intersection) >= 1):
@@ -222,31 +233,239 @@ class ReadingDataSet:
         self.All_dfs['ssintorders']["prod_id"] = products_column
         self.All_dfs['ssintorders']["cost"] = order_cost
 
-    def __add_type_to_retailer(self):
+
+    def __add_products_to_internal_orders(self):
+
+        def add_products(pre):
+            internal_orders_df = self.All_dfs[f"{pre}intorders"]
+            internal_shipments_df = self.All_dfs[f"{pre}intship"]
+
+            internal_orders_df_numpy = internal_orders_df.to_numpy()
+
+            columns_index = dict()
+
+            for index, column_name in enumerate(internal_orders_df.columns):
+                columns_index[column_name] = index
+
+            products_df = self.All_dfs['products']
+            factory_ids = self.All_dfs["manufacturing"]['Factory_id']
+            manufactured_products = self.All_dfs["manufacturing"]["Product_id"]
+            product_ids = pd.Series(self.All_dfs["products"]["prod_id"].unique())
+
+            not_manufactured_products = product_ids[~product_ids.isin(manufactured_products)].unique()
+
+            products_column = []
+            order_cost = []
+            for row in internal_orders_df_numpy:
+                ship = row[columns_index["IntShip_id"]]
+                quantity = row[columns_index['quantity']]
+                ship_row = internal_shipments_df.query(f'IntShip_id == {ship}')
+                sup_id = ship_row["listSuppIds"].iloc[0]
+
+                intersection = np.where(factory_ids == sup_id)[0]
+
+                product = ""
+
+                if len(intersection) >= 1:
+                    product = manufactured_products[random.choice(intersection)]
+                    # products_column.append(manufactured_products[random.choice(intersection)])
+                elif len(intersection) == 0:
+                    product = random.choice(not_manufactured_products)
+                    # products_column.append(random.choice(not_manufactured_products))
+                prod_price = products_df[products_df["prod_id"] == product].iloc[0]['price']
+
+                new_prod_price = prod_price * quantity
+
+                products_column.append(product)
+                order_cost.append(new_prod_price)
+
+            internal_orders_df["prod_id"] = products_column
+            internal_orders_df["cost"] = order_cost
+            self.All_dfs[f"{pre}intorders"] = internal_orders_df
+
+        add_products("ss")
+        add_products("sr")
+
+
+    def __add_products_to_srintorders(self):
+
+        internal_orders_df = self.All_dfs["srintorders"]
+        internal_shipments_df = self.All_dfs["srintship"]
+
+        internal_orders_df_numpy = internal_orders_df.to_numpy()
+
+        columns_index = dict()
+
+        for index, column_name in enumerate(internal_orders_df.columns):
+            columns_index[column_name] = index
+
+        products_df = self.All_dfs['products']
+        factory_ids = self.All_dfs["manufacturing"]['Factory_id']
+        manufactured_products = self.All_dfs["manufacturing"]["Product_id"]
+        product_ids = pd.Series(self.All_dfs["products"]["prod_id"].unique())
+
+        not_manufactured_products = product_ids[~product_ids.isin(manufactured_products)].unique()
+
+        products_column = []
+        order_cost = []
+        for row in internal_orders_df_numpy:
+            ship = row[columns_index["IntShip_id"]]
+            quantity = row[columns_index['quantity']]
+            ship_row = internal_shipments_df.query(f'IntShip_id == {ship}')
+            sup_id = ship_row["listSuppIds"].iloc[0]
+
+            intersection = np.where(factory_ids == sup_id)[0]
+
+            product = ""
+
+            if len(intersection) >= 1:
+                product = manufactured_products[random.choice(intersection)]
+                # products_column.append(manufactured_products[random.choice(intersection)])
+            elif len(intersection) == 0:
+                product = random.choice(not_manufactured_products)
+                # products_column.append(random.choice(not_manufactured_products))
+            prod_price = products_df[products_df["prod_id"] == product].iloc[0]['price']
+
+            new_prod_price = prod_price * quantity
+
+            products_column.append(product)
+            order_cost.append(new_prod_price)
+
+        internal_orders_df["prod_id"] = products_column
+        internal_orders_df["cost"] = order_cost
+        self.All_dfs["srintorders"] = internal_orders_df
+
+    def __add_products_to_scextorders(self):
+
+        products_df = self.All_dfs['products']
+        factory_ids = self.All_dfs["manufacturing"]['Factory_id']
+        manufactured_products = self.All_dfs["manufacturing"]["Product_id"]
+        product_ids = pd.Series(self.All_dfs["products"]["prod_id"].unique())
+
+        not_manufactured_products = product_ids[~product_ids.isin(manufactured_products)].unique()
+
+        products_column = []
+        order_cost = []
+        for _, row in self.All_dfs["scextorders"].iterrows():
+            ship = row["ExtShip_id"]
+            quantity = row['quantity']
+            ship_row = self.All_dfs["scextship"].query(f'ExtShip_id == {ship}')
+            sup_id = ship_row["factoryIds/retailerIds"].iloc[0]
+            # ret_id = ship_row["factoryIds"].iloc[0]
+            intersection = np.where(factory_ids == sup_id)[0]
+            product = ""
+            if (len(intersection) >= 1):
+                product = manufactured_products[random.choice(intersection)]
+                # products_column.append(manufactured_products[random.choice(intersection)])
+            elif (len(intersection) == 0):
+                product = random.choice(not_manufactured_products)
+                # products_column.append(random.choice(not_manufactured_products))
+            prod_price = products_df[products_df["prod_id"] == product].iloc[0]['price']
+
+            new_prod_price = prod_price * quantity
+
+            products_column.append(product)
+            order_cost.append(new_prod_price)
+
+        self.All_dfs['scextorders']["prod_id"] = products_column
+        self.All_dfs['scextorders']["cost"] = order_cost
+
+    def __add_products_to_rcextorders(self):
+
+        products_df = self.All_dfs['products']
+        retailer_df = self.All_dfs['retailer']
+        rcextorders_df = self.All_dfs['rcextorders']
+        rcextship_df = self.All_dfs['rcextship']
+
+        manufactured_products = self.All_dfs["manufacturing"]["Product_id"]
+        product_ids = pd.Series(self.All_dfs["products"]["prod_id"].unique())
+
+        not_manufactured_products = product_ids[~product_ids.isin(manufactured_products)].unique()
+
+        columns_index = dict()
+
+        print(retailer_df.columns)
+
+        for index, column_name in enumerate(rcextorders_df.columns):
+            columns_index[column_name] = index
+
+        rcextorders_df_numpy = rcextorders_df.to_numpy()
+
+        products_column = []
+        order_cost = []
+
+        for row in rcextorders_df_numpy:
+            ship = row[columns_index["ExtShip_id"]]
+            quantity = row[columns_index['quantity']]
+            ship_row = rcextship_df.query(f'ExtShip_id == {ship}')
+            retailer_id = ship_row["factoryIds/retailerIds"].iloc[0]
+            # ret_id = ship_row["factoryIds"].iloc[0]
+            retailer_products = retailer_df.query(f"retailer_id == {retailer_id}").iloc[0]["products_sold"]
+            product = ""
+            if len(retailer_products) >= 1:
+                product = random.choice(retailer_products)
+
+            elif len(retailer_products) == 0:
+                product = random.choice(not_manufactured_products)
+
+            prod_price = products_df[products_df["prod_id"] == product].iloc[0]['price']
+
+            new_prod_price = prod_price * quantity
+
+            products_column.append(product)
+            order_cost.append(new_prod_price)
+
+        rcextorders_df["prod_id"] = products_column
+        rcextorders_df["cost"] = order_cost
+        self.All_dfs["rcextorders"] = rcextorders_df
+
+    def __add_type_and_products_sold_to_retailer(self):
+        """
+        Add type and products sold to retailer
+
+        :return: NONE
+        """
+
         supplier_to_retailer_shipment_df = self.All_dfs["srintship"]
         retailer_df = self.All_dfs["retailer"]
         supplier_df = self.All_dfs["supplier"]
+        srorders_df = self.All_dfs["srintorders"]
         suppliers_ids_in_shipments = list(supplier_to_retailer_shipment_df.listSuppIds.unique())
         suppliers_in_shipments_df = supplier_df[supplier_df["supp_id"].isin(suppliers_ids_in_shipments)]
         retailers_types_column = []
-        for _, retialer_row in retailer_df.iterrows():
+        products_sold_column = []
+        for retailer_row in retailer_df.to_dict('records'):
             retailer_types = set()
-            retailer_id = retialer_row.retailer_id
+            retailer_id = retailer_row["retailer_id"]
+            products_sold = set()
             shipments_with_retailer_df = supplier_to_retailer_shipment_df[
                 supplier_to_retailer_shipment_df.factoryIds == retailer_id]
-            for _, shipment_row in shipments_with_retailer_df.iterrows():
-                supplier_id = shipment_row.listSuppIds
-
+            for shipment_row in shipments_with_retailer_df.to_dict('records'):
+                supplier_id = shipment_row["listSuppIds"]
+                ship_id = shipment_row["IntShip_id"]
                 supplier_type = suppliers_in_shipments_df[suppliers_in_shipments_df.supp_id == supplier_id].iloc[0].type
                 retailer_types.add(supplier_type)
-            retailers_types_column.append(list(retailer_types))
 
+                retailer_orders_numpy = srorders_df.query(f"IntShip_id == {ship_id}").to_numpy()
+
+                for row in retailer_orders_numpy:
+                    products_sold.add(row[-1])
+
+            retailers_types_column.append(list(retailer_types))
+            products_sold_column.append(list(products_sold))
+
+        retailer_df["products_sold"] = products_sold_column
         retailer_df["retailer_types"] = retailers_types_column
         cols = retailer_df.columns.tolist()
         cols = cols[:5] + cols[-1:] + cols[5:-1]
         self.All_dfs["retailer"] = retailer_df[cols]
 
     def __add_manufacturing_price(self):
+        """
+        Compute manufacturing cost for each manufacturer (supplier)
+        :return: NONE
+        """
+
         new_column = []
         manf_df = self.All_dfs["manufacturing"]
         products_df = self.All_dfs["products"]
@@ -254,6 +473,6 @@ class ReadingDataSet:
         for _, row in manf_df.iterrows():
             product_id = row["Product_id"]
             prod_price = products_df[products_df["prod_id"] == product_id].iloc[0]['price']
-            manf_cost = int(prod_price * random.uniform(0.2, 0.9)*100)/100
+            manf_cost = int(prod_price * random.uniform(0.2, 0.9) * 100) / 100
             new_column.append(manf_cost)
         self.All_dfs["manufacturing"]["ManufacturingCost"] = new_column

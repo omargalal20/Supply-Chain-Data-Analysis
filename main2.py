@@ -1,4 +1,5 @@
-print(''' as %s''' % '"s"')
+for index , element in [1,2,3]:
+    print(index,element)
 #
 # from Neo4jGraph import Neo4jGraph
 # from ReadingDataSet import ReadingDataSet

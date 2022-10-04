@@ -12,7 +12,6 @@ import pickle
 
 if not exists("./Pickle Files"):
 
-    mkdir("./Pickle Files")
     dataSet = ReadingDataSet()
     # Dictionary containing all dataframes
     All_dfs = dataSet.All_dfs
@@ -35,20 +34,17 @@ if not exists("./Pickle Files"):
     initializingNodesAndEdges = InitializeNodesAndEdges(All_dfs, All_fks)
     nodes = initializingNodesAndEdges.nodes
     print(f"Nodes: {nodes}")
-    with open("Pickle Files/nodes.pkl", "wb") as f:
-        pickle.dump(nodes, f)
+
     print('-------------------------')
     edges = initializingNodesAndEdges.edges
-    with open("Pickle Files/edges.pkl", "wb") as f:
-        pickle.dump(edges, f)
+
     print(f"Edges: {edges}")
     print('-------------------------')
     properties = initializingNodesAndEdges.properties
     print(f"Properties: {properties}")
-    with open("Pickle Files/properties.pkl", "wb") as f:
-        pickle.dump(properties, f)
-    print('-------------------------')
 
+    print('-------------------------')
+    #
     for key in All_dfs:
         All_dfs[key].to_csv(f'./Altered CSVs/{key}.csv')
     # True to output nodes table and edges table as a normal graph
@@ -81,11 +77,20 @@ if not exists("./Pickle Files"):
     edges_df.to_csv('./CSV Files/edges_df.csv')
     # print(edges_df)
     print('-------------------------')
-
+    mkdir("./Pickle Files")
     nodesTable.to_pickle("Pickle Files/nodesTable.pkl")
     edgesTable.to_pickle("Pickle Files/edgesTable.pkl")
     nodes_df.to_pickle("Pickle Files/nodes_df.pkl")
     edges_df.to_pickle("Pickle Files/edges_df.pkl")
+
+    with open("Pickle Files/nodes.pkl", "wb") as f:
+        pickle.dump(nodes, f)
+
+    with open("Pickle Files/edges.pkl", "wb") as f:
+        pickle.dump(edges, f)
+
+    with open("Pickle Files/properties.pkl", "wb") as f:
+        pickle.dump(properties, f)
 
 else:
     with open("Pickle Files/nodes.pkl", "rb") as f:
@@ -100,14 +105,14 @@ else:
     edgesTable = pd.read_pickle("Pickle Files/edgesTable.pkl")
 
 print("beginning")
-myGraph = Neo4jGraph(nodes_df, edges_df)
+# myGraph = Neo4jGraph(nodes_df, edges_df)
 # myGraph.populate_database()
 #______________________________________________
 # Product Analysis
-
-products_analyzer = ProductAnalysis(myGraph)
-print(products_analyzer.get_all_manufacturers())
-products_analyzer.analayze_all_suppliers_products()
+#
+# products_analyzer = ProductAnalysis(myGraph)
+# print(products_analyzer.get_all_manufacturers())
+# products_analyzer.analayze_all_suppliers_products()
 
 try:
     print("beginning")
@@ -133,7 +138,7 @@ except  Exception as e:
     print(e)
 finally:
     print("Terminating")
-    myGraph.close()
+    # myGraph.close()
 
 ##Supplier 65468
 # x = graphAnalysis.mainMethod("Supplier 65468",True,findAllPathsSet,validaPathsSet)

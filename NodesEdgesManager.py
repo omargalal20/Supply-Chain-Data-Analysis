@@ -39,7 +39,7 @@ class NodesEdgesManager:
         self.distance = 0
 
     def create_nodes_and_edges_df(self):
-        if (self.edges_as_edges):
+        if self.edges_as_edges:
             print('TRUEEEE')
             self.__prepare_graph_edges_as_edges()
             return self.nodesTable, self.edgesTable
@@ -109,7 +109,12 @@ class NodesEdgesManager:
         self.__add_edges_to_edges_df()
         self.__add_properties_to_dfs()
         self.__add_manufacturing_relation_to_dfs()
-        self.__add_internal_orders_to_dfs()
+        # self.__add_internal_orders_to_dfs()
+        self.__add_orders_to_dfs('rcextorders', 'rcextship')
+        self.__add_orders_to_dfs('scextorders', 'scextship')
+        self.__add_orders_to_dfs('srintorders', 'srintship')
+        self.__add_orders_to_dfs('ssintorders', 'ssintship')
+        self.__add_retailer_product_edge()
         self.__cal_weight()
 
         return self.nodes_df_edges_as_nodes, self.edges_df_edges_as_nodes
@@ -259,8 +264,8 @@ class NodesEdgesManager:
 
     # Method to create the nodes dataframe from the dataframes that are determined as nodes
     def __create_nodes_df(self):
-        for node in self.nodes:
-            column_names = list(self.All_dfs[node].columns)  # get column names
+        for node_name in self.nodes:
+            column_names = list(self.All_dfs[node_name].columns)  # get column names
             # for index, row in self.All_dfs[node].iterrows():
             #     att = {}
             #     for i in range(1, len(column_names)):
@@ -268,12 +273,15 @@ class NodesEdgesManager:
             #     newRow = [{'Label': node, 'ID': self.All_dfs[node].iloc[index, 0], 'Attributes': att}]
             #     tmp = pd.DataFrame(newRow)
             #     self.nodes_df_edges_as_nodes = pd.concat([self.nodes_df_edges_as_nodes, tmp], ignore_index=True)
-            dfNumpy = self.All_dfs[node].to_numpy()
-            for index in range(dfNumpy.shape[0]):
+            dfNumpy = self.All_dfs[node_name].to_numpy()
+            foreign_keys = list(self.fk[node_name].keys())
+
+            for row in dfNumpy:
                 att = {}
                 for i in range(1, len(column_names)):
-                    att[column_names[i]] = dfNumpy[index][i]
-                newRow = [{'Label': node, 'ID': dfNumpy[index][0], 'Attributes': att}]
+                    if column_names[i] not in foreign_keys:
+                        att[column_names[i]] = row[i]
+                newRow = [{'Label': node_name, 'ID': row[0], 'Attributes': att}]
                 tmp = pd.DataFrame(newRow)
                 self.nodes_df_edges_as_nodes = pd.concat([self.nodes_df_edges_as_nodes, tmp], ignore_index=True)
 
@@ -287,7 +295,7 @@ class NodesEdgesManager:
 
             driver.implicitly_wait(5)
             firstTimeToWriteToFile = True
-
+        print("Starting Edges Method")
         for edge_name in self.edges:
 
             foreign_keys = list(self.fk[edge_name].keys())
@@ -344,7 +352,7 @@ class NodesEdgesManager:
                 totalDistance = 0
                 transportationType = ''
 
-                if (firstTimeToWriteToFile and (edge_name not in ['internaltransactions', 'externaltransactions'])):
+                if firstTimeToWriteToFile and (edge_name not in ['internaltransactions', 'externaltransactions']):
                     print(f'Index {index}')
                     print(f"From Row {self.nodes_df_edges_as_nodes.iloc[from_node_id]['Attributes']}".encode('utf-8'))
                     print(f"To Row {self.nodes_df_edges_as_nodes.iloc[to_node_id]['Attributes']}".encode('utf-8'))
@@ -352,7 +360,7 @@ class NodesEdgesManager:
                     totalDuration += self.distanceAndDuration_df.iloc[index]['Duration']
                     totalDistance += self.distanceAndDuration_df.iloc[index]['Distance']
                     transportationType += durationAndDistanceData.iloc[index]['typeOfTransportation']
-                elif (edge_name not in ['internaltransactions', 'externaltransactions']):
+                elif edge_name not in ['internaltransactions', 'externaltransactions']:
                     durationAndDistanceData = pd.read_csv('./CSV Files/distanceAndDurationData.csv')
                     totalDuration += durationAndDistanceData.iloc[index]['Duration']
                     totalDistance += durationAndDistanceData.iloc[index]['Distance']
@@ -380,7 +388,7 @@ class NodesEdgesManager:
                 tmp = pd.DataFrame(new_to_edge_row)
                 self.edges_df_edges_as_nodes = pd.concat([self.edges_df_edges_as_nodes, tmp], ignore_index=True)
 
-            if (firstTimeToWriteToFile and edge_name not in ['internaltransactions', 'externaltransactions']):
+            if firstTimeToWriteToFile and edge_name not in ['internaltransactions', 'externaltransactions']:
                 self.distanceAndDuration_df.to_csv('./CSV Files/distanceAndDurationData.csv', index=False)
                 print('Writing')
                 # if (os.path.exists('distanceAndDurationData.csv') == True and edge_name not in ['internaltransactions', 'externaltransactions']):
@@ -388,7 +396,7 @@ class NodesEdgesManager:
                 # elif (os.path.exists('distanceAndDurationData.csv') == False and edge_name not in ['internaltransactions', 'externaltransactions']):
                 #     self.distanceAndDuration_df.to_csv('distanceAndDurationData.csv',index=False)
 
-        if (firstTimeToWriteToFile):
+        if firstTimeToWriteToFile:
             driver.close()
             driver.quit()
         self.__adjustWeightRangeForFinalWeight(['Transportation_Distance', 'Transportation_Duration'])
@@ -397,8 +405,10 @@ class NodesEdgesManager:
 
     # Method to add the dataframes that are determined as properties to the nodes dataframe
     def __add_properties_to_dfs(self):
+        print("Starting Properties Method")
+
         for property_name in self.properties:
-            # print(property_name)
+            print(property_name)
 
             property_df = self.All_dfs[property_name]
 
@@ -411,7 +421,7 @@ class NodesEdgesManager:
 
             # for index, _ in property_df.iterrows():
             dfNumpy = property_df.to_numpy()
-            for index in range(dfNumpy.shape[0]):
+            for row in dfNumpy:
                 att = {}
                 reference_id = None
 
@@ -419,14 +429,14 @@ class NodesEdgesManager:
                     column_name = column_names[i]
 
                     if column_name not in foreign_keys:
-                        att[column_name] = dfNumpy[index][i]
+                        att[column_name] = row[i]
 
                     else:
                         # capturing foreign key value
-                        reference_id = dfNumpy[index][i]
+                        reference_id = row[i]
 
                 # Adding new entry to node tabel
-                newRow = [{'Label': property_name, 'ID': dfNumpy[index][0], 'Attributes': att}]
+                newRow = [{'Label': property_name, 'ID': row[0], 'Attributes': att}]
                 tmp = pd.DataFrame(newRow)
                 self.nodes_df_edges_as_nodes = pd.concat([self.nodes_df_edges_as_nodes, tmp], ignore_index=True)
                 property_node_index = len(self.nodes_df_edges_as_nodes) - 1
@@ -439,13 +449,13 @@ class NodesEdgesManager:
                             (self.nodes_df_edges_as_nodes['Label'] == referenced_table_name) & (
                                     self.nodes_df_edges_as_nodes['ID'] == list_element_id)].index[0]
 
-                        new_property_edge_row = [{'From': referenced_node_id, 'To': property_node_index,
-                                                  'From_Table': referenced_table_name.capitalize(),
-                                                  'To_Table': property_name.capitalize()
-                                                     , 'Weight': 100, 'Transportation_Type': 'N/A', 'Distance': 0,
-                                                  'Edge_Name': "Related_To"}]
-                        tmp = pd.DataFrame(new_property_edge_row)
-                        self.edges_df_edges_as_nodes = pd.concat([self.edges_df_edges_as_nodes, tmp], ignore_index=True)
+                        new_property_edge_row = {'From': referenced_node_id, 'To': property_node_index,
+                                                 'From_Table': referenced_table_name.capitalize(),
+                                                 'To_Table': property_name.capitalize()
+                            , 'Weight': 100, 'Transportation_Type': 'N/A', 'Distance': 0,
+                                                 'Edge_Name': "Related_To"}
+
+                        self.edges_df_edges_as_nodes.loc[len(self.edges_df_edges_as_nodes)] = new_property_edge_row
 
                 else:
                     referenced_node_id = \
@@ -453,13 +463,12 @@ class NodesEdgesManager:
                             (self.nodes_df_edges_as_nodes['Label'] == referenced_table_name) & (
                                     self.nodes_df_edges_as_nodes['ID'] == reference_id)].index[0]
 
-                    new_property_edge_row = [{'From': referenced_node_id, 'To': property_node_index,
-                                              'From_Table': referenced_table_name.capitalize(),
-                                              'To_Table': property_name.capitalize()
-                                                 , 'Weight': 100, 'Transportation_Type': 'N/A', 'Distance': 0,
-                                              'Edge_Name': "Related_To"}]
-                    tmp = pd.DataFrame(new_property_edge_row)
-                    self.edges_df_edges_as_nodes = pd.concat([self.edges_df_edges_as_nodes, tmp], ignore_index=True)
+                    new_property_edge_row = {'From': referenced_node_id, 'To': property_node_index,
+                                             'From_Table': referenced_table_name.capitalize(),
+                                             'To_Table': property_name.capitalize()
+                        , 'Weight': 100, 'Transportation_Type': 'N/A', 'Distance': 0,
+                                             'Edge_Name': "Related_To"}
+                    self.edges_df_edges_as_nodes.loc[len(self.edges_df_edges_as_nodes)] = new_property_edge_row
         print('Finish Properties Method')
 
     # Method to relate the products to the suppliers that produce a certain product
@@ -550,15 +559,15 @@ class NodesEdgesManager:
 
         # for _, manufacturing_row in manufacturing_df.iterrows():
         dfNumpy = manufacturing_df.to_numpy()
-        for index in range(dfNumpy.shape[0]):
-            yield_val = dfNumpy[index][yield_index]
-            target = dfNumpy[index][target_index]
-            factory_id = dfNumpy[index][factory_id_index]
-            manf_cost = dfNumpy[index][manf_cost_index]
+        for row in dfNumpy:
+            yield_val = row[yield_index]
+            target = row[target_index]
+            factory_id = row[factory_id_index]
+            manf_cost = row[manf_cost_index]
             supplier_node_index = \
                 self.nodes_df_edges_as_nodes.query(f"(Label == 'supplier' ) and (ID == {factory_id}) ").index[0]
 
-            product_id = dfNumpy[index][product_id_index]
+            product_id = row[product_id_index]
             product_node_index = \
                 self.nodes_df_edges_as_nodes.query(f"(Label == 'products' ) and (ID == {product_id}) ").index[0]
             warehouse_node_index = self.warehousesOfProducts(product_node_index)
@@ -574,16 +583,14 @@ class NodesEdgesManager:
             # self.calaculateDistance()
 
             # #supplier -> products
-            other_properties = {'Target': target, 'Yield': yield_val,'ManufacturingCost':manf_cost}
-            print(other_properties)
-            new_supplier_edge_row = [
-                {'From': supplier_node_index, 'To': product_node_index,
-                 'From_Table': "supplier".capitalize(),
-                 'To_Table': "products".capitalize()
-                    , 'Weight': 100, 'Distance': 0, 'Edge_Name': "Manufatures",
-                 'CustomProperties': other_properties}]
-            suppliertmp = pd.DataFrame(new_supplier_edge_row)
-            self.edges_df_edges_as_nodes = pd.concat([self.edges_df_edges_as_nodes, suppliertmp], ignore_index=True)
+            other_properties = {'Target': target, 'Yield': yield_val, 'ManufacturingCost': manf_cost}
+            new_supplier_edge_row = {'From': supplier_node_index, 'To': product_node_index,
+                                     'From_Table': "supplier".capitalize(),
+                                     'To_Table': "products".capitalize()
+                , 'Weight': 100, 'Distance': 0, 'Edge_Name': "Manufatures",
+                                     'CustomProperties': other_properties}
+
+            self.edges_df_edges_as_nodes.loc[len(self.edges_df_edges_as_nodes)] = new_supplier_edge_row
 
             # supplier_df = pd.concat([supplier_df, suppliertmp], ignore_index=True)
 
@@ -598,6 +605,66 @@ class NodesEdgesManager:
         # self.edges_df_edges_as_nodes.to_csv("edges.csv")
         print('Finish Manufacturing')
 
+    def __add_orders_to_dfs(self, order_name, shipment_name):
+        """
+        Add Orders to nodes DF and add relation between order and its Product
+        Args:
+            :param order_name (string): order type [SS/SR/RC/SC]
+            :param shipment_name (string): shipment type [SS/SR/RC/SC]
+        :return: None
+        """
+
+        print(f"Starting {order_name}....")
+        orders_df = self.All_dfs[order_name]
+
+        shipments_nodes_df = self.nodes_df_edges_as_nodes.query(f"(Label == '{shipment_name}')")
+        product_nodes_df = self.nodes_df_edges_as_nodes.query("(Label == 'products' )")
+
+        nodes_df_length = len(self.nodes_df_edges_as_nodes)
+        edges_df_length = len(self.edges_df_edges_as_nodes)
+
+        # Get Index For Each Column
+        columns_index = dict()
+        for index, column_name in enumerate(orders_df.columns):
+            columns_index[column_name] = index
+
+        order_df_numpy = orders_df.to_numpy()
+        index = 0
+        for row in order_df_numpy:
+            order_node_index = nodes_df_length + index
+            att = {}
+            for column_name in columns_index:
+                if column_name not in self.fk[order_name].keys() and column_name != self.pk[order_name]:
+                    att[column_name] = row[columns_index[column_name]]
+
+            new_node_row = {'Label': order_name, 'ID': row[0], 'Attributes': att}
+
+            self.nodes_df_edges_as_nodes.loc[len(self.nodes_df_edges_as_nodes)] = new_node_row
+
+            shipment_id = row[columns_index[f"{'Ext' if shipment_name[1] == 'c' else 'Int'}Ship_id"]]
+            shipment_node_index = shipments_nodes_df.query(f"(ID == {shipment_id})").index[0]
+
+            product_id = row[columns_index["prod_id"]]
+            product_node_index = product_nodes_df.query(f"(ID == {product_id})").index[0]
+
+            # Create Edge Between Shipment & its Order
+            order_shipment_edge = {'From': shipment_node_index, 'To': order_node_index,
+                                   'From_Table': shipment_name.capitalize(),
+                                   'To_Table': order_name.capitalize()
+                , 'Weight': 100, 'Transportation_Type': 'N/A', 'Edge_Name': "Order"}
+            self.edges_df_edges_as_nodes.loc[len(self.edges_df_edges_as_nodes)] = order_shipment_edge
+
+            # Create Edge Between Edge & its Product
+            order_product_edge = {'From': order_node_index, 'To': product_node_index,
+                                  'From_Table': order_name.capitalize(),
+                                  'To_Table': "products".capitalize(), 'Weight': 100,
+                                  'Transportation_Type': 'N/A',
+                                  'Edge_Name': "Orders_Product"
+                                  }
+            self.edges_df_edges_as_nodes.loc[len(self.edges_df_edges_as_nodes)] = order_product_edge
+            index += 1
+        print(f'Finish {order_name}')
+
     def __add_internal_orders_to_dfs(self):
         ss_internal_orders_df = self.All_dfs["ssintorders"]
 
@@ -606,7 +673,7 @@ class NodesEdgesManager:
         for index in range(dfNumpy.shape[0]):
             att = {}
             for column_name in ss_internal_orders_df:
-                if (column_name not in self.fk["ssintorders"].keys() and column_name != self.pk["ssintorders"]):
+                if column_name not in self.fk["ssintorders"].keys() and column_name != self.pk["ssintorders"]:
                     att[column_name] = dfNumpy[index][list(ss_internal_orders_df.columns).index(column_name)]
                     # att[column_name] = ss_internal_order_row[column_name]
 
@@ -645,3 +712,29 @@ class NodesEdgesManager:
             self.edges_df_edges_as_nodes = pd.concat([self.edges_df_edges_as_nodes, tmp], ignore_index=True)
         print('Finish Internal Orders')
 
+    def __add_retailer_product_edge(self):
+        retailer_df = self.All_dfs["retailer"]
+        product_nodes_df = self.nodes_df_edges_as_nodes.query("(Label == 'products' )")
+        retailer_nodes_df = self.nodes_df_edges_as_nodes.query("(Label == 'retailer' )")
+        retailer_df_numpy = retailer_df.to_numpy()
+
+        columns_index = dict()
+        for index, column_name in enumerate(retailer_df.columns):
+            columns_index[column_name] = index
+
+        for row in retailer_df_numpy:
+            retailer_id = row[columns_index['retailer_id']]
+            retailer_node_index = retailer_nodes_df.query(f"(ID == {retailer_id})").index[0]
+            products_sold = row[columns_index['products_sold']]
+            for product_id in products_sold:
+                product_node_index = product_nodes_df.query(f"(ID == {product_id})").index[0]
+                retailer_product_edge = {
+                    'From': retailer_node_index,
+                    'To': product_node_index,
+                    'From_Table': 'retailer'.capitalize(),
+                    'To_Table': 'products'.capitalize(),
+                    'Weight': 100,
+                    'Transportation_Type': 'N/A',
+                    'Edge_Name': "Sells"
+                }
+                self.edges_df_edges_as_nodes.loc[len(self.edges_df_edges_as_nodes)] = retailer_product_edge
