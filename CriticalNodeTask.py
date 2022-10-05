@@ -1,7 +1,8 @@
-from sqlite3 import connect
 import pandas as pd
-
 from GraphAnalysis import GraphAnalysis
+from scipy.integrate import quad
+import numpy as np
+import matplotlib.pyplot as plt
 
 
 class CriticalNodeTask:
@@ -13,6 +14,8 @@ class CriticalNodeTask:
         self.edgesNames = edgesNames
         self.nodesTable = nodesTable
         self.relationNames = relationNames
+
+
     # get the nodes and count of connected Nodes to it (det degree of each node)
     def getNodesWiththeCountsOfConnectedNodes(self,graphName,orientation=""):
         executedStatment = ""
@@ -41,31 +44,68 @@ class CriticalNodeTask:
         retailerCNDF = (criticalNodesDF[criticalNodesDF['name'].str.contains("Retailer")]).reset_index(drop=True) 
         warehousesCNDF = (criticalNodesDF[criticalNodesDF['name'].str.contains("Warehouses")]).reset_index(drop=True) 
 
-        suppliersCNDF = self.ValidatethecountsOfNodes(suppliersCNDF,10)
-        retailerCNDF = self.ValidatethecountsOfNodes(retailerCNDF,2)
-        warehousesCNDF = self.ValidatethecountsOfNodes(warehousesCNDF,5)
-        
-        self.validateConnectedNodes(suppliersCNDF)
-        #self.validateConnectedNodes(retailerCNDF)
-        #self.validateConnectedNodes(warehousesCNDF)
-        
-        # for criticalNode in range(len(criticalNodesDF)):
-        #     count = self.validateConnectedNodes(criticalNodesDF.loc[criticalNode]['name'])
-        #     if count !=0:
-        #         criticalNodesDF.at[criticalNode, 'followers'] = count
-        return criticalNodesDF
-    
-    
-    def validateConnectedNodes(self,DF):
-        for node in range(len(DF)):
-            connectedNodes = self.getConnectedNodes(DF.loc[node]['name'])
-            print("connectedNodes")
-            print(len(connectedNodes))
-            validConnectedNodes = list(filter(lambda node: (node.split(" ")[0] != "Facilities") or (node.split(" ")[0] != "Products"),connectedNodes))
-            print("AFTER")
-            print(len(validConnectedNodes))
-        #return len(validConnectedNodes)
+        suppliersCNDF = suppliersCNDF[suppliersCNDF.followers>0].reset_index(drop=True) 
+        retailerCNDF = retailerCNDF[retailerCNDF.followers>0].reset_index(drop=True) 
+        warehousesCNDF = warehousesCNDF[warehousesCNDF.followers>0].reset_index(drop=True) 
+            
+        return suppliersCNDF,retailerCNDF,warehousesCNDF
 
+    
+    def getActualFollowersToNode(self,graphName):
+
+        suppliersCNDF,retailerCNDF,warehousesCNDF = self.getNodesWiththeCountsOfConnectedNodes(graphName,"UNDIRECTED")
+
+
+        for supplier in range(len(suppliersCNDF)):
+            followersDeleted = self.validateConnectedNodes(suppliersCNDF.loc[supplier]["name"])
+            actualFollowers = (suppliersCNDF.loc[supplier]["followers"]) - followersDeleted
+            suppliersCNDF.at[supplier, 'followers'] = actualFollowers
+        
+        for retailer in range(len(retailerCNDF)):
+            followersDeleted = self.validateConnectedNodes(retailerCNDF.loc[retailer]["name"])
+            actualFollowers = (retailerCNDF.loc[retailer]["followers"]) - followersDeleted
+            retailerCNDF.at[retailer, 'followers'] = actualFollowers
+        
+        suppliersCNDF = (self.ValidatethecountsOfNodes(suppliersCNDF,10)).reset_index(drop=True)
+        retailerCNDF = (self.ValidatethecountsOfNodes(retailerCNDF,2)).reset_index(drop=True)
+        warehousesCNDF = (self.ValidatethecountsOfNodes(warehousesCNDF,5)).reset_index(drop=True)
+
+        suppliersCNDF.to_csv("suppliersCNDF.csv")
+        retailerCNDF.to_csv("retailerCNDF.csv")
+        warehousesCNDF.to_csv("warehousesCNDF.csv")
+
+    #getcritical nodes respect to how many connected nodes coneected to it and returns list with their names
+    def criticalNodesRespectToConnetedNodes(self,suppliersCNDF,retailerCNDF):
+        # get followers
+        supplierFollowers = suppliersCNDF['followers']
+        retailerFollowers = retailerCNDF["followers"]
+        # get the max followers 
+        supplierMax = supplierFollowers.max()
+        retailerMax = retailerCNDF.max()
+        # apply this formula to get the threshold
+        threshold = max - 10
+        criticalNodesWithHightestConnectedNodes = []
+        temp = criticalNodesDF
+        # loop over the dataframe
+        for node in range(len(temp)):
+            # check if the node followers below the threshold remove it from the dataframe
+            if criticalNodesDF.loc[node]['followers'] < threshold:
+                criticalNodesDF = criticalNodesDF.drop(node)
+        # reindex the dataframe
+        criticalNodeDF = criticalNodesDF.reset_index(drop=True) 
+        # add the nodes names to the list
+        criticalNodesWithHightestConnectedNodes = criticalNodeDF['name'].to_list()
+        # return the list
+        return criticalNodesWithHightestConnectedNodes
+
+   
+    def validateConnectedNodes(self,nodeName):
+        connectedNodes = self.getConnectedNodes(nodeName)
+        facilitiesNodes = list(filter(lambda node: node.split(" ")[0] == "Facilities",connectedNodes))
+        productsNodes = list(filter(lambda node: node.split(" ")[0] == "Products",connectedNodes))
+        return (len(facilitiesNodes) + len(productsNodes))
+    
+        
     # takes the criticalNodes as neo4ji outout and return it as dataframe
     def returnCriticalNodesDF(self,criticalNodes):
         criticalNodesDF = pd.DataFrame()
@@ -86,8 +126,7 @@ class CriticalNodeTask:
     
     def ValidatethecountsOfNodes(self,DF,min):    
         return  DF[DF.followers>=min].reset_index(drop=True) 
-    
-
+        
     
     def getConnectedNodes(self,souceNodeName):
         nodeLabel = souceNodeName.split(" ")[0]
@@ -97,32 +136,9 @@ class CriticalNodeTask:
         for criticalNode in result:
             x = dict(criticalNode)
             resultNames.append(x['m.name'])
-        print(resultNames)
         return resultNames
 
-
-
-    #getcritical nodes respect to how many connected nodes coneected to it and returns list with their names
-    def criticalNodesRespectToConnetedNodes(self,criticalNodesDF):
-        # get followers
-        followersColumn = criticalNodesDF['followers']
-        # get the max followers 
-        max = followersColumn.max()
-        # apply this formula to get the threshold
-        threshold = max - 10
-        criticalNodesWithHightestConnectedNodes = []
-        temp = criticalNodesDF
-        # loop over the dataframe
-        for node in range(len(temp)):
-            # check if the node followers below the threshold remove it from the dataframe
-            if criticalNodesDF.loc[node]['followers'] < threshold:
-                criticalNodesDF = criticalNodesDF.drop(node)
-        # reindex the dataframe
-        criticalNodeDF = criticalNodesDF.reset_index(drop=True) 
-        # add the nodes names to the list
-        criticalNodesWithHightestConnectedNodes = criticalNodeDF['name'].to_list()
-        # return the list
-        return criticalNodesWithHightestConnectedNodes
+    
 
     # use criticalNodeDF global variable --- ## return list of critical nodes that I can reach
     def ifIReachCriticalNode(self,sourceNodeName,graphName,crticalNodes):

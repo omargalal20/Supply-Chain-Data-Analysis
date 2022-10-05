@@ -1,2 +1,0 @@
-,index,sourceNodeName,targetNodeName,totalCost,isDirect,costs,nodeNames
-0,0,Supplier 90236,Retailer 25889,719.5,False,"[0.0, 100.0, 185.0, 285.0, 355.0, 452.25, 519.5, 619.5, 719.5]","['Supplier 90236', 'Ssintship 8796', 'Supplier 26533', 'Ssintship 10032', 'Supplier 24646', 'Ssintship 10349', 'Supplier 72315', 'Srintship 1851', 'Retailer 25889']"
