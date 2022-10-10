@@ -3,6 +3,7 @@ from GraphAnalysis import GraphAnalysis
 from scipy.integrate import quad
 import numpy as np
 import matplotlib.pyplot as plt
+import plotly.express as px
 
 
 class CriticalNodeTask:
@@ -55,7 +56,6 @@ class CriticalNodeTask:
 
         suppliersCNDF,retailerCNDF,warehousesCNDF = self.getNodesWiththeCountsOfConnectedNodes(graphName,"UNDIRECTED")
 
-
         for supplier in range(len(suppliersCNDF)):
             followersDeleted = self.validateConnectedNodes(suppliersCNDF.loc[supplier]["name"])
             actualFollowers = (suppliersCNDF.loc[supplier]["followers"]) - followersDeleted
@@ -66,39 +66,66 @@ class CriticalNodeTask:
             actualFollowers = (retailerCNDF.loc[retailer]["followers"]) - followersDeleted
             retailerCNDF.at[retailer, 'followers'] = actualFollowers
         
-        suppliersCNDF = (self.ValidatethecountsOfNodes(suppliersCNDF,10)).reset_index(drop=True)
-        retailerCNDF = (self.ValidatethecountsOfNodes(retailerCNDF,2)).reset_index(drop=True)
-        warehousesCNDF = (self.ValidatethecountsOfNodes(warehousesCNDF,5)).reset_index(drop=True)
+        suppliersCNDF = (self.ValidatethecountsOfNodes(suppliersCNDF,10))
+        retailerCNDF = (self.ValidatethecountsOfNodes(retailerCNDF,2))
+        warehousesCNDF = (self.ValidatethecountsOfNodes(warehousesCNDF,1))
 
+        self.criticalNodesRespectToConnetedNodes(suppliersCNDF,retailerCNDF)
+        
         suppliersCNDF.to_csv("suppliersCNDF.csv")
         retailerCNDF.to_csv("retailerCNDF.csv")
         warehousesCNDF.to_csv("warehousesCNDF.csv")
+    
 
-    #getcritical nodes respect to how many connected nodes coneected to it and returns list with their names
-    def criticalNodesRespectToConnetedNodes(self,suppliersCNDF,retailerCNDF):
-        # get followers
-        supplierFollowers = suppliersCNDF['followers']
-        retailerFollowers = retailerCNDF["followers"]
-        # get the max followers 
-        supplierMax = supplierFollowers.max()
-        retailerMax = retailerCNDF.max()
-        # apply this formula to get the threshold
-        threshold = max - 10
-        criticalNodesWithHightestConnectedNodes = []
-        temp = criticalNodesDF
-        # loop over the dataframe
-        for node in range(len(temp)):
-            # check if the node followers below the threshold remove it from the dataframe
-            if criticalNodesDF.loc[node]['followers'] < threshold:
-                criticalNodesDF = criticalNodesDF.drop(node)
-        # reindex the dataframe
-        criticalNodeDF = criticalNodesDF.reset_index(drop=True) 
-        # add the nodes names to the list
-        criticalNodesWithHightestConnectedNodes = criticalNodeDF['name'].to_list()
-        # return the list
-        return criticalNodesWithHightestConnectedNodes
 
+    def criticalWarehouses(self,productName):
+        command = '''match(n:Warehouses)-[]->(m:Products{name:'%s'}) return n.name''' %(productName)
+        result = self.myGraph.execute_Command(command)
+        warehouses = []
+        for criticalNode in result:
+            x = dict(criticalNode)
+            warehouses.append(x['n.name'])
+        
+        
    
+    def criticalNodesRespectToConnetedNodes(self,suppliersCNDF,retailerCNDF):
+        
+        hisFigS = px.histogram(suppliersCNDF, x="followers")
+        boxFigS = px.box(suppliersCNDF, x="followers")
+        hisFigS.show()
+        boxFigS.show()
+
+        hisFigR = px.histogram(retailerCNDF, x="followers")
+        boxFigR = px.box(retailerCNDF, x="followers")
+        hisFigR.show()
+        boxFigR.show()
+
+        criticalSupplierIndices = list((self.find_outliers_IQR(suppliersCNDF["followers"])).index)
+        criticalRetailerIndices = list((self.find_outliers_IQR(retailerCNDF["followers"])).index)
+        suppliers = self.getCriticalsrespectTofollowers(criticalSupplierIndices,suppliersCNDF)
+        retailers = self.getCriticalsrespectTofollowers(criticalRetailerIndices,retailerCNDF)
+
+        return suppliers,retailers
+    
+    def getCriticalsrespectTofollowers(self,indices,df):
+        criticalsNames = []
+        for index in indices:
+           criticalsNames.append(df.loc[index]['name'])
+        return criticalsNames
+
+    def find_outliers_IQR(self,df):
+
+        q1=df.quantile(0.25)
+
+        q3=df.quantile(0.75)
+
+        IQR=q3-q1
+
+        outliers = df[((df<(q1-1.5*IQR)) | (df>(q3+1.5*IQR)))]
+    
+        return outliers
+    
+
     def validateConnectedNodes(self,nodeName):
         connectedNodes = self.getConnectedNodes(nodeName)
         facilitiesNodes = list(filter(lambda node: node.split(" ")[0] == "Facilities",connectedNodes))
@@ -138,7 +165,6 @@ class CriticalNodeTask:
             resultNames.append(x['m.name'])
         return resultNames
 
-    
 
     # use criticalNodeDF global variable --- ## return list of critical nodes that I can reach
     def ifIReachCriticalNode(self,sourceNodeName,graphName,crticalNodes):
