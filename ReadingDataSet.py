@@ -79,7 +79,6 @@ class ReadingDataSet:
 
     def createMissingShipments(self):
         c = 9995
-
         for r in range(len(self.All_dfs["manufacturing"])):
             diff_supp = self.All_dfs["manufacturing"].loc[r, "Different_suppliers"]
             factory = self.All_dfs["manufacturing"].loc[r, "Factory_id"]
@@ -240,3 +239,5 @@ class ReadingDataSet:
         cols = retailer_df.columns.tolist()
         cols = cols[:5] + cols[-1:] + cols[5:-1]
         self.All_dfs["retailer"] = retailer_df[cols]
+
+    

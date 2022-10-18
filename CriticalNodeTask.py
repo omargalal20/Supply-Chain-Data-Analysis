@@ -1,3 +1,5 @@
+import ast
+from random import randint
 import pandas as pd
 from GraphAnalysis import GraphAnalysis
 from scipy.integrate import quad
@@ -77,7 +79,7 @@ class CriticalNodeTask:
         warehousesCNDF.to_csv("warehousesCNDF.csv")
     
 
-
+    # how many product does each warehouse has
     def criticalWarehouses(self,productName):
         command = '''match(n:Warehouses)-[]->(m:Products{name:'%s'}) return n.name''' %(productName)
         result = self.myGraph.execute_Command(command)
@@ -85,9 +87,46 @@ class CriticalNodeTask:
         for criticalNode in result:
             x = dict(criticalNode)
             warehouses.append(x['n.name'])
-        
-        
+        return warehouses
    
+    def addQuantityToProduct(self,nodes_df):
+        import random as rd
+        ProductsData = pd.read_csv("./DataSet/Products_data.csv")
+        capacityDF = pd.DataFrame()
+        warehousesCapacity = []
+        mainCapacity = []
+        for product in range(len(ProductsData)):
+            listOfEachProduct = ProductsData.loc[product]["warehouses"]
+            listOfEachProduct = ast.literal_eval(listOfEachProduct)
+            for warehouse in range(len(listOfEachProduct)):
+                warehouseId = listOfEachProduct[warehouse]
+                capacityOfWarehouse = self.gettingCapacityOfWarehouse(warehouseId,nodes_df)
+                randomProductQuantity = rd.randint(5000,capacityOfWarehouse)
+                warehousesCapacity.append(randomProductQuantity)
+            mainCapacity.append(warehousesCapacity)
+            warehousesCapacity = []
+        capacityDF["capacity"] = mainCapacity
+        ProductsData = pd.merge(
+                ProductsData,
+                capacityDF,
+                how='left',
+                left_index=True, 
+                right_index=True 
+                )
+        print(ProductsData.head())
+        ProductsData.to_csv("./DataSet/Products_data.csv")
+    
+    def addAttribureToProductsInNodesDF(self,nodes_df):
+        nodes_df = nodes_df[nodes_df.Label == "products"]
+
+        print()
+    
+    def gettingCapacityOfWarehouse(self,warehouseID,nodes_df):
+        nodes_df = nodes_df[nodes_df.Label == "warehouses"]
+        attributes = ((nodes_df[nodes_df.ID == warehouseID])["Attributes"])
+        index = (attributes.index)[0]
+        return attributes[index]['capacity (NA)']
+
     def criticalNodesRespectToConnetedNodes(self,suppliersCNDF,retailerCNDF):
         
         hisFigS = px.histogram(suppliersCNDF, x="followers")
