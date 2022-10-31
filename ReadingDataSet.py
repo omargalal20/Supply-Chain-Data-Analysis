@@ -1,5 +1,6 @@
 import os
 import time
+from attr import attributes
 
 import pandas as pd
 import random
@@ -240,4 +241,16 @@ class ReadingDataSet:
         cols = cols[:5] + cols[-1:] + cols[5:-1]
         self.All_dfs["retailer"] = retailer_df[cols]
 
-    
+    def add_warehouse_capacity(nodes_df):
+        products = pd.read_csv("./DataSet/Products_data.csv")
+        column_names = products.columns
+        columns = range(len(products.columns))
+        for product in range(len(products)):
+            attributes = {}
+            for col in columns:
+                attributes[column_names[col]] = products.loc[product][column_names[col]]
+            prod_id = products.loc[product]["prod_id"]
+            index = nodes_df[(nodes_df["ID"] == prod_id) & (nodes_df["Label"] == "products")].index.values.astype(int)
+            # print(index)
+            nodes_df.at[index[0]] = attributes
+        return nodes_df

@@ -13,6 +13,7 @@ import pickle
 if not exists("Pickle Files/nodes_df.pkl"):
 
     dataSet = ReadingDataSet()
+    dataSet = ReadingDataSet()
     # Dictionary containing all dataframes
     All_dfs = dataSet.All_dfs
     print(f"Df Keys: {All_dfs.keys()}")
@@ -206,3 +207,7 @@ finally:
 #print(myGraph.getGraphs())
 #print(nodes_df.loc[(nodes_df['ID'] == 380 ) & (nodes_df['Label'] == 'supplier')])
 #print(list(All_dfs.keys()))
+print("RAWAAAAAAAAAAN")
+print((nodes_df[nodes_df["Label"]=="products"]).loc[4688]["Attributes"])
+
+# print(ReadingDataSet.add_warehouse_capacity(nodes_df))
