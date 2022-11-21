@@ -89,10 +89,11 @@ class CriticalNodeTask:
             warehouses.append(x['n.name'])
         return warehouses
    
+   # should be called only once
     def addQuantityToProduct(self,nodes_df):
         import random as rd
         ProductsData = pd.read_csv("./DataSet/Products_data.csv")
-        capacityDF = pd.DataFrame()
+        capacityDF = pd.DataFrame(columns=['capacity'])
         warehousesCapacity = []
         mainCapacity = []
         for product in range(len(ProductsData)):
@@ -101,7 +102,7 @@ class CriticalNodeTask:
             for warehouse in range(len(listOfEachProduct)):
                 warehouseId = listOfEachProduct[warehouse]
                 capacityOfWarehouse = self.gettingCapacityOfWarehouse(warehouseId,nodes_df)
-                randomProductQuantity = rd.randint(5000,capacityOfWarehouse)
+                randomProductQuantity = rd.randint(5000,capacityOfWarehouse) #can warehouse capacity be less than 5000?
                 warehousesCapacity.append(randomProductQuantity)
             mainCapacity.append(warehousesCapacity)
             warehousesCapacity = []
@@ -114,7 +115,7 @@ class CriticalNodeTask:
                 right_index=True 
                 )
         print(ProductsData.head())
-        ProductsData.to_csv("./DataSet/Products_data.csv")
+        ProductsData.to_csv("./DataSet/Products_data.csv",index=False)
     
     def addAttribureToProductsInNodesDF(self,nodes_df):
         nodes_df = nodes_df[nodes_df.Label == "products"]
@@ -189,11 +190,9 @@ class CriticalNodeTask:
         # return the dataframe of nodes with the count of its connected nodes
         return criticalNodesDF
 
-    
     def ValidatethecountsOfNodes(self,DF,min):    
         return  DF[DF.followers>=min].reset_index(drop=True) 
-        
-    
+     
     def getConnectedNodes(self,souceNodeName):
         nodeLabel = souceNodeName.split(" ")[0]
         command = '''match(n:%s {name:'%s'})-[]->(m) return n.name,m.name''' %(nodeLabel,souceNodeName)
@@ -203,7 +202,6 @@ class CriticalNodeTask:
             x = dict(criticalNode)
             resultNames.append(x['m.name'])
         return resultNames
-
 
     # use criticalNodeDF global variable --- ## return list of critical nodes that I can reach
     def ifIReachCriticalNode(self,sourceNodeName,graphName,crticalNodes):
@@ -318,7 +316,6 @@ class CriticalNodeTask:
                 repeatedProductsIndices.append(filteredEdgesDF.loc[node]['To'])
         return criticalNodesWithRespectToProduct
     
-
     def criticalNodesRespectToWeightAndPrices(self,sourceNodeName,targetNodeName,graphName):
         # criteria 1: using dijkstra's algorithm
         findAllPathsDic = {'targetNodeName': targetNodeName , 'cases': 2, 'graphName': graphName,'relationship':"",'k':1,'TargetType':""}
@@ -336,19 +333,64 @@ class CriticalNodeTask:
         followersList.pop(-1)
         return followersList
         
-            
+    '''
+        for each prod in the dataset 
+        access Products_data.csv using the prod_id
+        from the dataset add capacity & warehouses list to the attributes
+        '''
 
+    def add_warehouses_capacity_to_nodes_df(self,nodes_df):
+        products_data = pd.read_csv("./DataSet/Products_data.csv")
+        # products_df = nodes_df[nodes_df["Label"]=="products"]
+        for prod in range(len(products_data)):
+            id = products_data.loc[prod]['prod_id']
+            x = nodes_df[(nodes_df['Label']=="products") & (nodes_df['ID']==id)]
+            index = x["Attributes"].index.to_list()[0]
+            att_dict = x.Attributes.to_dict()
+            att = att_dict[index]
+            att_warehouses = products_data.loc[prod]['warehouses']
+            att_capacity = products_data.loc[prod]['capacity']
+            att["capacity"] = att_capacity
+            att["warehouses"] = att_warehouses
+            nodes_df.at[index,"Attributes"] = att
+            # nodes_df.iloc[index]["Attributes"] = att
+        nodes_df[nodes_df["Label"]=="products"].to_csv("checker.csv",index=False)
 
+    def critical_warehouses_with_respect_to_count(self,nodes_df):
+        '''
+        '''
+        self.add_warehouses_capacity_to_nodes_df(nodes_df)
+        #{"prod_id":[critical_]}
+        critical_warehouses = []
+        prod_df = nodes_df[nodes_df['Label']=="products"]
+        for prod in range(len(prod_df)):
+            prod_id = "Product " + str(prod_df.iloc[prod]["ID"])
+            warehouses_list = ast.literal_eval((prod_df.iloc[prod]["Attributes"])['warehouses'])
+            if(len(warehouses_list)==1):
+                critical_warehouses.append((prod_id, "Warehouse " + str(warehouses_list[0])))
+        print(critical_warehouses)
 
-    
-    
+    def critical_warehouses_with_respect_to_percentage(self, nodes_df):
+        self.add_warehouses_capacity_to_nodes_df(nodes_df)
+        critical_warehouses = []
+        prod_df = nodes_df[nodes_df['Label']=="products"]
+        for prod in range(len(prod_df)):
+            prod_id = prod_df.iloc[prod]["ID"]
+            warehouses_list = ast.literal_eval((prod_df.iloc[prod]["Attributes"])['warehouses'])
+            capacity_list = ast.literal_eval((prod_df.iloc[prod]["Attributes"])['capacity'])
+            if(len(capacity_list) > 1):
+                capacity_percent_list = self.get_percentage(capacity_list)
+                max_percent = max(capacity_percent_list)
+                max_index = capacity_percent_list.index(max_percent)
+                if(max_percent >= 50):
+                    critical_warehouses.append(("Product " + str(prod_id),"Warehouse " + str(warehouses_list[max_index])))
+            else:
+                continue
+        print(critical_warehouses)  
 
-
-
-
-
-
-
-
+    def get_percentage(self,target_list):
+        s = sum(target_list)
+        res = []
+        res = map(lambda x: (x / s)*100, target_list)
+        return list(res)
         
-

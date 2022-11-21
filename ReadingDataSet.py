@@ -241,7 +241,7 @@ class ReadingDataSet:
         cols = cols[:5] + cols[-1:] + cols[5:-1]
         self.All_dfs["retailer"] = retailer_df[cols]
 
-    def add_warehouse_capacity(nodes_df):
+    def add_warehouse_capacity(self, nodes_df):
         products = pd.read_csv("./DataSet/Products_data.csv")
         column_names = products.columns
         columns = range(len(products.columns))
